@@ -33,3 +33,13 @@ Thumbs.db
 # *.h5
 # *.hdf5
 # *.nc
+
+# PFLOTRAN outputs
+*.tec
+*.vtk
+*.xmf
+*.out
+pflotran.log
+
+# Large model output (adjust as needed)
+data/model_output/*.h5
