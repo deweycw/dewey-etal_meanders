@@ -1,0 +1,503 @@
+#==================== CHEMISTRY ===================
+CHEMISTRY 
+  PRIMARY_SPECIES 
+    H+        
+    H2O      
+    Cl-      
+    SO4--    
+    HCO3- 
+    Al+++    
+    Ca++      
+    Mg++     
+    Fe++     
+    Fe+++ 
+    K+       
+    Na+      
+    Ac-      
+    Tracer   
+    O2(aq) 
+    DOC-
+    HS-      
+    NO3-     
+    N2(aq)   
+    NH3(aq)
+  / 
+  
+  SECONDARY_SPECIES 
+    HAc
+    HDOC(aq)
+    CO2(aq)
+    CO3--
+    CaOH+
+    CaSO4(aq)
+    H2S(aq)
+    H2SO4(aq)
+    HNO3(aq)
+    HSO4-
+    NH4+
+    NH4SO4-
+    OH-
+    S--
+    FeS(aq)
+  / 
+  
+  IMMOBILE_SPECIES
+    Fim
+    Nim
+    Sim
+  /
+  PASSIVE_GAS_SPECIES
+    CO2(g)
+  /
+  
+  MINERALS 
+    SOM
+    SOM_COOH
+    Fe(OH)3(s)
+    Ferrihydrite
+    Goethite
+    Calcite
+    Mackinawite
+  /
+
+MINERAL_KINETICS 
+
+  SOM        
+    RATE_CONSTANT 0.d0 
+  /
+
+  SOM_COOH
+    RATE_CONSTANT -12.95d0 !-12.8d0
+    PREFACTOR
+      PREFACTOR_SPECIES H+
+        ALPHA 0.d0
+        BETA 1.d0
+        ATTENUATION_COEF 1.e7
+      /
+    /
+  /
+
+  Calcite
+    PREFACTOR 
+      RATE_CONSTANT 1.55d-06 
+      ACTIVATION_ENERGY 23.5d0
+      /
+    PREFACTOR
+      RATE_CONSTANT 5.01d-01 
+      ACTIVATION_ENERGY 14.4d0 
+      PREFACTOR_SPECIES H+  
+          ALPHA  1.0
+      /
+    /
+    PREFACTOR
+      RATE_CONSTANT 3.31d-04 
+      ACTIVATION_ENERGY 35.4d0
+      PREFACTOR_SPECIES HCO3-  
+          ALPHA  1.0 
+      /
+    / 
+  /
+  
+  Goethite 
+    RATE_CONSTANT 0.d0
+  /
+
+  Ferrihydrite 
+    RATE_CONSTANT 0.d0
+  /
+
+  Fe(OH)3(s)
+    RATE_CONSTANT 0.d0
+  /
+
+  Mackinawite 
+    RATE_CONSTANT 0.d0
+  /
+/
+
+#=========================== Reaction Network ========================================      
+
+  SORPTION   
+    SURFACE_COMPLEXATION_RXN
+      EQUILIBRIUM
+      MINERAL Ferrihydrite
+      SITE >FeOH 1.14E+4
+      COMPLEXES
+        >FeO_DOC
+      /
+    /
+  END
+
+  REACTION_SANDBOX
+  
+    SOM_AC_FERMENTATION
+      RATE        1.d-8
+      THRESHOLD   1.d-6
+    /
+
+    MACKINAWITE_DISS_PRECIP
+      PRECIP_RATE     1.d-10
+      DSLN_RATE       0.d0
+      HALF_SAT_HS     1.d-4
+      HALF_SAT_FE     2.d-5
+      O2_THRESHOLD_M  1.d-5
+      HALF_SAT_O2     1.d-5    
+    /
+
+    FE_MINERAL_PRECIPITATION
+      RATE_CONSTANT -5.d-7
+    /
+
+    FE_FH_MINERAL_RIPENING
+      RATE_CONSTANT_FE_TO_FH 1.d-2
+    /
+
+    FH_GT_MINERAL_RIPENING
+      RATE_CONSTANT_FH_TO_GT  5.d-3
+    /
+
+    JINBETHKE_NITRATE_ACETATE
+      RMAX            1.0d-6  
+      K_DONOR         1.0d-5 
+      K_ACCEPTOR      1.0d-5
+      Y               1.0d-0
+      M               2.667d0            ! 0.667 * 4   
+      CHI             8.0d0              ! 2.0 * 4 
+      O2_THRESHOLD    5.0d-5
+    END
+
+    JINBETHKE_GOETHITE_ACETATE  
+      RMAX            2.5d-7
+      K_DONOR         1.0d-6
+      K_ACCEPTOR      1.0d-6  ! vol fraction
+      Y               1.0d-0
+      M               0.50d0            ! 0.125 * 4   
+      CHI             7.0d0              ! 1.75 * 4 
+      O2_THRESHOLD    1.0d-5
+      K_PRECIPITATION 1.0d-30
+    END
+
+    JINBETHKE_FERRIHYDRITE_ACETATE     
+      RMAX            2.5d-7
+      K_DONOR         1.0d-6
+      K_ACCEPTOR      1.0d-6  ! vol fraction
+      Y               1.0d-0
+      M               0.50d0            ! 0.125 * 4   
+      CHI             7.0d0              ! 1.75 * 4 
+      O2_THRESHOLD    1.0d-5
+      RELEASE_DOC     YES
+      DOC_TO_FE_RATIO  20
+    /
+
+    JINBETHKE_SULFATE_ACETATE
+      RMAX            2.5d-7 !3.2
+      K_DONOR         5.0d-6
+      K_ACCEPTOR      1.0d-4
+      Y               1.0d-0
+      M               1.33d0            ! 0.33 * 4.0   
+      CHI             8.0d0              ! 2.0 * 4.0 
+      O2_THRESHOLD    1.0d-5
+    END
+
+  END
+
+# ------- Aerobic respiration ---------
+  MICROBIAL_REACTION
+    REACTION  1.00 DOC- + 4.00 O2(aq) <-> 2.667 HCO3-
+    RATE_CONSTANT 5.d-9
+    MONOD
+      SPECIES_NAME O2(aq)
+      HALF_SATURATION_CONSTANT 1.d-4          
+      THRESHOLD_CONCENTRATION 1.d-8
+    /
+    MONOD
+      SPECIES_NAME DOC- 
+      HALF_SATURATION_CONSTANT 1.d-5     
+      THRESHOLD_CONCENTRATION 1.d-8
+    /
+  /
+  
+
+# ------- HS- oxidation ---------
+  MICROBIAL_REACTION
+    REACTION  1.00 HS- + 2.00 O2(aq) <->  1.00 SO4--  +  1.00 H+ 
+    RATE_CONSTANT 1.0d-10
+    MONOD
+      SPECIES_NAME O2(aq)
+      HALF_SATURATION_CONSTANT 1.d-3           
+      THRESHOLD_CONCENTRATION 1.d-8
+    /
+
+    MONOD
+      SPECIES_NAME HS-
+      HALF_SATURATION_CONSTANT 1.d-5           
+      THRESHOLD_CONCENTRATION 1.d-8
+    /
+  /
+
+# ------- Fe++ oxidation ---------
+  MICROBIAL_REACTION
+    REACTION  1.00 Fe++ + 0.250 O2(aq) + 1.00 H+ <->  1.00 Fe+++  +  0.50 H2O 
+     RATE_CONSTANT 5.25d-10
+     MONOD
+       SPECIES_NAME Fe++
+       HALF_SATURATION_CONSTANT 1.d-3       
+       THRESHOLD_CONCENTRATION 1.d-10
+     /
+     MONOD
+       SPECIES_NAME O2(aq)
+       HALF_SATURATION_CONSTANT 1.0d-5      
+       THRESHOLD_CONCENTRATION 1.d-10
+     /
+   /
+
+# --------------------------------------- ## --------------------------------------- ## --------------------------------------- #
+   DATABASE ER_Database.dat
+   LOG_FORMULATION 
+   ACTIVITY_COEFFICIENTS TIMESTEP 
+   OUTPUT 
+     all
+     PRIMARY_SPECIES
+     SECONDARY_SPECIES
+     FREE_ION
+     AUXILIARY
+     ACTIVITY_COEFFICIENTS
+     TOTAL
+     SITE_DENSITY >FeOH
+     pH
+     TOTAL_SORBED
+     MINERAL_SATURATION_INDEX
+/ 
+END 
+
+#=========================== CONSTRAINTS ====================================== 
+CONSTRAINT  initial_conc_gravel
+  CONCENTRATIONS 
+  H+          7.60      P
+  H2O         1.00E+00  T
+  Cl-         2.05e-05  T
+  SO4--       3.90E-04  T
+  HCO3-       2.15e-03  T
+  Al+++       1.41e-06  T
+  Ca++        1.22e-03  T
+  Mg++        3.08e-04  Z
+  Fe++        4.66E-06  T
+  Fe+++       2.36d-18  T
+  K+          2.07e-05  T
+  Na+         8.15e-05  T
+  Ac-         1.00d-06  T
+  Tracer      1.00d-10  T
+  O2(aq)      1.00d-08  T
+  DOC-        1.34d-04  T
+  HS-         4.43E-08  T
+  NO3-        2.07e-08  T
+  N2(aq)      1.00E-10  T
+  NH3(aq)     2.00E-06  T
+  /
+  
+  IMMOBILE
+    Fim       1.d-6
+    Nim       1.d-4
+    Sim       1.d-4
+  /
+
+  MINERALS
+    Calcite         1.00E-03  6.00E+02 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    Ferrihydrite    0.00E-10  1.08E+07 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    Goethite        3.72E-03  2.83E+06 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    SOM             1.00E-02  1.13E+05 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    SOM_COOH        1.00E-02  1.13E+03 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]    
+    Mackinawite     5.23E-04  4.25E+03 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk] 
+    Fe(OH)3(s)      0.00E-07  1.08E+07 cm^2/cm^3
+    /
+END
+
+CONSTRAINT  initial_conc_soil
+  CONCENTRATIONS 
+  H+          7.60      P
+  H2O         1.00E+00  T
+  Cl-         2.05e-05  T
+  SO4--       3.90E-04  T
+  HCO3-       2.15e-03  T
+  Al+++       1.41e-06  T
+  Ca++        1.22e-03  T
+  Mg++        3.08e-04  Z
+  Fe++        4.66E-06  T
+  Fe+++       2.36d-18  T
+  K+          2.07e-05  T
+  Na+         8.15e-05  T
+  Ac-         1.00d-06  T
+  Tracer      1.00d-10  T
+  O2(aq)      1.00d-08  T
+  DOC-        1.34d-04  T
+  HS-         4.43E-08  T
+  NO3-        2.07e-08  T
+  N2(aq)      1.00E-10  T
+  NH3(aq)     2.00E-06  T
+  /
+  
+  IMMOBILE
+    Fim       2.d-5
+    Nim       1.d-4
+    Sim       1.d-4
+  /
+
+  MINERALS
+    Calcite         1.00E-03  6.00E+02 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    Ferrihydrite    1.00E-04  1.08E+07 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    Goethite        3.72E-03  2.83E+06 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    SOM             1.00E-02  1.13E+05 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    SOM_COOH        1.00E-02  1.13E+03 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]    
+    Mackinawite     5.23E-04  4.25E+03 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk] 
+    Fe(OH)3(s)      1.00E-07  1.08E+07 cm^2/cm^3
+    /
+END
+
+
+CONSTRAINT  initial_conc_soil2
+  CONCENTRATIONS 
+  H+          7.60      P
+  H2O         1.00E+00  T
+  Cl-         2.05e-05  T
+  SO4--       3.90E-04  T 
+  HCO3-       2.15e-03  T
+  Al+++       1.41e-06  T
+  Ca++        1.22e-03  T
+  Mg++        3.08e-04  Z
+  Fe++        4.66E-07  T
+  Fe+++       2.36d-18  T
+  K+          2.07e-05  T
+  Na+         8.15e-05  T
+  Ac-         1.00d-06  T
+  Tracer      1.00d-10  T
+  O2(aq)      1.00d-08  T
+  DOC-        1.34d-04  T
+  HS-         4.43E-06  T
+  NO3-        2.07e-08  T
+  N2(aq)      1.00E-10  T
+  NH3(aq)     2.00E-06  T
+  /
+  
+  IMMOBILE
+    Fim       1.d-5
+    Nim       1.d-4
+    Sim       1.d-4
+  /
+
+  MINERALS
+    Calcite         1.00E-03  6.00E+02 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    Ferrihydrite    0.00E-05  1.08E+07 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    Goethite        3.72E-03  2.83E+06 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    SOM             1.00E-02  1.13E+05 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    SOM_COOH        1.00E-03  1.13E+03 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]    
+    Mackinawite     5.23E-04  4.25E+03 cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk] 
+    Fe(OH)3(s)      1.00E-07  1.08E+07 cm^2/cm^3
+    /
+END
+
+CONSTRAINT  from_river_conc
+  CONCENTRATIONS 
+  H+          7.60      P
+  H2O         1.00E+00  T
+  Cl-         2.05e-05  T
+  SO4--       3.90e-04  T
+  HCO3-       2.15e-03  T
+  Al+++       1.41e-06  T
+  Ca++        1.22e-03  T
+  Mg++        3.08e-04  Z
+  Fe++        4.66E-07  T
+  Fe+++       2.36d-18  T
+  K+          2.07e-05  T
+  Na+         8.15e-05  T
+  Ac-         1.00d-06  T
+  Tracer      1.00d-10  T
+  O2(aq)      2.40d-04  T
+  DOC-        1.34d-04  T
+  HS-         4.43E-08  T
+  NO3-        2.07e-08  T
+  N2(aq)      1.00E-10  T
+  NH3(aq)     2.00E-06  T
+  /
+END
+
+CONSTRAINT  from_top_conc
+  CONCENTRATIONS 
+  H+          7.60      P
+  H2O         1.00E+00  T
+  Cl-         2.05e-05  T
+  SO4--       3.90e-04  T
+  HCO3-       2.15e-03  T
+  Al+++       1.41e-06  T
+  Ca++        1.22e-03  T
+  Mg++        3.08e-04  Z
+  Fe++        4.66E-07  T
+  Fe+++       2.36d-18  T
+  K+          2.07e-05  T
+  Na+         8.15e-05  T
+  Ac-         1.00d-06  T
+  Tracer      1.00d-10  T
+  O2(aq)      2.40d-04  T
+  DOC-        1.34d-04  T
+  HS-         4.43E-08  T
+  NO3-        2.07e-08  T
+  N2(aq)      1.00E-10  T
+  NH3(aq)     2.00E-06  T
+  /
+END
+
+#=========================== TRANSPORT CONDITIONS ============================= 
+TRANSPORT_CONDITION  initial_conc_all
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  initial_conc_gravel
+    / 
+END 
+
+TRANSPORT_CONDITION  initial_conc_soil
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  initial_conc_soil
+    / 
+END 
+
+TRANSPORT_CONDITION  initial_conc_soil2
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  initial_conc_soil2
+    / 
+END 
+
+TRANSPORT_CONDITION  initial_conc_gravel
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  initial_conc_gravel
+    / 
+END 
+
+TRANSPORT_CONDITION  from_river
+   TYPE dirichlet_zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  from_river_conc
+    / 
+END 
+
+TRANSPORT_CONDITION  from_top
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  from_top_conc
+    / 
+END 
+
+#======================BOUNDARY CONDITION==========================
+
+BOUNDARY_CONDITION river_upstream
+  FLOW_CONDITION upstream_bc
+  TRANSPORT_CONDITION from_river
+  REGION upstream_bc_reg
+/
+
+BOUNDARY_CONDITION river_downstream
+  FLOW_CONDITION downstream_bc
+  TRANSPORT_CONDITION from_river
+  REGION downstream_bc_reg
+/

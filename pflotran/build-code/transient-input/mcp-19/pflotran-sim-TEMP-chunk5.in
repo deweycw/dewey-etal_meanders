@@ -1,0 +1,15 @@
+
+
+#======================BOUNDARY CONDITION==========================
+
+BOUNDARY_CONDITION river_upstream
+  FLOW_CONDITION upstream_bc
+  TRANSPORT_CONDITION from_river
+  REGION upstream_bc_reg
+/
+
+BOUNDARY_CONDITION river_downstream
+  FLOW_CONDITION downstream_bc
+  TRANSPORT_CONDITION from_river
+  REGION downstream_bc_reg
+/
