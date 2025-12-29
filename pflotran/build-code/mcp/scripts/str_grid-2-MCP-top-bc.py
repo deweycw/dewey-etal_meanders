@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import sys
 from pathlib import Path
 
-# Add shared module to path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'shared'))
+# Add shared module to path (located in src/shared)
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent.parent / 'src' / 'shared'))
 import pflo
 
 '''
