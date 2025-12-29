@@ -5,3 +5,7 @@ h5py
 matplotlib
 scipy
 jupyter
+seaborn
+
+# Local package (install with: pip install -e /path/to/pflotran-utils)
+# pflotran-utils

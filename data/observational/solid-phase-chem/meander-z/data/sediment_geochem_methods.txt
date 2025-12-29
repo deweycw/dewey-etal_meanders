@@ -1,0 +1,21 @@
+Sediment samples were collected in approximately 15-cm increments using a 5 cm diameter soil core sampler (with slide hammer) until coarse alluvium was reached. After reaching coarse alluvium, sediment was sampled using an 8.3 cm diameter bucket auger. Sediment samples were placed in polyethylene bags, sealed into aluminized Mylar bags containing oxygen absorbers, shipped to the laboratory, and stored at 4°C until processing in order to preserve anaerobic conditions observed in some cores. Sediment samples were then sieved through a 2-mm sieve under field-moist conditions in a Coy anaerobic chamber filled with a gas mixture of 97% nitrogen and 3% hydrogen. The weights of the greater than and less than 2 mm fractions were weighed and are reported as fraction <2mm. All other analyses were performed on the <2mm fraction of sediment. 
+
+Moisture content was determined by drying at room temperature and is expressed as the mass of water per mass of dry soil.
+
+Anoxic HCl extractions were performed in the anaerobic chamber using field-moist sediment immediately after sieving. Approximately 3 g of field-wet sediment was weighed into a 50-mL polypropylene centrifuge tube and 15 mL of 0.5 M HCl was added. Samples were mixed on an end-over-end sample rotator for 20-hours, then centrifuged (10 min at 7,000 x g), and filtered through a 0.22 micrometer PVDF filter. Extractions were performed in duplicate and the average and standard deviation of the replicate extracts is reported. Extract solutions were analyzed for Fe(II) using the ferrozine method and total metal content by ICP-MS. Organic carbon concentrations were determined in extract solutions by non-purgeable organic carbon on a Shimadzu TOC-V analyzer. Samples were acidified with HCl and purged with nitrogen in order to remove inorganic carbon prior to analysis. 
+
+Total free iron oxide content was determined on the sediment using the citrate-bicarbonate-dithionite method (CBD). Air-dried sediment samples were ground to <125 micrometers in a ball mill using tungsten-carbide balls and then extracted with 0.3 M sodium citrate, 0.1 M sodium bicarbonate, and sodium dithionite (added in two 0.5-g portions) at 80°C on duplicate samples (Loeppert and Inskeep, 1996). The extracts were then filtered through a 0.45 micrometer PVDF syringe filter and analyzed for Fe. Extractions were performed in duplicate and the average and standard deviation of the replicate extracts is reported. Extract solutions were analyzed for total metal content by ICP-MS.
+
+Acid ammonium oxalate extractions were performed on air-dried sediment ground to <125 micrometers according to Loeppert & Inskeep (1996) in order to determine the amorphous iron oxide content. Briefly, 0.5 g of soil was extracted with 30-mL of 0.175 M ammonium oxalate, 0.1 M oxalic acid at pH 3 for 2-hr in the dark. Samples were centrifuged and filtered through a 0.45 micrometer PVDF syringe filter and the solution was analyzed for metals by ICP-MS. 
+
+Field-moist sediment samples were extracted with 1 M KCl for 24 hours in order to determine the adsorbed ammonium content. Extract solutions were analyzed for ammonium by flow injection analysis using the colorimetric salicylate method (Lachat Instruments).
+
+Particle size analysis was performed using the modified pipet method (Gee & Or, 2002). 
+
+Sediment samples (air-dried and milled) were analyzed for total carbon (TC) and total inorganic carbon (TIC) on a Shimadzu TOC-V analyzer equipped with a solids module (SSM) by catalytically aided combustion oxidation at 900°C (TC) and thermally aided oxidation at 200°C after 20% phosphoric acid addition (TIC). Total organic carbon (TOC) was determined by difference between TC and IC. Samples were analyzed in duplicate, and the average and standard deviation is reported.
+
+References:
+
+Gee, G. W. and D. Or (2002). 2.4 Particle-size analysis. Methods of soil analysis. Part 4-Physical Methods. J. H. Dane, and Topp, G.C. Madison, WI, USA, Soil Science Society of America: 255-293.
+
+Loeppert, R. H. and W. P. Inskeep (1996). Iron. Methods of soil analysis. Part 3. Chemical methods. D. L. Sparks. Madison, WI, ASA and SSSA: 639-664.

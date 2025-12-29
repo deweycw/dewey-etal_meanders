@@ -1,0 +1,25 @@
+CONSTRAINT  from_river_conc
+  CONCENTRATIONS 
+    H+          7.85  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.64e-07  T
+    Ca++        1.25e-03  T
+    Cl-         4.32e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.22e-03  T
+    HS-         1.00e-7   T
+    K+          1.66e-05  T
+    Mg++        3.13e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.12e-05  T
+    NO3-        1.82e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.91e-05  T
+    SO4--       5.71e-04  T
+    SOC(aq)     1.30e-04  T
+    Tracer      1.00e-06  T
+  /
+END

@@ -1,0 +1,25 @@
+
+  CONCENTRATIONS 
+      H+          XX       P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+      Al+++       XX        T
+      Ca++        XX        T      
+      Cl-         XX        T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+      HCO3-       XX        T   
+    HS-         1.00e-7   T
+      K+          XX        T
+      Mg++        XX        T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+      Na+         XX        T
+      NO3-        XX        T
+    O2(aq)      0.16      G O2(g)
+      SiO2(aq)    XX        T
+      SO4--       XX        T
+      SOC(aq)     XX        T
+    Tracer      1.00d-06  T 
+  /
+END

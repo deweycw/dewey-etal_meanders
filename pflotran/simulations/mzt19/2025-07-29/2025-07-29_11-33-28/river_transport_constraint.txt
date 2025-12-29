@@ -1,0 +1,6 @@
+TRANSPORT_CONDITION  from_river
+  TYPE dirichlet_zero_gradient
+    CONSTRAINT_LIST
+      0.d0 from_river_conc
+    /
+  END

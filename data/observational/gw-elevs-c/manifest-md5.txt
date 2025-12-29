@@ -1,0 +1,7 @@
+dfc3e20b5c8adbd43556f2a5a2d9ba17 data/WellLocation_WLdataArchive2018.csv
+f4d52b11038762094e013f9379a412ae data/ER_CPA6.csv
+73aae78b1d1eb20d46834fea1dc0f8f2 data/ER_CPA1.csv
+54cd0d1ff13f1a5e919971c69dc89826 data/ER_CPA4.csv
+6a5bde0013ff4e3213e562d3bf1ad91f data/ER_CPA2.csv
+c2bf9d51fe4c2b2ba1c3c892a83c9704 data/ER_CPA3.csv
+820e6757ccc86560e7a9b37fb398b7bb data/ER_CPA5.csv

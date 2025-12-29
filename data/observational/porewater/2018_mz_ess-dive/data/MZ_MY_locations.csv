@@ -1,0 +1,16 @@
+,,GPS Coordinates,,,
+Location ID,Other Name,Lat,Long,Installation Date,Location Notes
+ER-MZA1,MZT1-1,38.88977065,-106.9081525,9/26/2017,"Brush Creek, MZ transect1"
+ER-MZA2,MZT1-2,38.88965275,-106.9081644,9/26/2017,"Brush Creek, MZ transect1"
+ER-MZA3,MZT1-3,38.88954611,-106.9081672,9/26/2017,"Brush Creek, MZ transect1"
+ER-MZA4,MZT1-4,38.88943873,-106.908172,9/26/2017,"Brush Creek, MZ transect1"
+ER-MZA5,MZT1-5,38.88934289,-106.9081634,9/26/2017,"Brush Creek, MZ transect1"
+ER-MZB1,MZT2-1,38.88987028,-106.9077575,9/26/2017,"Brush Creek, MZ transect2"
+ER-MZB2,MZT2-2,38.88972131,-106.9077752,9/26/2017,"Brush Creek, MZ transect2"
+ER-MZB3,MZT2-3,38.88958791,-106.9078013,9/26/2017,"Brush Creek, MZ transect2"
+ER-MZB4,MZT2-4,38.88949574,-106.9078238,9/26/2017,"Brush Creek, MZ transect2"
+ER-MZB5,MZT2-5,38.8893628,-106.9078419,9/26/2017,"Brush Creek, MZ transect2"
+ER-MYP1,MYP1,38.88989028,-106.9088918,9/27/2027,Brush Creek oxbow (MY)
+ER-MYP2,MYP2,38.88989372,-106.9090547,9/27/2027,Brush Creek oxbow (MY)
+ER-BCC6,River Water Up Z,38.889797,-106.907962,,"river water, upstream side of MZ"
+ER-BCC8,River Water Down Z,38.889311,-106.908104,,"river water, downstream side of MZ"

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:systemMetadata xmlns:ns2="http://ns.dataone.org/service/types/v1" xmlns:ns3="http://ns.dataone.org/service/types/v2.0">
+    <serialVersion>142</serialVersion>
+    <identifier>ess-dive-7bbe22420aa11ad-20211207T204337015313</identifier>
+    <formatId>text/csv</formatId>
+    <size>15355</size>
+    <checksum algorithm="MD5">0223632ea0142d72707d93f005d978f8</checksum>
+    <submitter>http://orcid.org/0000-0003-2296-4698</submitter>
+    <rightsHolder>http://orcid.org/0000-0003-2296-4698</rightsHolder>
+    <accessPolicy>
+        <allow>
+            <subject>CN=urn:node:ESS_DIVE,DC=dataone,DC=org</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+        <allow>
+            <subject>http://orcid.org/0000-0003-2296-4698</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+        <allow>
+            <subject>public</subject>
+            <permission>read</permission>
+        </allow>
+        <allow>
+            <subject>CN=ess-dive-admins,DC=dataone,DC=org</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+    </accessPolicy>
+    <replicationPolicy replicationAllowed="true" numberReplicas="2">
+        <preferredMemberNode>urn:node:KNB</preferredMemberNode>
+        <preferredMemberNode>urn:node:mnORC1</preferredMemberNode>
+        <blockedMemberNode>urn:node:mnUNM1</blockedMemberNode>
+        <blockedMemberNode>urn:node:mnUCSB1</blockedMemberNode>
+        <blockedMemberNode>urn:node:US_MPC</blockedMemberNode>
+        <blockedMemberNode>urn:node:NMEPSCOR</blockedMemberNode>
+        <blockedMemberNode>urn:node:PPBIO</blockedMemberNode>
+    </replicationPolicy>
+    <archived>false</archived>
+    <dateUploaded>2021-12-07T20:43:37.253+00:00</dateUploaded>
+    <dateSysMetadataModified>2022-10-27T02:17:17.151+00:00</dateSysMetadataModified>
+    <originMemberNode>urn:node:ESS_DIVE</originMemberNode>
+    <authoritativeMemberNode>urn:node:ESS_DIVE</authoritativeMemberNode>
+    <replica>
+        <replicaMemberNode>urn:node:UIC</replicaMemberNode>
+        <replicationStatus>failed</replicationStatus>
+        <replicaVerified>2023-01-16T13:27:15.926+00:00</replicaVerified>
+    </replica>
+    <replica>
+        <replicaMemberNode>urn:node:mnORC1</replicaMemberNode>
+        <replicationStatus>completed</replicationStatus>
+        <replicaVerified>2023-01-17T21:15:02.536+00:00</replicaVerified>
+    </replica>
+    <replica>
+        <replicaMemberNode>urn:node:KNB</replicaMemberNode>
+        <replicationStatus>completed</replicationStatus>
+        <replicaVerified>2023-01-17T21:15:02.701+00:00</replicaVerified>
+    </replica>
+    <replica>
+        <replicaMemberNode>urn:node:ESS_DIVE</replicaMemberNode>
+        <replicationStatus>completed</replicationStatus>
+        <replicaVerified>2023-01-17T21:15:02.916+00:00</replicaVerified>
+    </replica>
+    <fileName>anoxic HCl extractions.csv</fileName>
+</ns3:systemMetadata>

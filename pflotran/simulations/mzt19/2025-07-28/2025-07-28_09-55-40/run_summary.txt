@@ -1,0 +1,45 @@
+PFLOTRAN Input File Generation Summary
+========================================
+
+Generation Date: 2025-07-28 09:55:40 (Local Time)
+Output Directory: /home/christiandewey/Code/dewey-etal-meanders/simulations/co2/mzt19/2025-07-28/2025-07-28_09-55-40
+
+Configuration:
+  Simulation Year: 2019
+  Grid Cells (nx): 108
+  Upstream Head: 1.94 m
+  Downstream Head: 1.66 m
+
+DATUM Calculation (CORRECTED):
+  First DATUM (ix=0): 1.940000 m
+  Last DATUM (ix=107): 1.660000 m
+  Second DATUM (ix=1): 1.937383 m
+  Linear interpolation between upstream and downstream
+
+Generated Files:
+  Spin-up: pflotran-mzt19_2025-07-28_09-55-40_spin.in
+  Transient: pflotran-mzt19_2025-07-28_09-55-40.in
+  Upstream BC: hydro_us_2019_4-21_10-2-MZT.txt
+  Downstream BC: hydro_ds_2019_4-21_10-2-MZT.txt
+
+Boundary Condition Files:
+  river_chem.txt
+  river_transport_constraint.txt
+  top_chem.txt
+  top_transport_constraint.txt
+  trans-top-bcs/ (directory with BC files)
+
+Template Files Used:
+  TEMPLATE-constraint.txt
+  TEMPLATE-chemistry.txt
+  TEMPLATE-pflotran.in
+  TEMPLATE-pflotran-spin.in
+
+Copied Reference Files:
+  hanford-cd.dat
+  hydro_us_2019_4-21_10-2-MZT.txt
+  hydro_ds_2019_4-21_10-2-MZT.txt
+  TEMPLATE-constraint.txt
+  TEMPLATE-chemistry.txt
+  TEMPLATE-pflotran.in
+  TEMPLATE-pflotran-spin.in

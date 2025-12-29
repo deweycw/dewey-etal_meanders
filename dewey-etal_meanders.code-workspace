@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../dewey-etal-meanders"
+		},
+		{
+			"path": "../pflotran-utils"
 		}
 	],
 	"settings": {}

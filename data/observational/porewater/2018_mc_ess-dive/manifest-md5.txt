@@ -1,0 +1,5 @@
+fb5c632ec3522fe594547b0df15653b4 data/detection_limits.csv
+5996f651301037d8c907db621a832508 data/2018_MC_locations.csv
+145c683ac7b2fea922870a9f1126722a data/East_River_geochem_sampling_protocol_2018-2019_v2.pdf
+f61a7410fcc1dc1463efea8f450d331b data/2018_Meander_C_water_chem_archive_v3.csv
+1a2a4c417edc399376ee08af226cd37e data/2018_MC_locations_v2.kmz

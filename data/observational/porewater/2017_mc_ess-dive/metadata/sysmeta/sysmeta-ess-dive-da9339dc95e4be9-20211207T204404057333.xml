@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:systemMetadata xmlns:ns2="http://ns.dataone.org/service/types/v1" xmlns:ns3="http://ns.dataone.org/service/types/v2.0">
+    <serialVersion>118</serialVersion>
+    <identifier>ess-dive-da9339dc95e4be9-20211207T204404057333</identifier>
+    <formatId>text/plain</formatId>
+    <size>2793</size>
+    <checksum algorithm="MD5">9068516373fcfea3e3c2a1b987388ff7</checksum>
+    <submitter>http://orcid.org/0000-0003-2296-4698</submitter>
+    <rightsHolder>http://orcid.org/0000-0003-2296-4698</rightsHolder>
+    <accessPolicy>
+        <allow>
+            <subject>http://orcid.org/0000-0003-2296-4698</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+        <allow>
+            <subject>public</subject>
+            <permission>read</permission>
+        </allow>
+        <allow>
+            <subject>CN=ess-dive-admins,DC=dataone,DC=org</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+        <allow>
+            <subject>CN=urn:node:ESS_DIVE,DC=dataone,DC=org</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+    </accessPolicy>
+    <replicationPolicy replicationAllowed="true" numberReplicas="3">
+        <preferredMemberNode>urn:node:KNB</preferredMemberNode>
+        <preferredMemberNode>urn:node:mnORC1</preferredMemberNode>
+        <blockedMemberNode>urn:node:mnUNM1</blockedMemberNode>
+        <blockedMemberNode>urn:node:mnUCSB1</blockedMemberNode>
+        <blockedMemberNode>urn:node:US_MPC</blockedMemberNode>
+        <blockedMemberNode>urn:node:NMEPSCOR</blockedMemberNode>
+        <blockedMemberNode>urn:node:PPBIO</blockedMemberNode>
+    </replicationPolicy>
+    <archived>false</archived>
+    <dateUploaded>2021-12-07T20:44:04.345+00:00</dateUploaded>
+    <dateSysMetadataModified>2022-10-26T20:28:21.660+00:00</dateSysMetadataModified>
+    <originMemberNode>urn:node:ESS_DIVE</originMemberNode>
+    <authoritativeMemberNode>urn:node:ESS_DIVE</authoritativeMemberNode>
+    <replica>
+        <replicaMemberNode>urn:node:ESS_DIVE</replicaMemberNode>
+        <replicationStatus>completed</replicationStatus>
+        <replicaVerified>2023-01-29T03:59:23.268+00:00</replicaVerified>
+    </replica>
+    <replica>
+        <replicaMemberNode>urn:node:KNB</replicaMemberNode>
+        <replicationStatus>completed</replicationStatus>
+        <replicaVerified>2023-01-29T03:59:23.369+00:00</replicaVerified>
+    </replica>
+    <fileName>water chemistry sampling and analytical methods.txt</fileName>
+</ns3:systemMetadata>

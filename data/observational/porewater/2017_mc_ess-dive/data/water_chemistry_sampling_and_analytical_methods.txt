@@ -1,0 +1,21 @@
+Manual water level measurements were performed using an electrical water level meter and are reported in cm bgs (cm below ground surface). 
+
+Groundwater samples were collected using a peristaltic pump from piezometers. A multi-parameter probe was used to measure pH, electrical conductivity (EC, mS/m) and oxidation-reduction potential (ORP, mV) immediately after sampling in the field. Dissolved oxygen (DO) and Fe(II) were measured colorimetrically in the field using a portable spectrophotometer (CHEMetrics, Inc.). Filtered samples (0.45 um PVDF syringe filter) were collected for anions (Cl, SO4, and NO3), dissolved inorganic carbon (DIC) and organic carbon (DOC), ammonium (NH4), and cations (various elements) and shipped to the lab for analysis. Exact volumes and bottle types for each sample are described in the "East River geochem sampling protocol" file. 
+
+DO was measured on unfiltered groundwater using either with the indigo carmine method (Chemetrics #K-7513, 1–15 ppm) or the Rhodazine D™ method (Chemetrics #K-7553, 0–1 ppm). 
+
+Fe(II) was measured on filtered groundwater using the phenanthroline method (Chemetrics #K-6203, 0-6 ppm). 
+
+Anion samples were frozen at -20 degC for storage and shipment, and analyzed by ion chromatography (IC) using a Dionex ICS-2100 IC (Thermo Scientific).
+
+DIC and DOC samples were refrigerated at 4 degC for storage and shipment. Groundwater samples were analyzed for total dissolved carbon and dissolved organic carbon (DOC) on a Shimadzu TOC-V analyzer with a nondispersive infrared detector, and dissolved inorganic carbon was determined by the difference. Total dissolved carbon was measured by catalytically aided combustion at 680°C, and DOC samples were analyzed by nonpurgeable organic carbon, for which samples were acidified with HCl and purged with N2 in order to remove inorganic carbon prior to the analysis. 
+
+Ammonium samples were acidified to pH 2 using 2 M HCl and refrigerated at 4 degC for storage and shipment. Samples were analyzed by flow injection analysis using the colorimetric salicylate method (Lachat Instruments).
+
+Elemental concentrations were measured in "cation" samples by inductively coupled plasma mass spectrometry (ICP-MS, Perkin-Elmer Elan DRC II) after acidification and dilution with ultrapure 0.16 M nitric acid and internal standard addition.
+
+Detection limits for each parameter are listed in the data file and were either reported by instrument manufacturer [DO and Fe(II)] or calculated as 5 times the standard deviation of a MilliQ water blank (all others). Any data below the detection limit is reported as "BDL". 
+
+Empty cells indicate that the parameter was not measured for that sample.
+
+Standard deviations (sd) reported for parameters reflect analytical error. 

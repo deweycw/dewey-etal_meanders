@@ -1,0 +1,234 @@
+📁 Output directory: /home/christiandewey/Code/dewey-etal-meanders/simulations/co2/mzt19/2025-07-29/2025-07-29_11-16-56
+🕐 Local timestamp: 2025-07-29 11:16:56
+Loading chemistry template...
+  ✓ Chemistry template loaded (363 lines)
+Assembling transient 1D input file: pflotran-1d_2025-07-29_11-16-56.in
+Generating 1D flow conditions...
+  ✓ Found upstream hydraulic file: hydro_us_2019_4-21_10-2-MZT.txt
+  ✓ Found downstream hydraulic file: hydro_ds_2019_4-21_10-2-MZT.txt
+Writing river chemistry blocks...
+Loading boundary condition data...
+Target year: 2019
+Date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+
+  Processing sodium from er_phf0_sodium.csv:
+    Raw data shape: (1519, 2)
+    Unit: ppb
+    After removing header: 1518 rows
+    After date parsing: 1518 valid dates
+    After numeric conversion: 1518 valid values
+    After removing NaN: 1518 rows
+    Date range in data: 2014-05-02 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 22990000.0
+    After interpolation: 2800 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ sodium loaded (214 data points)
+
+  Processing pH from er_pH.csv:
+    Raw data shape: (51, 2)
+    Unit: pH
+    After removing header: 50 rows
+    After date parsing: 50 valid dates
+    After numeric conversion: 50 valid values
+    After removing NaN: 50 rows
+    Date range in data: 2018-04-01 00:00:00 to 2019-10-10 00:00:00
+    Conversion factor: 1
+    After interpolation: 559 rows
+    After year filtering: 169 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ pH loaded (169 data points)
+
+  Processing dic from er_phf0_dic.csv:
+    Raw data shape: (1145, 2)
+    Unit: mg.L-1
+    After removing header: 1144 rows
+    After date parsing: 1144 valid dates
+    After numeric conversion: 1144 valid values
+    After removing NaN: 1144 rows
+    Date range in data: 2015-09-18 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 12011.0
+    After interpolation: 2294 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ dic loaded (214 data points)
+
+  Processing silicon from er_phf0_silicon.csv:
+    Raw data shape: (1519, 2)
+    Unit: ppb
+    After removing header: 1518 rows
+    After date parsing: 1518 valid dates
+    After numeric conversion: 1518 valid values
+    After removing NaN: 1518 rows
+    Date range in data: 2014-05-02 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 62004900.0
+    After interpolation: 2800 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ silicon loaded (214 data points)
+
+  Processing iron from er_phf0_iron.csv:
+    Raw data shape: (1505, 2)
+    Unit: ppb
+    After removing header: 1504 rows
+    After date parsing: 1504 valid dates
+    After numeric conversion: 1503 valid values
+    After removing NaN: 1503 rows
+    Date range in data: 2014-05-02 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 55845000.0
+    After interpolation: 2800 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ iron loaded (214 data points)
+
+  Processing potassium from er_phf0_potassium.csv:
+    Raw data shape: (1519, 2)
+    Unit: ppb
+    After removing header: 1518 rows
+    After date parsing: 1518 valid dates
+    After numeric conversion: 1518 valid values
+    After removing NaN: 1518 rows
+    Date range in data: 2014-05-02 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 39098000.0
+    After interpolation: 2800 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ potassium loaded (214 data points)
+
+  Processing npoc from er_phf0_npoc.csv:
+    Raw data shape: (1144, 2)
+    Unit: mg.L-1
+    After removing header: 1143 rows
+    After date parsing: 1143 valid dates
+    After numeric conversion: 1143 valid values
+    After removing NaN: 1143 rows
+    Date range in data: 2015-09-18 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 12011.0
+    After interpolation: 2294 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ npoc loaded (214 data points)
+
+  Processing nitrate from er_phf0_nitrate.csv:
+    Raw data shape: (546, 2)
+    Unit: uM
+    After removing header: 545 rows
+    After date parsing: 545 valid dates
+    After numeric conversion: 545 valid values
+    After removing NaN: 545 rows
+    Date range in data: 2018-02-09 00:00:00 to 2022-01-14 00:00:00
+    Conversion factor: 1000000.0
+    After interpolation: 1435 rows
+    After year filtering: 167 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ nitrate loaded (167 data points)
+
+  Processing magnesium from er_phf0_magnesium.csv:
+    Raw data shape: (1519, 2)
+    Unit: ppb
+    After removing header: 1518 rows
+    After date parsing: 1518 valid dates
+    After numeric conversion: 1518 valid values
+    After removing NaN: 1518 rows
+    Date range in data: 2014-05-02 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 24305000.0
+    After interpolation: 2800 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ magnesium loaded (214 data points)
+
+  Processing calcium from er_phf0_calcium.csv:
+    Raw data shape: (1517, 3)
+    Unit: ppb
+    After removing header: 1516 rows
+    After date parsing: 1516 valid dates
+    After numeric conversion: 1516 valid values
+    After removing NaN: 1516 rows
+    Date range in data: 2014-05-02 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 40078000.0
+    After interpolation: 2800 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ calcium loaded (214 data points)
+
+  Processing sulfate from er_phf0_sulfate.csv:
+    Raw data shape: (546, 2)
+    Unit: uM
+    After removing header: 545 rows
+    After date parsing: 545 valid dates
+    After numeric conversion: 545 valid values
+    After removing NaN: 545 rows
+    Date range in data: 2018-02-09 00:00:00 to 2022-01-14 00:00:00
+    Conversion factor: 1000000.0
+    After interpolation: 1435 rows
+    After year filtering: 167 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ sulfate loaded (167 data points)
+
+  Processing aluminum from er_phf0_aluminum.csv:
+    Raw data shape: (1519, 2)
+    Unit: ppb
+    After removing header: 1518 rows
+    After date parsing: 1518 valid dates
+    After numeric conversion: 1518 valid values
+    After removing NaN: 1518 rows
+    Date range in data: 2014-05-02 00:00:00 to 2021-10-20 00:00:00
+    Conversion factor: 26982000.0
+    After interpolation: 2800 rows
+    After year filtering: 214 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ aluminum loaded (214 data points)
+
+  Processing chloride from er_phf0_chloride.csv:
+    Raw data shape: (542, 2)
+    Unit: uM
+    After removing header: 541 rows
+    After date parsing: 541 valid dates
+    After numeric conversion: 541 valid values
+    After removing NaN: 541 rows
+    Date range in data: 2018-02-09 00:00:00 to 2022-01-14 00:00:00
+    Conversion factor: 1000000.0
+    After interpolation: 1435 rows
+    After year filtering: 167 rows
+    Final date range: 2019-04-19 00:00:00 to 2019-10-02 00:00:00
+  ✓ chloride loaded (167 data points)
+  ✓ File written: 2025-07-29/2025-07-29_11-16-56/pflotran-1d_2025-07-29_11-16-56.in
+Assembling spin-up 1D input file: pflotran-1d_2025-07-29_11-16-56_spin.in
+Generating 1D flow conditions...
+Writing static river chemistry blocks for spin-up...
+  ✓ File written: 2025-07-29/2025-07-29_11-16-56/pflotran-1d_2025-07-29_11-16-56_spin.in
+📋 Copying required files to output directory...
+  ✓ Found hydraulic file: hydro_us_2019_4-21_10-2-MZT.txt
+  ✓ Found hydraulic file: hydro_ds_2019_4-21_10-2-MZT.txt
+  ✓ Copied: hanford-cd.dat -> hanford-cd.dat
+  ✓ Copied: hydro_us_2019_4-21_10-2-MZT.txt -> hydro_us_2019_4-21_10-2-MZT.txt
+  ✓ Copied: hydro_ds_2019_4-21_10-2-MZT.txt -> hydro_ds_2019_4-21_10-2-MZT.txt
+  ✓ Copied: TEMPLATE-constraint.txt -> TEMPLATE-constraint.txt
+  ✓ Copied: TEMPLATE-chemistry.txt -> TEMPLATE-chemistry.txt
+  ✓ Copied: TEMPLATE-pflotran-1d.in -> TEMPLATE-pflotran-1d.in
+  ✓ Copied: TEMPLATE-pflotran-spin-1d.in -> TEMPLATE-pflotran-spin-1d.in
+  📁 7 files copied successfully
+📋 Run summary saved: 2025-07-29/2025-07-29_11-16-56/run_summary.txt
+
+✅ SUCCESS! Generated 1D files in nested directory structure:
+   📁 Directory: /home/christiandewey/Code/dewey-etal-meanders/simulations/co2/mzt19/2025-07-29/2025-07-29_11-16-56
+   🔧 Spin-up: pflotran-1d_2025-07-29_11-16-56_spin.in
+   ⚡ Transient: pflotran-1d_2025-07-29_11-16-56.in
+   📋 Summary: run_summary.txt
+   📄 Copied files: hanford-cd.dat, hydro_us_2019_4-21_10-2-MZT.txt, hydro_ds_2019_4-21_10-2-MZT.txt, TEMPLATE-constraint.txt, TEMPLATE-chemistry.txt, TEMPLATE-pflotran-1d.in, TEMPLATE-pflotran-spin-1d.in
+
+🎯 Key Features of 1D Version:
+   ✅ Only upstream/downstream boundary conditions
+   ✅ No top boundary conditions (river/precipitation)
+   ✅ Discretized along y-direction (0.5 m per cell)
+   ✅ Flow in y-direction (upstream to downstream)
+   ✅ Uses 1D template files: TEMPLATE-pflotran-1d.in, TEMPLATE-pflotran-spin-1d.in
+   ✅ Hydraulic head boundary conditions with DATUM
+   ✅ Grid defined in input file (no external grid file)
+   ✅ Transport conditions for both spin-up and transient
+   ✅ Formatting matches example structure and spacing
+   ✅ Proper constraint and transport condition generation
+   ✅ Nested directory structure: ./2025-07-29/2025-07-29_11-16-57/
+
+📄 Full path to spin-up file:
+2025-07-29/2025-07-29_11-16-56/pflotran-1d_2025-07-29_11-16-56_spin.in

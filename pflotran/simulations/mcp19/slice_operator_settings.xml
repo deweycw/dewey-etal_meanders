@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Object name="SliceAttributes">
+    <Field name="originType" type="string">Intercept</Field>
+    <Field name="originPoint" type="doubleArray" length="3">0 0 0 </Field>
+    <Field name="originIntercept" type="double">0</Field>
+    <Field name="originPercent" type="double">0</Field>
+    <Field name="originZone" type="int">0</Field>
+    <Field name="originNode" type="int">0</Field>
+    <Field name="normal" type="doubleArray" length="3">1 0 0 </Field>
+    <Field name="axisType" type="string">XAxis</Field>
+    <Field name="upAxis" type="doubleArray" length="3">0 0 1 </Field>
+    <Field name="project2d" type="bool">true</Field>
+    <Field name="interactive" type="bool">true</Field>
+    <Field name="flip" type="bool">true</Field>
+    <Field name="originZoneDomain" type="int">0</Field>
+    <Field name="originNodeDomain" type="int">0</Field>
+    <Field name="meshName" type="string">mesh</Field>
+    <Field name="theta" type="double">90</Field>
+    <Field name="phi" type="double">0</Field>
+</Object>

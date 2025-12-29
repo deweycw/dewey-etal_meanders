@@ -1,0 +1,70 @@
+<rdf:RDF
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://purl.org/spar/cito/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:ore="http://www.openarchives.org/ore/terms/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/" > 
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v2/resolve/ess-dive-da9339dc95e4be9-20211207T204404057333">
+    <ore:isAggregatedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233#aggregation"/>
+    <dcterms:identifier>ess-dive-da9339dc95e4be9-20211207T204404057333</dcterms:identifier>
+    <j.0:isDocumentedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-6b6e5264ab83285-20211207T204404497775"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.openarchives.org/ore/terms/Aggregation">
+    <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
+    <rdfs:label>Aggregation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A0">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+    <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foresite ORE Library</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v2/resolve/ess-dive-e28cac1ff3c4069-20211207T204401765788">
+    <ore:isAggregatedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233#aggregation"/>
+    <dcterms:identifier>ess-dive-e28cac1ff3c4069-20211207T204401765788</dcterms:identifier>
+    <j.0:isDocumentedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-6b6e5264ab83285-20211207T204404497775"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233#aggregation">
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+    <ore:aggregates rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-6b6e5264ab83285-20211207T204404497775"/>
+    <ore:aggregates rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-e28cac1ff3c4069-20211207T204401765788"/>
+    <ore:aggregates rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-fffd63755c8b565-20211207T204402613323"/>
+    <ore:aggregates rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-7283e56d05aae7f-20211207T204403075995"/>
+    <ore:aggregates rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-74a294cee5b1b12-20211207T204403546723"/>
+    <ore:aggregates rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-da9339dc95e4be9-20211207T204404057333"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233">
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-29T23:08:52.531Z</dcterms:modified>
+    <dc:creator rdf:nodeID="A0"/>
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+    <dcterms:identifier>ess-dive-4c48d0730a04934-20211207T204405373233</dcterms:identifier>
+    <dcterms:creator>DataONE.org Python ITK 3.5.0</dcterms:creator>
+    <ore:describes rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233#aggregation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v2/resolve/ess-dive-fffd63755c8b565-20211207T204402613323">
+    <ore:isAggregatedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233#aggregation"/>
+    <dcterms:identifier>ess-dive-fffd63755c8b565-20211207T204402613323</dcterms:identifier>
+    <j.0:isDocumentedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-6b6e5264ab83285-20211207T204404497775"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v2/resolve/ess-dive-6b6e5264ab83285-20211207T204404497775">
+    <ore:isAggregatedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233#aggregation"/>
+    <dcterms:identifier>ess-dive-6b6e5264ab83285-20211207T204404497775</dcterms:identifier>
+    <j.0:documents rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-e28cac1ff3c4069-20211207T204401765788"/>
+    <j.0:documents rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-fffd63755c8b565-20211207T204402613323"/>
+    <j.0:documents rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-7283e56d05aae7f-20211207T204403075995"/>
+    <j.0:documents rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-74a294cee5b1b12-20211207T204403546723"/>
+    <j.0:documents rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-da9339dc95e4be9-20211207T204404057333"/>
+    <j.0:documents rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-6b6e5264ab83285-20211207T204404497775"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v2/resolve/ess-dive-7283e56d05aae7f-20211207T204403075995">
+    <ore:isAggregatedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233#aggregation"/>
+    <dcterms:identifier>ess-dive-7283e56d05aae7f-20211207T204403075995</dcterms:identifier>
+    <j.0:isDocumentedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-6b6e5264ab83285-20211207T204404497775"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v2/resolve/ess-dive-74a294cee5b1b12-20211207T204403546723">
+    <ore:isAggregatedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-4c48d0730a04934-20211207T204405373233#aggregation"/>
+    <dcterms:identifier>ess-dive-74a294cee5b1b12-20211207T204403546723</dcterms:identifier>
+    <j.0:isDocumentedBy rdf:resource="https://cn.dataone.org/cn/v2/resolve/ess-dive-6b6e5264ab83285-20211207T204404497775"/>
+  </rdf:Description>
+</rdf:RDF>

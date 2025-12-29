@@ -1,0 +1,23 @@
+PFLOTRAN Performance Analysis Summary
+===================================
+Generated: Sun Jul 27 11:25:33 PM EDT 2025
+System: Intel 13th Gen i5-13600K (P+E core hybrid)
+Command: mpirun -n 10 /home/christiandewey/Code/pflotran/src/pflotran/pflotran -pflotranin 2025-07-27/2025-07-27_20-43-22/pflotran-mzt19_2025-07-27_20-43-22_spin.in
+Exit Code: 0
+
+Files Generated:
+===============
+- performance_analysis.txt: Main performance analysis (START HERE)
+- perf_raw.log: Raw perf performance data
+- memory.log: Memory usage over time
+- iostat.log: Storage I/O statistics
+- vmstat.log: System resource usage
+- memory_summary.txt: Memory usage summary
+- storage_summary.txt: Storage performance summary
+
+Quick Commands:
+==============
+View main analysis:     cat ./pflotran_perf_20250727_232320/performance_analysis.txt
+Check memory usage:     cat ./pflotran_perf_20250727_232320/memory_summary.txt  
+Check storage performance: cat ./pflotran_perf_20250727_232320/storage_summary.txt
+View raw perf data:     cat ./pflotran_perf_20250727_232320/perf_raw.log
