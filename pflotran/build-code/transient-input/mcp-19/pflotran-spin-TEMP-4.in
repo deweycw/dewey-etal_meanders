@@ -1,0 +1,33 @@
+
+
+#========================INITIAL CONDITION==========================
+INITIAL_CONDITION initial_all
+  FLOW_CONDITION initial
+  TRANSPORT_CONDITION initial_conc_all
+  REGION all
+/
+
+INITIAL_CONDITION initial_soil
+  FLOW_CONDITION initial
+  TRANSPORT_CONDITION initial_conc_soil
+  REGION soil_reg
+/
+
+INITIAL_CONDITION initial_soil2
+  FLOW_CONDITION initial
+  TRANSPORT_CONDITION initial_conc_soil2
+  REGION soil2_reg
+/
+
+INITIAL_CONDITION initial_gravel
+  FLOW_CONDITION initial
+  TRANSPORT_CONDITION initial_conc_gravel
+  REGION gravel_reg
+/
+
+#==================== STRATA ===================
+STRATA
+  FILE xxgrid010-top.h5
+END
+
+END_SUBSURFACE

@@ -1,0 +1,140 @@
+## MCP: 2023-12-31
+## 2D
+## SPIN-1
+## v5.0 PFLOTRAN
+
+#==================== SIMULATION ==================== 
+SIMULATION
+  SIMULATION_TYPE SUBSURFACE
+  PROCESS_MODELS
+    SUBSURFACE_FLOW flow
+      MODE RICHARDS
+    /
+    SUBSURFACE_TRANSPORT transport 
+    MODE GIRT 
+    /
+  /
+
+  RESTART
+    FILENAME pflotran-spin-1-n-restart.h5
+    RESET_TO_TIME_ZERO
+  /
+
+
+  CHECKPOINT
+    FORMAT HDF5
+    TIME_UNITS h
+  /
+END
+
+SUBSURFACE
+#==================== GRID ====================
+GRID
+  TYPE structured     
+  NXYZ 1 108 26
+  DXYZ
+    1.d0
+    0.5d0
+    0.10d0
+  /
+END
+
+#=========================== MATERIAL PROPERTIES ==============================
+MATERIAL_PROPERTY gravel
+  ID  1
+  POROSITY 0.25
+  CHARACTERISTIC_CURVES sf1
+  PERMEABILITY 
+    PERM_X  2.26E-11
+    PERM_Y  2.26E-11
+    PERM_Z  2.26E-11
+   /
+/
+
+MATERIAL_PROPERTY  topsoil
+  ID  2
+  POROSITY 0.40
+  CHARACTERISTIC_CURVES sf2
+  PERMEABILITY 
+    PERM_X  1.055E-12
+    PERM_Y  1.055E-12
+    PERM_Z  1.055E-12
+   /
+/
+
+#=====================CHARACTERISTIC CURVES============
+CHARACTERISTIC_CURVES sf1 #gravel
+  SATURATION_FUNCTION VAN_GENUCHTEN
+    M 0.8
+    ALPHA 1.85d-4
+    LIQUID_RESIDUAL_SATURATION 0.33
+  /
+  PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+    M 0.8
+    LIQUID_RESIDUAL_SATURATION 0.13
+  /
+/
+
+CHARACTERISTIC_CURVES sf2 #topsoil
+  SATURATION_FUNCTION VAN_GENUCHTEN
+    M 0.9
+    ALPHA 1.11d-3
+    LIQUID_RESIDUAL_SATURATION 0.08
+  /
+  PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+    M 0.9
+    LIQUID_RESIDUAL_SATURATION 0.08
+  /
+/
+
+#===================OUTPUT=====================
+OUTPUT
+  VELOCITY_AT_CENTER
+  TIME_UNITS hr
+  SCREEN PERIODIC 20
+  SNAPSHOT_FILE
+    FORMAT HDF5
+    PERIODIC TIME 1000 hr
+  /
+END
+
+#=====================TIME======================
+TIME
+  FINAL_TIME 40000.d0 hr 
+  INITIAL_TIMESTEP_SIZE  0.001d0 hr
+  MINIMUM_TIMESTEP_SIZE  0.00001d0 hr
+  MAXIMUM_TIMESTEP_SIZE  1.d0 hr
+END
+
+#==================REGIONS====================
+REGION all
+  COORDINATES
+    0.d0  0.d0  0.d0
+    100.d0  1000.d0  100.d0
+  /
+/
+
+REGION upstream_bc_reg
+  FILE xxgrid010-top.h5
+/
+
+REGION downstream_bc_reg
+  FILE xxgrid010-top.h5
+/
+
+REGION soil_reg
+  FILE xxgrid010-top.h5
+/
+
+REGION gravel_reg
+  FILE xxgrid010-top.h5
+/
+
+
+
+
+
+
+
+
+

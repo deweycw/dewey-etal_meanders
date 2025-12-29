@@ -1,0 +1,31 @@
+
+
+#=========================== TRANSPORT CONDITIONS ============================= 
+TRANSPORT_CONDITION  initial_conc_all
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  initial_conc_gravel
+    / 
+END 
+
+TRANSPORT_CONDITION  initial_conc_soil
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  initial_conc_soil
+    / 
+END 
+
+TRANSPORT_CONDITION  initial_conc_soil2
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  initial_conc_soil2
+    / 
+END 
+
+TRANSPORT_CONDITION  initial_conc_gravel
+   TYPE zero_gradient 
+    CONSTRAINT_LIST 
+     0.d0  initial_conc_gravel
+    / 
+END 
+

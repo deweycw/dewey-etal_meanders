@@ -1,0 +1,31 @@
+
+
+#========================FLOW CONDITION=============================
+FLOW_CONDITION initial
+  TYPE
+    LIQUID_PRESSURE hydrostatic
+  /
+  INTERPOLATION linear
+  DATUM 1.d0 1.d0 1.46d0
+  LIQUID_PRESSURE 101325.d0
+/
+
+FLOW_CONDITION upstream_bc
+  TYPE
+    LIQUID_PRESSURE seepage 
+  /
+  CYCLIC
+  DATUM 0.d0 0.d0 1.84d0 
+  LIQUID_PRESSURE 101325.d0
+/
+
+FLOW_CONDITION downstream_bc
+  TYPE
+    LIQUID_PRESSURE seepage
+  /
+  CYCLIC
+  DATUM 0.d0 0.d0 1.46d0 
+  LIQUID_PRESSURE 101325.d0 
+/
+
+

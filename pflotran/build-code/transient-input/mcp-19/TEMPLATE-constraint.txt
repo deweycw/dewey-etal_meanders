@@ -1,0 +1,25 @@
+CONSTRAINT  from_river_conc_
+  CONCENTRATIONS 
+  H+          XX        P
+  H2O         1.00E+00  T
+  Cl-         XX        T
+  SO4--       XX        T
+  HCO3-       XX        T 
+  Al+++       1.41e-06  T
+  Ca++        XX        T
+  Mg++        4.00E-04  Z
+  Fe++        4.66E-07  T
+  Fe+++       2.36d-18  T
+  K+          XX        T
+  Na+         XX        T
+  Ac-         1.00d-06  T
+  Tracer      1.00d-10  T
+  O2(aq)      2.40d-04  T
+  DOC-        XX        T
+  HS-         4.43E-08  T
+  NO3-        XX        T
+  N2(aq)      1.00E-10  T
+  NH3(aq)     2.00E-06  T
+  !Tracer1     1.00E-10  T        
+  /
+END
