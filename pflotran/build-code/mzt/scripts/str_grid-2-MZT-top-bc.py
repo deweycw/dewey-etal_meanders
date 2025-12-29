@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import sys
 from pathlib import Path
 
-# Add shared module to path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'shared'))
+# Add shared module to path (located in src/shared)
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent.parent / 'src' / 'shared'))
 import pflo
 
 '''
@@ -189,8 +189,8 @@ def write_regions_files(mat_id_1d, cell_id_1d, face_id_1d, bc_id_1d, nx, output_
     h5file.close()
 
 if __name__ == "__main__":
-    # Use shared data directory
-    SHARED_DATA_DIR = Path(__file__).parent.parent.parent / 'shared' / 'data' / 'mzt'
+    # Use shared data directory (located in src/shared)
+    SHARED_DATA_DIR = Path(__file__).parent.parent.parent.parent.parent / 'src' / 'shared' / 'data' / 'mzt'
 
     DEM = np.loadtxt(SHARED_DATA_DIR / 'MZT2.csv', delimiter=',')
     DEM = np.reshape(DEM, (np.size(DEM), 1), order="F")
