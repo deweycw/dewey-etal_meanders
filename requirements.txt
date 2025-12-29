@@ -1,0 +1,6 @@
+# PFLOTRAN build script dependencies
+numpy
+pandas
+h5py
+matplotlib
+scipy

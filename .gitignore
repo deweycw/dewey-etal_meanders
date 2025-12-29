@@ -28,6 +28,9 @@ dist/
 .DS_Store
 Thumbs.db
 
+# Office temp files
+~$*
+
 # Data files (uncomment if needed)
 # *.csv
 # *.h5
