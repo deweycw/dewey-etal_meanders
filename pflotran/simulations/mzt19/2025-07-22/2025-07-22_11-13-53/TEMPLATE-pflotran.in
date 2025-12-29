@@ -1,0 +1,387 @@
+#==================== SIMULATION ==================== 
+SIMULATION
+  SIMULATION_TYPE SUBSURFACE
+  PROCESS_MODELS
+    SUBSURFACE_FLOW flow
+      MODE RICHARDS
+    /
+    SUBSURFACE_TRANSPORT transport 
+      MODE GIRT 
+    /
+  /
+  RESTART
+    FILENAME pflotran-spin-mzt19-restart.chk
+    RESET_TO_TIME_ZERO
+  /
+END
+
+SUBSURFACE
+  #==================== GRID ====================
+  GRID
+    TYPE structured     
+    NXYZ 1 108 26
+    DXYZ
+      1.d0
+      0.5d0
+      0.10d0
+    /
+  END
+
+  #==================== STRATA ===================
+  STRATA
+    FILE ../../xxgrid010-mz-cxc-top.h5
+  END
+
+  #=========================== MATERIAL PROPERTIES ==============================
+  MATERIAL_PROPERTY gravel
+    ID  1
+    POROSITY 0.2
+    CHARACTERISTIC_CURVES sf
+    PERMEABILITY 
+      PERM_X  5.26E-11
+      PERM_Y  5.26E-11
+      PERM_Z  5.26E-11
+    /
+  /
+
+  MATERIAL_PROPERTY  topsoil
+    ID  2
+    POROSITY 0.40
+    CHARACTERISTIC_CURVES sf
+    PERMEABILITY 
+      PERM_X  1.055E-12
+      PERM_Y  1.055E-12
+      PERM_Z  1.055E-12
+    /
+  /
+
+  #=====================CHARACTERISTIC CURVES============
+  CHARACTERISTIC_CURVES sf
+    SATURATION_FUNCTION VAN_GENUCHTEN
+      M 0.286
+      ALPHA 1.9401d-4
+      LIQUID_RESIDUAL_SATURATION 0.115
+    /
+    PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+      M 0.5
+      LIQUID_RESIDUAL_SATURATION 0.115
+    /
+  /
+
+  #=========================== fluid properties =================================
+  FLUID_PROPERTY
+    PHASE LIQUID
+    DIFFUSION_COEFFICIENT 1.d-9
+  END
+
+  FLUID_PROPERTY
+    PHASE GAS
+    DIFFUSION_COEFFICIENT 2.1d-5
+  END
+
+  #===================OUTPUT=====================
+  OUTPUT
+    VELOCITY_AT_CENTER
+    TIME_UNITS h
+    SNAPSHOT_FILE
+      FORMAT HDF5
+      PERIODIC TIME 24 h
+    /
+skip
+    MASS_BALANCE_FILE
+      PERIODIC TIME 24 h
+      TOTAL_MASS_REGIONS
+        all
+        downstream_bc_reg
+        upstream_bc_reg
+      /
+    /
+noskip
+
+  SCREEN PERIODIC 100
+  END
+
+  #=====================TIME======================
+  TIME
+    FINAL_TIME 3993.d0 h 
+    INITIAL_TIMESTEP_SIZE  0.01d0 hr
+    MINIMUM_TIMESTEP_SIZE  0.00001d0 hr
+    MAXIMUM_TIMESTEP_SIZE  0.5d0 hr
+  END
+
+  #==================REGIONS====================
+  REGION all
+    COORDINATES
+      -1000.d0  -1000.d0  -1000.d0
+      1000.d0  1000.d0  1000.d0
+    /
+  /
+
+  REGION upstream_bc_reg
+    FILE ../../xxgrid010-mz-cxc-top.h5
+  /
+
+  REGION downstream_bc_reg
+    FILE ../../xxgrid010-mz-cxc-top.h5
+  /
+
+  REGION soil_reg
+    FILE ../../xxgrid010-mz-cxc-top.h5
+  /
+
+  REGION gravel_reg
+    FILE ../../xxgrid010-mz-cxc-top.h5
+  /
+
+! start auto add
+
+$%$%$% CHUNK DELIM %^%^%^
+
+! end auto add
+
+  #========================FLOW CONDITION=============================
+  FLOW_CONDITION initial
+    TYPE
+      LIQUID_PRESSURE hydrostatic
+    /
+    INTERPOLATION linear
+    DATUM 1.d0 1.d0 1.66d0
+    LIQUID_PRESSURE 101325.d0
+  /
+
+  FLOW_CONDITION upstream_bc
+    TYPE
+      LIQUID_PRESSURE seepage 
+    /
+    CYCLIC
+    DATUM FILE hydro_us_2019_4-21_10-2-MZT.txt
+    LIQUID_PRESSURE 101325.d0
+  /
+
+  FLOW_CONDITION downstream_bc
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM FILE hydro_ds_2019_4-21_10-2-MZT.txt
+    LIQUID_PRESSURE 101325.d0 
+  /
+  
+  FLOW_CONDITION top_precip_bc
+    TYPE
+      LIQUID_FLUX NEUMANN
+    /
+    LIQUID_FLUX 1.757d-8 ! [m/s]
+  /
+
+! start auto add
+
+$%$%$% CHUNK DELIM %^%^%^
+
+! end auto add
+
+! start auto add CHEMISTRY
+
+$%$%$% CHUNK DELIM %^%^%^
+
+! end auto add
+
+  #=========================== CONSTRAINTS ====================================== 
+  CONSTRAINT  initial_gravel
+    CONCENTRATIONS 
+      H+          8.2       P
+      H2O         1.00E+00  T
+      Ac-         1.00E-06  T
+      Al+++       1.41e-06  T
+      Ca++        1.22e-03  T      
+      Cl-         2.05e-05  T
+      Fe++        4.66E-10  T
+      Fe+++       1.00E-15  M Goethite 
+      HCO3-       3.00e-04  G CO2(g)*   
+      HS-         1.00e-07  T
+      K+          2.07e-05  T
+      Mg++        3.08e-04  T 
+      N2(aq)      5.50e-01  G N2(g)
+      Na+         8.15e-05  T
+      NH3(aq)     1.00e-06  T
+      NO3-        2.07e-08  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.63e-04  T
+      SO4--       3.90E-04  T
+      SOC(aq)     1.34d-04  M SOC
+      Tracer      1.00d-10  T 
+    /
+
+    IMMOBILE
+      Fim       1.d-6
+      Nim       1.d-4
+      Sim       1.d-4
+    /
+
+    MINERALS
+      Albite           6.74e-02  2.90e+01
+     ! Calcite          1.00e-02  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Dolomite         5.00e-03  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Root_Respiration 1.00e-02  1.13e+05
+      !Pyrite           1.00e-03  1.90e+00
+      Ferrihydrite     0.00e-00  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      SOC              1.00e-02  1.13e+05 # cm^2/cm^3
+      SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    /
+  END
+
+  CONSTRAINT  initial_soil
+    CONCENTRATIONS 
+      H+          7.6       P
+      H2O         1.00E+00  T
+      Ac-         1.00E-06  T
+      Al+++       1.41e-06  T
+      Ca++        1.22e-03  T      
+      Cl-         2.05e-05  T
+      Fe++        4.66E-10  T
+      Fe+++       1.00E-15  M Goethite 
+      HCO3-       3.00e-04  G CO2(g)*   
+      HS-         1.00e-07  T
+      K+          2.07e-05  T
+      Mg++        3.08e-04  T 
+      N2(aq)      5.50e-01  G N2(g)
+      Na+         8.15e-05  T
+      NH3(aq)     1.00e-06  T
+      NO3-        2.07e-08  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.63e-04  T
+      SO4--       3.90E-04  T
+      SOC(aq)     1.34d-04  M SOC
+      Tracer      1.00d-10  T 
+    /
+
+    IMMOBILE
+      Fim       1.d-5
+      Nim       1.d-4
+      Sim       1.d-4
+    /
+
+    MINERALS
+      Albite           6.74e-02  2.90e+01
+     ! Calcite          1.00e-02  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Dolomite         5.00e-03  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Root_Respiration 1.00e-02  1.13e+05
+      !Pyrite           1.00e-03  1.90e+00
+      Ferrihydrite     5.00e-05  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      SOC              1.00e-02  1.13e+05 # cm^2/cm^3
+      SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    /
+  END
+
+  CONSTRAINT  precip
+    CONCENTRATIONS 
+      H+          5.6       Z
+      H2O         1.00e+00  T
+      Ac-         1.00e-10  T
+      Al+++       1.00e-10  T
+      Ca++        1.00e-10  T 
+      Cl-         1.00e-10  T
+      Fe++        4.66e-10  T
+      Fe+++       1.00E-15  M Goethite
+      HCO3-       3.00e-04  G CO2(g)*
+      HS-         1.00e-10  T
+      K+          1.00e-10  T
+      Mg++        1.00e-10  T
+      N2(aq)      0.55      G N2(g)
+      NH3(aq)     1.00e-10  T
+      Na+         1.00e-10  T
+      NO3-        2.07e-08  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.00e-08  T
+      SO4--       3.00e-08  T
+      SOC(aq)     1.00e-04  M SOC
+      Tracer      1.00e-05  T
+    /
+  END
+
+
+! start auto add
+
+$%$%$% CHUNK DELIM %^%^%^
+
+! end auto add
+
+  #=========================== TRANSPORT CONDITIONS ============================= 
+  TRANSPORT_CONDITION  initial_all
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  initial_gravel
+      / 
+  END 
+
+  TRANSPORT_CONDITION  initial_soil
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  initial_soil
+      / 
+  END 
+
+  TRANSPORT_CONDITION  initial_gravel
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  initial_gravel
+      / 
+  END 
+
+  TRANSPORT_CONDITION  from_precip
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  precip
+      / 
+  END 
+
+! start auto add
+
+$%$%$% CHUNK DELIM %^%^%^
+
+! end auto add
+
+  #======================BOUNDARY CONDITION==========================
+
+  BOUNDARY_CONDITION river_upstream
+    FLOW_CONDITION upstream_bc
+    TRANSPORT_CONDITION from_river
+    REGION upstream_bc_reg
+  /
+
+  BOUNDARY_CONDITION river_downstream
+    FLOW_CONDITION downstream_bc
+    TRANSPORT_CONDITION from_river
+    REGION downstream_bc_reg
+  /
+
+! start auto add
+
+$%$%$% CHUNK DELIM %^%^%^
+
+! end auto add
+
+  #========================INITIAL CONDITION==========================
+  INITIAL_CONDITION initial
+    FLOW_CONDITION initial
+    TRANSPORT_CONDITION initial_all
+    REGION all
+  /
+
+  INITIAL_CONDITION initial_soil
+    FLOW_CONDITION initial
+    TRANSPORT_CONDITION initial_soil
+    REGION soil_reg
+  /
+
+  INITIAL_CONDITION initial_gravel
+    FLOW_CONDITION initial
+    TRANSPORT_CONDITION initial_gravel
+    REGION gravel_reg
+  /
+
+END_SUBSURFACE
+
+$%$%$% CHUNK DELIM %^%^%^

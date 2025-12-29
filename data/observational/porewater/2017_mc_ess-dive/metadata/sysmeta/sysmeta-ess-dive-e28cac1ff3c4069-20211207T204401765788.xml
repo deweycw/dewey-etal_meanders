@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:systemMetadata xmlns:ns2="http://ns.dataone.org/service/types/v1" xmlns:ns3="http://ns.dataone.org/service/types/v2.0">
+    <serialVersion>193</serialVersion>
+    <identifier>ess-dive-e28cac1ff3c4069-20211207T204401765788</identifier>
+    <formatId>application/pdf</formatId>
+    <size>166904</size>
+    <checksum algorithm="MD5">c40cd0e77ebf603c72ea172f1e617942</checksum>
+    <submitter>http://orcid.org/0000-0003-2296-4698</submitter>
+    <rightsHolder>http://orcid.org/0000-0003-2296-4698</rightsHolder>
+    <accessPolicy>
+        <allow>
+            <subject>http://orcid.org/0000-0003-2296-4698</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+        <allow>
+            <subject>public</subject>
+            <permission>read</permission>
+        </allow>
+        <allow>
+            <subject>CN=urn:node:ESS_DIVE,DC=dataone,DC=org</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+        <allow>
+            <subject>CN=ess-dive-admins,DC=dataone,DC=org</subject>
+            <permission>read</permission>
+            <permission>write</permission>
+            <permission>changePermission</permission>
+        </allow>
+    </accessPolicy>
+    <replicationPolicy replicationAllowed="true" numberReplicas="3">
+        <preferredMemberNode>urn:node:KNB</preferredMemberNode>
+        <preferredMemberNode>urn:node:mnORC1</preferredMemberNode>
+        <preferredMemberNode>urn:node:UIC</preferredMemberNode>
+        <preferredMemberNode>urn:node:NKN</preferredMemberNode>
+        <blockedMemberNode>urn:node:mnUNM1</blockedMemberNode>
+        <blockedMemberNode>urn:node:mnUCSB1</blockedMemberNode>
+        <blockedMemberNode>urn:node:US_MPC</blockedMemberNode>
+        <blockedMemberNode>urn:node:NMEPSCOR</blockedMemberNode>
+        <blockedMemberNode>urn:node:PPBIO</blockedMemberNode>
+    </replicationPolicy>
+    <archived>false</archived>
+    <dateUploaded>2021-12-07T20:44:02.014+00:00</dateUploaded>
+    <dateSysMetadataModified>2021-12-16T08:00:05.976+00:00</dateSysMetadataModified>
+    <originMemberNode>urn:node:ESS_DIVE</originMemberNode>
+    <authoritativeMemberNode>urn:node:ESS_DIVE</authoritativeMemberNode>
+    <replica>
+        <replicaMemberNode>urn:node:UIC</replicaMemberNode>
+        <replicationStatus>failed</replicationStatus>
+        <replicaVerified>2023-01-29T05:46:49.127+00:00</replicaVerified>
+    </replica>
+    <replica>
+        <replicaMemberNode>urn:node:KNB</replicaMemberNode>
+        <replicationStatus>completed</replicationStatus>
+        <replicaVerified>2023-01-29T10:20:22.657+00:00</replicaVerified>
+    </replica>
+    <replica>
+        <replicaMemberNode>urn:node:mnORC1</replicaMemberNode>
+        <replicationStatus>completed</replicationStatus>
+        <replicaVerified>2023-01-29T10:20:22.712+00:00</replicaVerified>
+    </replica>
+    <replica>
+        <replicaMemberNode>urn:node:ESS_DIVE</replicaMemberNode>
+        <replicationStatus>completed</replicationStatus>
+        <replicaVerified>2023-01-29T10:20:22.718+00:00</replicaVerified>
+    </replica>
+    <fileName>East River geochem sampling protocol_2015-2017_v2.pdf</fileName>
+</ns3:systemMetadata>

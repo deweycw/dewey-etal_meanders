@@ -1,0 +1,363 @@
+#==================== CHEMISTRY ===================
+  CHEMISTRY 
+    PRIMARY_SPECIES 
+      H+        
+      H2O   
+      Ac-    
+      Al+++
+      Ca++   
+      Cl-         
+      Fe++
+      Fe+++
+      HCO3-
+      HS-
+      K+
+      Mg++ 
+      N2(aq)
+      Na+
+      NH3(aq)
+      NO3-
+      O2(aq)   
+      SiO2(aq)
+      SO4--  
+      SOC(aq)
+      Tracer 
+    / 
+
+    SECONDARY_SPECIES
+      HAc(aq)
+      S2--
+      S2O3--
+      CO(aq)
+      ClO-
+      ClO2-
+      ClO3-
+      ClO4-
+      H2(aq)
+      HSO5-
+      SO3--
+      Al(OH)2+
+      Al(SO4)2-
+      Al(OH)4-
+      Al(OH)3(aq)
+      AlOH++
+      AlSO4+
+      CO2(aq)
+      CO3--
+      CaCO3(aq)
+      CaCl+
+      CaCl2(aq)
+      CaHCO3+
+      CaNO3+
+      CaOH+
+      CaSO4(aq)
+      CH4(aq)
+      Fe(OH)2(aq)
+      Fe(OH)2+
+      Fe(OH)3(aq)
+      Fe(OH)3-
+      Fe(OH)4-
+      Fe(OH)4--
+      Fe(SO4)2-
+      Fe2(OH)2++++
+      Fe3(OH)4(5+)
+      FeCO3(aq)
+      FeCO3+
+      FeCl+
+      FeCl++
+      FeCl2(aq)
+      FeCl2+
+      FeCl4-
+      FeCl4--
+      FeHCO3+
+      FeNO3++
+      FeOH+
+      FeOH++
+      FeSO4(aq)
+      FeSO4+
+      H2S(aq)
+      H2SO4(aq)
+      H2SiO4--
+      HCl(aq)
+      HNO3(aq)
+      HO2-
+      HS2O3-
+      HSO4-
+      H3SiO4-
+      KCl(aq)
+      KHSO4(aq)
+      KOH(aq)
+      KSO4-
+      Mg4(OH)4++++
+      MgCO3(aq)
+      MgCl+
+      MgHCO3+
+      MgSO4(aq)
+      NaAlO2(aq)
+      NaCO3-
+      NaCl(aq)
+      NaHCO3(aq)
+      NaHSiO3(aq)
+      NaNO3(aq)
+      NaOH(aq)
+      NaSO4-
+      OH-
+      S--
+      S5O6--
+      SCN-
+      H2SO3(aq)
+      HClO(aq)
+      HClO2(aq)
+      HSO3-
+      MgOH+
+      NH4+
+      NH4SO4-
+      SO2(aq)
+      Urea(aq)
+      
+    END   
+ 
+    ACTIVE_GAS_SPECIES
+      GAS_TRANSPORT_IS_UNVETTED
+      CO2(g)*
+      N2(g)
+      O2(g)
+    /
+    
+    PASSIVE_GAS_SPECIES
+      CO2(g)*
+      O2(g)
+      N2(g)
+    /
+    IMMOBILE_SPECIES
+      Fim
+      Nim
+      Sim
+    /
+
+    MINERALS 
+      Albite
+      !Calcite
+      Dolomite
+      !Root_Respiration
+      Ferrihydrite
+      Goethite
+      !Pyrite
+      SOC
+      !SOM
+    /
+
+    DECOUPLED_EQUILIBRIUM_REACTIONS
+        Fe++
+        Fe+++
+        HS-
+        SO4--
+        NO3-
+        NH3(aq)
+        N2(aq)
+        O2(aq)
+    END 
+
+    MINERAL_KINETICS 
+
+      Albite
+        PREFACTOR 
+          RATE_CONSTANT 2.75d-13 
+          ACTIVATION_ENERGY 69.8d0  !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 6.92d-11 
+          ACTIVATION_ENERGY 60.2d0  !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  0.457d0
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 2.57d-08
+          ACTIVATION_ENERGY 71.0d0  !kJ / mol
+          PREFACTOR_SPECIES OH- 
+              ALPHA  0.572
+          /
+        / 
+      /
+skip
+      Calcite
+        PREFACTOR 
+          RATE_CONSTANT 1.55d-06 
+          ACTIVATION_ENERGY 23.5d0  !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 5.01d-01 
+          ACTIVATION_ENERGY 14.4d0  !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  1.0
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 3.31d-04 
+          ACTIVATION_ENERGY 35.4d0  !kJ / mol
+          PREFACTOR_SPECIES HCO3-  
+              ALPHA  1.0 
+          /
+        / 
+      /
+noskip
+      Dolomite
+        PREFACTOR 
+          RATE_CONSTANT 2.51d-09
+          ACTIVATION_ENERGY 95.31d0 !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 1.74d-04
+          ACTIVATION_ENERGY 56.69d0 !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  0.5
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 4.27d-06 
+          ACTIVATION_ENERGY 45.69d0 !kJ / mol
+          PREFACTOR_SPECIES HCO3-  
+              ALPHA  0.5 
+          /
+        / 
+      /
+skip
+      Pyrite
+        PREFACTOR
+          RATE_CONSTANT 7.94d-09
+          ACTIVATION_ENERGY 56.9d0
+          PREFACTOR_SPECIES H+  O2(aq) 
+              ALPHA  -0.11d0  0.5d0
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 3.16d-10 
+          ACTIVATION_ENERGY 56.9d0
+          PREFACTOR_SPECIES H+  Fe++  Fe+++
+            ALPHA  -0.32d0 -0.47d0  0.30d0
+          /
+        /
+      /
+noskip
+      Ferrihydrite 
+        RATE_CONSTANT 0.d0
+      /
+
+      Goethite 
+        RATE_CONSTANT 0.d0
+      /
+skip
+      Root_Respiration
+        DISSOLUTION_RATE_CONSTANT    -12.1d0     
+        PRECIPITATION_RATE_CONSTANT   0.d0
+      /
+noskip
+      SOC
+        RATE_CONSTANT 1.00d-10
+      /
+skip      
+      SOM        
+        RATE_CONSTANT 0.d0 
+      /
+noskip
+    /
+skip
+# ------- Fe++ oxidation ---------
+    GENERAL_REACTION
+      REACTION 1.00 Fe++ + 0.25 1.00  O2(aq)  + H+ <-> 1.00 Fe+++ + 0.50 H2O
+      FORWARD_RATE 1.d-10
+      BACKWARD_RATE 0.d0
+    /
+
+# ------- HS- oxidation ---------
+    GENERAL_REACTION
+      REACTION 1.00 HS- + 2.00 1.00  O2(aq)  <->  1.00 SO4--  +  1.00 H+
+      FORWARD_RATE 1.d-10
+      BACKWARD_RATE 0.d0
+    /
+
+# ------- Aerobic respiration ---------
+    MICROBIAL_REACTION
+      REACTION  1.00 SOC(aq) + 1.00  O2(aq)  + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
+      RATE_CONSTANT 1.d-9
+      MONOD
+        SPECIES_NAME  O2(aq)  
+        HALF_SATURATION_CONSTANT 1.d-4         
+        THRESHOLD_CONCENTRATION 1.d-6
+      /
+      MONOD
+        SPECIES_NAME SOC(aq)
+        HALF_SATURATION_CONSTANT 1.d-5     
+        THRESHOLD_CONCENTRATION 1.d-8
+      /
+    /
+
+    REACTION_SANDBOX
+    
+      SOM_AC_FERMENTATION
+        RATE        1.d-8
+        THRESHOLD   1.d-6
+      /
+    
+      FH_GT_MINERAL_RIPENING
+        RATE_CONSTANT_FH_TO_GT  5.d-3
+      /
+
+      JINBETHKE_NITRATE_ACETATE
+        RMAX            1.0d-6  
+        K_DONOR         1.0d-5 
+        K_ACCEPTOR      1.0d-5
+        Y               1.0d-0
+        M               2.667d0            ! 0.667 * 4   
+        CHI             8.0d0              ! 2.0 * 4 
+        O2_THRESHOLD    5.0d-5
+      END
+
+      JINBETHKE_FERRIHYDRITE_ACETATE     
+        RMAX            2.5d-7
+        K_DONOR         1.0d-6
+        K_ACCEPTOR      1.0d-6  ! vol fraction
+        Y               1.0d-0
+        M               0.50d0            ! 0.125 * 4   
+        CHI             7.0d0              ! 1.75 * 4 
+        O2_THRESHOLD    1.0d-5
+      /
+
+      JINBETHKE_GOETHITE_ACETATE  
+        RMAX            2.5d-7
+        K_DONOR         1.0d-6
+        K_ACCEPTOR      1.0d-6  ! vol fraction
+        Y               1.0d-0
+        M               0.50d0            ! 0.125 * 4   
+        CHI             7.0d0              ! 1.75 * 4 
+        O2_THRESHOLD    1.0d-5
+        K_PRECIPITATION 1.0d-30
+      /
+
+      JINBETHKE_SULFATE_ACETATE
+        RMAX            2.5d-7 !3.2
+        K_DONOR         5.0d-6
+        K_ACCEPTOR      1.0d-4
+        Y               1.0d-0
+        M               1.33d0            ! 0.33 * 4.0   
+        CHI             8.0d0              ! 2.0 * 4.0 
+        O2_THRESHOLD    1.0d-5
+      END
+
+    /
+  noskip
+
+    DATABASE hanford-cd.dat
+    LOG_FORMULATION 
+    ACTIVITY_COEFFICIENTS TIMESTEP 
+    OUTPUT 
+     all
+     PRIMARY_SPECIES
+     SECONDARY_SPECIES
+     FREE_ION
+     TOTAL
+     pH
+     MINERAL_SATURATION_INDEX
+    /  
+  END

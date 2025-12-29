@@ -1,0 +1,32 @@
+# started on Sun Jul 27 23:23:20 2025
+
+
+ Performance counter stats for 'mpirun -n 10 /home/christiandewey/Code/pflotran/src/pflotran/pflotran -pflotranin 2025-07-27/2025-07-27_20-43-22/pflotran-mzt19_2025-07-27_20-43-22_spin.in':
+
+    49,014,415,153      cpu_atom/cache-misses/           #   79.27% of all cache refs           (27.11%)
+    41,774,044,110      cpu_core/cache-misses/           #   87.10% of all cache refs           (59.66%)
+    61,830,024,944      cpu_atom/cache-references/                                              (27.11%)
+    47,961,107,922      cpu_core/cache-references/                                              (53.04%)
+ 5,737,999,842,695      cpu_atom/instructions/           #    1.13  insn per cycle              (31.63%)
+16,477,392,190,456      cpu_core/instructions/           #    2.73  insn per cycle              (59.66%)
+ 5,089,132,234,097      cpu_atom/cycles/                                                        (31.63%)
+ 6,040,068,101,051      cpu_core/cycles/                                                        (59.66%)
+   855,930,681,397      cpu_atom/branches/                                                      (31.63%)
+ 2,590,048,236,274      cpu_core/branches/                                                      (59.66%)
+     2,979,915,915      cpu_atom/branch-misses/          #    0.35% of all branches             (31.63%)
+    11,628,787,745      cpu_core/branch-misses/          #    0.45% of all branches             (59.66%)
+ 1,509,945,442,003      cpu_atom/L1-dcache-loads/                                               (31.63%)
+ 5,623,327,002,328      cpu_core/L1-dcache-loads/                                               (59.66%)
+   <not supported>      cpu_atom/L1-dcache-load-misses/                                       
+    17,046,992,894      cpu_core/L1-dcache-load-misses/  #    0.30% of all L1-dcache accesses   (59.66%)
+    12,889,658,530      cpu_atom/LLC-loads/                                                     (31.63%)
+     9,888,804,222      cpu_core/LLC-loads/                                                     (59.66%)
+       124,340,380      cpu_atom/LLC-load-misses/        #    0.96% of all LL-cache accesses    (31.63%)
+     9,046,009,082      cpu_core/LLC-load-misses/        #   91.48% of all LL-cache accesses    (59.66%)
+
+     133.210564349 seconds time elapsed
+
+    1326.407614000 seconds user
+       2.679400000 seconds sys
+
+

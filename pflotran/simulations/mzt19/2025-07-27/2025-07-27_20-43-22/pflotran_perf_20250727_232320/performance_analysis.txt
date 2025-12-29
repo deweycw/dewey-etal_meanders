@@ -1,0 +1,54 @@
+Intel 13th Gen Hybrid Architecture Performance Analysis
+=======================================================
+
+Core Type Utilization:
+  P-cores (Performance): ✓ Active
+  E-cores (Efficiency):  ✓ Active
+
+Cache Performance (Combined P+E cores):
+  Cache misses: 90,788,459,263
+  Cache references: 109,791,132,866
+  Cache miss ratio: 82.69%
+  🔴 CRITICAL - Extreme cache miss rate indicates severe memory bandwidth bottleneck
+
+CPU Efficiency (Combined P+E cores):
+  Instructions: 22,215,392,033,151
+  Cycles: 11,129,200,335,148
+  Instructions per cycle: 2.00
+  ✓ GOOD - Decent CPU utilization
+
+Per-Core Type Analysis:
+  P-cores IPC: 2.73
+  E-cores IPC: 1.13
+  Workload distribution: 74.2% P-cores, 25.8% E-cores
+
+Memory Bandwidth Impact Analysis:
+  With 82.7% cache miss rate:
+  Current DDR4-3200: ~249 cycles average per memory access
+  With DDR5-5600: ~149 cycles average per memory access
+  Expected improvement: 1.7x faster with DDR5 upgrade
+
+PFLOTRAN Performance Assessment:
+-----------------------------------
+🔴 SEVERE MEMORY BANDWIDTH BOTTLENECK
+   Cache miss ratio of 82.7% indicates critical memory bandwidth saturation
+   DDR4-3200 is completely insufficient for PFLOTRAN's memory access patterns
+   Immediate upgrade to DDR5-5600+ recommended for substantial performance gains
+   Expected improvement: 60-80% faster simulation times
+
+   Performance Impact:
+   - CPU spends most time waiting for memory (~249 cycles per access)
+   - Sparse matrix operations severely bottlenecked
+   - Storage optimization is secondary until memory bandwidth is addressed
+
+Raw Metrics:
+------------
+e_core_cache_misses: 49,014,415,153
+e_core_cache_refs: 61,830,024,944
+e_core_cycles: 5,089,132,234,097
+e_core_instructions: 5,737,999,842,695
+elapsed_time: 133.21
+p_core_cache_misses: 41,774,044,110
+p_core_cache_refs: 47,961,107,922
+p_core_cycles: 6,040,068,101,051
+p_core_instructions: 16,477,392,190,456

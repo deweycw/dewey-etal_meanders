@@ -1,0 +1,48 @@
+PFLOTRAN 1D Input File Generation Summary
+=============================================
+
+Generation Date: 2025-07-29 11:02:38 (Local Time)
+Output Directory: /home/christiandewey/Code/dewey-etal-meanders/simulations/co2/mzt19/2025-07-29/2025-07-29_11-02-38
+
+1D Simulation Configuration:
+  Simulation Year: 2019
+  Grid Cells (ny): 108
+  Y-direction discretization: 0.5 m per cell
+  Total transect length: 54.0 m
+  Upstream Head: 1.94 m
+  Downstream Head: 1.66 m
+
+1D Simulation Features:
+  ✓ Only upstream/downstream boundary conditions
+  ✓ No top boundary conditions (no river/precipitation)
+  ✓ Discretized along y-direction (0.5 m per cell)
+  ✓ Flow in y-direction (upstream to downstream)
+  ✓ Hydraulic head boundary conditions with DATUM
+  ✓ Grid defined in input file (no external grid file)
+  ✓ Transport conditions for both spin-up and transient
+  ✓ Formatting matches example structure and spacing
+  ✓ Proper constraint and transport condition generation
+
+Generated Files:
+  Spin-up: pflotran-1d_2025-07-29_11-02-38_spin.in
+  Transient: pflotran-1d_2025-07-29_11-02-38.in
+
+Boundary Condition Files:
+  river_chem.txt (generated for both spin-up and transient)
+  river_transport_constraint.txt (generated for both spin-up and transient)
+  Note: Spin-up uses static constraints, transient uses time-varying constraints
+
+1D Template Files Used:
+  TEMPLATE-constraint.txt
+  TEMPLATE-chemistry.txt
+  TEMPLATE-pflotran-1d.in
+  TEMPLATE-pflotran-spin-1d.in
+
+Copied Reference Files:
+  hanford-cd.dat
+  hydro_us_2019_4-21_10-2-MZT.txt
+  hydro_ds_2019_4-21_10-2-MZT.txt
+  TEMPLATE-constraint.txt
+  TEMPLATE-chemistry.txt
+  TEMPLATE-pflotran-1d.in
+  TEMPLATE-pflotran-spin-1d.in

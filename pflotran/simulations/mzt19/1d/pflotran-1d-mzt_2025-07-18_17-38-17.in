@@ -1,0 +1,618 @@
+! Generated 2025-07-18_17-38-17 UTC
+
+#==================== SIMULATION ==================== 
+SIMULATION
+  SIMULATION_TYPE SUBSURFACE
+  PROCESS_MODELS
+    SUBSURFACE_FLOW flow
+      MODE RICHARDS
+    /
+    SUBSURFACE_TRANSPORT transport 
+      MODE GIRT 
+    /
+  /
+  CHECKPOINT
+    TIMES y 10. 
+  /
+END
+
+SUBSURFACE
+  #==================== GRID ====================
+  GRID
+    TYPE structured     
+    NXYZ 1 108 1
+    DXYZ
+      1.d0
+      0.5d0
+      1.d0
+    /
+  END
+
+  #==================== STRATA ===================
+    STRATA
+        REGION all
+        MATERIAL gravel
+    END
+
+  #=========================== MATERIAL PROPERTIES ==============================
+  MATERIAL_PROPERTY gravel
+    ID  1
+    POROSITY 0.2
+    CHARACTERISTIC_CURVES sf
+    PERMEABILITY 
+      PERM_X  5.26E-11
+      PERM_Y  5.26E-11
+      PERM_Z  5.26E-11
+    /
+  /
+
+  #=====================CHARACTERISTIC CURVES============
+  CHARACTERISTIC_CURVES sf
+    SATURATION_FUNCTION VAN_GENUCHTEN
+      M 0.286
+      ALPHA 1.9401d-4
+      LIQUID_RESIDUAL_SATURATION 0.115
+    /
+    PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+      M 0.5
+      LIQUID_RESIDUAL_SATURATION 0.115
+    /
+  /
+
+  #=========================== fluid properties =================================
+  FLUID_PROPERTY
+    PHASE LIQUID
+    DIFFUSION_COEFFICIENT 1.d-9
+  END
+
+  FLUID_PROPERTY
+    PHASE GAS
+    DIFFUSION_COEFFICIENT 2.1d-5
+  END
+
+  #===================OUTPUT=====================
+  OUTPUT
+    VELOCITY_AT_CENTER
+    TIME_UNITS y
+    SNAPSHOT_FILE
+      FORMAT HDF5
+      PERIODIC TIME 0.5d0 y
+    /
+
+  SCREEN PERIODIC 100
+  END
+
+  #=====================TIME======================
+  TIME
+    FINAL_TIME 1.d0 y 
+    INITIAL_TIMESTEP_SIZE  0.01d0 hr
+    MINIMUM_TIMESTEP_SIZE  0.00001d0 hr
+    MAXIMUM_TIMESTEP_SIZE  20.0d0 hr
+  END
+
+  #==================REGIONS====================
+  REGION all
+    COORDINATES
+      -1000.d0  -1000.d0  -1000.d0
+      1000.d0  1000.d0  1000.d0
+    /
+  /
+
+  REGION upstream_bc_reg
+    COORDINATES
+        0.d0  0.0d0  0.d0
+        0.d0  0.0d0  1.d0
+    /
+    FACE SOUTH
+  /
+
+  REGION downstream_bc_reg
+    COORDINATES
+        0.d0  54.d0  0.d0
+        0.d0  54.d0  1.d0
+    /
+    FACE NORTH
+  /
+
+  #========================FLOW CONDITION=============================
+  FLOW_CONDITION initial
+    TYPE
+      LIQUID_PRESSURE hydrostatic
+    /
+    INTERPOLATION linear
+    DATUM 1.d0 1.d0 1.66d0
+    LIQUID_PRESSURE 101325.d0
+  /
+
+  FLOW_CONDITION upstream_bc
+    TYPE
+      LIQUID_PRESSURE seepage 
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.94d0 
+    LIQUID_PRESSURE 101325.d0
+  /
+
+  FLOW_CONDITION downstream_bc
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.66d0 
+    LIQUID_PRESSURE 101325.d0 
+  /
+
+  #==================== CHEMISTRY ===================
+  CHEMISTRY 
+    PRIMARY_SPECIES 
+      H+        
+      H2O   
+      Ac-    
+      Al+++
+      Ca++   
+      Cl-         
+      Fe++
+      Fe+++
+      HCO3-
+      HS-
+      K+
+      Mg++ 
+      N2(aq)
+      Na+
+      NH3(aq)
+      NO3-
+      O2(aq)   
+      SiO2(aq)
+      SO4--  
+      SOC(aq)
+      Tracer 
+    / 
+
+    SECONDARY_SPECIES
+      HAc(aq)
+      S2--
+      S2O3--
+      CO(aq)
+      ClO-
+      ClO2-
+      ClO3-
+      ClO4-
+      H2(aq)
+      HSO5-
+      SO3--
+      Al(OH)2+
+      Al(SO4)2-
+      Al(OH)4-
+      Al(OH)3(aq)
+      AlOH++
+      AlSO4+
+      CO2(aq)
+      CO3--
+      CaCO3(aq)
+      CaCl+
+      CaCl2(aq)
+      CaHCO3+
+      CaNO3+
+      CaOH+
+      CaSO4(aq)
+      CH4(aq)
+      Fe(OH)2(aq)
+      Fe(OH)2+
+      Fe(OH)3(aq)
+      Fe(OH)3-
+      Fe(OH)4-
+      Fe(OH)4--
+      Fe(SO4)2-
+      Fe2(OH)2++++
+      Fe3(OH)4(5+)
+      FeCO3(aq)
+      FeCO3+
+      FeCl+
+      FeCl++
+      FeCl2(aq)
+      FeCl2+
+      FeCl4-
+      FeCl4--
+      FeHCO3+
+      FeNO3++
+      FeOH+
+      FeOH++
+      FeSO4(aq)
+      FeSO4+
+      H2S(aq)
+      H2SO4(aq)
+      H2SiO4--
+      HCl(aq)
+      HNO3(aq)
+      HO2-
+      HS2O3-
+      HSO4-
+      H3SiO4-
+      KCl(aq)
+      KHSO4(aq)
+      KOH(aq)
+      KSO4-
+      Mg4(OH)4++++
+      MgCO3(aq)
+      MgCl+
+      MgHCO3+
+      MgSO4(aq)
+      NaAlO2(aq)
+      NaCO3-
+      NaCl(aq)
+      NaHCO3(aq)
+      NaHSiO3(aq)
+      NaNO3(aq)
+      NaOH(aq)
+      NaSO4-
+      OH-
+      S--
+      S5O6--
+      SCN-
+      H2SO3(aq)
+      HClO(aq)
+      HClO2(aq)
+      HSO3-
+      MgOH+
+      NH4+
+      NH4SO4-
+      SO2(aq)
+      Urea(aq)
+      
+    END   
+ 
+    ACTIVE_GAS_SPECIES
+      GAS_TRANSPORT_IS_UNVETTED
+      CO2(g)*
+      N2(g)
+      O2(g)
+    /
+    
+    PASSIVE_GAS_SPECIES
+      CO2(g)*
+      O2(g)
+      N2(g)
+    /
+    IMMOBILE_SPECIES
+      Fim
+      Nim
+      Sim
+    /
+
+    MINERALS 
+      Albite
+      !Calcite
+      Dolomite
+      Root_Respiration
+      Ferrihydrite
+      Goethite
+      !Pyrite
+      SOC
+      SOM
+    /
+
+    DECOUPLED_EQUILIBRIUM_REACTIONS
+        Fe++
+        Fe+++
+        HS-
+        SO4--
+        NO3-
+        NH3(aq)
+        N2(aq)
+        O2(aq)
+    END 
+
+    MINERAL_KINETICS 
+
+      Albite
+        PREFACTOR 
+          RATE_CONSTANT 2.75d-13 
+          ACTIVATION_ENERGY 69.8d0  !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 6.92d-11 
+          ACTIVATION_ENERGY 60.2d0  !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  0.457d0
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 2.57d-08
+          ACTIVATION_ENERGY 71.0d0  !kJ / mol
+          PREFACTOR_SPECIES OH- 
+              ALPHA  0.572
+          /
+        / 
+      /
+skip
+      Calcite
+        PREFACTOR 
+          RATE_CONSTANT 1.55d-06 
+          ACTIVATION_ENERGY 23.5d0  !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 5.01d-01 
+          ACTIVATION_ENERGY 14.4d0  !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  1.0
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 3.31d-04 
+          ACTIVATION_ENERGY 35.4d0  !kJ / mol
+          PREFACTOR_SPECIES HCO3-  
+              ALPHA  1.0 
+          /
+        / 
+      /
+noskip
+      Dolomite
+        PREFACTOR 
+          RATE_CONSTANT 2.51d-09
+          ACTIVATION_ENERGY 95.31d0 !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 1.74d-04
+          ACTIVATION_ENERGY 56.69d0 !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  0.5
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 4.27d-06 
+          ACTIVATION_ENERGY 45.69d0 !kJ / mol
+          PREFACTOR_SPECIES HCO3-  
+              ALPHA  0.5 
+          /
+        / 
+      /
+skip
+      Pyrite
+        PREFACTOR
+          RATE_CONSTANT 7.94d-09
+          ACTIVATION_ENERGY 56.9d0
+          PREFACTOR_SPECIES H+  O2(aq) 
+              ALPHA  -0.11d0  0.5d0
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 3.16d-10 
+          ACTIVATION_ENERGY 56.9d0
+          PREFACTOR_SPECIES H+  Fe++  Fe+++
+            ALPHA  -0.32d0 -0.47d0  0.30d0
+          /
+        /
+      /
+noskip
+      Ferrihydrite 
+        RATE_CONSTANT 0.d0
+      /
+
+      Goethite 
+        RATE_CONSTANT 0.d0
+      /
+
+      Root_Respiration
+        DISSOLUTION_RATE_CONSTANT    -12.1d0     
+        PRECIPITATION_RATE_CONSTANT   0.d0
+      /
+
+      SOC
+        RATE_CONSTANT 1.00d-10
+      /
+      
+      SOM        
+        RATE_CONSTANT 0.d0 
+      /
+    /
+
+# ------- Fe++ oxidation ---------
+    GENERAL_REACTION
+      REACTION 1.00 Fe++ + 0.25 1.00  O2(aq)  + H+ <-> 1.00 Fe+++ + 0.50 H2O
+      FORWARD_RATE 1.d-10
+      BACKWARD_RATE 0.d0
+    /
+
+# ------- HS- oxidation ---------
+    GENERAL_REACTION
+      REACTION 1.00 HS- + 2.00 1.00  O2(aq)  <->  1.00 SO4--  +  1.00 H+
+      FORWARD_RATE 1.d-10
+      BACKWARD_RATE 0.d0
+    /
+
+# ------- Aerobic respiration ---------
+    MICROBIAL_REACTION
+      REACTION  1.00 SOC(aq) + 1.00  O2(aq)  + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
+      RATE_CONSTANT 1.d-9
+      MONOD
+        SPECIES_NAME  O2(aq)  
+        HALF_SATURATION_CONSTANT 1.d-4         
+        THRESHOLD_CONCENTRATION 1.d-6
+      /
+      MONOD
+        SPECIES_NAME SOC(aq)
+        HALF_SATURATION_CONSTANT 1.d-5     
+        THRESHOLD_CONCENTRATION 1.d-8
+      /
+    /
+
+    REACTION_SANDBOX
+    
+      SOM_AC_FERMENTATION
+        RATE        1.d-8
+        THRESHOLD   1.d-6
+      /
+    
+      FH_GT_MINERAL_RIPENING
+        RATE_CONSTANT_FH_TO_GT  5.d-3
+      /
+
+      JINBETHKE_NITRATE_ACETATE
+        RMAX            1.0d-6  
+        K_DONOR         1.0d-5 
+        K_ACCEPTOR      1.0d-5
+        Y               1.0d-0
+        M               2.667d0            ! 0.667 * 4   
+        CHI             8.0d0              ! 2.0 * 4 
+        O2_THRESHOLD    5.0d-5
+      END
+
+      JINBETHKE_FERRIHYDRITE_ACETATE     
+        RMAX            2.5d-7
+        K_DONOR         1.0d-6
+        K_ACCEPTOR      1.0d-6  ! vol fraction
+        Y               1.0d-0
+        M               0.50d0            ! 0.125 * 4   
+        CHI             7.0d0              ! 1.75 * 4 
+        O2_THRESHOLD    1.0d-5
+      /
+
+      JINBETHKE_GOETHITE_ACETATE  
+        RMAX            2.5d-7
+        K_DONOR         1.0d-6
+        K_ACCEPTOR      1.0d-6  ! vol fraction
+        Y               1.0d-0
+        M               0.50d0            ! 0.125 * 4   
+        CHI             7.0d0              ! 1.75 * 4 
+        O2_THRESHOLD    1.0d-5
+        K_PRECIPITATION 1.0d-30
+      /
+
+      JINBETHKE_SULFATE_ACETATE
+        RMAX            2.5d-7 !3.2
+        K_DONOR         5.0d-6
+        K_ACCEPTOR      1.0d-4
+        Y               1.0d-0
+        M               1.33d0            ! 0.33 * 4.0   
+        CHI             8.0d0              ! 2.0 * 4.0 
+        O2_THRESHOLD    1.0d-5
+      END
+
+    /
+
+
+    DATABASE hanford-cd.dat
+    LOG_FORMULATION 
+    ACTIVITY_COEFFICIENTS TIMESTEP 
+    OUTPUT 
+     all
+     PRIMARY_SPECIES
+     SECONDARY_SPECIES
+     FREE_ION
+     TOTAL
+     pH
+     MINERAL_SATURATION_INDEX
+    /  
+  END 
+
+  #=========================== CONSTRAINTS ====================================== 
+  CONSTRAINT  initial_gravel
+    CONCENTRATIONS 
+      H+          8.2       P
+      H2O         1.00E+00  T
+      Ac-         1.00E-06  T
+      Al+++       1.41e-06  T
+      Ca++        1.22e-03  T      
+      Cl-         2.05e-05  Z
+      Fe++        4.66E-10  T
+      Fe+++       1.00E-15  M Goethite 
+      HCO3-       3.00e-04  G CO2(g)*   
+      HS-         1.00e-07  T
+      K+          2.07e-05  T
+      Mg++        3.08e-04  T 
+      N2(aq)      5.50e-01  G N2(g)
+      Na+         8.15e-05  T
+      NH3(aq)     1.00e-06  T
+      NO3-        2.07e-08  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.63e-04  T
+      SO4--       3.90E-04  T
+      SOC(aq)     1.34d-04  M SOC
+      Tracer      1.00d-10  T 
+    /
+
+    IMMOBILE
+      Fim       1.d-6
+      Nim       1.d-4
+      Sim       1.d-4
+    /
+
+    MINERALS
+      Albite           6.74e-02  2.90e+01
+     ! Calcite          1.00e-02  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Dolomite         2.00e-02  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Root_Respiration 1.00e-02  1.13e+05
+      !Pyrite           1.00e-03  1.90e+00
+      Ferrihydrite     0.00e-00  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      SOC              1.00e-02  1.13e+05 # cm^2/cm^3
+      SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+    /
+  END
+
+  CONSTRAINT  river
+    CONCENTRATIONS 
+      H+          7.85      P
+      H2O         1.00e+00  T
+      Ac-         1.00e-06  T
+      Al+++       1.41e-06  T
+      Ca++        1.22e-03  T 
+      Cl-         4.55e-05  T
+      Fe++        4.66e-07  T
+      Fe+++       1.00E-15  M Goethite
+      HCO3-       3.00e-04  M Dolomite
+      HS-         4.43E-08  T
+      K+          1.66e-05  T
+      Mg++        4.10e-04  T
+      N2(aq)      5.50e-01  G N2(g)
+      NH3(aq)     1.00e-06  T
+      Na+         7.97e-05  T
+      NO3-        1.41e-06  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.63e-04  T
+      SO4--       3.00e-08  T
+      SOC(aq)     1.00e-04  T
+      Tracer      1.00e-05  T
+    /
+  END
+
+
+
+  #=========================== TRANSPORT CONDITIONS ============================= 
+  TRANSPORT_CONDITION  initial_all
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  initial_gravel
+      / 
+  END 
+
+  TRANSPORT_CONDITION  from_river
+    TYPE dirichlet_zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  river
+      / 
+  END 
+
+  #======================BOUNDARY CONDITION==========================
+
+  BOUNDARY_CONDITION river_upstream
+    FLOW_CONDITION upstream_bc
+    TRANSPORT_CONDITION from_river
+    REGION upstream_bc_reg
+  /
+
+  BOUNDARY_CONDITION river_downstream
+    FLOW_CONDITION downstream_bc
+    TRANSPORT_CONDITION from_river
+    REGION downstream_bc_reg
+  /
+
+
+  #========================INITIAL CONDITION==========================
+  INITIAL_CONDITION initial
+    FLOW_CONDITION initial
+    TRANSPORT_CONDITION initial_all
+    REGION all
+  /
+
+END_SUBSURFACE
