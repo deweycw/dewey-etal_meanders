@@ -12,7 +12,7 @@ Requirements:
 - os
 
 File Structure Required:
-├── bc_chem_data/           # Directory with CSV boundary condition files
+├── chem-bcs/           # Directory with CSV boundary condition files
 ├── TEMPLATE-constraint.txt # Chemistry constraint template
 ├── TEMPLATE-chemistry.txt  # Chemistry block template (NEW)
 ├── TEMPLATE-pflotran.in    # Main PFLOTRAN template 
@@ -116,8 +116,8 @@ class PFLOTRANGenerator:
             if not os.path.exists(file):
                 raise FileNotFoundError(f"Required template file not found: {file}")
         
-        if not os.path.exists('../bc_chem_data'):
-            raise FileNotFoundError("Directory '../bc_chem_data' not found")
+        if not os.path.exists('../chem-bcs'):
+            raise FileNotFoundError("Directory '../chem-bcs' not found")
     
     def load_chemistry_template(self):
         """Load the chemistry template file."""
@@ -137,15 +137,15 @@ class PFLOTRANGenerator:
         print(f"Date range: {year_config['start']} to {year_config['end']}")
         
         bc_data = {}
-        csv_files = [f for f in os.listdir('../bc_chem_data') if f.endswith('.csv')]
+        csv_files = [f for f in os.listdir('../chem-bcs') if f.endswith('.csv')]
         
         if not csv_files:
-            raise FileNotFoundError("No CSV files found in '../bc_chem_data'")
+            raise FileNotFoundError("No CSV files found in '../chem-bcs'")
         
         for filename in csv_files:
             try:
                 # Read file efficiently - remove row limit to get all data
-                filepath = os.path.join('../bc_chem_data', filename)
+                filepath = os.path.join('../chem-bcs/', filename)
                 data = pd.read_csv(filepath)  # Read all data, not just first 1000 rows
                 
                 component = filename.split('.')[0].split('_')[-1]

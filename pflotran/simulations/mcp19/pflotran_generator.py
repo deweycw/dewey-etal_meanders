@@ -12,7 +12,7 @@ Requirements:
 - os
 
 File Structure Required:
-├── bc_chem_data/           # Directory with CSV boundary condition files
+├── chem-bcs/           # Directory with CSV boundary condition files
 ├── TEMPLATE-constraint.txt # Chemistry constraint template
 ├── TEMPLATE-chemistry.txt  # Chemistry block template (NEW)
 ├── TEMPLATE-pflotran.in    # Main PFLOTRAN template 
@@ -25,6 +25,7 @@ Usage:
     
 Example:
     python pflotran_generator.py --year 2019 --meander mzt --nx 108 --upstream_h 1.94 --downstream_h 1.66
+    python pflotran_generator.py --year 2019 --meander mcp --nx 122 --upstream_h 1.94 --downstream_h 0.91
 
 Author: Christian Dewey
 Date: 07.22.2025
@@ -120,8 +121,8 @@ class PFLOTRANGenerator:
             if not os.path.exists(file):
                 raise FileNotFoundError(f"Required template file not found: {file}")
         
-        if not os.path.exists('../bc_chem_data'):
-            raise FileNotFoundError("Directory '../bc_chem_data' not found")
+        if not os.path.exists('../chem-bcs'):
+            raise FileNotFoundError("Directory '../chem-bcs' not found")
     
     def load_chemistry_template(self):
         """Load the chemistry template file."""
@@ -142,15 +143,15 @@ class PFLOTRANGenerator:
         print(f"Date range: {year_config['start']} to {year_config['end']}")
         
         bc_data = {}
-        csv_files = [f for f in os.listdir('../bc_chem_data') if f.endswith('.csv')]
+        csv_files = [f for f in os.listdir('../chem-bcs') if f.endswith('.csv')]
         
         if not csv_files:
-            raise FileNotFoundError("No CSV files found in '../bc_chem_data'")
+            raise FileNotFoundError("No CSV files found in '../chem-bcs'")
         
         for filename in csv_files:
             try:
                 # Read file efficiently - remove row limit to get all data
-                filepath = os.path.join('../bc_chem_data', filename)
+                filepath = os.path.join('../chem-bcs', filename)
                 data = pd.read_csv(filepath)  # Read all data, not just first 1000 rows
                 
                 component = filename.split('.')[0].split('_')[-1]
@@ -691,62 +692,76 @@ class PFLOTRANGenerator:
         
         return spinup_filename, transient_filename
     
-    def create_run_summary(self, spinup_file: str, transient_file: str, 
-                          upstream_file: str = None, downstream_file: str = None,
-                          copied_files: List[str] = None) -> None:
-        """Create a summary file with run information."""
-        summary_file = self.output_dir / 'run_summary.txt'
-        
-        with open(summary_file, 'w') as f:
-            f.write("PFLOTRAN Input File Generation Summary\n")
-            f.write("=" * 40 + "\n\n")
-            f.write(f"Generation Date: {self.generation_timestamp.strftime('%Y-%m-%d %H:%M:%S')} (Local Time)\n")
+    def create_run_log(self, spinup_file: str, transient_file: str,
+                       upstream_file: str = None, downstream_file: str = None,
+                       copied_files: List[str] = None) -> None:
+        """Create a combined log file with arguments and run information."""
+        log_file = self.output_dir / 'generation.log'
+
+        with open(log_file, 'w') as f:
+            f.write("PFLOTRAN Generator Log\n")
+            f.write("=" * 50 + "\n\n")
+
+            # Generation info
+            f.write(f"Generated: {self.generation_timestamp.strftime('%Y-%m-%d %H:%M:%S')} (Local Time)\n")
             f.write(f"Output Directory: {self.output_dir.absolute()}\n\n")
-            
-            f.write("Configuration:\n")
-            f.write(f"  Simulation Year: {self.year}\n")
-            f.write(f"  Meander: {self.meander.upper()}\n")
-            f.write(f"  Grid Cells (nx): {self.nx}\n")
-            f.write(f"  Upstream Head: {self.upstream_h} m\n")
-            f.write(f"  Downstream Head: {self.downstream_h} m\n\n")
-            
-            # Show corrected DATUM calculation info
-            f.write("DATUM Calculation (CORRECTED):\n")
+
+            # Arguments section
+            f.write("Arguments\n")
+            f.write("-" * 50 + "\n")
+            f.write(f"  year:            {self.year}\n")
+            f.write(f"  meander:         {self.meander}\n")
+            f.write(f"  nx:              {self.nx}\n")
+            f.write(f"  upstream_h:      {self.upstream_h}\n")
+            f.write(f"  downstream_h:    {self.downstream_h}\n")
+            if upstream_file:
+                f.write(f"  upstream_file:   {upstream_file}\n")
+            if downstream_file:
+                f.write(f"  downstream_file: {downstream_file}\n")
+            f.write("\n")
+
+            # DATUM calculation info
+            f.write("DATUM Calculation\n")
+            f.write("-" * 50 + "\n")
             f.write(f"  First DATUM (ix=0): {self.upstream_h:.6f} m\n")
             if self.nx > 1:
                 f.write(f"  Last DATUM (ix={self.nx-1}): {self.downstream_h:.6f} m\n")
                 second_datum = self.upstream_h + (self.downstream_h - self.upstream_h) * (1 / (self.nx - 1))
                 f.write(f"  Second DATUM (ix=1): {second_datum:.6f} m\n")
             f.write(f"  Linear interpolation between upstream and downstream\n\n")
-            
-            f.write("Generated Files:\n")
-            f.write(f"  Spin-up: {spinup_file}\n")
-            f.write(f"  Transient: {transient_file}\n")
-            
-            if upstream_file:
-                f.write(f"  Upstream BC: {upstream_file}\n")
-            if downstream_file:
-                f.write(f"  Downstream BC: {downstream_file}\n")
-            
-            f.write("\nBoundary Condition Files:\n")
+
+            # Created files section
+            f.write("Created Files\n")
+            f.write("-" * 50 + "\n")
+            f.write(f"  {spinup_file}\n")
+            f.write(f"  {transient_file}\n")
+            f.write(f"  generation.log\n\n")
+
+            # Boundary condition files
+            f.write("Boundary Condition Files\n")
+            f.write("-" * 50 + "\n")
             f.write("  river_chem.txt\n")
             f.write("  river_transport_constraint.txt\n")
             f.write("  top_chem.txt\n")
             f.write("  top_transport_constraint.txt\n")
-            f.write("  trans-top-bcs/ (directory with BC files)\n")
-            
-            f.write("\nTemplate Files Used:\n")
+            f.write("  trans-top-bcs/ (directory with BC files)\n\n")
+
+            # Template files
+            f.write("Template Files Used\n")
+            f.write("-" * 50 + "\n")
             f.write("  TEMPLATE-constraint.txt\n")
             f.write("  TEMPLATE-chemistry.txt\n")
             f.write("  TEMPLATE-pflotran.in\n")
-            f.write("  TEMPLATE-pflotran-spin.in\n")
-            
+            f.write("  TEMPLATE-pflotran-spin.in\n\n")
+
+            # Copied files
             if copied_files:
-                f.write(f"\nCopied Reference Files:\n")
+                f.write("Copied Files\n")
+                f.write("-" * 50 + "\n")
                 for file in copied_files:
                     f.write(f"  {file}\n")
-        
-        print(f"📋 Run summary saved: {summary_file}")
+
+        print(f"📋 Log saved: {log_file}")
     
     def copy_required_files(self, upstream_file: str = None, downstream_file: str = None) -> None:
         """Copy required files to the output directory."""
@@ -834,33 +849,84 @@ class PFLOTRANGenerator:
 
 def main():
     """Main function with command line interface."""
+
+    # Configuration lookup tables based on year and meander
+    CONFIG = {
+        ('2019', 'mzt'): {
+            'nx': 108,
+            'upstream_h': 1.94,
+            'downstream_h': 1.66,
+            'upstream_file': 'hydro_us_2019_4-21_10-2-MZT.txt',
+            'downstream_file': 'hydro_dn_2019_4-21_10-2-MZT.txt'
+        },
+        ('2018', 'mzt'): {
+            'nx': 108,
+            'upstream_h': 1.84,
+            'downstream_h': 1.46,
+            'upstream_file': 'hydro_us_2018_4-1_10-31-MZT.txt',
+            'downstream_file': 'hydro_dn_2018_4-1_10-31-MZT.txt'
+        },
+        ('2019', 'mcp'): {
+            'nx': 122,
+            'upstream_h': 1.94,
+            'downstream_h': 0.91,
+            'upstream_file': 'hydro_mc_up_2019_3993h.txt',
+            'downstream_file': 'hydro_mc_dn_2019_3993h.txt'
+        },
+        ('2018', 'mcp'): {
+            'nx': 122,
+            'upstream_h': 1.84,
+            'downstream_h': 0.96,
+            'upstream_file': 'hydro_mc_us_2018_5131h-NODAM.txt',
+            'downstream_file': 'hydro_mc_dn_2018_5131h-NODAM.txt'
+        }
+    }
+
     parser = argparse.ArgumentParser(
         description='Generate PFLOTRAN input files for meander simulations',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__
     )
-    
-    parser.add_argument('--year', choices=['2018', '2019'], default='2019',
-                       help='Simulation year (default: 2019)')
-    parser.add_argument('--meander', choices=['mcp', 'mzt'], default='mzt',
-                       help='Meander type: mcp or mzt (default: mzt)')
-    parser.add_argument('--nx', type=int, default=108,
-                       help='Number of grid cells in x-direction (default: 108)')
-    parser.add_argument('--upstream_h', type=float, default=1.94,
-                       help='Upstream hydraulic head (default: 1.94)')
-    parser.add_argument('--downstream_h', type=float, default=1.66,
-                       help='Downstream hydraulic head (default: 1.66)')
-    parser.add_argument('--upstream_file', 
-                       default="hydro_us_2019_4-21_10-2-MZT.txt",
-                       help='Upstream hydrological data file')
-    parser.add_argument('--downstream_file',
-                       default="hydro_ds_2019_4-21_10-2-MZT.txt", 
-                       help='Downstream hydrological data file')
+
+    parser.add_argument('--year', type=str, required=True,
+                       help='Simulation year: 2018 or 2019')
+    parser.add_argument('--meander', type=str, required=True,
+                       help='Meander type: mcp or mzt')
     parser.add_argument('--test-datum', action='store_true',
                        help='Run DATUM generation test and exit')
-    
+
     args = parser.parse_args()
-    
+
+    # Validate year
+    if args.year not in ['2018', '2019']:
+        print(f"\nError: Invalid year '{args.year}'")
+        print("Acceptable options: 2018, 2019")
+        return 1
+
+    # Validate meander
+    if args.meander not in ['mcp', 'mzt']:
+        print(f"\nError: Invalid meander '{args.meander}'")
+        print("Acceptable options: mcp, mzt")
+        return 1
+
+    # Get configuration for this year/meander combination
+    config_key = (args.year, args.meander)
+    config = CONFIG[config_key]
+
+    # Set derived values
+    args.nx = config['nx']
+    args.upstream_h = config['upstream_h']
+    args.downstream_h = config['downstream_h']
+    args.upstream_file = config['upstream_file']
+    args.downstream_file = config['downstream_file']
+
+    print(f"\nConfiguration for {args.meander.upper()} {args.year}:")
+    print(f"  nx:              {args.nx}")
+    print(f"  upstream_h:      {args.upstream_h}")
+    print(f"  downstream_h:    {args.downstream_h}")
+    print(f"  upstream_file:   {args.upstream_file}")
+    print(f"  downstream_file: {args.downstream_file}")
+
     try:
         # Initialize generator
         generator = PFLOTRANGenerator(
@@ -870,7 +936,7 @@ def main():
             upstream_h=args.upstream_h,
             downstream_h=args.downstream_h
         )
-        
+
         # Test DATUM generation if requested
         if args.test_datum:
             generator.test_datum_generation()
@@ -888,22 +954,22 @@ def main():
         
         # Copy required files to output directory
         copied_files = generator.copy_required_files(
-            args.upstream_file, 
+            args.upstream_file,
             args.downstream_file
-        )
-        
-        # Create run summary
-        generator.create_run_summary(
-            spinup_file, transient_file, 
+        ) or []
+
+        # Create combined generation log
+        generator.create_run_log(
+            spinup_file, transient_file,
             args.upstream_file, args.downstream_file,
             copied_files
         )
-        
+
         print(f"\n✅ SUCCESS! Generated files in nested directory structure:")
         print(f"   📁 Directory: {generator.output_dir.absolute()}")
         print(f"   🔧 Spin-up: {spinup_file}")
         print(f"   ⚡ Transient: {transient_file}")
-        print(f"   📋 Summary: run_summary.txt")
+        print(f"   📋 Log: generation.log")
         if copied_files:
             print(f"   📄 Copied files: {', '.join(copied_files)}")
         print(f"\n🎯 Key Improvements in v2.2:")
