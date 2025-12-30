@@ -1,0 +1,53 @@
+PFLOTRAN Generator Log
+==================================================
+
+Generated: 2025-12-29 22:04:33 (Local Time)
+Output Directory: /Users/christiandewey/Code/dewey-etal_meanders/pflotran/simulations/mcp19/2025-12-29/2025-12-29_22-04-33
+
+Arguments
+--------------------------------------------------
+  year:            2019
+  meander:         mcp
+  nx:              122
+  upstream_h:      1.94
+  downstream_h:    0.91
+  upstream_file:   hydro_mc_up_2019_3993h.txt
+  downstream_file: hydro_mc_dn_2019_3993h.txt
+
+DATUM Calculation
+--------------------------------------------------
+  First DATUM (ix=0): 1.940000 m
+  Last DATUM (ix=121): 0.910000 m
+  Second DATUM (ix=1): 1.931488 m
+  Linear interpolation between upstream and downstream
+
+Created Files
+--------------------------------------------------
+  pflotran-mcp19_2025-12-29_22-04-33_spin.in
+  pflotran-mcp19_2025-12-29_22-04-33.in
+  generation.log
+
+Boundary Condition Files
+--------------------------------------------------
+  river_chem.txt
+  river_transport_constraint.txt
+  top_chem.txt
+  top_transport_constraint.txt
+  trans-top-bcs/ (directory with BC files)
+
+Template Files Used
+--------------------------------------------------
+  TEMPLATE-constraint.txt
+  TEMPLATE-chemistry.txt
+  TEMPLATE-pflotran.in
+  TEMPLATE-pflotran-spin.in
+
+Copied Files
+--------------------------------------------------
+  hanford-cd.dat
+  hydro_mc_up_2019_3993h.txt
+  hydro_mc_dn_2019_3993h.txt
+  TEMPLATE-constraint.txt
+  TEMPLATE-chemistry.txt
+  TEMPLATE-pflotran.in
+  TEMPLATE-pflotran-spin.in
