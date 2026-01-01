@@ -4,7 +4,10 @@
 - [ ] Sync changes between mzt19/ and mcp19/ versions
 - [ ] Verify hydro file paths for all year/meander combinations
 - [ ] Test all 4 configurations (mzt/2018, mzt/2019, mcp/2018, mcp/2019)
-- [ ] Move pflotran_generator.py outside of individual simulation folders & copy version into simulation folder 
+- [x] Move pflotran_generator.py outside of individual simulation folders & copy version into simulation folder 
+- [x] BUG: generator does not add create region file to spin (only adds the mz region file)
+- [x] BUG: generator does not update the template with the correct domain size (always loads the MZT domain -- 108 cells in y)
+- [x] BUG: generator loads 2019 hydro conditions for 2018 simulations -- may be issue with how template for input file is (not) modified 
 
 ## pflotran.py (PflotranProcessor)
 - [ ] Fix `plot_validation()` - verify mask indexing works correctly

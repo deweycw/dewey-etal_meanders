@@ -1,5 +1,5 @@
-! Generated 2026-01-01 12:21:00 (Local Time)
-! Output directory: /Users/christiandewey/Code/dewey-etal_meanders/pflotran/simulations/mzt18/2026-01-01/2026-01-01_12-21-00
+! Generated 2026-01-01 13:05:48 (Local Time)
+! Output directory: /Users/christiandewey/Code/dewey-etal_meanders/pflotran/simulations/mzt18/2026-01-01/2026-01-01_13-05-48
 ! Meander: MZT, Year: 2018
 
 #==================== SIMULATION ==================== 
@@ -14,7 +14,7 @@ SIMULATION
     /
   /
   RESTART
-    FILENAME pflotran-mzt18_2026-01-01_12-21-00_spin-restart.chk
+    FILENAME pflotran-mzt18_2026-01-01_13-05-48_spin-restart.chk
     RESET_TO_TIME_ZERO
   /
 END
@@ -481,7 +481,7 @@ REGION top_bc_reg_107
       LIQUID_PRESSURE seepage 
     /
     CYCLIC
-    DATUM FILE hydro_us_2018_4-1_10-31-MZT.txt
+    DATUM FILE hydro_us_2019_4-21_10-2-MZT.txt
     LIQUID_PRESSURE 101325.d0
   /
 
@@ -490,7 +490,7 @@ REGION top_bc_reg_107
       LIQUID_PRESSURE seepage
     /
     CYCLIC
-    DATUM FILE hydro_ds_2018_4-1_10-31-MZT.txt
+    DATUM FILE hydro_ds_2019_4-21_10-2-MZT.txt
     LIQUID_PRESSURE 101325.d0 
   /
   
@@ -5085,7 +5085,7 @@ CONSTRAINT  from_river_conc_2976
     H+          7.56  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.86e-03  T
+    Al+++       1.36e-06  T
     Ca++        1.07e-03  T
     Cl-         7.35e-06  T
     Fe++        1.00E-10  T
@@ -5111,7 +5111,7 @@ CONSTRAINT  from_river_conc_3000
     H+          7.58  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.17e-02  T
+    Al+++       1.17e-06  T
     Ca++        9.81e-04  T
     Cl-         7.66e-06  T
     Fe++        1.00E-10  T
@@ -5137,7 +5137,7 @@ CONSTRAINT  from_river_conc_3024
     H+          7.60  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.37e-03  T
+    Al+++       9.37e-07  T
     Ca++        1.01e-03  T
     Cl-         7.76e-06  T
     Fe++        1.00E-10  T
@@ -5163,7 +5163,7 @@ CONSTRAINT  from_river_conc_3048
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.01e-03  T
+    Al+++       7.01e-07  T
     Ca++        1.03e-03  T
     Cl-         7.87e-06  T
     Fe++        1.00E-10  T
@@ -5189,7 +5189,7 @@ CONSTRAINT  from_river_conc_3072
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.10e-03  T
+    Al+++       8.10e-07  T
     Ca++        1.02e-03  T
     Cl-         8.00e-06  T
     Fe++        1.00E-10  T
@@ -5215,7 +5215,7 @@ CONSTRAINT  from_river_conc_3096
     H+          7.66  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.20e-03  T
+    Al+++       9.20e-07  T
     Ca++        1.01e-03  T
     Cl-         8.14e-06  T
     Fe++        1.00E-10  T
@@ -5241,7 +5241,7 @@ CONSTRAINT  from_river_conc_3120
     H+          7.68  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.56e-03  T
+    Al+++       8.10e-07  T
     Ca++        1.01e-03  T
     Cl-         7.79e-06  T
     Fe++        1.00E-10  T
@@ -5267,7 +5267,7 @@ CONSTRAINT  from_river_conc_3144
     H+          7.68  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.11e+03  T
+    Al+++       7.01e-07  T
     Ca++        1.01e-03  T
     Cl-         7.45e-06  T
     Fe++        1.00E-10  T
@@ -5293,7 +5293,7 @@ CONSTRAINT  from_river_conc_3168
     H+          7.67  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.11e+03  T
+    Al+++       7.01e-07  T
     Ca++        1.03e-03  T
     Cl-         7.49e-06  T
     Fe++        1.00E-10  T
@@ -5319,7 +5319,7 @@ CONSTRAINT  from_river_conc_3192
     H+          7.67  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.11e+03  T
+    Al+++       7.01e-07  T
     Ca++        1.04e-03  T
     Cl-         7.53e-06  T
     Fe++        1.00E-10  T
@@ -5345,7 +5345,7 @@ CONSTRAINT  from_river_conc_3216
     H+          7.67  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.56e+03  T
+    Al+++       6.18e-07  T
     Ca++        1.08e-03  T
     Cl-         7.70e-06  T
     Fe++        1.00E-10  T
@@ -5371,7 +5371,7 @@ CONSTRAINT  from_river_conc_3240
     H+          7.67  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.34e-03  T
+    Al+++       5.34e-07  T
     Ca++        1.11e-03  T
     Cl-         7.87e-06  T
     Fe++        1.00E-10  T
@@ -5397,7 +5397,7 @@ CONSTRAINT  from_river_conc_3264
     H+          7.66  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.54e-03  T
+    Al+++       6.54e-07  T
     Ca++        1.10e-03  T
     Cl-         8.65e-06  T
     Fe++        1.00E-10  T
@@ -5423,7 +5423,7 @@ CONSTRAINT  from_river_conc_3288
     H+          7.66  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.74e-03  T
+    Al+++       7.74e-07  T
     Ca++        1.08e-03  T
     Cl-         9.43e-06  T
     Fe++        1.00E-10  T
@@ -5449,7 +5449,7 @@ CONSTRAINT  from_river_conc_3312
     H+          7.66  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.62e-03  T
+    Al+++       7.62e-07  T
     Ca++        1.07e-03  T
     Cl-         9.80e-06  T
     Fe++        1.00E-10  T
@@ -5475,7 +5475,7 @@ CONSTRAINT  from_river_conc_3336
     H+          7.65  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.50e-03  T
+    Al+++       7.49e-07  T
     Ca++        1.07e-03  T
     Cl-         1.02e-05  T
     Fe++        1.00E-10  T
@@ -5501,7 +5501,7 @@ CONSTRAINT  from_river_conc_3360
     H+          7.65  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.60e-03  T
+    Al+++       8.59e-07  T
     Ca++        1.05e-03  T
     Cl-         9.62e-06  T
     Fe++        1.00E-10  T
@@ -5527,7 +5527,7 @@ CONSTRAINT  from_river_conc_3384
     H+          7.65  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.70e-03  T
+    Al+++       9.70e-07  T
     Ca++        1.04e-03  T
     Cl-         9.07e-06  T
     Fe++        1.00E-10  T
@@ -5553,7 +5553,7 @@ CONSTRAINT  from_river_conc_3408
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.59e-03  T
+    Al+++       1.22e-06  T
     Ca++        1.10e-03  T
     Cl-         1.73e-05  T
     Fe++        1.00E-10  T
@@ -5579,7 +5579,7 @@ CONSTRAINT  from_river_conc_3432
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.48e-03  T
+    Al+++       1.48e-06  T
     Ca++        1.16e-03  T
     Cl-         2.56e-05  T
     Fe++        1.00E-10  T
@@ -5605,7 +5605,7 @@ CONSTRAINT  from_river_conc_3456
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.78e+03  T
+    Al+++       1.52e-06  T
     Ca++        1.03e-03  T
     Cl-         1.82e-05  T
     Fe++        1.00E-10  T
@@ -5631,7 +5631,7 @@ CONSTRAINT  from_river_conc_3480
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.56e+04  T
+    Al+++       1.56e-06  T
     Ca++        9.10e-04  T
     Cl-         1.09e-05  T
     Fe++        1.00E-10  T
@@ -5657,7 +5657,7 @@ CONSTRAINT  from_river_conc_3504
     H+          7.63  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.78e-03  T
+    Al+++       1.78e-06  T
     Ca++        1.15e-03  T
     Cl-         1.27e-05  T
     Fe++        1.00E-10  T
@@ -5709,7 +5709,7 @@ CONSTRAINT  from_river_conc_3552
     H+          7.63  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.11e-06  T
+    Al+++       9.90e-07  T
     Ca++        1.28e-03  T
     Cl-         9.62e-06  T
     Fe++        1.00E-10  T
@@ -5735,7 +5735,7 @@ CONSTRAINT  from_river_conc_3576
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.72e-06  T
+    Al+++       4.72e-07  T
     Ca++        1.26e-03  T
     Cl-         1.03e-05  T
     Fe++        1.00E-10  T
@@ -5761,7 +5761,7 @@ CONSTRAINT  from_river_conc_3600
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.69e-06  T
+    Al+++       8.69e-07  T
     Ca++        1.25e-03  T
     Cl-         9.58e-06  T
     Fe++        1.00E-10  T
@@ -5787,7 +5787,7 @@ CONSTRAINT  from_river_conc_3624
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.27e-05  T
+    Al+++       1.27e-06  T
     Ca++        1.23e-03  T
     Cl-         8.84e-06  T
     Fe++        1.00E-10  T
@@ -5813,7 +5813,7 @@ CONSTRAINT  from_river_conc_3648
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.86e-06  T
+    Al+++       1.17e-06  T
     Ca++        1.24e-03  T
     Cl-         8.75e-06  T
     Fe++        1.00E-10  T
@@ -5917,7 +5917,7 @@ CONSTRAINT  from_river_conc_3744
     H+          7.60  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.44e-06  T
+    Al+++       1.16e-06  T
     Ca++        1.27e-03  T
     Cl-         9.47e-06  T
     Fe++        1.00E-10  T
@@ -5943,7 +5943,7 @@ CONSTRAINT  from_river_conc_3768
     H+          7.60  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.51e-06  T
+    Al+++       9.51e-07  T
     Ca++        1.29e-03  T
     Cl-         9.12e-06  T
     Fe++        1.00E-10  T
@@ -5969,7 +5969,7 @@ CONSTRAINT  from_river_conc_3792
     H+          7.60  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.90e-06  T
+    Al+++       6.15e-07  T
     Ca++        1.29e-03  T
     Cl-         9.73e-06  T
     Fe++        1.00E-10  T
@@ -6281,7 +6281,7 @@ CONSTRAINT  from_river_conc_4080
     H+          7.56  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.89e-06  T
+    Al+++       3.23e-07  T
     Ca++        1.39e-03  T
     Cl-         1.09e-05  T
     Fe++        1.00E-10  T
@@ -6307,7 +6307,7 @@ CONSTRAINT  from_river_conc_4104
     H+          7.56  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.48e-06  T
+    Al+++       3.48e-07  T
     Ca++        1.38e-03  T
     Cl-         1.09e-05  T
     Fe++        1.00E-10  T
@@ -6333,7 +6333,7 @@ CONSTRAINT  from_river_conc_4128
     H+          7.56  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.18e-06  T
+    Al+++       4.18e-07  T
     Ca++        1.36e-03  T
     Cl-         1.42e-05  T
     Fe++        1.00E-10  T
@@ -6359,7 +6359,7 @@ CONSTRAINT  from_river_conc_4152
     H+          7.55  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.88e-06  T
+    Al+++       4.88e-07  T
     Ca++        1.34e-03  T
     Cl-         1.75e-05  T
     Fe++        1.00E-10  T
@@ -6385,7 +6385,7 @@ CONSTRAINT  from_river_conc_4176
     H+          7.55  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.76e-06  T
+    Al+++       6.76e-07  T
     Ca++        1.35e-03  T
     Cl-         1.61e-05  T
     Fe++        1.00E-10  T
@@ -6411,7 +6411,7 @@ CONSTRAINT  from_river_conc_4200
     H+          7.55  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.64e-06  T
+    Al+++       8.64e-07  T
     Ca++        1.37e-03  T
     Cl-         1.48e-05  T
     Fe++        1.00E-10  T
@@ -6437,7 +6437,7 @@ CONSTRAINT  from_river_conc_4224
     H+          7.54  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.88e-06  T
+    Al+++       8.88e-07  T
     Ca++        1.36e-03  T
     Cl-         1.45e-05  T
     Fe++        1.00E-10  T
@@ -6463,7 +6463,7 @@ CONSTRAINT  from_river_conc_4248
     H+          7.54  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.12e-06  T
+    Al+++       9.12e-07  T
     Ca++        1.36e-03  T
     Cl-         1.41e-05  T
     Fe++        1.00E-10  T
@@ -6489,7 +6489,7 @@ CONSTRAINT  from_river_conc_4272
     H+          7.54  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.73e-06  T
+    Al+++       6.27e-07  T
     Ca++        1.36e-03  T
     Cl-         1.41e-05  T
     Fe++        1.00E-10  T
@@ -6541,7 +6541,7 @@ CONSTRAINT  from_river_conc_4320
     H+          7.53  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.19e-06  T
+    Al+++       2.73e-07  T
     Ca++        1.30e-03  T
     Cl-         1.34e-05  T
     Fe++        1.00E-10  T
@@ -6567,7 +6567,7 @@ CONSTRAINT  from_river_conc_4344
     H+          7.53  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       2.04e-06  T
+    Al+++       2.03e-07  T
     Ca++        1.23e-03  T
     Cl-         1.28e-05  T
     Fe++        1.00E-10  T
@@ -6593,7 +6593,7 @@ CONSTRAINT  from_river_conc_4368
     H+          7.53  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.15e-06  T
+    Al+++       5.15e-07  T
     Ca++        1.22e-03  T
     Cl-         1.23e-05  T
     Fe++        1.00E-10  T
@@ -6619,7 +6619,7 @@ CONSTRAINT  from_river_conc_4392
     H+          7.52  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.26e-06  T
+    Al+++       8.26e-07  T
     Ca++        1.21e-03  T
     Cl-         1.18e-05  T
     Fe++        1.00E-10  T
@@ -6645,7 +6645,7 @@ CONSTRAINT  from_river_conc_4416
     H+          7.52  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.54e-06  T
+    Al+++       7.54e-07  T
     Ca++        1.13e-03  T
     Cl-         1.86e-05  T
     Fe++        1.00E-10  T
@@ -6671,7 +6671,7 @@ CONSTRAINT  from_river_conc_4440
     H+          7.52  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.82e-06  T
+    Al+++       6.81e-07  T
     Ca++        1.05e-03  T
     Cl-         2.55e-05  T
     Fe++        1.00E-10  T
@@ -6697,7 +6697,7 @@ CONSTRAINT  from_river_conc_4464
     H+          7.51  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.80e-06  T
+    Al+++       7.36e-07  T
     Ca++        1.06e-03  T
     Cl-         2.19e-05  T
     Fe++        1.00E-10  T
@@ -6801,7 +6801,7 @@ CONSTRAINT  from_river_conc_4560
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.69e-06  T
+    Al+++       5.85e-07  T
     Ca++        1.12e-03  T
     Cl-         1.70e-05  T
     Fe++        1.00E-10  T
@@ -6827,7 +6827,7 @@ CONSTRAINT  from_river_conc_4584
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.90e-06  T
+    Al+++       6.90e-07  T
     Ca++        1.11e-03  T
     Cl-         1.64e-05  T
     Fe++        1.00E-10  T
@@ -6853,7 +6853,7 @@ CONSTRAINT  from_river_conc_4608
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.20e-06  T
+    Al+++       5.20e-07  T
     Ca++        1.10e-03  T
     Cl-         1.57e-05  T
     Fe++        1.00E-10  T
@@ -6879,7 +6879,7 @@ CONSTRAINT  from_river_conc_4632
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.50e-06  T
+    Al+++       3.50e-07  T
     Ca++        1.08e-03  T
     Cl-         1.50e-05  T
     Fe++        1.00E-10  T
@@ -6905,7 +6905,7 @@ CONSTRAINT  from_river_conc_4656
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.92e-06  T
+    Al+++       3.47e-07  T
     Ca++        8.49e-04  T
     Cl-         1.49e-05  T
     Fe++        1.00E-10  T
@@ -10597,7 +10597,7 @@ CONSTRAINT  from_top_conc_2976
     H+          7.56  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.86e-03  T
+    Al+++       1.36e-06  T
     Ca++        1.07e-03  T
     Cl-         7.35e-06  T
     Fe++        1.00E-10  T
@@ -10623,7 +10623,7 @@ CONSTRAINT  from_top_conc_3000
     H+          7.58  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.17e-02  T
+    Al+++       1.17e-06  T
     Ca++        9.81e-04  T
     Cl-         7.66e-06  T
     Fe++        1.00E-10  T
@@ -10649,7 +10649,7 @@ CONSTRAINT  from_top_conc_3024
     H+          7.60  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.37e-03  T
+    Al+++       9.37e-07  T
     Ca++        1.01e-03  T
     Cl-         7.76e-06  T
     Fe++        1.00E-10  T
@@ -10675,7 +10675,7 @@ CONSTRAINT  from_top_conc_3048
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.01e-03  T
+    Al+++       7.01e-07  T
     Ca++        1.03e-03  T
     Cl-         7.87e-06  T
     Fe++        1.00E-10  T
@@ -10701,7 +10701,7 @@ CONSTRAINT  from_top_conc_3072
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.10e-03  T
+    Al+++       8.10e-07  T
     Ca++        1.02e-03  T
     Cl-         8.00e-06  T
     Fe++        1.00E-10  T
@@ -10727,7 +10727,7 @@ CONSTRAINT  from_top_conc_3096
     H+          7.66  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.20e-03  T
+    Al+++       9.20e-07  T
     Ca++        1.01e-03  T
     Cl-         8.14e-06  T
     Fe++        1.00E-10  T
@@ -10753,7 +10753,7 @@ CONSTRAINT  from_top_conc_3120
     H+          7.68  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.56e+03  T
+    Al+++       8.10e-07  T
     Ca++        1.01e-03  T
     Cl-         7.79e-06  T
     Fe++        1.00E-10  T
@@ -10779,7 +10779,7 @@ CONSTRAINT  from_top_conc_3144
     H+          7.68  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.11e+03  T
+    Al+++       7.01e-07  T
     Ca++        1.01e-03  T
     Cl-         7.45e-06  T
     Fe++        1.00E-10  T
@@ -10805,7 +10805,7 @@ CONSTRAINT  from_top_conc_3168
     H+          7.67  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.11e+03  T
+    Al+++       7.01e-07  T
     Ca++        1.03e-03  T
     Cl-         7.49e-06  T
     Fe++        1.00E-10  T
@@ -10831,7 +10831,7 @@ CONSTRAINT  from_top_conc_3192
     H+          7.67  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.11e+03  T
+    Al+++       7.01e-07  T
     Ca++        1.04e-03  T
     Cl-         7.53e-06  T
     Fe++        1.00E-10  T
@@ -10857,7 +10857,7 @@ CONSTRAINT  from_top_conc_3216
     H+          7.67  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.56e+03  T
+    Al+++       6.18e-07  T
     Ca++        1.08e-03  T
     Cl-         7.70e-06  T
     Fe++        1.00E-10  T
@@ -10883,7 +10883,7 @@ CONSTRAINT  from_top_conc_3240
     H+          7.67  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.34e-03  T
+    Al+++       5.34e-07  T
     Ca++        1.11e-03  T
     Cl-         7.87e-06  T
     Fe++        1.00E-10  T
@@ -10909,7 +10909,7 @@ CONSTRAINT  from_top_conc_3264
     H+          7.66  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.54e-03  T
+    Al+++       6.54e-07  T
     Ca++        1.10e-03  T
     Cl-         8.65e-06  T
     Fe++        1.00E-10  T
@@ -10935,7 +10935,7 @@ CONSTRAINT  from_top_conc_3288
     H+          7.66  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.74e-03  T
+    Al+++       7.74e-07  T
     Ca++        1.08e-03  T
     Cl-         9.43e-06  T
     Fe++        1.00E-10  T
@@ -10961,7 +10961,7 @@ CONSTRAINT  from_top_conc_3312
     H+          7.66  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.62e-03  T
+    Al+++       7.62e-07  T
     Ca++        1.07e-03  T
     Cl-         9.80e-06  T
     Fe++        1.00E-10  T
@@ -10987,7 +10987,7 @@ CONSTRAINT  from_top_conc_3336
     H+          7.65  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.50e-03  T
+    Al+++       7.49e-07  T
     Ca++        1.07e-03  T
     Cl-         1.02e-05  T
     Fe++        1.00E-10  T
@@ -11013,7 +11013,7 @@ CONSTRAINT  from_top_conc_3360
     H+          7.65  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.60e-03  T
+    Al+++       8.59e-07  T
     Ca++        1.05e-03  T
     Cl-         9.62e-06  T
     Fe++        1.00E-10  T
@@ -11039,7 +11039,7 @@ CONSTRAINT  from_top_conc_3384
     H+          7.65  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.70e-03  T
+    Al+++       9.70e-07  T
     Ca++        1.04e-03  T
     Cl-         9.07e-06  T
     Fe++        1.00E-10  T
@@ -11065,7 +11065,7 @@ CONSTRAINT  from_top_conc_3408
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.59e-03  T
+    Al+++       1.22e-06  T
     Ca++        1.10e-03  T
     Cl-         1.73e-05  T
     Fe++        1.00E-10  T
@@ -11091,7 +11091,7 @@ CONSTRAINT  from_top_conc_3432
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.48e-03  T
+    Al+++       1.48e-06  T
     Ca++        1.16e-03  T
     Cl-         2.56e-05  T
     Fe++        1.00E-10  T
@@ -11117,7 +11117,7 @@ CONSTRAINT  from_top_conc_3456
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.78e+03  T
+    Al+++       1.52e-06  T
     Ca++        1.03e-03  T
     Cl-         1.82e-05  T
     Fe++        1.00E-10  T
@@ -11143,7 +11143,7 @@ CONSTRAINT  from_top_conc_3480
     H+          7.64  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.56e+04  T
+    Al+++       1.56e-06  T
     Ca++        9.10e-04  T
     Cl-         1.09e-05  T
     Fe++        1.00E-10  T
@@ -11169,7 +11169,7 @@ CONSTRAINT  from_top_conc_3504
     H+          7.63  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.78e-03  T
+    Al+++       1.78e-06  T
     Ca++        1.15e-03  T
     Cl-         1.27e-05  T
     Fe++        1.00E-10  T
@@ -11221,7 +11221,7 @@ CONSTRAINT  from_top_conc_3552
     H+          7.63  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.11e-06  T
+    Al+++       9.90e-07  T
     Ca++        1.28e-03  T
     Cl-         9.62e-06  T
     Fe++        1.00E-10  T
@@ -11247,7 +11247,7 @@ CONSTRAINT  from_top_conc_3576
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.72e-06  T
+    Al+++       4.72e-07  T
     Ca++        1.26e-03  T
     Cl-         1.03e-05  T
     Fe++        1.00E-10  T
@@ -11273,7 +11273,7 @@ CONSTRAINT  from_top_conc_3600
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.69e-06  T
+    Al+++       8.69e-07  T
     Ca++        1.25e-03  T
     Cl-         9.58e-06  T
     Fe++        1.00E-10  T
@@ -11299,7 +11299,7 @@ CONSTRAINT  from_top_conc_3624
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.27e-05  T
+    Al+++       1.27e-06  T
     Ca++        1.23e-03  T
     Cl-         8.84e-06  T
     Fe++        1.00E-10  T
@@ -11325,7 +11325,7 @@ CONSTRAINT  from_top_conc_3648
     H+          7.62  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.86e-06  T
+    Al+++       1.17e-06  T
     Ca++        1.24e-03  T
     Cl-         8.75e-06  T
     Fe++        1.00E-10  T
@@ -11429,7 +11429,7 @@ CONSTRAINT  from_top_conc_3744
     H+          7.60  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.44e-06  T
+    Al+++       1.16e-06  T
     Ca++        1.27e-03  T
     Cl-         9.47e-06  T
     Fe++        1.00E-10  T
@@ -11455,7 +11455,7 @@ CONSTRAINT  from_top_conc_3768
     H+          7.60  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.51e-06  T
+    Al+++       9.51e-07  T
     Ca++        1.29e-03  T
     Cl-         9.12e-06  T
     Fe++        1.00E-10  T
@@ -11481,7 +11481,7 @@ CONSTRAINT  from_top_conc_3792
     H+          7.60  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.90e-06  T
+    Al+++       6.15e-07  T
     Ca++        1.29e-03  T
     Cl-         9.73e-06  T
     Fe++        1.00E-10  T
@@ -11793,7 +11793,7 @@ CONSTRAINT  from_top_conc_4080
     H+          7.56  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.89e-06  T
+    Al+++       3.23e-07  T
     Ca++        1.39e-03  T
     Cl-         1.09e-05  T
     Fe++        1.00E-10  T
@@ -11819,7 +11819,7 @@ CONSTRAINT  from_top_conc_4104
     H+          7.56  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.48e-06  T
+    Al+++       3.48e-07  T
     Ca++        1.38e-03  T
     Cl-         1.09e-05  T
     Fe++        1.00E-10  T
@@ -11845,7 +11845,7 @@ CONSTRAINT  from_top_conc_4128
     H+          7.56  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.18e-06  T
+    Al+++       4.18e-07  T
     Ca++        1.36e-03  T
     Cl-         1.42e-05  T
     Fe++        1.00E-10  T
@@ -11871,7 +11871,7 @@ CONSTRAINT  from_top_conc_4152
     H+          7.55  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.88e-06  T
+    Al+++       4.88e-07  T
     Ca++        1.34e-03  T
     Cl-         1.75e-05  T
     Fe++        1.00E-10  T
@@ -11897,7 +11897,7 @@ CONSTRAINT  from_top_conc_4176
     H+          7.55  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.76e-06  T
+    Al+++       6.76e-07  T
     Ca++        1.35e-03  T
     Cl-         1.61e-05  T
     Fe++        1.00E-10  T
@@ -11923,7 +11923,7 @@ CONSTRAINT  from_top_conc_4200
     H+          7.55  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.64e-06  T
+    Al+++       8.64e-07  T
     Ca++        1.37e-03  T
     Cl-         1.48e-05  T
     Fe++        1.00E-10  T
@@ -11949,7 +11949,7 @@ CONSTRAINT  from_top_conc_4224
     H+          7.54  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.88e-06  T
+    Al+++       8.88e-07  T
     Ca++        1.36e-03  T
     Cl-         1.45e-05  T
     Fe++        1.00E-10  T
@@ -11975,7 +11975,7 @@ CONSTRAINT  from_top_conc_4248
     H+          7.54  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       9.12e-06  T
+    Al+++       9.12e-07  T
     Ca++        1.36e-03  T
     Cl-         1.41e-05  T
     Fe++        1.00E-10  T
@@ -12001,7 +12001,7 @@ CONSTRAINT  from_top_conc_4272
     H+          7.54  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       4.73e-06  T
+    Al+++       6.27e-07  T
     Ca++        1.36e-03  T
     Cl-         1.41e-05  T
     Fe++        1.00E-10  T
@@ -12053,7 +12053,7 @@ CONSTRAINT  from_top_conc_4320
     H+          7.53  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.19e-06  T
+    Al+++       2.73e-07  T
     Ca++        1.30e-03  T
     Cl-         1.34e-05  T
     Fe++        1.00E-10  T
@@ -12079,7 +12079,7 @@ CONSTRAINT  from_top_conc_4344
     H+          7.53  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       2.04e-06  T
+    Al+++       2.03e-07  T
     Ca++        1.23e-03  T
     Cl-         1.28e-05  T
     Fe++        1.00E-10  T
@@ -12105,7 +12105,7 @@ CONSTRAINT  from_top_conc_4368
     H+          7.53  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.15e-06  T
+    Al+++       5.15e-07  T
     Ca++        1.22e-03  T
     Cl-         1.23e-05  T
     Fe++        1.00E-10  T
@@ -12131,7 +12131,7 @@ CONSTRAINT  from_top_conc_4392
     H+          7.52  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       8.26e-06  T
+    Al+++       8.26e-07  T
     Ca++        1.21e-03  T
     Cl-         1.18e-05  T
     Fe++        1.00E-10  T
@@ -12157,7 +12157,7 @@ CONSTRAINT  from_top_conc_4416
     H+          7.52  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       7.54e-06  T
+    Al+++       7.54e-07  T
     Ca++        1.13e-03  T
     Cl-         1.86e-05  T
     Fe++        1.00E-10  T
@@ -12183,7 +12183,7 @@ CONSTRAINT  from_top_conc_4440
     H+          7.52  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.82e-06  T
+    Al+++       6.81e-07  T
     Ca++        1.05e-03  T
     Cl-         2.55e-05  T
     Fe++        1.00E-10  T
@@ -12209,7 +12209,7 @@ CONSTRAINT  from_top_conc_4464
     H+          7.51  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.80e-06  T
+    Al+++       7.36e-07  T
     Ca++        1.06e-03  T
     Cl-         2.19e-05  T
     Fe++        1.00E-10  T
@@ -12313,7 +12313,7 @@ CONSTRAINT  from_top_conc_4560
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.69e-06  T
+    Al+++       5.85e-07  T
     Ca++        1.12e-03  T
     Cl-         1.70e-05  T
     Fe++        1.00E-10  T
@@ -12339,7 +12339,7 @@ CONSTRAINT  from_top_conc_4584
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       6.90e-06  T
+    Al+++       6.90e-07  T
     Ca++        1.11e-03  T
     Cl-         1.64e-05  T
     Fe++        1.00E-10  T
@@ -12365,7 +12365,7 @@ CONSTRAINT  from_top_conc_4608
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       5.20e-06  T
+    Al+++       5.20e-07  T
     Ca++        1.10e-03  T
     Cl-         1.57e-05  T
     Fe++        1.00E-10  T
@@ -12391,7 +12391,7 @@ CONSTRAINT  from_top_conc_4632
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       3.50e-06  T
+    Al+++       3.50e-07  T
     Ca++        1.08e-03  T
     Cl-         1.50e-05  T
     Fe++        1.00E-10  T
@@ -12417,7 +12417,7 @@ CONSTRAINT  from_top_conc_4656
     H+          7.50  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.92e-06  T
+    Al+++       3.47e-07  T
     Ca++        8.49e-04  T
     Cl-         1.49e-05  T
     Fe++        1.00E-10  T

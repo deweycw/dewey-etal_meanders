@@ -459,16 +459,53 @@ class PFLOTRANGenerator:
                     
                     f.write(f'{i:.4E}\t{0:.4E}\t{0:.4E}\t{hx:.4E}\n')
     
-    def write_regions_block(self) -> str:
-        """Generate regions block."""
-        # Choose grid file based on meander type
+    def _get_grid_file(self) -> str:
+        """Get the correct grid file path based on meander type."""
         if self.meander == 'mzt':
-            grid_file = "../../xxgrid010-mz-cxc-top.h5"
+            return "../../xxgrid010-mz-cxc-top.h5"
         elif self.meander == 'mcp':
-            grid_file = "../../xxgrid010-mc-cxc-top.h5"
+            return "../../xxgrid010-mc-cxc-top.h5"
         else:
             raise ValueError(f"Unknown meander type: {self.meander}")
-        
+
+    def _update_strata_block(self, content: List[str]) -> List[str]:
+        """Update the STRATA block with the correct grid file for the meander type."""
+        grid_file = self._get_grid_file()
+        updated_content = []
+        i = 0
+
+        while i < len(content):
+            line = content[i]
+
+            # Check if this is the start of a STRATA block
+            if line.strip() == 'STRATA':
+                # Add the STRATA line
+                updated_content.append(line)
+                i += 1
+
+                # Replace the FILE line with the correct grid file
+                while i < len(content):
+                    inner_line = content[i]
+                    if inner_line.strip().startswith('FILE'):
+                        # Replace with correct grid file, preserving indentation
+                        indent = len(inner_line) - len(inner_line.lstrip())
+                        updated_content.append(' ' * indent + f'FILE {grid_file}\n')
+                    elif inner_line.strip() == 'END':
+                        updated_content.append(inner_line)
+                        break
+                    else:
+                        updated_content.append(inner_line)
+                    i += 1
+            else:
+                updated_content.append(line)
+            i += 1
+
+        return updated_content
+
+    def write_regions_block(self) -> str:
+        """Generate regions block."""
+        grid_file = self._get_grid_file()
+
         regions = []
         for ix in range(self.nx):
             regions.append(f"\nREGION top_bc_reg_{ix}\n  FILE {grid_file}\n/")
@@ -553,7 +590,10 @@ class PFLOTRANGenerator:
         # Read template and split into chunks
         with open(template_file, 'r') as f:
             template_content = f.readlines()
-        
+
+        # Update STRATA block with correct grid file for this meander
+        template_content = self._update_strata_block(template_content)
+
         chunks = self._split_template_with_chemistry(template_content)
         
         # Write final file to output directory

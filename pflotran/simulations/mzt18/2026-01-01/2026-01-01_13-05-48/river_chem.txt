@@ -1,0 +1,5512 @@
+
+CONSTRAINT  from_river_conc_0
+  CONCENTRATIONS 
+    H+          7.60  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.41e-06  T
+    Ca++        1.22e-03  T
+    Cl-         2.05e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.15e-03  T
+    HS-         1.00e-7   T
+    K+          2.07e-05  T
+    Mg++        3.08e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.15e-05  T
+    NO3-        2.07e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.04e-05  T
+    SO4--       5.76e-04  T
+    SOC(aq)     1.37e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_24
+  CONCENTRATIONS 
+    H+          7.61  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.19e-06  T
+    Ca++        1.23e-03  T
+    Cl-         2.12e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.18e-03  T
+    HS-         1.00e-7   T
+    K+          2.06e-05  T
+    Mg++        3.10e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.19e-05  T
+    NO3-        3.91e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.06e-05  T
+    SO4--       5.68e-04  T
+    SOC(aq)     1.38e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_48
+  CONCENTRATIONS 
+    H+          7.62  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.68e-07  T
+    Ca++        1.24e-03  T
+    Cl-         2.19e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.22e-03  T
+    HS-         1.00e-7   T
+    K+          2.04e-05  T
+    Mg++        3.12e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.22e-05  T
+    NO3-        5.74e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.09e-05  T
+    SO4--       5.60e-04  T
+    SOC(aq)     1.38e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_72
+  CONCENTRATIONS 
+    H+          7.63  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.45e-07  T
+    Ca++        1.25e-03  T
+    Cl-         2.26e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.25e-03  T
+    HS-         1.00e-7   T
+    K+          2.03e-05  T
+    Mg++        3.15e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.25e-05  T
+    NO3-        7.58e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.12e-05  T
+    SO4--       5.51e-04  T
+    SOC(aq)     1.38e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_96
+  CONCENTRATIONS 
+    H+          7.64  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.61e-07  T
+    Ca++        1.22e-03  T
+    Cl-         2.92e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.22e-03  T
+    HS-         1.00e-7   T
+    K+          1.96e-05  T
+    Mg++        3.11e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.35e-05  T
+    NO3-        5.05e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.06e-05  T
+    SO4--       5.47e-04  T
+    SOC(aq)     1.42e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_120
+  CONCENTRATIONS 
+    H+          7.65  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.77e-07  T
+    Ca++        1.20e-03  T
+    Cl-         3.58e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.19e-03  T
+    HS-         1.00e-7   T
+    K+          1.90e-05  T
+    Mg++        3.06e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.44e-05  T
+    NO3-        2.53e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.01e-05  T
+    SO4--       5.44e-04  T
+    SOC(aq)     1.47e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_144
+  CONCENTRATIONS 
+    H+          7.66  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.93e-07  T
+    Ca++        1.18e-03  T
+    Cl-         4.24e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.15e-03  T
+    HS-         1.00e-7   T
+    K+          1.83e-05  T
+    Mg++        3.02e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.53e-05  T
+    NO3-        2.53e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.96e-05  T
+    SO4--       5.40e-04  T
+    SOC(aq)     1.52e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_168
+  CONCENTRATIONS 
+    H+          7.67  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.91e-07  T
+    Ca++        1.16e-03  T
+    Cl-         4.85e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.91e-05  T
+    Mg++        3.01e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.62e-05  T
+    NO3-        1.11e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.97e-05  T
+    SO4--       5.20e-04  T
+    SOC(aq)     1.58e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_192
+  CONCENTRATIONS 
+    H+          7.68  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.89e-07  T
+    Ca++        1.14e-03  T
+    Cl-         5.47e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.11e-03  T
+    HS-         1.00e-7   T
+    K+          1.98e-05  T
+    Mg++        2.99e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.71e-05  T
+    NO3-        2.22e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.98e-05  T
+    SO4--       4.99e-04  T
+    SOC(aq)     1.65e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_216
+  CONCENTRATIONS 
+    H+          7.69  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.88e-07  T
+    Ca++        1.12e-03  T
+    Cl-         6.08e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.09e-03  T
+    HS-         1.00e-7   T
+    K+          2.06e-05  T
+    Mg++        2.97e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.80e-05  T
+    NO3-        3.32e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.99e-05  T
+    SO4--       4.79e-04  T
+    SOC(aq)     1.72e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_240
+  CONCENTRATIONS 
+    H+          7.70  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.91e-07  T
+    Ca++        1.12e-03  T
+    Cl-         6.11e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.09e-03  T
+    HS-         1.00e-7   T
+    K+          2.00e-05  T
+    Mg++        2.95e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.75e-05  T
+    NO3-        2.94e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.01e-05  T
+    SO4--       4.73e-04  T
+    SOC(aq)     1.69e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_264
+  CONCENTRATIONS 
+    H+          7.71  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.94e-07  T
+    Ca++        1.12e-03  T
+    Cl-         6.15e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.10e-03  T
+    HS-         1.00e-7   T
+    K+          1.95e-05  T
+    Mg++        2.94e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.70e-05  T
+    NO3-        2.55e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.02e-05  T
+    SO4--       4.67e-04  T
+    SOC(aq)     1.67e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_288
+  CONCENTRATIONS 
+    H+          7.72  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.97e-07  T
+    Ca++        1.12e-03  T
+    Cl-         6.18e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.10e-03  T
+    HS-         1.00e-7   T
+    K+          1.90e-05  T
+    Mg++        2.93e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.65e-05  T
+    NO3-        2.16e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.04e-05  T
+    SO4--       4.60e-04  T
+    SOC(aq)     1.64e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_312
+  CONCENTRATIONS 
+    H+          7.73  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.87e-07  T
+    Ca++        1.14e-03  T
+    Cl-         5.84e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.86e-05  T
+    Mg++        2.91e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.57e-05  T
+    NO3-        2.39e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.06e-05  T
+    SO4--       4.69e-04  T
+    SOC(aq)     1.60e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_336
+  CONCENTRATIONS 
+    H+          7.74  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.78e-07  T
+    Ca++        1.16e-03  T
+    Cl-         5.51e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.16e-03  T
+    HS-         1.00e-7   T
+    K+          1.82e-05  T
+    Mg++        2.90e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.49e-05  T
+    NO3-        2.63e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.08e-05  T
+    SO4--       4.77e-04  T
+    SOC(aq)     1.55e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_360
+  CONCENTRATIONS 
+    H+          7.75  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.68e-07  T
+    Ca++        1.18e-03  T
+    Cl-         5.17e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.19e-03  T
+    HS-         1.00e-7   T
+    K+          1.77e-05  T
+    Mg++        2.89e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.41e-05  T
+    NO3-        2.86e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.10e-05  T
+    SO4--       4.86e-04  T
+    SOC(aq)     1.51e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_384
+  CONCENTRATIONS 
+    H+          7.77  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       5.86e-07  T
+    Ca++        1.28e-03  T
+    Cl-         6.51e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.43e-03  T
+    HS-         1.00e-7   T
+    K+          1.98e-05  T
+    Mg++        3.31e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         9.65e-05  T
+    NO3-        1.50e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.25e-05  T
+    SO4--       4.94e-04  T
+    SOC(aq)     1.56e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_408
+  CONCENTRATIONS 
+    H+          7.78  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       4.04e-07  T
+    Ca++        1.39e-03  T
+    Cl-         7.85e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.67e-03  T
+    HS-         1.00e-7   T
+    K+          2.18e-05  T
+    Mg++        3.72e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         1.09e-04  T
+    NO3-        1.33e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.40e-05  T
+    SO4--       5.02e-04  T
+    SOC(aq)     1.62e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_432
+  CONCENTRATIONS 
+    H+          7.79  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.52e-07  T
+    Ca++        1.39e-03  T
+    Cl-         6.56e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.62e-03  T
+    HS-         1.00e-7   T
+    K+          2.11e-05  T
+    Mg++        3.70e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         1.06e-04  T
+    NO3-        2.13e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.41e-05  T
+    SO4--       5.06e-04  T
+    SOC(aq)     1.48e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_456
+  CONCENTRATIONS 
+    H+          7.80  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.00e-07  T
+    Ca++        1.39e-03  T
+    Cl-         5.26e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.57e-03  T
+    HS-         1.00e-7   T
+    K+          2.03e-05  T
+    Mg++        3.68e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         1.02e-04  T
+    NO3-        2.93e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.41e-05  T
+    SO4--       5.11e-04  T
+    SOC(aq)     1.35e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_480
+  CONCENTRATIONS 
+    H+          7.81  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.36e-07  T
+    Ca++        1.42e-03  T
+    Cl-         6.09e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.58e-03  T
+    HS-         1.00e-7   T
+    K+          2.06e-05  T
+    Mg++        3.78e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         1.10e-04  T
+    NO3-        2.53e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.49e-05  T
+    SO4--       5.02e-04  T
+    SOC(aq)     1.37e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_504
+  CONCENTRATIONS 
+    H+          7.82  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.72e-07  T
+    Ca++        1.44e-03  T
+    Cl-         6.92e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.59e-03  T
+    HS-         1.00e-7   T
+    K+          2.09e-05  T
+    Mg++        3.88e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         1.18e-04  T
+    NO3-        4.77e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.57e-05  T
+    SO4--       4.93e-04  T
+    SOC(aq)     1.39e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_528
+  CONCENTRATIONS 
+    H+          7.83  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.96e-07  T
+    Ca++        1.35e-03  T
+    Cl-         4.92e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.43e-03  T
+    HS-         1.00e-7   T
+    K+          1.96e-05  T
+    Mg++        3.56e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         1.03e-04  T
+    NO3-        2.41e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.40e-05  T
+    SO4--       4.65e-04  T
+    SOC(aq)     1.60e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_552
+  CONCENTRATIONS 
+    H+          7.84  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.21e-07  T
+    Ca++        1.26e-03  T
+    Cl-         2.92e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.27e-03  T
+    HS-         1.00e-7   T
+    K+          1.83e-05  T
+    Mg++        3.25e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.84e-05  T
+    NO3-        4.34e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.23e-05  T
+    SO4--       4.36e-04  T
+    SOC(aq)     1.80e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_576
+  CONCENTRATIONS 
+    H+          7.85  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.24e-07  T
+    Ca++        1.21e-03  T
+    Cl-         2.92e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.20e-03  T
+    HS-         1.00e-7   T
+    K+          1.76e-05  T
+    Mg++        3.07e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.34e-05  T
+    NO3-        2.17e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.12e-05  T
+    SO4--       4.12e-04  T
+    SOC(aq)     1.74e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_600
+  CONCENTRATIONS 
+    H+          7.86  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.27e-07  T
+    Ca++        1.15e-03  T
+    Cl-         2.93e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.14e-03  T
+    HS-         1.00e-7   T
+    K+          1.69e-05  T
+    Mg++        2.89e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.85e-05  T
+    NO3-        2.17e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.00e-05  T
+    SO4--       3.88e-04  T
+    SOC(aq)     1.67e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_624
+  CONCENTRATIONS 
+    H+          7.87  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.53e-07  T
+    Ca++        1.12e-03  T
+    Cl-         2.90e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.06e-03  T
+    HS-         1.00e-7   T
+    K+          1.69e-05  T
+    Mg++        2.81e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.64e-05  T
+    NO3-        7.51e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.02e-05  T
+    SO4--       3.61e-04  T
+    SOC(aq)     1.83e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_648
+  CONCENTRATIONS 
+    H+          7.88  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.79e-07  T
+    Ca++        1.09e-03  T
+    Cl-         2.87e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.97e-03  T
+    HS-         1.00e-7   T
+    K+          1.69e-05  T
+    Mg++        2.73e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.43e-05  T
+    NO3-        1.50e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.04e-05  T
+    SO4--       3.34e-04  T
+    SOC(aq)     1.99e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_672
+  CONCENTRATIONS 
+    H+          7.89  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.05e-06  T
+    Ca++        1.08e-03  T
+    Cl-         3.02e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.66e-05  T
+    Mg++        2.70e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.39e-05  T
+    NO3-        2.93e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.10e-05  T
+    SO4--       3.22e-04  T
+    SOC(aq)     1.94e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_696
+  CONCENTRATIONS 
+    H+          7.90  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.22e-06  T
+    Ca++        1.06e-03  T
+    Cl-         3.16e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.93e-03  T
+    HS-         1.00e-7   T
+    K+          1.64e-05  T
+    Mg++        2.67e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.36e-05  T
+    NO3-        5.71e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.16e-05  T
+    SO4--       3.11e-04  T
+    SOC(aq)     1.89e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_720
+  CONCENTRATIONS 
+    H+          7.91  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.52e-06  T
+    Ca++        1.08e-03  T
+    Cl-         3.16e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.99e-03  T
+    HS-         1.00e-7   T
+    K+          1.58e-05  T
+    Mg++        2.70e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.51e-05  T
+    NO3-        2.89e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.15e-05  T
+    SO4--       3.13e-04  T
+    SOC(aq)     1.81e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_744
+  CONCENTRATIONS 
+    H+          7.92  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.83e-06  T
+    Ca++        1.11e-03  T
+    Cl-         3.17e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.05e-03  T
+    HS-         1.00e-7   T
+    K+          1.52e-05  T
+    Mg++        2.74e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.65e-05  T
+    NO3-        6.82e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.14e-05  T
+    SO4--       3.14e-04  T
+    SOC(aq)     1.74e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_768
+  CONCENTRATIONS 
+    H+          7.93  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.41e-06  T
+    Ca++        1.15e-03  T
+    Cl-         3.28e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.11e-03  T
+    HS-         1.00e-7   T
+    K+          1.53e-05  T
+    Mg++        2.82e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.01e-05  T
+    NO3-        1.30e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.21e-05  T
+    SO4--       3.25e-04  T
+    SOC(aq)     1.66e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_792
+  CONCENTRATIONS 
+    H+          7.94  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.94e-07  T
+    Ca++        1.19e-03  T
+    Cl-         3.40e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.17e-03  T
+    HS-         1.00e-7   T
+    K+          1.53e-05  T
+    Mg++        2.90e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.37e-05  T
+    NO3-        1.92e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.27e-05  T
+    SO4--       3.35e-04  T
+    SOC(aq)     1.59e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_816
+  CONCENTRATIONS 
+    H+          7.95  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.10e-06  T
+    Ca++        1.12e-03  T
+    Cl-         3.17e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.04e-03  T
+    HS-         1.00e-7   T
+    K+          1.52e-05  T
+    Mg++        2.74e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.00e-05  T
+    NO3-        1.61e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.18e-05  T
+    SO4--       3.21e-04  T
+    SOC(aq)     1.74e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_840
+  CONCENTRATIONS 
+    H+          7.96  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.21e-06  T
+    Ca++        1.05e-03  T
+    Cl-         2.94e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.92e-03  T
+    HS-         1.00e-7   T
+    K+          1.51e-05  T
+    Mg++        2.58e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.64e-05  T
+    NO3-        3.03e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.08e-05  T
+    SO4--       3.06e-04  T
+    SOC(aq)     1.88e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_864
+  CONCENTRATIONS 
+    H+          7.97  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.35e-06  T
+    Ca++        1.01e-03  T
+    Cl-         2.70e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.85e-03  T
+    HS-         1.00e-7   T
+    K+          1.48e-05  T
+    Mg++        2.49e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.15e-05  T
+    NO3-        3.24e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.03e-05  T
+    SO4--       2.95e-04  T
+    SOC(aq)     1.88e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_888
+  CONCENTRATIONS 
+    H+          7.98  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.48e-06  T
+    Ca++        9.74e-04  T
+    Cl-         2.45e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.78e-03  T
+    HS-         1.00e-7   T
+    K+          1.46e-05  T
+    Mg++        2.41e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.67e-05  T
+    NO3-        3.46e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.97e-05  T
+    SO4--       2.83e-04  T
+    SOC(aq)     1.88e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_912
+  CONCENTRATIONS 
+    H+          7.99  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.28e-06  T
+    Ca++        9.45e-04  T
+    Cl-         2.11e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.73e-03  T
+    HS-         1.00e-7   T
+    K+          1.44e-05  T
+    Mg++        2.33e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.36e-05  T
+    NO3-        1.77e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.87e-05  T
+    SO4--       2.56e-04  T
+    SOC(aq)     1.85e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_936
+  CONCENTRATIONS 
+    H+          8.00  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.09e-06  T
+    Ca++        9.15e-04  T
+    Cl-         1.77e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.67e-03  T
+    HS-         1.00e-7   T
+    K+          1.42e-05  T
+    Mg++        2.24e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.06e-05  T
+    NO3-        8.18e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.77e-05  T
+    SO4--       2.29e-04  T
+    SOC(aq)     1.81e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_960
+  CONCENTRATIONS 
+    H+          8.01  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.03e-06  T
+    Ca++        9.03e-04  T
+    Cl-         1.69e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.66e-03  T
+    HS-         1.00e-7   T
+    K+          1.40e-05  T
+    Mg++        2.20e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.89e-05  T
+    NO3-        9.12e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.73e-05  T
+    SO4--       2.33e-04  T
+    SOC(aq)     1.80e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_984
+  CONCENTRATIONS 
+    H+          8.02  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.78e-07  T
+    Ca++        8.92e-04  T
+    Cl-         1.60e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.65e-03  T
+    HS-         1.00e-7   T
+    K+          1.38e-05  T
+    Mg++        2.16e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.73e-05  T
+    NO3-        1.74e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.68e-05  T
+    SO4--       2.36e-04  T
+    SOC(aq)     1.78e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1008
+  CONCENTRATIONS 
+    H+          8.03  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.19e-06  T
+    Ca++        8.94e-04  T
+    Cl-         1.53e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.65e-03  T
+    HS-         1.00e-7   T
+    K+          1.36e-05  T
+    Mg++        2.18e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.82e-05  T
+    NO3-        3.17e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.69e-05  T
+    SO4--       2.40e-04  T
+    SOC(aq)     1.70e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1032
+  CONCENTRATIONS 
+    H+          8.04  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.41e-06  T
+    Ca++        8.97e-04  T
+    Cl-         1.46e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.66e-03  T
+    HS-         1.00e-7   T
+    K+          1.33e-05  T
+    Mg++        2.19e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.90e-05  T
+    NO3-        4.60e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.70e-05  T
+    SO4--       2.43e-04  T
+    SOC(aq)     1.62e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1056
+  CONCENTRATIONS 
+    H+          8.05  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.20e-06  T
+    Ca++        8.75e-04  T
+    Cl-         1.34e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.61e-03  T
+    HS-         1.00e-7   T
+    K+          1.32e-05  T
+    Mg++        2.13e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.12e-05  T
+    NO3-        2.30e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.55e-05  T
+    SO4--       2.35e-04  T
+    SOC(aq)     1.66e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1080
+  CONCENTRATIONS 
+    H+          8.07  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.93e-07  T
+    Ca++        8.54e-04  T
+    Cl-         1.22e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.57e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.06e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.33e-05  T
+    NO3-        2.30e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.41e-05  T
+    SO4--       2.26e-04  T
+    SOC(aq)     1.69e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1104
+  CONCENTRATIONS 
+    H+          8.08  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.90e-07  T
+    Ca++        8.47e-04  T
+    Cl-         1.16e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.54e-03  T
+    HS-         1.00e-7   T
+    K+          1.31e-05  T
+    Mg++        2.03e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.61e-05  T
+    NO3-        8.63e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.38e-05  T
+    SO4--       2.19e-04  T
+    SOC(aq)     1.59e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1128
+  CONCENTRATIONS 
+    H+          8.09  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.87e-07  T
+    Ca++        8.39e-04  T
+    Cl-         1.09e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.52e-03  T
+    HS-         1.00e-7   T
+    K+          1.31e-05  T
+    Mg++        2.01e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.88e-05  T
+    NO3-        1.73e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.35e-05  T
+    SO4--       2.11e-04  T
+    SOC(aq)     1.49e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1152
+  CONCENTRATIONS 
+    H+          8.10  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.63e-07  T
+    Ca++        8.54e-04  T
+    Cl-         1.09e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.55e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.01e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.98e-05  T
+    NO3-        9.24e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.33e-05  T
+    SO4--       2.21e-04  T
+    SOC(aq)     1.53e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1176
+  CONCENTRATIONS 
+    H+          8.11  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.39e-07  T
+    Ca++        8.69e-04  T
+    Cl-         1.08e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.58e-03  T
+    HS-         1.00e-7   T
+    K+          1.29e-05  T
+    Mg++        2.02e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.07e-05  T
+    NO3-        1.21e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.31e-05  T
+    SO4--       2.31e-04  T
+    SOC(aq)     1.56e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1200
+  CONCENTRATIONS 
+    H+          8.12  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.08e-06  T
+    Ca++        8.62e-04  T
+    Cl-         1.07e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.57e-03  T
+    HS-         1.00e-7   T
+    K+          1.26e-05  T
+    Mg++        1.98e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.15e-05  T
+    NO3-        7.39e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.25e-05  T
+    SO4--       2.38e-04  T
+    SOC(aq)     1.51e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1224
+  CONCENTRATIONS 
+    H+          8.13  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.23e-06  T
+    Ca++        8.55e-04  T
+    Cl-         1.05e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.56e-03  T
+    HS-         1.00e-7   T
+    K+          1.24e-05  T
+    Mg++        1.93e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.23e-05  T
+    NO3-        2.66e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.20e-05  T
+    SO4--       2.45e-04  T
+    SOC(aq)     1.47e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1248
+  CONCENTRATIONS 
+    H+          8.14  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.19e-06  T
+    Ca++        8.51e-04  T
+    Cl-         9.81e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.53e-03  T
+    HS-         1.00e-7   T
+    K+          1.25e-05  T
+    Mg++        1.93e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.05e-05  T
+    NO3-        1.33e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.17e-05  T
+    SO4--       2.38e-04  T
+    SOC(aq)     1.34e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1272
+  CONCENTRATIONS 
+    H+          8.15  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.15e-06  T
+    Ca++        8.47e-04  T
+    Cl-         9.11e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.49e-03  T
+    HS-         1.00e-7   T
+    K+          1.26e-05  T
+    Mg++        1.92e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.87e-05  T
+    NO3-        1.33e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.15e-05  T
+    SO4--       2.30e-04  T
+    SOC(aq)     1.22e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1296
+  CONCENTRATIONS 
+    H+          8.16  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.14e-06  T
+    Ca++        8.26e-04  T
+    Cl-         8.59e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.46e-03  T
+    HS-         1.00e-7   T
+    K+          1.26e-05  T
+    Mg++        1.86e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.80e-05  T
+    NO3-        1.33e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.10e-05  T
+    SO4--       2.27e-04  T
+    SOC(aq)     1.34e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1320
+  CONCENTRATIONS 
+    H+          8.17  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.14e-06  T
+    Ca++        8.04e-04  T
+    Cl-         8.07e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.42e-03  T
+    HS-         1.00e-7   T
+    K+          1.26e-05  T
+    Mg++        1.80e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.72e-05  T
+    NO3-        1.33e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.05e-05  T
+    SO4--       2.24e-04  T
+    SOC(aq)     1.47e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1344
+  CONCENTRATIONS 
+    H+          8.18  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.60e-06  T
+    Ca++        7.72e-04  T
+    Cl-         9.04e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.41e-03  T
+    HS-         1.00e-7   T
+    K+          1.21e-05  T
+    Mg++        1.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.36e-05  T
+    NO3-        1.74e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.03e-05  T
+    SO4--       2.27e-04  T
+    SOC(aq)     1.43e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1368
+  CONCENTRATIONS 
+    H+          8.19  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.06e-06  T
+    Ca++        7.39e-04  T
+    Cl-         1.00e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.39e-03  T
+    HS-         1.00e-7   T
+    K+          1.16e-05  T
+    Mg++        1.70e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.01e-05  T
+    NO3-        3.47e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.00e-05  T
+    SO4--       2.31e-04  T
+    SOC(aq)     1.39e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1392
+  CONCENTRATIONS 
+    H+          8.20  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.73e-06  T
+    Ca++        7.54e-04  T
+    Cl-         9.43e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.43e-03  T
+    HS-         1.00e-7   T
+    K+          1.17e-05  T
+    Mg++        1.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.20e-05  T
+    NO3-        2.40e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.03e-05  T
+    SO4--       2.37e-04  T
+    SOC(aq)     1.32e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1416
+  CONCENTRATIONS 
+    H+          8.21  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.39e-06  T
+    Ca++        7.69e-04  T
+    Cl-         8.86e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.47e-03  T
+    HS-         1.00e-7   T
+    K+          1.18e-05  T
+    Mg++        1.80e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.40e-05  T
+    NO3-        1.33e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.07e-05  T
+    SO4--       2.43e-04  T
+    SOC(aq)     1.26e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1440
+  CONCENTRATIONS 
+    H+          8.22  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.17e-06  T
+    Ca++        7.59e-04  T
+    Cl-         9.25e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.43e-03  T
+    HS-         1.00e-7   T
+    K+          1.17e-05  T
+    Mg++        1.77e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.44e-05  T
+    NO3-        2.61e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.06e-05  T
+    SO4--       2.41e-04  T
+    SOC(aq)     1.26e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1464
+  CONCENTRATIONS 
+    H+          8.19  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.55e-07  T
+    Ca++        7.50e-04  T
+    Cl-         9.63e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.39e-03  T
+    HS-         1.00e-7   T
+    K+          1.16e-05  T
+    Mg++        1.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.49e-05  T
+    NO3-        3.90e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.04e-05  T
+    SO4--       2.40e-04  T
+    SOC(aq)     1.27e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1488
+  CONCENTRATIONS 
+    H+          8.16  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.62e-07  T
+    Ca++        7.49e-04  T
+    Cl-         9.20e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.41e-03  T
+    HS-         1.00e-7   T
+    K+          1.18e-05  T
+    Mg++        1.76e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.83e-05  T
+    NO3-        2.30e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.04e-05  T
+    SO4--       2.41e-04  T
+    SOC(aq)     1.20e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1512
+  CONCENTRATIONS 
+    H+          8.13  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.69e-07  T
+    Ca++        7.48e-04  T
+    Cl-         8.77e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.42e-03  T
+    HS-         1.00e-7   T
+    K+          1.19e-05  T
+    Mg++        1.77e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.18e-05  T
+    NO3-        7.03e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.03e-05  T
+    SO4--       2.43e-04  T
+    SOC(aq)     1.14e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1536
+  CONCENTRATIONS 
+    H+          8.11  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.21e-07  T
+    Ca++        7.45e-04  T
+    Cl-         8.47e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.40e-03  T
+    HS-         1.00e-7   T
+    K+          1.18e-05  T
+    Mg++        1.76e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.68e-05  T
+    NO3-        2.82e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.00e-05  T
+    SO4--       2.45e-04  T
+    SOC(aq)     1.04e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1560
+  CONCENTRATIONS 
+    H+          8.08  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.72e-07  T
+    Ca++        7.42e-04  T
+    Cl-         8.16e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.39e-03  T
+    HS-         1.00e-7   T
+    K+          1.17e-05  T
+    Mg++        1.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.17e-05  T
+    NO3-        5.56e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.96e-05  T
+    SO4--       2.47e-04  T
+    SOC(aq)     9.40e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1584
+  CONCENTRATIONS 
+    H+          8.05  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.06e-06  T
+    Ca++        7.43e-04  T
+    Cl-         7.75e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.39e-03  T
+    HS-         1.00e-7   T
+    K+          1.17e-05  T
+    Mg++        1.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.36e-05  T
+    NO3-        1.16e-05  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.96e-05  T
+    SO4--       2.51e-04  T
+    SOC(aq)     9.62e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1608
+  CONCENTRATIONS 
+    H+          8.02  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.26e-06  T
+    Ca++        7.44e-04  T
+    Cl-         7.33e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.38e-03  T
+    HS-         1.00e-7   T
+    K+          1.17e-05  T
+    Mg++        1.74e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.54e-05  T
+    NO3-        1.76e-05  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.96e-05  T
+    SO4--       2.55e-04  T
+    SOC(aq)     9.83e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1632
+  CONCENTRATIONS 
+    H+          7.88  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.03e-06  T
+    Ca++        8.08e-04  T
+    Cl-         7.82e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.46e-03  T
+    HS-         1.00e-7   T
+    K+          1.26e-05  T
+    Mg++        1.89e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.13e-05  T
+    NO3-        9.29e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.20e-05  T
+    SO4--       2.77e-04  T
+    SOC(aq)     1.08e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1656
+  CONCENTRATIONS 
+    H+          7.75  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.11e-07  T
+    Ca++        8.71e-04  T
+    Cl-         8.31e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.53e-03  T
+    HS-         1.00e-7   T
+    K+          1.35e-05  T
+    Mg++        2.04e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.72e-05  T
+    NO3-        9.66e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.45e-05  T
+    SO4--       2.99e-04  T
+    SOC(aq)     1.17e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1680
+  CONCENTRATIONS 
+    H+          7.85  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.87e-07  T
+    Ca++        8.74e-04  T
+    Cl-         8.02e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.55e-03  T
+    HS-         1.00e-7   T
+    K+          1.32e-05  T
+    Mg++        2.06e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.35e-05  T
+    NO3-        5.87e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.44e-05  T
+    SO4--       3.04e-04  T
+    SOC(aq)     1.09e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1704
+  CONCENTRATIONS 
+    H+          7.95  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.63e-07  T
+    Ca++        8.76e-04  T
+    Cl-         7.74e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.56e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.08e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.97e-05  T
+    NO3-        2.08e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.43e-05  T
+    SO4--       3.08e-04  T
+    SOC(aq)     1.01e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1728
+  CONCENTRATIONS 
+    H+          8.05  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.35e-07  T
+    Ca++        8.73e-04  T
+    Cl-         9.54e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.55e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.07e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.94e-05  T
+    NO3-        9.27e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.41e-05  T
+    SO4--       3.11e-04  T
+    SOC(aq)     9.82e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1752
+  CONCENTRATIONS 
+    H+          8.08  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.07e-07  T
+    Ca++        8.70e-04  T
+    Cl-         1.14e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.54e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.06e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.91e-05  T
+    NO3-        1.65e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.39e-05  T
+    SO4--       3.14e-04  T
+    SOC(aq)     9.49e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1776
+  CONCENTRATIONS 
+    H+          8.11  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.28e-07  T
+    Ca++        8.56e-04  T
+    Cl-         8.86e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.51e-03  T
+    HS-         1.00e-7   T
+    K+          1.27e-05  T
+    Mg++        2.01e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.72e-05  T
+    NO3-        8.52e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.31e-05  T
+    SO4--       3.09e-04  T
+    SOC(aq)     8.90e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1800
+  CONCENTRATIONS 
+    H+          8.09  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.48e-07  T
+    Ca++        8.42e-04  T
+    Cl-         6.36e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.49e-03  T
+    HS-         1.00e-7   T
+    K+          1.24e-05  T
+    Mg++        1.97e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.53e-05  T
+    NO3-        5.91e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.22e-05  T
+    SO4--       3.05e-04  T
+    SOC(aq)     8.30e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1824
+  CONCENTRATIONS 
+    H+          8.07  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.78e-07  T
+    Ca++        7.67e-04  T
+    Cl-         9.96e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.36e-03  T
+    HS-         1.00e-7   T
+    K+          1.20e-05  T
+    Mg++        1.80e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.46e-05  T
+    NO3-        1.03e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.04e-05  T
+    SO4--       2.78e-04  T
+    SOC(aq)     1.00e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1848
+  CONCENTRATIONS 
+    H+          8.05  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.08e-07  T
+    Ca++        6.92e-04  T
+    Cl-         1.35e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.22e-03  T
+    HS-         1.00e-7   T
+    K+          1.16e-05  T
+    Mg++        1.64e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.38e-05  T
+    NO3-        1.47e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.85e-05  T
+    SO4--       2.51e-04  T
+    SOC(aq)     1.18e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1872
+  CONCENTRATIONS 
+    H+          8.02  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.15e-07  T
+    Ca++        7.53e-04  T
+    Cl-         1.05e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.34e-03  T
+    HS-         1.00e-7   T
+    K+          1.18e-05  T
+    Mg++        1.76e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.60e-05  T
+    NO3-        1.58e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.99e-05  T
+    SO4--       2.63e-04  T
+    SOC(aq)     1.00e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1896
+  CONCENTRATIONS 
+    H+          8.00  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.21e-07  T
+    Ca++        8.15e-04  T
+    Cl-         7.54e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.46e-03  T
+    HS-         1.00e-7   T
+    K+          1.21e-05  T
+    Mg++        1.88e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.81e-05  T
+    NO3-        1.68e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.12e-05  T
+    SO4--       2.75e-04  T
+    SOC(aq)     8.27e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1920
+  CONCENTRATIONS 
+    H+          7.98  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.40e-07  T
+    Ca++        8.33e-04  T
+    Cl-         7.26e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.48e-03  T
+    HS-         1.00e-7   T
+    K+          1.23e-05  T
+    Mg++        1.94e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.79e-05  T
+    NO3-        1.41e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.15e-05  T
+    SO4--       2.92e-04  T
+    SOC(aq)     8.16e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1944
+  CONCENTRATIONS 
+    H+          7.96  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.58e-07  T
+    Ca++        8.51e-04  T
+    Cl-         6.97e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.51e-03  T
+    HS-         1.00e-7   T
+    K+          1.24e-05  T
+    Mg++        1.99e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.77e-05  T
+    NO3-        1.14e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.18e-05  T
+    SO4--       3.10e-04  T
+    SOC(aq)     8.05e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1968
+  CONCENTRATIONS 
+    H+          7.94  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.92e-07  T
+    Ca++        8.78e-04  T
+    Cl-         7.68e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.55e-03  T
+    HS-         1.00e-7   T
+    K+          1.26e-05  T
+    Mg++        2.05e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.87e-05  T
+    NO3-        2.04e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.22e-05  T
+    SO4--       3.23e-04  T
+    SOC(aq)     7.69e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_1992
+  CONCENTRATIONS 
+    H+          7.92  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.26e-07  T
+    Ca++        9.04e-04  T
+    Cl-         8.39e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.58e-03  T
+    HS-         1.00e-7   T
+    K+          1.27e-05  T
+    Mg++        2.11e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.96e-05  T
+    NO3-        2.93e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.26e-05  T
+    SO4--       3.35e-04  T
+    SOC(aq)     7.33e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2016
+  CONCENTRATIONS 
+    H+          7.89  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.73e-07  T
+    Ca++        9.16e-04  T
+    Cl-         7.43e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.61e-03  T
+    HS-         1.00e-7   T
+    K+          1.29e-05  T
+    Mg++        2.14e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.05e-05  T
+    NO3-        2.79e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.27e-05  T
+    SO4--       3.30e-04  T
+    SOC(aq)     6.92e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2040
+  CONCENTRATIONS 
+    H+          7.87  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.20e-07  T
+    Ca++        9.28e-04  T
+    Cl-         6.48e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.63e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.16e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.13e-05  T
+    NO3-        2.64e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.29e-05  T
+    SO4--       3.25e-04  T
+    SOC(aq)     6.52e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2064
+  CONCENTRATIONS 
+    H+          7.85  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.05e-07  T
+    Ca++        9.25e-04  T
+    Cl-         7.92e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.61e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.14e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.42e-05  T
+    NO3-        1.85e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.25e-05  T
+    SO4--       3.35e-04  T
+    SOC(aq)     6.79e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2088
+  CONCENTRATIONS 
+    H+          7.83  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.90e-07  T
+    Ca++        9.21e-04  T
+    Cl-         9.36e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.59e-03  T
+    HS-         1.00e-7   T
+    K+          1.31e-05  T
+    Mg++        2.11e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.72e-05  T
+    NO3-        1.07e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.21e-05  T
+    SO4--       3.44e-04  T
+    SOC(aq)     7.05e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2112
+  CONCENTRATIONS 
+    H+          7.95  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.16e-07  T
+    Ca++        9.23e-04  T
+    Cl-         7.45e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.60e-03  T
+    HS-         1.00e-7   T
+    K+          1.32e-05  T
+    Mg++        2.10e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.24e-05  T
+    NO3-        5.36e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.17e-05  T
+    SO4--       3.37e-04  T
+    SOC(aq)     7.36e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2136
+  CONCENTRATIONS 
+    H+          8.07  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.42e-07  T
+    Ca++        9.25e-04  T
+    Cl-         5.53e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.61e-03  T
+    HS-         1.00e-7   T
+    K+          1.33e-05  T
+    Mg++        2.09e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         1.08e-04  T
+    NO3-        5.36e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.14e-05  T
+    SO4--       3.30e-04  T
+    SOC(aq)     7.66e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2160
+  CONCENTRATIONS 
+    H+          8.03  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.47e-07  T
+    Ca++        9.37e-04  T
+    Cl-         6.71e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.62e-03  T
+    HS-         1.00e-7   T
+    K+          1.33e-05  T
+    Mg++        2.11e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.13e-05  T
+    NO3-        5.36e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.15e-05  T
+    SO4--       3.39e-04  T
+    SOC(aq)     7.33e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2184
+  CONCENTRATIONS 
+    H+          7.98  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.52e-07  T
+    Ca++        9.49e-04  T
+    Cl-         7.88e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.63e-03  T
+    HS-         1.00e-7   T
+    K+          1.34e-05  T
+    Mg++        2.13e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.50e-05  T
+    NO3-        5.36e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.17e-05  T
+    SO4--       3.48e-04  T
+    SOC(aq)     6.99e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2208
+  CONCENTRATIONS 
+    H+          7.94  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.24e-07  T
+    Ca++        9.58e-04  T
+    Cl-         6.70e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.63e-03  T
+    HS-         1.00e-7   T
+    K+          1.35e-05  T
+    Mg++        2.15e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.59e-05  T
+    NO3-        1.44e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.18e-05  T
+    SO4--       3.51e-04  T
+    SOC(aq)     6.43e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2232
+  CONCENTRATIONS 
+    H+          7.93  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.95e-07  T
+    Ca++        9.67e-04  T
+    Cl-         5.53e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.64e-03  T
+    HS-         1.00e-7   T
+    K+          1.36e-05  T
+    Mg++        2.17e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.68e-05  T
+    NO3-        2.88e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.18e-05  T
+    SO4--       3.54e-04  T
+    SOC(aq)     5.87e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2256
+  CONCENTRATIONS 
+    H+          7.92  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.65e-07  T
+    Ca++        9.82e-04  T
+    Cl-         6.74e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.65e-03  T
+    HS-         1.00e-7   T
+    K+          1.39e-05  T
+    Mg++        2.20e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.40e-05  T
+    NO3-        6.01e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.20e-05  T
+    SO4--       3.59e-04  T
+    SOC(aq)     6.15e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2280
+  CONCENTRATIONS 
+    H+          7.91  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.35e-07  T
+    Ca++        9.97e-04  T
+    Cl-         7.96e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.66e-03  T
+    HS-         1.00e-7   T
+    K+          1.43e-05  T
+    Mg++        2.22e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.12e-05  T
+    NO3-        1.17e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.22e-05  T
+    SO4--       3.64e-04  T
+    SOC(aq)     6.43e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2304
+  CONCENTRATIONS 
+    H+          7.90  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.03e-07  T
+    Ca++        1.00e-03  T
+    Cl-         7.95e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.69e-03  T
+    HS-         1.00e-7   T
+    K+          1.44e-05  T
+    Mg++        2.21e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.46e-05  T
+    NO3-        6.78e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.22e-05  T
+    SO4--       3.65e-04  T
+    SOC(aq)     6.42e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2328
+  CONCENTRATIONS 
+    H+          7.83  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.71e-07  T
+    Ca++        1.01e-03  T
+    Cl-         7.94e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.71e-03  T
+    HS-         1.00e-7   T
+    K+          1.45e-05  T
+    Mg++        2.20e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.80e-05  T
+    NO3-        1.83e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.21e-05  T
+    SO4--       3.67e-04  T
+    SOC(aq)     6.40e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2352
+  CONCENTRATIONS 
+    H+          7.77  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.21e-06  T
+    Ca++        1.02e-03  T
+    Cl-         7.61e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.77e-03  T
+    HS-         1.00e-7   T
+    K+          1.38e-05  T
+    Mg++        2.30e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.26e-05  T
+    NO3-        1.33e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.47e-05  T
+    SO4--       3.69e-04  T
+    SOC(aq)     6.26e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2376
+  CONCENTRATIONS 
+    H+          7.70  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.55e-06  T
+    Ca++        1.03e-03  T
+    Cl-         7.28e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.83e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.40e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.72e-05  T
+    NO3-        8.34e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.72e-05  T
+    SO4--       3.71e-04  T
+    SOC(aq)     6.12e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2400
+  CONCENTRATIONS 
+    H+          7.63  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.54e-06  T
+    Ca++        1.01e-03  T
+    Cl-         7.80e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.80e-03  T
+    HS-         1.00e-7   T
+    K+          1.26e-05  T
+    Mg++        2.34e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.55e-05  T
+    NO3-        1.05e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.57e-05  T
+    SO4--       3.69e-04  T
+    SOC(aq)     6.95e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2424
+  CONCENTRATIONS 
+    H+          7.64  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.52e-06  T
+    Ca++        9.82e-04  T
+    Cl-         8.33e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.77e-03  T
+    HS-         1.00e-7   T
+    K+          1.22e-05  T
+    Mg++        2.27e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.37e-05  T
+    NO3-        1.26e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.42e-05  T
+    SO4--       3.68e-04  T
+    SOC(aq)     7.78e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2448
+  CONCENTRATIONS 
+    H+          7.66  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.66e-06  T
+    Ca++        9.80e-04  T
+    Cl-         7.44e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.78e-03  T
+    HS-         1.00e-7   T
+    K+          1.23e-05  T
+    Mg++        2.32e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.54e-05  T
+    NO3-        6.28e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.44e-05  T
+    SO4--       3.69e-04  T
+    SOC(aq)     7.89e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2472
+  CONCENTRATIONS 
+    H+          7.68  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.80e-06  T
+    Ca++        9.78e-04  T
+    Cl-         6.56e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.80e-03  T
+    HS-         1.00e-7   T
+    K+          1.25e-05  T
+    Mg++        2.37e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.71e-05  T
+    NO3-        6.28e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.47e-05  T
+    SO4--       3.70e-04  T
+    SOC(aq)     7.99e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2496
+  CONCENTRATIONS 
+    H+          7.69  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.55e-06  T
+    Ca++        1.00e-03  T
+    Cl-         6.52e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.84e-03  T
+    HS-         1.00e-7   T
+    K+          1.27e-05  T
+    Mg++        2.39e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.71e-05  T
+    NO3-        2.85e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.45e-05  T
+    SO4--       3.77e-04  T
+    SOC(aq)     7.47e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2520
+  CONCENTRATIONS 
+    H+          7.71  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.31e-06  T
+    Ca++        1.03e-03  T
+    Cl-         6.47e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.89e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.41e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.71e-05  T
+    NO3-        5.71e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.43e-05  T
+    SO4--       3.83e-04  T
+    SOC(aq)     6.94e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2544
+  CONCENTRATIONS 
+    H+          7.72  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.42e-06  T
+    Ca++        1.03e-03  T
+    Cl-         7.29e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.87e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.43e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.87e-05  T
+    NO3-        1.38e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.47e-05  T
+    SO4--       3.89e-04  T
+    SOC(aq)     6.21e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2568
+  CONCENTRATIONS 
+    H+          7.74  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.53e-06  T
+    Ca++        1.03e-03  T
+    Cl-         8.10e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.85e-03  T
+    HS-         1.00e-7   T
+    K+          1.31e-05  T
+    Mg++        2.45e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.02e-05  T
+    NO3-        2.18e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.51e-05  T
+    SO4--       3.94e-04  T
+    SOC(aq)     5.47e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2592
+  CONCENTRATIONS 
+    H+          7.74  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.47e-06  T
+    Ca++        1.05e-03  T
+    Cl-         7.59e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.87e-03  T
+    HS-         1.00e-7   T
+    K+          1.34e-05  T
+    Mg++        2.53e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.36e-05  T
+    NO3-        1.89e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.55e-05  T
+    SO4--       3.97e-04  T
+    SOC(aq)     6.24e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2616
+  CONCENTRATIONS 
+    H+          7.75  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.40e-06  T
+    Ca++        1.07e-03  T
+    Cl-         7.09e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.90e-03  T
+    HS-         1.00e-7   T
+    K+          1.37e-05  T
+    Mg++        2.62e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.70e-05  T
+    NO3-        1.60e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.60e-05  T
+    SO4--       3.99e-04  T
+    SOC(aq)     7.00e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2640
+  CONCENTRATIONS 
+    H+          7.75  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.35e-06  T
+    Ca++        1.09e-03  T
+    Cl-         7.12e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.90e-03  T
+    HS-         1.00e-7   T
+    K+          1.38e-05  T
+    Mg++        2.65e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.55e-05  T
+    NO3-        8.00e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.59e-05  T
+    SO4--       4.04e-04  T
+    SOC(aq)     6.41e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2664
+  CONCENTRATIONS 
+    H+          7.75  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.31e-06  T
+    Ca++        1.11e-03  T
+    Cl-         7.15e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.91e-03  T
+    HS-         1.00e-7   T
+    K+          1.40e-05  T
+    Mg++        2.68e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.40e-05  T
+    NO3-        8.00e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.58e-05  T
+    SO4--       4.08e-04  T
+    SOC(aq)     5.82e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2688
+  CONCENTRATIONS 
+    H+          7.73  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.33e-06  T
+    Ca++        1.11e-03  T
+    Cl-         8.80e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.89e-03  T
+    HS-         1.00e-7   T
+    K+          1.42e-05  T
+    Mg++        2.66e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.40e-05  T
+    NO3-        1.30e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.58e-05  T
+    SO4--       4.15e-04  T
+    SOC(aq)     5.95e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2712
+  CONCENTRATIONS 
+    H+          7.70  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.36e-06  T
+    Ca++        1.12e-03  T
+    Cl-         1.05e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.87e-03  T
+    HS-         1.00e-7   T
+    K+          1.44e-05  T
+    Mg++        2.64e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.39e-05  T
+    NO3-        2.60e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.58e-05  T
+    SO4--       4.23e-04  T
+    SOC(aq)     6.08e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2736
+  CONCENTRATIONS 
+    H+          7.68  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.36e-06  T
+    Ca++        1.11e-03  T
+    Cl-         8.73e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.88e-03  T
+    HS-         1.00e-7   T
+    K+          1.42e-05  T
+    Mg++        2.65e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.39e-05  T
+    NO3-        1.30e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.58e-05  T
+    SO4--       4.23e-04  T
+    SOC(aq)     6.00e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2760
+  CONCENTRATIONS 
+    H+          7.69  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.35e-06  T
+    Ca++        1.10e-03  T
+    Cl-         7.01e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.88e-03  T
+    HS-         1.00e-7   T
+    K+          1.41e-05  T
+    Mg++        2.67e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.39e-05  T
+    NO3-        1.30e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.58e-05  T
+    SO4--       4.22e-04  T
+    SOC(aq)     5.92e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2784
+  CONCENTRATIONS 
+    H+          7.70  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.44e-06  T
+    Ca++        1.13e-03  T
+    Cl-         6.98e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.91e-03  T
+    HS-         1.00e-7   T
+    K+          1.42e-05  T
+    Mg++        2.73e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.64e-05  T
+    NO3-        2.06e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.62e-05  T
+    SO4--       4.27e-04  T
+    SOC(aq)     5.67e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2808
+  CONCENTRATIONS 
+    H+          7.71  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.53e-06  T
+    Ca++        1.15e-03  T
+    Cl-         6.94e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.43e-05  T
+    Mg++        2.79e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.89e-05  T
+    NO3-        4.12e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.66e-05  T
+    SO4--       4.32e-04  T
+    SOC(aq)     5.42e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2832
+  CONCENTRATIONS 
+    H+          7.69  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.48e-06  T
+    Ca++        1.14e-03  T
+    Cl-         7.52e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.93e-03  T
+    HS-         1.00e-7   T
+    K+          1.43e-05  T
+    Mg++        2.76e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.69e-05  T
+    NO3-        2.06e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.64e-05  T
+    SO4--       4.33e-04  T
+    SOC(aq)     5.71e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2856
+  CONCENTRATIONS 
+    H+          7.66  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.43e-06  T
+    Ca++        1.13e-03  T
+    Cl-         8.09e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.91e-03  T
+    HS-         1.00e-7   T
+    K+          1.43e-05  T
+    Mg++        2.73e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.49e-05  T
+    NO3-        2.06e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.61e-05  T
+    SO4--       4.34e-04  T
+    SOC(aq)     6.00e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2880
+  CONCENTRATIONS 
+    H+          7.64  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.65e-06  T
+    Ca++        1.14e-03  T
+    Cl-         7.48e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.91e-03  T
+    HS-         1.00e-7   T
+    K+          1.44e-05  T
+    Mg++        2.77e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.57e-05  T
+    NO3-        1.04e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.60e-05  T
+    SO4--       4.38e-04  T
+    SOC(aq)     6.16e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2904
+  CONCENTRATIONS 
+    H+          7.61  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.86e-06  T
+    Ca++        1.15e-03  T
+    Cl-         6.87e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.92e-03  T
+    HS-         1.00e-7   T
+    K+          1.45e-05  T
+    Mg++        2.81e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.65e-05  T
+    NO3-        2.08e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.59e-05  T
+    SO4--       4.42e-04  T
+    SOC(aq)     6.32e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2928
+  CONCENTRATIONS 
+    H+          7.57  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.71e-06  T
+    Ca++        1.16e-03  T
+    Cl-         6.96e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.94e-03  T
+    HS-         1.00e-7   T
+    K+          1.49e-05  T
+    Mg++        2.83e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.67e-05  T
+    NO3-        4.44e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.58e-05  T
+    SO4--       4.47e-04  T
+    SOC(aq)     6.30e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2952
+  CONCENTRATIONS 
+    H+          7.54  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.56e-06  T
+    Ca++        1.16e-03  T
+    Cl-         7.05e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.53e-05  T
+    Mg++        2.84e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.68e-05  T
+    NO3-        6.80e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.57e-05  T
+    SO4--       4.52e-04  T
+    SOC(aq)     6.27e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_2976
+  CONCENTRATIONS 
+    H+          7.56  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.36e-06  T
+    Ca++        1.07e-03  T
+    Cl-         7.35e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.38e-05  T
+    Mg++        2.84e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.64e-05  T
+    NO3-        9.08e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.77e-05  T
+    SO4--       4.54e-04  T
+    SOC(aq)     5.69e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3000
+  CONCENTRATIONS 
+    H+          7.58  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.17e-06  T
+    Ca++        9.81e-04  T
+    Cl-         7.66e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.23e-05  T
+    Mg++        2.84e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.60e-05  T
+    NO3-        1.14e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.98e-05  T
+    SO4--       4.55e-04  T
+    SOC(aq)     5.10e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3024
+  CONCENTRATIONS 
+    H+          7.60  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.37e-07  T
+    Ca++        1.01e-03  T
+    Cl-         7.76e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.94e-03  T
+    HS-         1.00e-7   T
+    K+          1.28e-05  T
+    Mg++        2.56e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.28e-05  T
+    NO3-        7.98e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.54e-05  T
+    SO4--       4.63e-04  T
+    SOC(aq)     5.64e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3048
+  CONCENTRATIONS 
+    H+          7.62  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.01e-07  T
+    Ca++        1.03e-03  T
+    Cl-         7.87e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.93e-03  T
+    HS-         1.00e-7   T
+    K+          1.33e-05  T
+    Mg++        2.29e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         4.96e-05  T
+    NO3-        4.61e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.09e-05  T
+    SO4--       4.71e-04  T
+    SOC(aq)     6.19e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3072
+  CONCENTRATIONS 
+    H+          7.64  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.10e-07  T
+    Ca++        1.02e-03  T
+    Cl-         8.00e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.29e-05  T
+    Mg++        2.33e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.07e-05  T
+    NO3-        2.31e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.14e-05  T
+    SO4--       4.68e-04  T
+    SOC(aq)     6.19e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3096
+  CONCENTRATIONS 
+    H+          7.66  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.20e-07  T
+    Ca++        1.01e-03  T
+    Cl-         8.14e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.97e-03  T
+    HS-         1.00e-7   T
+    K+          1.26e-05  T
+    Mg++        2.37e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.18e-05  T
+    NO3-        2.31e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.19e-05  T
+    SO4--       4.65e-04  T
+    SOC(aq)     6.20e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3120
+  CONCENTRATIONS 
+    H+          7.68  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.10e-07  T
+    Ca++        1.01e-03  T
+    Cl-         7.79e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.97e-03  T
+    HS-         1.00e-7   T
+    K+          1.24e-05  T
+    Mg++        2.40e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.38e-05  T
+    NO3-        1.65e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.50e-05  T
+    SO4--       4.66e-04  T
+    SOC(aq)     6.22e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3144
+  CONCENTRATIONS 
+    H+          7.68  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.01e-07  T
+    Ca++        1.01e-03  T
+    Cl-         7.45e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.96e-03  T
+    HS-         1.00e-7   T
+    K+          1.23e-05  T
+    Mg++        2.42e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.58e-05  T
+    NO3-        3.31e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.81e-05  T
+    SO4--       4.66e-04  T
+    SOC(aq)     6.24e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3168
+  CONCENTRATIONS 
+    H+          7.67  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.01e-07  T
+    Ca++        1.03e-03  T
+    Cl-         7.49e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.97e-03  T
+    HS-         1.00e-7   T
+    K+          1.25e-05  T
+    Mg++        2.47e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.57e-05  T
+    NO3-        8.37e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.95e-05  T
+    SO4--       4.72e-04  T
+    SOC(aq)     6.19e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3192
+  CONCENTRATIONS 
+    H+          7.67  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.01e-07  T
+    Ca++        1.04e-03  T
+    Cl-         7.53e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.98e-03  T
+    HS-         1.00e-7   T
+    K+          1.27e-05  T
+    Mg++        2.52e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.56e-05  T
+    NO3-        1.34e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.09e-05  T
+    SO4--       4.77e-04  T
+    SOC(aq)     6.14e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3216
+  CONCENTRATIONS 
+    H+          7.67  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.18e-07  T
+    Ca++        1.08e-03  T
+    Cl-         7.70e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.99e-03  T
+    HS-         1.00e-7   T
+    K+          1.33e-05  T
+    Mg++        2.53e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.65e-05  T
+    NO3-        6.71e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.91e-05  T
+    SO4--       4.79e-04  T
+    SOC(aq)     5.83e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3240
+  CONCENTRATIONS 
+    H+          7.67  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       5.34e-07  T
+    Ca++        1.11e-03  T
+    Cl-         7.87e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.00e-03  T
+    HS-         1.00e-7   T
+    K+          1.39e-05  T
+    Mg++        2.53e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.75e-05  T
+    NO3-        6.71e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.73e-05  T
+    SO4--       4.82e-04  T
+    SOC(aq)     5.52e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3264
+  CONCENTRATIONS 
+    H+          7.66  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.54e-07  T
+    Ca++        1.10e-03  T
+    Cl-         8.65e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.00e-03  T
+    HS-         1.00e-7   T
+    K+          1.36e-05  T
+    Mg++        2.55e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.94e-05  T
+    NO3-        7.82e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.79e-05  T
+    SO4--       4.85e-04  T
+    SOC(aq)     5.92e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3288
+  CONCENTRATIONS 
+    H+          7.66  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.74e-07  T
+    Ca++        1.08e-03  T
+    Cl-         9.43e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.00e-03  T
+    HS-         1.00e-7   T
+    K+          1.33e-05  T
+    Mg++        2.57e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.13e-05  T
+    NO3-        1.56e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.85e-05  T
+    SO4--       4.87e-04  T
+    SOC(aq)     6.32e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3312
+  CONCENTRATIONS 
+    H+          7.66  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.62e-07  T
+    Ca++        1.07e-03  T
+    Cl-         9.80e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.98e-03  T
+    HS-         1.00e-7   T
+    K+          1.32e-05  T
+    Mg++        2.57e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.98e-05  T
+    NO3-        1.39e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.90e-05  T
+    SO4--       4.84e-04  T
+    SOC(aq)     6.26e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3336
+  CONCENTRATIONS 
+    H+          7.65  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.49e-07  T
+    Ca++        1.07e-03  T
+    Cl-         1.02e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.32e-05  T
+    Mg++        2.56e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.84e-05  T
+    NO3-        1.21e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.95e-05  T
+    SO4--       4.80e-04  T
+    SOC(aq)     6.21e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3360
+  CONCENTRATIONS 
+    H+          7.65  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.59e-07  T
+    Ca++        1.05e-03  T
+    Cl-         9.62e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.96e-03  T
+    HS-         1.00e-7   T
+    K+          1.30e-05  T
+    Mg++        2.61e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.44e-05  T
+    NO3-        1.15e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.07e-05  T
+    SO4--       4.87e-04  T
+    SOC(aq)     6.54e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3384
+  CONCENTRATIONS 
+    H+          7.65  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.70e-07  T
+    Ca++        1.04e-03  T
+    Cl-         9.07e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.96e-03  T
+    HS-         1.00e-7   T
+    K+          1.29e-05  T
+    Mg++        2.65e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.03e-05  T
+    NO3-        1.09e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.18e-05  T
+    SO4--       4.93e-04  T
+    SOC(aq)     6.86e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3408
+  CONCENTRATIONS 
+    H+          7.64  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.22e-06  T
+    Ca++        1.10e-03  T
+    Cl-         1.73e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.96e-03  T
+    HS-         1.00e-7   T
+    K+          1.38e-05  T
+    Mg++        2.64e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.47e-05  T
+    NO3-        1.00e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.83e-05  T
+    SO4--       4.88e-04  T
+    SOC(aq)     6.52e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3432
+  CONCENTRATIONS 
+    H+          7.64  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.48e-06  T
+    Ca++        1.16e-03  T
+    Cl-         2.56e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.46e-05  T
+    Mg++        2.62e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.90e-05  T
+    NO3-        9.16e-08  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.49e-05  T
+    SO4--       4.83e-04  T
+    SOC(aq)     6.17e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3456
+  CONCENTRATIONS 
+    H+          7.64  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.52e-06  T
+    Ca++        1.03e-03  T
+    Cl-         1.82e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.96e-03  T
+    HS-         1.00e-7   T
+    K+          1.29e-05  T
+    Mg++        2.59e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.08e-05  T
+    NO3-        2.33e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.01e-05  T
+    SO4--       4.91e-04  T
+    SOC(aq)     6.14e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3480
+  CONCENTRATIONS 
+    H+          7.64  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.56e-06  T
+    Ca++        9.10e-04  T
+    Cl-         1.09e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.96e-03  T
+    HS-         1.00e-7   T
+    K+          1.13e-05  T
+    Mg++        2.56e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.26e-05  T
+    NO3-        3.75e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    4.54e-05  T
+    SO4--       5.00e-04  T
+    SOC(aq)     6.12e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3504
+  CONCENTRATIONS 
+    H+          7.63  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.78e-06  T
+    Ca++        1.15e-03  T
+    Cl-         1.27e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.98e-03  T
+    HS-         1.00e-7   T
+    K+          1.70e-05  T
+    Mg++        2.64e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.62e-05  T
+    NO3-        1.76e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.56e-05  T
+    SO4--       5.05e-04  T
+    SOC(aq)     5.55e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3528
+  CONCENTRATIONS 
+    H+          7.63  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.51e-06  T
+    Ca++        1.30e-03  T
+    Cl-         8.92e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.12e-03  T
+    HS-         1.00e-7   T
+    K+          1.84e-05  T
+    Mg++        2.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.44e-05  T
+    NO3-        3.75e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.86e-05  T
+    SO4--       4.98e-04  T
+    SOC(aq)     5.91e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3552
+  CONCENTRATIONS 
+    H+          7.63  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.90e-07  T
+    Ca++        1.28e-03  T
+    Cl-         9.62e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.14e-03  T
+    HS-         1.00e-7   T
+    K+          1.87e-05  T
+    Mg++        2.69e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.54e-05  T
+    NO3-        6.05e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.90e-05  T
+    SO4--       5.01e-04  T
+    SOC(aq)     6.86e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3576
+  CONCENTRATIONS 
+    H+          7.62  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       4.72e-07  T
+    Ca++        1.26e-03  T
+    Cl-         1.03e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.16e-03  T
+    HS-         1.00e-7   T
+    K+          1.90e-05  T
+    Mg++        2.63e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.64e-05  T
+    NO3-        8.35e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.94e-05  T
+    SO4--       5.03e-04  T
+    SOC(aq)     7.81e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3600
+  CONCENTRATIONS 
+    H+          7.62  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.69e-07  T
+    Ca++        1.25e-03  T
+    Cl-         9.58e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.15e-03  T
+    HS-         1.00e-7   T
+    K+          1.93e-05  T
+    Mg++        2.61e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.33e-05  T
+    NO3-        4.81e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.91e-05  T
+    SO4--       5.05e-04  T
+    SOC(aq)     6.76e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3624
+  CONCENTRATIONS 
+    H+          7.62  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.27e-06  T
+    Ca++        1.23e-03  T
+    Cl-         8.84e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.14e-03  T
+    HS-         1.00e-7   T
+    K+          1.97e-05  T
+    Mg++        2.58e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         8.02e-05  T
+    NO3-        1.27e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.89e-05  T
+    SO4--       5.06e-04  T
+    SOC(aq)     5.71e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3648
+  CONCENTRATIONS 
+    H+          7.62  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.17e-06  T
+    Ca++        1.24e-03  T
+    Cl-         8.75e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.82e-05  T
+    Mg++        2.62e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.05e-05  T
+    NO3-        1.33e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.80e-05  T
+    SO4--       5.05e-04  T
+    SOC(aq)     5.90e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3672
+  CONCENTRATIONS 
+    H+          7.61  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.07e-06  T
+    Ca++        1.24e-03  T
+    Cl-         8.66e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.67e-05  T
+    Mg++        2.65e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.07e-05  T
+    NO3-        1.38e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.70e-05  T
+    SO4--       5.04e-04  T
+    SOC(aq)     6.09e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3696
+  CONCENTRATIONS 
+    H+          7.61  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.22e-06  T
+    Ca++        1.24e-03  T
+    Cl-         9.25e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.11e-03  T
+    HS-         1.00e-7   T
+    K+          1.71e-05  T
+    Mg++        2.66e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.14e-05  T
+    NO3-        1.56e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.69e-05  T
+    SO4--       5.07e-04  T
+    SOC(aq)     5.92e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3720
+  CONCENTRATIONS 
+    H+          7.61  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.38e-06  T
+    Ca++        1.25e-03  T
+    Cl-         9.83e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.09e-03  T
+    HS-         1.00e-7   T
+    K+          1.76e-05  T
+    Mg++        2.66e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.21e-05  T
+    NO3-        1.74e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.68e-05  T
+    SO4--       5.09e-04  T
+    SOC(aq)     5.74e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3744
+  CONCENTRATIONS 
+    H+          7.60  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       1.16e-06  T
+    Ca++        1.27e-03  T
+    Cl-         9.47e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.11e-03  T
+    HS-         1.00e-7   T
+    K+          1.84e-05  T
+    Mg++        2.70e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.08e-05  T
+    NO3-        1.40e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.77e-05  T
+    SO4--       5.06e-04  T
+    SOC(aq)     6.15e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3768
+  CONCENTRATIONS 
+    H+          7.60  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.51e-07  T
+    Ca++        1.29e-03  T
+    Cl-         9.12e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.91e-05  T
+    Mg++        2.74e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.95e-05  T
+    NO3-        1.06e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.86e-05  T
+    SO4--       5.02e-04  T
+    SOC(aq)     6.55e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3792
+  CONCENTRATIONS 
+    H+          7.60  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.15e-07  T
+    Ca++        1.29e-03  T
+    Cl-         9.73e-06  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.11e-03  T
+    HS-         1.00e-7   T
+    K+          1.85e-05  T
+    Mg++        2.76e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.21e-05  T
+    NO3-        3.24e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.81e-05  T
+    SO4--       5.09e-04  T
+    SOC(aq)     6.15e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3816
+  CONCENTRATIONS 
+    H+          7.59  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.79e-07  T
+    Ca++        1.29e-03  T
+    Cl-         1.03e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.09e-03  T
+    HS-         1.00e-7   T
+    K+          1.79e-05  T
+    Mg++        2.78e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.47e-05  T
+    NO3-        5.42e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.76e-05  T
+    SO4--       5.16e-04  T
+    SOC(aq)     5.75e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3840
+  CONCENTRATIONS 
+    H+          7.59  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.91e-07  T
+    Ca++        1.30e-03  T
+    Cl-         1.15e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.11e-03  T
+    HS-         1.00e-7   T
+    K+          1.81e-05  T
+    Mg++        2.78e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.58e-05  T
+    NO3-        1.12e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.76e-05  T
+    SO4--       5.61e-04  T
+    SOC(aq)     6.21e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3864
+  CONCENTRATIONS 
+    H+          7.59  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.03e-07  T
+    Ca++        1.32e-03  T
+    Cl-         1.26e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.84e-05  T
+    Mg++        2.79e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.69e-05  T
+    NO3-        1.70e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.77e-05  T
+    SO4--       6.07e-04  T
+    SOC(aq)     6.66e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3888
+  CONCENTRATIONS 
+    H+          7.59  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.03e-07  T
+    Ca++        1.33e-03  T
+    Cl-         1.15e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.83e-05  T
+    Mg++        2.83e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.74e-05  T
+    NO3-        2.92e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.79e-05  T
+    SO4--       5.71e-04  T
+    SOC(aq)     6.26e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3912
+  CONCENTRATIONS 
+    H+          7.58  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.04e-07  T
+    Ca++        1.35e-03  T
+    Cl-         1.04e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.82e-05  T
+    Mg++        2.86e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.80e-05  T
+    NO3-        4.14e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.80e-05  T
+    SO4--       5.34e-04  T
+    SOC(aq)     5.87e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3936
+  CONCENTRATIONS 
+    H+          7.58  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.88e-07  T
+    Ca++        1.34e-03  T
+    Cl-         1.15e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.12e-03  T
+    HS-         1.00e-7   T
+    K+          1.83e-05  T
+    Mg++        2.87e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.86e-05  T
+    NO3-        4.03e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.84e-05  T
+    SO4--       5.35e-04  T
+    SOC(aq)     5.66e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3960
+  CONCENTRATIONS 
+    H+          7.58  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.72e-07  T
+    Ca++        1.34e-03  T
+    Cl-         1.27e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.11e-03  T
+    HS-         1.00e-7   T
+    K+          1.83e-05  T
+    Mg++        2.88e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.93e-05  T
+    NO3-        3.92e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.88e-05  T
+    SO4--       5.35e-04  T
+    SOC(aq)     5.45e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_3984
+  CONCENTRATIONS 
+    H+          7.57  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.53e-07  T
+    Ca++        1.35e-03  T
+    Cl-         1.28e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.12e-03  T
+    HS-         1.00e-7   T
+    K+          1.87e-05  T
+    Mg++        2.90e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.96e-05  T
+    NO3-        2.29e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.82e-05  T
+    SO4--       5.73e-04  T
+    SOC(aq)     5.70e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4008
+  CONCENTRATIONS 
+    H+          7.57  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       4.33e-07  T
+    Ca++        1.36e-03  T
+    Cl-         1.28e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.91e-05  T
+    Mg++        2.92e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.00e-05  T
+    NO3-        6.54e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.77e-05  T
+    SO4--       6.12e-04  T
+    SOC(aq)     5.96e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4032
+  CONCENTRATIONS 
+    H+          7.57  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.65e-07  T
+    Ca++        1.37e-03  T
+    Cl-         1.19e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.14e-03  T
+    HS-         1.00e-7   T
+    K+          1.90e-05  T
+    Mg++        2.95e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.15e-05  T
+    NO3-        2.27e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.82e-05  T
+    SO4--       5.84e-04  T
+    SOC(aq)     6.21e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4056
+  CONCENTRATIONS 
+    H+          7.56  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.97e-07  T
+    Ca++        1.39e-03  T
+    Cl-         1.10e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.15e-03  T
+    HS-         1.00e-7   T
+    K+          1.88e-05  T
+    Mg++        2.98e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.30e-05  T
+    NO3-        3.89e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.87e-05  T
+    SO4--       5.55e-04  T
+    SOC(aq)     6.46e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4080
+  CONCENTRATIONS 
+    H+          7.56  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.23e-07  T
+    Ca++        1.39e-03  T
+    Cl-         1.09e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.13e-03  T
+    HS-         1.00e-7   T
+    K+          1.88e-05  T
+    Mg++        2.99e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.39e-05  T
+    NO3-        3.35e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.84e-05  T
+    SO4--       5.57e-04  T
+    SOC(aq)     6.69e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4104
+  CONCENTRATIONS 
+    H+          7.56  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.48e-07  T
+    Ca++        1.38e-03  T
+    Cl-         1.09e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.12e-03  T
+    HS-         1.00e-7   T
+    K+          1.88e-05  T
+    Mg++        3.01e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.49e-05  T
+    NO3-        2.80e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.81e-05  T
+    SO4--       5.58e-04  T
+    SOC(aq)     6.91e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4128
+  CONCENTRATIONS 
+    H+          7.56  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       4.18e-07  T
+    Ca++        1.36e-03  T
+    Cl-         1.42e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.07e-03  T
+    HS-         1.00e-7   T
+    K+          1.92e-05  T
+    Mg++        2.98e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.40e-05  T
+    NO3-        1.48e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.80e-05  T
+    SO4--       5.92e-04  T
+    SOC(aq)     7.14e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4152
+  CONCENTRATIONS 
+    H+          7.55  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       4.88e-07  T
+    Ca++        1.34e-03  T
+    Cl-         1.75e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.03e-03  T
+    HS-         1.00e-7   T
+    K+          1.95e-05  T
+    Mg++        2.96e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.31e-05  T
+    NO3-        1.50e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.79e-05  T
+    SO4--       6.26e-04  T
+    SOC(aq)     7.37e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4176
+  CONCENTRATIONS 
+    H+          7.55  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.76e-07  T
+    Ca++        1.35e-03  T
+    Cl-         1.61e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.06e-03  T
+    HS-         1.00e-7   T
+    K+          1.94e-05  T
+    Mg++        2.98e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.39e-05  T
+    NO3-        1.04e-05  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.80e-05  T
+    SO4--       6.14e-04  T
+    SOC(aq)     7.58e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4200
+  CONCENTRATIONS 
+    H+          7.55  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.64e-07  T
+    Ca++        1.37e-03  T
+    Cl-         1.48e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.09e-03  T
+    HS-         1.00e-7   T
+    K+          1.92e-05  T
+    Mg++        3.00e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.46e-05  T
+    NO3-        2.07e-05  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.81e-05  T
+    SO4--       6.01e-04  T
+    SOC(aq)     7.78e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4224
+  CONCENTRATIONS 
+    H+          7.54  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.88e-07  T
+    Ca++        1.36e-03  T
+    Cl-         1.45e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.08e-03  T
+    HS-         1.00e-7   T
+    K+          1.92e-05  T
+    Mg++        2.99e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.46e-05  T
+    NO3-        1.06e-05  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.79e-05  T
+    SO4--       5.81e-04  T
+    SOC(aq)     7.78e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4248
+  CONCENTRATIONS 
+    H+          7.54  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       9.12e-07  T
+    Ca++        1.36e-03  T
+    Cl-         1.41e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.07e-03  T
+    HS-         1.00e-7   T
+    K+          1.92e-05  T
+    Mg++        2.98e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.45e-05  T
+    NO3-        4.84e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.78e-05  T
+    SO4--       5.60e-04  T
+    SOC(aq)     7.78e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4272
+  CONCENTRATIONS 
+    H+          7.54  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.27e-07  T
+    Ca++        1.36e-03  T
+    Cl-         1.41e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.08e-03  T
+    HS-         1.00e-7   T
+    K+          1.89e-05  T
+    Mg++        3.02e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.49e-05  T
+    NO3-        3.23e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.81e-05  T
+    SO4--       5.81e-04  T
+    SOC(aq)     7.64e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4296
+  CONCENTRATIONS 
+    H+          7.54  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.42e-07  T
+    Ca++        1.36e-03  T
+    Cl-         1.40e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.10e-03  T
+    HS-         1.00e-7   T
+    K+          1.85e-05  T
+    Mg++        3.06e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.53e-05  T
+    NO3-        1.62e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.84e-05  T
+    SO4--       6.01e-04  T
+    SOC(aq)     7.49e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4320
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.73e-07  T
+    Ca++        1.30e-03  T
+    Cl-         1.34e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.10e-03  T
+    HS-         1.00e-7   T
+    K+          1.77e-05  T
+    Mg++        2.95e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.15e-05  T
+    NO3-        1.72e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.75e-05  T
+    SO4--       5.86e-04  T
+    SOC(aq)     7.57e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4344
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.03e-07  T
+    Ca++        1.23e-03  T
+    Cl-         1.28e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.10e-03  T
+    HS-         1.00e-7   T
+    K+          1.68e-05  T
+    Mg++        2.85e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.77e-05  T
+    NO3-        1.83e-07  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.67e-05  T
+    SO4--       5.72e-04  T
+    SOC(aq)     7.66e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4368
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       5.15e-07  T
+    Ca++        1.22e-03  T
+    Cl-         1.23e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.09e-03  T
+    HS-         1.00e-7   T
+    K+          1.69e-05  T
+    Mg++        2.79e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.75e-05  T
+    NO3-        1.30e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.59e-05  T
+    SO4--       5.60e-04  T
+    SOC(aq)     7.95e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4392
+  CONCENTRATIONS 
+    H+          7.52  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       8.26e-07  T
+    Ca++        1.21e-03  T
+    Cl-         1.18e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       2.09e-03  T
+    HS-         1.00e-7   T
+    K+          1.70e-05  T
+    Mg++        2.74e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.72e-05  T
+    NO3-        2.41e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.52e-05  T
+    SO4--       5.49e-04  T
+    SOC(aq)     8.23e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4416
+  CONCENTRATIONS 
+    H+          7.52  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.54e-07  T
+    Ca++        1.13e-03  T
+    Cl-         1.86e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.98e-03  T
+    HS-         1.00e-7   T
+    K+          1.94e-05  T
+    Mg++        2.60e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.30e-05  T
+    NO3-        2.98e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.50e-05  T
+    SO4--       5.46e-04  T
+    SOC(aq)     1.13e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4440
+  CONCENTRATIONS 
+    H+          7.52  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.81e-07  T
+    Ca++        1.05e-03  T
+    Cl-         2.55e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.87e-03  T
+    HS-         1.00e-7   T
+    K+          2.19e-05  T
+    Mg++        2.46e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.88e-05  T
+    NO3-        3.55e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.49e-05  T
+    SO4--       5.43e-04  T
+    SOC(aq)     1.44e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4464
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.36e-07  T
+    Ca++        1.06e-03  T
+    Cl-         2.19e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.85e-03  T
+    HS-         1.00e-7   T
+    K+          1.95e-05  T
+    Mg++        2.47e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.91e-05  T
+    NO3-        4.83e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.49e-05  T
+    SO4--       5.56e-04  T
+    SOC(aq)     1.11e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4488
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       7.90e-07  T
+    Ca++        1.07e-03  T
+    Cl-         1.84e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.84e-03  T
+    HS-         1.00e-7   T
+    K+          1.71e-05  T
+    Mg++        2.49e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         5.95e-05  T
+    NO3-        6.10e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.49e-05  T
+    SO4--       5.69e-04  T
+    SOC(aq)     7.80e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4512
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.35e-07  T
+    Ca++        1.10e-03  T
+    Cl-         1.80e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.89e-03  T
+    HS-         1.00e-7   T
+    K+          1.68e-05  T
+    Mg++        2.53e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.10e-05  T
+    NO3-        1.74e-05  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.49e-05  T
+    SO4--       5.84e-04  T
+    SOC(aq)     7.73e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4536
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       4.80e-07  T
+    Ca++        1.12e-03  T
+    Cl-         1.76e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.94e-03  T
+    HS-         1.00e-7   T
+    K+          1.65e-05  T
+    Mg++        2.58e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.25e-05  T
+    NO3-        2.86e-05  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.48e-05  T
+    SO4--       5.98e-04  T
+    SOC(aq)     7.65e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4560
+  CONCENTRATIONS 
+    H+          7.50  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       5.85e-07  T
+    Ca++        1.12e-03  T
+    Cl-         1.70e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.95e-03  T
+    HS-         1.00e-7   T
+    K+          1.59e-05  T
+    Mg++        2.57e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.22e-05  T
+    NO3-        1.64e-05  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.44e-05  T
+    SO4--       5.80e-04  T
+    SOC(aq)     7.07e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4584
+  CONCENTRATIONS 
+    H+          7.50  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       6.90e-07  T
+    Ca++        1.11e-03  T
+    Cl-         1.64e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.97e-03  T
+    HS-         1.00e-7   T
+    K+          1.54e-05  T
+    Mg++        2.57e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.19e-05  T
+    NO3-        4.18e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.39e-05  T
+    SO4--       5.61e-04  T
+    SOC(aq)     6.49e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4608
+  CONCENTRATIONS 
+    H+          7.50  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       5.20e-07  T
+    Ca++        1.10e-03  T
+    Cl-         1.57e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.94e-03  T
+    HS-         1.00e-7   T
+    K+          1.49e-05  T
+    Mg++        2.53e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.16e-05  T
+    NO3-        4.05e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.35e-05  T
+    SO4--       5.48e-04  T
+    SOC(aq)     6.63e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4632
+  CONCENTRATIONS 
+    H+          7.50  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.50e-07  T
+    Ca++        1.08e-03  T
+    Cl-         1.50e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.91e-03  T
+    HS-         1.00e-7   T
+    K+          1.44e-05  T
+    Mg++        2.49e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.13e-05  T
+    NO3-        3.93e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.30e-05  T
+    SO4--       5.36e-04  T
+    SOC(aq)     6.77e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4656
+  CONCENTRATIONS 
+    H+          7.50  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.47e-07  T
+    Ca++        8.49e-04  T
+    Cl-         1.49e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.41e-03  T
+    HS-         1.00e-7   T
+    K+          1.47e-05  T
+    Mg++        2.62e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.33e-05  T
+    NO3-        3.82e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.79e-05  T
+    SO4--       5.37e-04  T
+    SOC(aq)     5.95e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4680
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.43e-07  T
+    Ca++        6.19e-04  T
+    Cl-         1.49e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       9.06e-04  T
+    HS-         1.00e-7   T
+    K+          1.51e-05  T
+    Mg++        2.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.53e-05  T
+    NO3-        3.71e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.29e-05  T
+    SO4--       5.38e-04  T
+    SOC(aq)     5.13e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4704
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.91e-07  T
+    Ca++        7.02e-04  T
+    Cl-         1.48e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.12e-03  T
+    HS-         1.00e-7   T
+    K+          1.60e-05  T
+    Mg++        2.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.65e-05  T
+    NO3-        3.60e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.02e-05  T
+    SO4--       5.39e-04  T
+    SOC(aq)     6.22e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4728
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.39e-07  T
+    Ca++        7.86e-04  T
+    Cl-         1.48e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.34e-03  T
+    HS-         1.00e-7   T
+    K+          1.70e-05  T
+    Mg++        2.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.78e-05  T
+    NO3-        3.50e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    1.76e-05  T
+    SO4--       5.40e-04  T
+    SOC(aq)     7.31e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4752
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.42e-07  T
+    Ca++        7.94e-04  T
+    Cl-         1.48e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.31e-03  T
+    HS-         1.00e-7   T
+    K+          1.62e-05  T
+    Mg++        2.79e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.72e-05  T
+    NO3-        3.39e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.40e-05  T
+    SO4--       5.40e-04  T
+    SOC(aq)     6.46e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4776
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.46e-07  T
+    Ca++        8.02e-04  T
+    Cl-         1.47e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.27e-03  T
+    HS-         1.00e-7   T
+    K+          1.54e-05  T
+    Mg++        2.83e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.67e-05  T
+    NO3-        3.28e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    3.04e-05  T
+    SO4--       5.41e-04  T
+    SOC(aq)     5.62e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4800
+  CONCENTRATIONS 
+    H+          7.51  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.86e-07  T
+    Ca++        7.78e-04  T
+    Cl-         1.47e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.28e-03  T
+    HS-         1.00e-7   T
+    K+          1.51e-05  T
+    Mg++        2.81e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.80e-05  T
+    NO3-        3.18e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.58e-05  T
+    SO4--       5.42e-04  T
+    SOC(aq)     5.71e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4824
+  CONCENTRATIONS 
+    H+          7.52  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.27e-07  T
+    Ca++        7.54e-04  T
+    Cl-         1.46e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.29e-03  T
+    HS-         1.00e-7   T
+    K+          1.49e-05  T
+    Mg++        2.80e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.92e-05  T
+    NO3-        3.07e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.13e-05  T
+    SO4--       5.43e-04  T
+    SOC(aq)     5.80e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4848
+  CONCENTRATIONS 
+    H+          7.52  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.17e-07  T
+    Ca++        7.42e-04  T
+    Cl-         1.46e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.21e-03  T
+    HS-         1.00e-7   T
+    K+          1.49e-05  T
+    Mg++        2.80e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.90e-05  T
+    NO3-        2.96e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.32e-05  T
+    SO4--       5.44e-04  T
+    SOC(aq)     5.41e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4872
+  CONCENTRATIONS 
+    H+          7.52  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.07e-07  T
+    Ca++        7.29e-04  T
+    Cl-         1.45e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.12e-03  T
+    HS-         1.00e-7   T
+    K+          1.49e-05  T
+    Mg++        2.81e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.88e-05  T
+    NO3-        2.85e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.51e-05  T
+    SO4--       5.45e-04  T
+    SOC(aq)     5.02e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4896
+  CONCENTRATIONS 
+    H+          7.52  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.94e-07  T
+    Ca++        7.36e-04  T
+    Cl-         1.45e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.14e-03  T
+    HS-         1.00e-7   T
+    K+          1.60e-05  T
+    Mg++        2.80e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.90e-05  T
+    NO3-        2.75e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.59e-05  T
+    SO4--       5.46e-04  T
+    SOC(aq)     6.19e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4920
+  CONCENTRATIONS 
+    H+          7.52  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       4.81e-07  T
+    Ca++        7.43e-04  T
+    Cl-         1.45e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.16e-03  T
+    HS-         1.00e-7   T
+    K+          1.71e-05  T
+    Mg++        2.78e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         6.91e-05  T
+    NO3-        2.64e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.68e-05  T
+    SO4--       5.47e-04  T
+    SOC(aq)     7.36e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4944
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       4.25e-07  T
+    Ca++        7.69e-04  T
+    Cl-         1.44e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.24e-03  T
+    HS-         1.00e-7   T
+    K+          1.84e-05  T
+    Mg++        2.79e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.38e-05  T
+    NO3-        2.53e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.43e-05  T
+    SO4--       5.48e-04  T
+    SOC(aq)     8.00e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4968
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.69e-07  T
+    Ca++        7.96e-04  T
+    Cl-         1.44e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.33e-03  T
+    HS-         1.00e-7   T
+    K+          1.96e-05  T
+    Mg++        2.80e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.84e-05  T
+    NO3-        2.42e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.18e-05  T
+    SO4--       5.49e-04  T
+    SOC(aq)     8.65e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_4992
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       3.09e-07  T
+    Ca++        7.76e-04  T
+    Cl-         1.43e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.28e-03  T
+    HS-         1.00e-7   T
+    K+          1.86e-05  T
+    Mg++        2.78e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.44e-05  T
+    NO3-        2.32e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.25e-05  T
+    SO4--       5.50e-04  T
+    SOC(aq)     9.75e-05  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_5016
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.48e-07  T
+    Ca++        7.56e-04  T
+    Cl-         1.43e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.23e-03  T
+    HS-         1.00e-7   T
+    K+          1.75e-05  T
+    Mg++        2.76e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.04e-05  T
+    NO3-        2.21e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.32e-05  T
+    SO4--       5.51e-04  T
+    SOC(aq)     1.09e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_5040
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.47e-07  T
+    Ca++        7.91e-04  T
+    Cl-         1.43e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.30e-03  T
+    HS-         1.00e-7   T
+    K+          1.81e-05  T
+    Mg++        2.76e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.13e-05  T
+    NO3-        2.10e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.41e-05  T
+    SO4--       5.52e-04  T
+    SOC(aq)     1.03e-04  T
+    Tracer      1.00e-06  T
+  /
+END
+
+CONSTRAINT  from_river_conc_5064
+  CONCENTRATIONS 
+    H+          7.53  P
+    H2O         1.00E+00  T
+    Ac-         1.00E-06  T
+    Al+++       2.47e-07  T
+    Ca++        8.26e-04  T
+    Cl-         1.42e-05  T
+    Fe++        1.00E-10  T
+    Fe+++       1.00E-15  M Goethite 
+    HCO3-       1.37e-03  T
+    HS-         1.00e-7   T
+    K+          1.87e-05  T
+    Mg++        2.75e-04  T
+    N2(aq)      0.55      G N2(g)
+    NH3(aq)     1.00e-06  T
+    Na+         7.23e-05  T
+    NO3-        2.00e-06  T
+    O2(aq)      0.16      G O2(g)
+    SiO2(aq)    2.50e-05  T
+    SO4--       5.53e-04  T
+    SOC(aq)     9.72e-05  T
+    Tracer      1.00e-06  T
+  /
+END
