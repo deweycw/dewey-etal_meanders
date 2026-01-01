@@ -481,7 +481,7 @@ REGION top_bc_reg_107
       LIQUID_PRESSURE seepage 
     /
     CYCLIC
-    DATUM FILE hydro_us_2019_4-21_10-2-MZT.txt
+    DATUM FILE hydro_us_2018_4-1_10-31-MZT.txt
     LIQUID_PRESSURE 101325.d0
   /
 
@@ -490,7 +490,7 @@ REGION top_bc_reg_107
       LIQUID_PRESSURE seepage
     /
     CYCLIC
-    DATUM FILE hydro_ds_2019_4-21_10-2-MZT.txt
+    DATUM FILE hydro_ds_2018_4-1_10-31-MZT.txt
     LIQUID_PRESSURE 101325.d0 
   /
   
@@ -5241,7 +5241,7 @@ CONSTRAINT  from_river_conc_3120
     H+          7.68  P
     H2O         1.00E+00  T
     Ac-         1.00E-06  T
-    Al+++       1.56e+03  T
+    Al+++       1.56e-03  T
     Ca++        1.01e-03  T
     Cl-         7.79e-06  T
     Fe++        1.00E-10  T
