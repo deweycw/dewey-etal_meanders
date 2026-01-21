@@ -234,6 +234,56 @@ class PflotranProcessor(CrossSection):
             '5': self.cmaplist[4]
         }
 
+    def _get_time_unit(self) -> str:
+        """
+        Detect the time unit from the HDF5 file by examining the time group keys.
+
+        Returns:
+            Time unit string: 'h' (hours), 'y' (years), 'd' (days), 's' (seconds)
+        """
+        if self._h5_path_resolved is None:
+            return 'h'  # Default to hours
+
+        try:
+            with h5py.File(str(self._h5_path_resolved), 'r') as f:
+                for key in f.keys():
+                    if key.startswith('Time:'):
+                        # Extract unit from key like 'Time:  1.00000E+00 h'
+                        parts = key.strip().split()
+                        if parts:
+                            unit = parts[-1]
+                            if unit in ['h', 'y', 'd', 's', 'mo', 'w']:
+                                return unit
+        except Exception:
+            pass
+
+        return 'h'  # Default to hours
+
+    def _convert_times_to_days(self, times: np.ndarray) -> np.ndarray:
+        """
+        Convert times array to days based on the detected time unit.
+
+        Args:
+            times: Array of time values in the file's native unit
+
+        Returns:
+            Array of time values in days
+        """
+        unit = self._get_time_unit()
+
+        # Conversion factors to days
+        conversions = {
+            'h': 1.0 / 24.0,      # hours to days
+            'd': 1.0,              # days (no conversion)
+            'y': 365.25,           # years to days
+            's': 1.0 / 86400.0,    # seconds to days
+            'mo': 30.4375,         # months to days (approximate)
+            'w': 7.0               # weeks to days
+        }
+
+        factor = conversions.get(unit, 1.0 / 24.0)  # Default to hours
+        return times * factor
+
     # =========================================================================
     # Data Extraction Methods
     # =========================================================================
@@ -872,7 +922,8 @@ class PflotranProcessor(CrossSection):
         else:
             return 1.0  # Keep in M
 
-    def plot_component_histories(self, component_name: str, startdate: Any, ax: Axes,
+    def plot_component_histories(self, component_name: str, ax: Axes,
+                                  startdate: Optional[Any] = None,
                                   results: Optional[dict] = None, times: Optional[List] = None,
                                   distances: Optional[List] = None,
                                   chem_obs: Any = None, unit: Optional[str] = None,
@@ -888,12 +939,14 @@ class PflotranProcessor(CrossSection):
 
         Args:
             component_name: Name of the component to plot (e.g., 'Total_Ca++ [M]')
-            startdate: Starting date for time series (e.g., np.datetime64('2019-05-01'))
             ax: Axes object to plot on
+            startdate: Optional starting date for time series (e.g., np.datetime64('2019-05-01')).
+                      If None, plots with x-axis in days starting at day=0.
             results: Optional dict of results by distance. If None, calls get_histories().
             times: Optional time points. If None, uses self.times.
             distances: Optional distance points. If None, uses self.config['distances'].
-            chem_obs: Optional chemical observations DataFrame
+            chem_obs: Optional chemical observations DataFrame. With startdate, plots time series.
+                      Without startdate, plots mean with stdev shading.
             unit: Unit for y-axis display. If None, defaults to observation units.
                   For pH, always treated as unitless regardless of input.
             obs_component_name: Name of component in observations data (if different).
@@ -906,15 +959,18 @@ class PflotranProcessor(CrossSection):
             Updated axes object
 
         Example:
-            # Simple usage - auto-extracts data
-            processor.plot_component_histories('Total_Fe++ [M]', startdate, ax)
+            # Simple usage with dates - auto-extracts data
+            processor.plot_component_histories('Total_Fe++ [M]', ax, startdate=startdate)
 
-            # With observations
-            processor.plot_component_histories('Total_Fe++ [M]', startdate, ax, chem_obs=obs_df)
+            # Simple usage without dates - x-axis in days
+            processor.plot_component_histories('Total_Fe++ [M]', ax)
+
+            # With observations (requires startdate)
+            processor.plot_component_histories('Total_Fe++ [M]', ax, startdate=startdate, chem_obs=obs_df)
 
             # Pre-extracted data (faster for multiple plots)
             results, times = processor.get_histories()
-            processor.plot_component_histories('Total_Fe++ [M]', startdate, ax, results=results)
+            processor.plot_component_histories('Total_Fe++ [M]', ax, results=results)
         """
         # Use defaults from processor if not provided
         if distances is None:
@@ -999,10 +1055,13 @@ class PflotranProcessor(CrossSection):
 
             # Create time axis
             if startdate:
-                times_delta = [np.timedelta64(int(t), 'h') for t in times_array]
+                # Convert times to days first, then to timedelta
+                times_in_days = self._convert_times_to_days(np.array(times_array))
+                times_delta = [np.timedelta64(int(t * 24), 'h') for t in times_in_days]
                 x_data = [(startdate + dt) for dt in times_delta]
             else:
-                x_data = list(times_array)
+                # No startdate: convert to days starting at 0
+                x_data = list(self._convert_times_to_days(np.array(times_array)))
 
             # Get color for this distance
             loc_key = loc_dist.get(distance, '1')
@@ -1032,23 +1091,44 @@ class PflotranProcessor(CrossSection):
                         # Apply unit conversion to observation data
                         obs_values = df[obs_component_name] * obs_unit_factor
 
-                        ax.plot(df['Date'], obs_values,
-                               linestyle='-.', linewidth=0.5,
-                               color=color, marker=marker, markersize=3,
-                               alpha=0.7)
+                        if startdate:
+                            # Plot time series of observations
+                            ax.plot(df['Date'], obs_values,
+                                   linestyle='-.', linewidth=0.5,
+                                   color=color, marker=marker, markersize=3,
+                                   alpha=0.7)
 
-                        # Plot average as horizontal line if requested
-                        if plot_obs_average:
+                            # Plot average as horizontal line if requested
+                            if plot_obs_average:
+                                avg_val = obs_values.mean()
+                                ax.axhline(y=avg_val, color=color, linestyle=':',
+                                          linewidth=0.5, alpha=0.5)
+                        else:
+                            # No startdate: plot average with stdev shading
                             avg_val = obs_values.mean()
-                            ax.axhline(y=avg_val, color=color, linestyle=':',
-                                      linewidth=0.5, alpha=0.5)
+                            std_val = obs_values.std()
+
+                            # Get x-axis limits for horizontal line/shading
+                            x_min = min(x_data) if x_data else 0
+                            x_max = max(x_data) if x_data else 1
+
+                            # Plot average as horizontal line
+                            ax.axhline(y=avg_val, color=color, linestyle='--',
+                                      linewidth=1.5, alpha=0.8, label=f'{loc} obs mean')
+
+                            # Plot stdev as shaded region
+                            ax.axhspan(avg_val - std_val, avg_val + std_val,
+                                       color=color, alpha=0.15)
 
             except Exception as e:
                 print(f"Warning: Could not plot observations: {e}")
 
         # Format axes
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%-d-%b"))
-        ax.set_xlabel('Date')
+        if startdate:
+            ax.xaxis.set_major_formatter(mdates.DateFormatter("%-d-%b"))
+            ax.set_xlabel('Date')
+        else:
+            ax.set_xlabel('Days')
         ax.set_ylabel(ylabel)
 
         return ax

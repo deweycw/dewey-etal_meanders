@@ -79,7 +79,8 @@ SIMULATION_CONFIGS = {
         'downstream_h': 1.66,
         'upstream_file': 'hydro_us_2019_4-21_10-2-MZT.txt',
         'downstream_file': 'hydro_dn_2019_4-21_10-2-MZT.txt',
-        'subdir': 'mzt19'
+        'subdir': 'mzt19',
+        'final_time': 3993  # hours
     },
     ('2018', 'mzt'): {
         'nx': 108,
@@ -87,7 +88,8 @@ SIMULATION_CONFIGS = {
         'downstream_h': 1.46,
         'upstream_file': 'hydro_us_2018_4-1_10-31-MZT.txt',
         'downstream_file': 'hydro_ds_2018_4-1_10-31-MZT.txt',
-        'subdir': 'mzt18'
+        'subdir': 'mzt18',
+        'final_time': 5131  # hours
     },
     ('2019', 'mcp'): {
         'nx': 122,
@@ -95,7 +97,8 @@ SIMULATION_CONFIGS = {
         'downstream_h': 0.91,
         'upstream_file': 'mc_up_2019_3993h.txt',
         'downstream_file': 'mc_dn_2019_3993h.txt',
-        'subdir': 'mcp19'
+        'subdir': 'mcp19',
+        'final_time': 3993  # hours
     },
     ('2018', 'mcp'): {
         'nx': 122,
@@ -103,7 +106,8 @@ SIMULATION_CONFIGS = {
         'downstream_h': 0.96,
         'upstream_file': 'mc_us_2018_5131h-NODAM.txt',
         'downstream_file': 'mc_dn_2018_5131h-NODAM.txt',
-        'subdir': 'mcp18'
+        'subdir': 'mcp18',
+        'final_time': 5131  # hours
     }
 }
 
@@ -112,12 +116,13 @@ class PFLOTRANGenerator:
     """Main class for generating PFLOTRAN input files with corrected DATUM calculations."""
 
     def __init__(self, year: str, meander: str, nx: int, upstream_h: float,
-                 downstream_h: float, sim_dir: Path, template_dir: Path):
+                 downstream_h: float, final_time: int, sim_dir: Path, template_dir: Path):
         self.year = year
         self.meander = meander.lower()
         self.nx = nx
         self.upstream_h = upstream_h
         self.downstream_h = downstream_h
+        self.final_time = final_time  # Simulation duration in hours
         self.sim_dir = sim_dir  # The simulation subdirectory (e.g., mcp18, mzt19)
         self.template_dir = template_dir  # Directory containing shared templates
         self.bc_data = None
@@ -528,6 +533,28 @@ class PFLOTRANGenerator:
 
         return updated_content
 
+    def _update_final_time(self, content: List[str], transient: bool = True) -> List[str]:
+        """Update the FINAL_TIME in the TIME block based on simulation configuration.
+
+        For transient simulations: uses self.final_time (hours)
+        For spin-up simulations: keeps the template value (typically in years)
+        """
+        if not transient:
+            # Don't modify spin-up files - they use years
+            return content
+
+        updated_content = []
+
+        for line in content:
+            if line.strip().startswith('FINAL_TIME') and 'h' in line:
+                # Replace FINAL_TIME for transient simulations
+                indent = len(line) - len(line.lstrip())
+                updated_content.append(' ' * indent + f'FINAL_TIME {self.final_time}.d0 h\n')
+            else:
+                updated_content.append(line)
+
+        return updated_content
+
     def write_regions_block(self) -> str:
         """Generate regions block."""
         grid_file = self._get_grid_file()
@@ -610,6 +637,9 @@ class PFLOTRANGenerator:
 
         # Update GRID block with correct NXYZ for this meander
         template_content = self._update_grid_block(template_content)
+
+        # Update FINAL_TIME for transient simulations
+        template_content = self._update_final_time(template_content, transient)
 
         chunks = self._split_template_with_chemistry(template_content)
 
@@ -737,6 +767,7 @@ class PFLOTRANGenerator:
             f.write(f"  nx:              {self.nx}\n")
             f.write(f"  upstream_h:      {self.upstream_h}\n")
             f.write(f"  downstream_h:    {self.downstream_h}\n")
+            f.write(f"  final_time:      {self.final_time} h\n")
             f.write(f"  grid_file:       {self._get_grid_file()}\n")
             if upstream_file:
                 f.write(f"  upstream_file:   {upstream_file}\n")
@@ -913,6 +944,7 @@ def main():
     print(f"  downstream_h:    {config['downstream_h']}")
     print(f"  upstream_file:   {config['upstream_file']}")
     print(f"  downstream_file: {config['downstream_file']}")
+    print(f"  final_time:      {config['final_time']} h")
     print(f"  grid_file:       {'xxgrid010-mz-cxc-top.h5' if args.meander.lower() == 'mzt' else 'xxgrid010-mc-cxc-top.h5'}")
 
     try:
@@ -923,6 +955,7 @@ def main():
             nx=config['nx'],
             upstream_h=config['upstream_h'],
             downstream_h=config['downstream_h'],
+            final_time=config['final_time'],
             sim_dir=sim_dir,
             template_dir=template_dir
         )

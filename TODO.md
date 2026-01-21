@@ -1,7 +1,7 @@
 # TODO
 
 ## pflotran_generator.py
-- [ ] Sync changes between mzt19/ and mcp19/ versions
+- [x] Sync changes between mzt19/ and mcp19/ versions
 - [ ] Verify hydro file paths for all year/meander combinations
 - [ ] Test all 4 configurations (mzt/2018, mzt/2019, mcp/2018, mcp/2019)
 - [x] Move pflotran_generator.py outside of individual simulation folders & copy version into simulation folder 
