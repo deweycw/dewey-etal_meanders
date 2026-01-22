@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
+			"name": "dewey-etal_meanders",
 			"path": "."
 		},
 		{
-			"path": "../dewey-etal-meanders"
+			"name": "pflotran-utils",
+			"path": "../pflotran-utils"
 		},
 		{
-			"path": "../pflotran-utils"
+			"name": "dewey-etal-meanders",
+			"path": "../dewey-etal-meanders"
 		}
 	],
 	"settings": {}

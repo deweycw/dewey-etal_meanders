@@ -22,7 +22,7 @@ SUBSURFACE
   #==================== GRID ====================
   GRID
     TYPE structured     
-    NXYZ 1 108 26
+    NXYZ 1 122 26
     DXYZ
       1.d0
       0.5d0
@@ -32,7 +32,7 @@ SUBSURFACE
 
   #==================== STRATA ===================
   STRATA
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE ../../xxgrid010-mc-cxc-top.h5
   END
 
   #=========================== MATERIAL PROPERTIES ==============================
@@ -111,19 +111,19 @@ SUBSURFACE
   /
 
   REGION upstream_bc_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE ../../xxgrid010-mc-cxc-top.h5
   /
 
   REGION downstream_bc_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE ../../xxgrid010-mc-cxc-top.h5
   /
 
   REGION soil_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE ../../xxgrid010-mc-cxc-top.h5
   /
 
   REGION gravel_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE ../../xxgrid010-mc-cxc-top.h5
   /
 
 ! start auto add
