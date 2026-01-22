@@ -1,6 +1,6 @@
-! Generated 2026-01-01 12:29:17 (Local Time)
-! Output directory: /Users/christiandewey/Code/dewey-etal_meanders/pflotran/simulations/mcp18/2026-01-01/2026-01-01_12-29-17
-! Meander: MCP, Year: 2018
+! Generated 2026-01-21 13:48:20 (Local Time)
+! Output directory: /Users/christiandewey/Code/dewey-etal_meanders/pflotran/simulations/mzt18/2026-01-21/2026-01-21_13-48-20
+! Meander: MZT, Year: 2018
 
 #==================== SIMULATION ==================== 
 SIMULATION
@@ -22,7 +22,7 @@ SUBSURFACE
   #==================== GRID ====================
   GRID
     TYPE structured     
-    NXYZ 1 122 26
+    NXYZ 1 108 26
     DXYZ
       1.d0
       0.5d0
@@ -32,7 +32,7 @@ SUBSURFACE
 
   #==================== STRATA ===================
   STRATA
-    FILE ../../xxgrid010-mc-cxc-top.h5
+    FILE ../../xxgrid010-mz-cxc-top.h5
   END
 
   #=========================== MATERIAL PROPERTIES ==============================
@@ -96,7 +96,7 @@ SUBSURFACE
 
   #=====================TIME======================
   TIME
-    FINAL_TIME 1.5d0 y 
+    FINAL_TIME 0.8d0 y 
     INITIAL_TIMESTEP_SIZE  24.d0 hr
     MINIMUM_TIMESTEP_SIZE  0.001d0 hr
     MAXIMUM_TIMESTEP_SIZE  336.0d0 hr
@@ -111,389 +111,347 @@ SUBSURFACE
   /
 
   REGION upstream_bc_reg
-    FILE ../../xxgrid010-mc-cxc-top.h5
+    FILE ../../xxgrid010-mz-cxc-top.h5
   /
 
   REGION downstream_bc_reg
-    FILE ../../xxgrid010-mc-cxc-top.h5
+    FILE ../../xxgrid010-mz-cxc-top.h5
   /
 
   REGION soil_reg
-    FILE ../../xxgrid010-mc-cxc-top.h5
+    FILE ../../xxgrid010-mz-cxc-top.h5
   /
 
   REGION gravel_reg
-    FILE ../../xxgrid010-mc-cxc-top.h5
+    FILE ../../xxgrid010-mz-cxc-top.h5
   /
 
 ! start auto add
 
 
 REGION top_bc_reg_0
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_1
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_2
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_3
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_4
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_5
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_6
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_7
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_8
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_9
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_10
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_11
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_12
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_13
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_14
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_15
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_16
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_17
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_18
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_19
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_20
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_21
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_22
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_23
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_24
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_25
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_26
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_27
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_28
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_29
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_30
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_31
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_32
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_33
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_34
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_35
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_36
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_37
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_38
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_39
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_40
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_41
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_42
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_43
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_44
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_45
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_46
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_47
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_48
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_49
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_50
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_51
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_52
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_53
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_54
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_55
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_56
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_57
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_58
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_59
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_60
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_61
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_62
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_63
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_64
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_65
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_66
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_67
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_68
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_69
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_70
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_71
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_72
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_73
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_74
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_75
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_76
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_77
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_78
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_79
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_80
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_81
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_82
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_83
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_84
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_85
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_86
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_87
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_88
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_89
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_90
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_91
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_92
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_93
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_94
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_95
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_96
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_97
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_98
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_99
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_100
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_101
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_102
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_103
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_104
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_105
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_106
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 REGION top_bc_reg_107
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_108
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_109
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_110
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_111
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_112
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_113
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_114
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_115
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_116
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_117
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_118
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_119
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_120
-  FILE ../../xxgrid010-mc-cxc-top.h5
-/
-REGION top_bc_reg_121
-  FILE ../../xxgrid010-mc-cxc-top.h5
+  FILE ../../xxgrid010-mz-cxc-top.h5
 /
 ! end auto add
 
@@ -548,7 +506,7 @@ FLOW_CONDITION top_river_bc_1
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.833d0
+  DATUM 0.d0 0.d0 1.836d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_2
@@ -556,7 +514,7 @@ FLOW_CONDITION top_river_bc_2
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.825d0
+  DATUM 0.d0 0.d0 1.833d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_3
@@ -564,7 +522,7 @@ FLOW_CONDITION top_river_bc_3
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.818d0
+  DATUM 0.d0 0.d0 1.829d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_4
@@ -572,7 +530,7 @@ FLOW_CONDITION top_river_bc_4
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.811d0
+  DATUM 0.d0 0.d0 1.826d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_5
@@ -580,7 +538,7 @@ FLOW_CONDITION top_river_bc_5
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.804d0
+  DATUM 0.d0 0.d0 1.822d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_6
@@ -588,7 +546,7 @@ FLOW_CONDITION top_river_bc_6
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.796d0
+  DATUM 0.d0 0.d0 1.819d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_7
@@ -596,7 +554,7 @@ FLOW_CONDITION top_river_bc_7
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.789d0
+  DATUM 0.d0 0.d0 1.815d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_8
@@ -604,7 +562,7 @@ FLOW_CONDITION top_river_bc_8
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.782d0
+  DATUM 0.d0 0.d0 1.812d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_9
@@ -612,7 +570,7 @@ FLOW_CONDITION top_river_bc_9
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.775d0
+  DATUM 0.d0 0.d0 1.808d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_10
@@ -620,7 +578,7 @@ FLOW_CONDITION top_river_bc_10
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.767d0
+  DATUM 0.d0 0.d0 1.804d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_11
@@ -628,7 +586,7 @@ FLOW_CONDITION top_river_bc_11
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.760d0
+  DATUM 0.d0 0.d0 1.801d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_12
@@ -636,7 +594,7 @@ FLOW_CONDITION top_river_bc_12
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.753d0
+  DATUM 0.d0 0.d0 1.797d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_13
@@ -644,7 +602,7 @@ FLOW_CONDITION top_river_bc_13
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.745d0
+  DATUM 0.d0 0.d0 1.794d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_14
@@ -652,7 +610,7 @@ FLOW_CONDITION top_river_bc_14
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.738d0
+  DATUM 0.d0 0.d0 1.790d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_15
@@ -660,7 +618,7 @@ FLOW_CONDITION top_river_bc_15
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.731d0
+  DATUM 0.d0 0.d0 1.787d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_16
@@ -668,7 +626,7 @@ FLOW_CONDITION top_river_bc_16
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.724d0
+  DATUM 0.d0 0.d0 1.783d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_17
@@ -676,7 +634,7 @@ FLOW_CONDITION top_river_bc_17
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.716d0
+  DATUM 0.d0 0.d0 1.780d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_18
@@ -684,7 +642,7 @@ FLOW_CONDITION top_river_bc_18
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.709d0
+  DATUM 0.d0 0.d0 1.776d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_19
@@ -692,7 +650,7 @@ FLOW_CONDITION top_river_bc_19
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.702d0
+  DATUM 0.d0 0.d0 1.773d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_20
@@ -700,7 +658,7 @@ FLOW_CONDITION top_river_bc_20
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.695d0
+  DATUM 0.d0 0.d0 1.769d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_21
@@ -708,7 +666,7 @@ FLOW_CONDITION top_river_bc_21
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.687d0
+  DATUM 0.d0 0.d0 1.765d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_22
@@ -716,7 +674,7 @@ FLOW_CONDITION top_river_bc_22
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.680d0
+  DATUM 0.d0 0.d0 1.762d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_23
@@ -724,7 +682,7 @@ FLOW_CONDITION top_river_bc_23
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.673d0
+  DATUM 0.d0 0.d0 1.758d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_24
@@ -732,7 +690,7 @@ FLOW_CONDITION top_river_bc_24
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.665d0
+  DATUM 0.d0 0.d0 1.755d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_25
@@ -740,7 +698,7 @@ FLOW_CONDITION top_river_bc_25
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.658d0
+  DATUM 0.d0 0.d0 1.751d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_26
@@ -748,7 +706,7 @@ FLOW_CONDITION top_river_bc_26
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.651d0
+  DATUM 0.d0 0.d0 1.748d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_27
@@ -756,7 +714,7 @@ FLOW_CONDITION top_river_bc_27
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.644d0
+  DATUM 0.d0 0.d0 1.744d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_28
@@ -764,7 +722,7 @@ FLOW_CONDITION top_river_bc_28
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.636d0
+  DATUM 0.d0 0.d0 1.741d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_29
@@ -772,7 +730,7 @@ FLOW_CONDITION top_river_bc_29
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.629d0
+  DATUM 0.d0 0.d0 1.737d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_30
@@ -780,7 +738,7 @@ FLOW_CONDITION top_river_bc_30
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.622d0
+  DATUM 0.d0 0.d0 1.733d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_31
@@ -788,7 +746,7 @@ FLOW_CONDITION top_river_bc_31
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.615d0
+  DATUM 0.d0 0.d0 1.730d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_32
@@ -796,7 +754,7 @@ FLOW_CONDITION top_river_bc_32
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.607d0
+  DATUM 0.d0 0.d0 1.726d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_33
@@ -804,7 +762,7 @@ FLOW_CONDITION top_river_bc_33
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.600d0
+  DATUM 0.d0 0.d0 1.723d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_34
@@ -812,7 +770,7 @@ FLOW_CONDITION top_river_bc_34
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.593d0
+  DATUM 0.d0 0.d0 1.719d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_35
@@ -820,7 +778,7 @@ FLOW_CONDITION top_river_bc_35
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.585d0
+  DATUM 0.d0 0.d0 1.716d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_36
@@ -828,7 +786,7 @@ FLOW_CONDITION top_river_bc_36
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.578d0
+  DATUM 0.d0 0.d0 1.712d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_37
@@ -836,7 +794,7 @@ FLOW_CONDITION top_river_bc_37
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.571d0
+  DATUM 0.d0 0.d0 1.709d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_38
@@ -844,7 +802,7 @@ FLOW_CONDITION top_river_bc_38
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.564d0
+  DATUM 0.d0 0.d0 1.705d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_39
@@ -852,7 +810,7 @@ FLOW_CONDITION top_river_bc_39
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.556d0
+  DATUM 0.d0 0.d0 1.701d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_40
@@ -860,7 +818,7 @@ FLOW_CONDITION top_river_bc_40
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.549d0
+  DATUM 0.d0 0.d0 1.698d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_41
@@ -868,7 +826,7 @@ FLOW_CONDITION top_river_bc_41
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.542d0
+  DATUM 0.d0 0.d0 1.694d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_42
@@ -876,7 +834,7 @@ FLOW_CONDITION top_river_bc_42
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.535d0
+  DATUM 0.d0 0.d0 1.691d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_43
@@ -884,7 +842,7 @@ FLOW_CONDITION top_river_bc_43
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.527d0
+  DATUM 0.d0 0.d0 1.687d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_44
@@ -892,7 +850,7 @@ FLOW_CONDITION top_river_bc_44
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.520d0
+  DATUM 0.d0 0.d0 1.684d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_45
@@ -900,7 +858,7 @@ FLOW_CONDITION top_river_bc_45
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.513d0
+  DATUM 0.d0 0.d0 1.680d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_46
@@ -908,7 +866,7 @@ FLOW_CONDITION top_river_bc_46
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.505d0
+  DATUM 0.d0 0.d0 1.677d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_47
@@ -916,7 +874,7 @@ FLOW_CONDITION top_river_bc_47
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.498d0
+  DATUM 0.d0 0.d0 1.673d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_48
@@ -924,7 +882,7 @@ FLOW_CONDITION top_river_bc_48
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.491d0
+  DATUM 0.d0 0.d0 1.670d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_49
@@ -932,7 +890,7 @@ FLOW_CONDITION top_river_bc_49
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.484d0
+  DATUM 0.d0 0.d0 1.666d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_50
@@ -940,7 +898,7 @@ FLOW_CONDITION top_river_bc_50
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.476d0
+  DATUM 0.d0 0.d0 1.662d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_51
@@ -948,7 +906,7 @@ FLOW_CONDITION top_river_bc_51
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.469d0
+  DATUM 0.d0 0.d0 1.659d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_52
@@ -956,7 +914,7 @@ FLOW_CONDITION top_river_bc_52
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.462d0
+  DATUM 0.d0 0.d0 1.655d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_53
@@ -964,7 +922,7 @@ FLOW_CONDITION top_river_bc_53
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.455d0
+  DATUM 0.d0 0.d0 1.652d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_54
@@ -972,7 +930,7 @@ FLOW_CONDITION top_river_bc_54
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.447d0
+  DATUM 0.d0 0.d0 1.648d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_55
@@ -980,7 +938,7 @@ FLOW_CONDITION top_river_bc_55
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.440d0
+  DATUM 0.d0 0.d0 1.645d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_56
@@ -988,7 +946,7 @@ FLOW_CONDITION top_river_bc_56
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.433d0
+  DATUM 0.d0 0.d0 1.641d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_57
@@ -996,7 +954,7 @@ FLOW_CONDITION top_river_bc_57
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.425d0
+  DATUM 0.d0 0.d0 1.638d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_58
@@ -1004,7 +962,7 @@ FLOW_CONDITION top_river_bc_58
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.418d0
+  DATUM 0.d0 0.d0 1.634d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_59
@@ -1012,7 +970,7 @@ FLOW_CONDITION top_river_bc_59
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.411d0
+  DATUM 0.d0 0.d0 1.630d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_60
@@ -1020,7 +978,7 @@ FLOW_CONDITION top_river_bc_60
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.404d0
+  DATUM 0.d0 0.d0 1.627d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_61
@@ -1028,7 +986,7 @@ FLOW_CONDITION top_river_bc_61
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.396d0
+  DATUM 0.d0 0.d0 1.623d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_62
@@ -1036,7 +994,7 @@ FLOW_CONDITION top_river_bc_62
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.389d0
+  DATUM 0.d0 0.d0 1.620d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_63
@@ -1044,7 +1002,7 @@ FLOW_CONDITION top_river_bc_63
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.382d0
+  DATUM 0.d0 0.d0 1.616d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_64
@@ -1052,7 +1010,7 @@ FLOW_CONDITION top_river_bc_64
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.375d0
+  DATUM 0.d0 0.d0 1.613d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_65
@@ -1060,7 +1018,7 @@ FLOW_CONDITION top_river_bc_65
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.367d0
+  DATUM 0.d0 0.d0 1.609d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_66
@@ -1068,7 +1026,7 @@ FLOW_CONDITION top_river_bc_66
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.360d0
+  DATUM 0.d0 0.d0 1.606d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_67
@@ -1076,7 +1034,7 @@ FLOW_CONDITION top_river_bc_67
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.353d0
+  DATUM 0.d0 0.d0 1.602d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_68
@@ -1084,7 +1042,7 @@ FLOW_CONDITION top_river_bc_68
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.345d0
+  DATUM 0.d0 0.d0 1.599d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_69
@@ -1092,7 +1050,7 @@ FLOW_CONDITION top_river_bc_69
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.338d0
+  DATUM 0.d0 0.d0 1.595d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_70
@@ -1100,7 +1058,7 @@ FLOW_CONDITION top_river_bc_70
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.331d0
+  DATUM 0.d0 0.d0 1.591d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_71
@@ -1108,7 +1066,7 @@ FLOW_CONDITION top_river_bc_71
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.324d0
+  DATUM 0.d0 0.d0 1.588d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_72
@@ -1116,7 +1074,7 @@ FLOW_CONDITION top_river_bc_72
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.316d0
+  DATUM 0.d0 0.d0 1.584d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_73
@@ -1124,7 +1082,7 @@ FLOW_CONDITION top_river_bc_73
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.309d0
+  DATUM 0.d0 0.d0 1.581d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_74
@@ -1132,7 +1090,7 @@ FLOW_CONDITION top_river_bc_74
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.302d0
+  DATUM 0.d0 0.d0 1.577d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_75
@@ -1140,7 +1098,7 @@ FLOW_CONDITION top_river_bc_75
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.295d0
+  DATUM 0.d0 0.d0 1.574d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_76
@@ -1148,7 +1106,7 @@ FLOW_CONDITION top_river_bc_76
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.287d0
+  DATUM 0.d0 0.d0 1.570d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_77
@@ -1156,7 +1114,7 @@ FLOW_CONDITION top_river_bc_77
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.280d0
+  DATUM 0.d0 0.d0 1.567d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_78
@@ -1164,7 +1122,7 @@ FLOW_CONDITION top_river_bc_78
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.273d0
+  DATUM 0.d0 0.d0 1.563d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_79
@@ -1172,7 +1130,7 @@ FLOW_CONDITION top_river_bc_79
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.265d0
+  DATUM 0.d0 0.d0 1.559d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_80
@@ -1180,7 +1138,7 @@ FLOW_CONDITION top_river_bc_80
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.258d0
+  DATUM 0.d0 0.d0 1.556d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_81
@@ -1188,7 +1146,7 @@ FLOW_CONDITION top_river_bc_81
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.251d0
+  DATUM 0.d0 0.d0 1.552d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_82
@@ -1196,7 +1154,7 @@ FLOW_CONDITION top_river_bc_82
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.244d0
+  DATUM 0.d0 0.d0 1.549d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_83
@@ -1204,7 +1162,7 @@ FLOW_CONDITION top_river_bc_83
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.236d0
+  DATUM 0.d0 0.d0 1.545d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_84
@@ -1212,7 +1170,7 @@ FLOW_CONDITION top_river_bc_84
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.229d0
+  DATUM 0.d0 0.d0 1.542d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_85
@@ -1220,7 +1178,7 @@ FLOW_CONDITION top_river_bc_85
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.222d0
+  DATUM 0.d0 0.d0 1.538d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_86
@@ -1228,7 +1186,7 @@ FLOW_CONDITION top_river_bc_86
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.215d0
+  DATUM 0.d0 0.d0 1.535d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_87
@@ -1236,7 +1194,7 @@ FLOW_CONDITION top_river_bc_87
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.207d0
+  DATUM 0.d0 0.d0 1.531d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_88
@@ -1244,7 +1202,7 @@ FLOW_CONDITION top_river_bc_88
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.200d0
+  DATUM 0.d0 0.d0 1.527d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_89
@@ -1252,7 +1210,7 @@ FLOW_CONDITION top_river_bc_89
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.193d0
+  DATUM 0.d0 0.d0 1.524d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_90
@@ -1260,7 +1218,7 @@ FLOW_CONDITION top_river_bc_90
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.185d0
+  DATUM 0.d0 0.d0 1.520d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_91
@@ -1268,7 +1226,7 @@ FLOW_CONDITION top_river_bc_91
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.178d0
+  DATUM 0.d0 0.d0 1.517d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_92
@@ -1276,7 +1234,7 @@ FLOW_CONDITION top_river_bc_92
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.171d0
+  DATUM 0.d0 0.d0 1.513d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_93
@@ -1284,7 +1242,7 @@ FLOW_CONDITION top_river_bc_93
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.164d0
+  DATUM 0.d0 0.d0 1.510d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_94
@@ -1292,7 +1250,7 @@ FLOW_CONDITION top_river_bc_94
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.156d0
+  DATUM 0.d0 0.d0 1.506d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_95
@@ -1300,7 +1258,7 @@ FLOW_CONDITION top_river_bc_95
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.149d0
+  DATUM 0.d0 0.d0 1.503d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_96
@@ -1308,7 +1266,7 @@ FLOW_CONDITION top_river_bc_96
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.142d0
+  DATUM 0.d0 0.d0 1.499d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_97
@@ -1316,7 +1274,7 @@ FLOW_CONDITION top_river_bc_97
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.135d0
+  DATUM 0.d0 0.d0 1.496d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_98
@@ -1324,7 +1282,7 @@ FLOW_CONDITION top_river_bc_98
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.127d0
+  DATUM 0.d0 0.d0 1.492d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_99
@@ -1332,7 +1290,7 @@ FLOW_CONDITION top_river_bc_99
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.120d0
+  DATUM 0.d0 0.d0 1.488d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_100
@@ -1340,7 +1298,7 @@ FLOW_CONDITION top_river_bc_100
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.113d0
+  DATUM 0.d0 0.d0 1.485d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_101
@@ -1348,7 +1306,7 @@ FLOW_CONDITION top_river_bc_101
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.105d0
+  DATUM 0.d0 0.d0 1.481d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_102
@@ -1356,7 +1314,7 @@ FLOW_CONDITION top_river_bc_102
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.098d0
+  DATUM 0.d0 0.d0 1.478d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_103
@@ -1364,7 +1322,7 @@ FLOW_CONDITION top_river_bc_103
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.091d0
+  DATUM 0.d0 0.d0 1.474d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_104
@@ -1372,7 +1330,7 @@ FLOW_CONDITION top_river_bc_104
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.084d0
+  DATUM 0.d0 0.d0 1.471d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_105
@@ -1380,7 +1338,7 @@ FLOW_CONDITION top_river_bc_105
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.076d0
+  DATUM 0.d0 0.d0 1.467d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_106
@@ -1388,7 +1346,7 @@ FLOW_CONDITION top_river_bc_106
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.069d0
+  DATUM 0.d0 0.d0 1.464d0
   LIQUID_PRESSURE 101325.d0
 /
 FLOW_CONDITION top_river_bc_107
@@ -1396,119 +1354,7 @@ FLOW_CONDITION top_river_bc_107
     LIQUID_PRESSURE seepage
   /
   CYCLIC
-  DATUM 0.d0 0.d0 1.062d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_108
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 1.055d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_109
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 1.047d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_110
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 1.040d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_111
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 1.033d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_112
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 1.025d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_113
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 1.018d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_114
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 1.011d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_115
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 1.004d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_116
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 0.996d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_117
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 0.989d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_118
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 0.982d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_119
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 0.975d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_120
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 0.967d0
-  LIQUID_PRESSURE 101325.d0
-/
-FLOW_CONDITION top_river_bc_121
-  TYPE
-    LIQUID_PRESSURE seepage
-  /
-  CYCLIC
-  DATUM 0.d0 0.d0 0.960d0
+  DATUM 0.d0 0.d0 1.460d0
   LIQUID_PRESSURE 101325.d0
 /
 ! end auto add
@@ -1996,7 +1842,7 @@ noskip
       NO3-        1.41e-06  T
       O2(aq)      0.16      G O2(g)
       SiO2(aq)    1.63e-04  T
-      SO4--       3.00e-08  T
+      SO4--       1.25e-03  T
       SOC(aq)     1.00e-04  T
       Tracer      1.00e-05  T
     /
@@ -3160,146 +3006,6 @@ BOUNDARY_CONDITION top_precip_107
   FLOW_CONDITION top_precip_bc
   TRANSPORT_CONDITION from_precip
   REGION top_bc_reg_107
-/
-BOUNDARY_CONDITION top_river_108
-  FLOW_CONDITION top_river_bc_108
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_108
-/
-BOUNDARY_CONDITION top_precip_108
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_108
-/
-BOUNDARY_CONDITION top_river_109
-  FLOW_CONDITION top_river_bc_109
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_109
-/
-BOUNDARY_CONDITION top_precip_109
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_109
-/
-BOUNDARY_CONDITION top_river_110
-  FLOW_CONDITION top_river_bc_110
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_110
-/
-BOUNDARY_CONDITION top_precip_110
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_110
-/
-BOUNDARY_CONDITION top_river_111
-  FLOW_CONDITION top_river_bc_111
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_111
-/
-BOUNDARY_CONDITION top_precip_111
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_111
-/
-BOUNDARY_CONDITION top_river_112
-  FLOW_CONDITION top_river_bc_112
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_112
-/
-BOUNDARY_CONDITION top_precip_112
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_112
-/
-BOUNDARY_CONDITION top_river_113
-  FLOW_CONDITION top_river_bc_113
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_113
-/
-BOUNDARY_CONDITION top_precip_113
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_113
-/
-BOUNDARY_CONDITION top_river_114
-  FLOW_CONDITION top_river_bc_114
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_114
-/
-BOUNDARY_CONDITION top_precip_114
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_114
-/
-BOUNDARY_CONDITION top_river_115
-  FLOW_CONDITION top_river_bc_115
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_115
-/
-BOUNDARY_CONDITION top_precip_115
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_115
-/
-BOUNDARY_CONDITION top_river_116
-  FLOW_CONDITION top_river_bc_116
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_116
-/
-BOUNDARY_CONDITION top_precip_116
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_116
-/
-BOUNDARY_CONDITION top_river_117
-  FLOW_CONDITION top_river_bc_117
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_117
-/
-BOUNDARY_CONDITION top_precip_117
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_117
-/
-BOUNDARY_CONDITION top_river_118
-  FLOW_CONDITION top_river_bc_118
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_118
-/
-BOUNDARY_CONDITION top_precip_118
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_118
-/
-BOUNDARY_CONDITION top_river_119
-  FLOW_CONDITION top_river_bc_119
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_119
-/
-BOUNDARY_CONDITION top_precip_119
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_119
-/
-BOUNDARY_CONDITION top_river_120
-  FLOW_CONDITION top_river_bc_120
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_120
-/
-BOUNDARY_CONDITION top_precip_120
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_120
-/
-BOUNDARY_CONDITION top_river_121
-  FLOW_CONDITION top_river_bc_121
-  TRANSPORT_CONDITION from_river
-  REGION top_bc_reg_121
-/
-BOUNDARY_CONDITION top_precip_121
-  FLOW_CONDITION top_precip_bc
-  TRANSPORT_CONDITION from_precip
-  REGION top_bc_reg_121
 /
 ! end auto add
 

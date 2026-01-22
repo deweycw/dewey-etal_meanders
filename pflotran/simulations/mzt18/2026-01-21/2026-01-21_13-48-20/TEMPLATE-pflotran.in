@@ -9,8 +9,9 @@ SIMULATION
       MODE GIRT 
     /
   /
-  CHECKPOINT
-    TIMES y 1. 
+  RESTART
+    FILENAME pflotran-spin-mzt19-restart.chk
+    RESET_TO_TIME_ZERO
   /
 END
 
@@ -81,21 +82,31 @@ SUBSURFACE
   #===================OUTPUT=====================
   OUTPUT
     VELOCITY_AT_CENTER
-    TIME_UNITS y
+    TIME_UNITS h
     SNAPSHOT_FILE
       FORMAT HDF5
-      PERIODIC TIME 0.5d0 y
+      PERIODIC TIME 24 h
     /
+skip
+    MASS_BALANCE_FILE
+      PERIODIC TIME 24 h
+      TOTAL_MASS_REGIONS
+        all
+        downstream_bc_reg
+        upstream_bc_reg
+      /
+    /
+noskip
 
   SCREEN PERIODIC 100
   END
 
   #=====================TIME======================
   TIME
-    FINAL_TIME 1.5d0 y 
-    INITIAL_TIMESTEP_SIZE  24.d0 hr
-    MINIMUM_TIMESTEP_SIZE  0.001d0 hr
-    MAXIMUM_TIMESTEP_SIZE  336.0d0 hr
+    FINAL_TIME 3993.d0 h 
+    INITIAL_TIMESTEP_SIZE  0.01d0 hr
+    MINIMUM_TIMESTEP_SIZE  0.00001d0 hr
+    MAXIMUM_TIMESTEP_SIZE  0.5d0 hr
   END
 
   #==================REGIONS====================
@@ -143,7 +154,7 @@ $%$%$% CHUNK DELIM %^%^%^
       LIQUID_PRESSURE seepage 
     /
     CYCLIC
-    DATUM 0.d0 0.d0 1.94d0 
+    DATUM FILE hydro_us_2019_4-21_10-2-MZT.txt
     LIQUID_PRESSURE 101325.d0
   /
 
@@ -152,10 +163,10 @@ $%$%$% CHUNK DELIM %^%^%^
       LIQUID_PRESSURE seepage
     /
     CYCLIC
-    DATUM 0.d0 0.d0 1.66d0 
+    DATUM FILE hydro_ds_2019_4-21_10-2-MZT.txt
     LIQUID_PRESSURE 101325.d0 
   /
-
+  
   FLOW_CONDITION top_precip_bc
     TYPE
       LIQUID_FLUX NEUMANN
@@ -174,7 +185,6 @@ $%$%$% CHUNK DELIM %^%^%^
 $%$%$% CHUNK DELIM %^%^%^
 
 ! end auto add
-
 
   #=========================== CONSTRAINTS ====================================== 
   CONSTRAINT  initial_gravel
@@ -203,18 +213,15 @@ $%$%$% CHUNK DELIM %^%^%^
     /
 
     IMMOBILE
-      Fim       1.d-10 !1.d-6
-      Nim       1.d-10 !1.d-4
-      Sim       1.d-10 !1.d-4
+      Fim       1.d-6
+      Nim       1.d-4
+      Sim       1.d-4
     /
 
     MINERALS
-      !Albite           6.74e-02  2.90e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Albite           6.74e-02  0.10e+00 m^2/g 
-      Calcite          1.00e-03  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      !Calcite          1.00e-03  0.22e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      !Dolomite         1.00e-02  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Dolomite         1.00e-02  1.82e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Albite           6.74e-02  2.90e+01
+      Calcite          1.00e-02  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Dolomite         1.00e-02  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Root_Respiration 1.00e-02  1.13e+05
       !Pyrite           1.00e-03  1.90e+00
       Ferrihydrite     0.00e-00  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
@@ -250,50 +257,21 @@ $%$%$% CHUNK DELIM %^%^%^
     /
 
     IMMOBILE
-      Fim       1.d-10 !1.d-5
-      Nim       1.d-10 !1.d-4
-      Sim       1.d-10 !1.d-4
+      Fim       1.d-5
+      Nim       1.d-4
+      Sim       1.d-4
     /
 
     MINERALS
-      !Albite           6.74e-02  2.90e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Albite           6.74e-02  0.10e+00 m^2/g 
-      Calcite          1.00e-03  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      !Calcite          1.00e-03  0.22e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      !Dolomite         1.00e-02  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Dolomite         1.00e-02  1.82e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Albite           6.74e-02  2.90e+01
+      Calcite          1.00e-02  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Dolomite         1.00e-02  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Root_Respiration 1.00e-02  1.13e+05
       !Pyrite           1.00e-03  1.90e+00
-      Ferrihydrite     0.00e-00  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Ferrihydrite     5.00e-05  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       SOC              1.00e-02  1.13e+05 # cm^2/cm^3
       SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-    /
-  END
-
-  CONSTRAINT  river
-    CONCENTRATIONS 
-      H+          7.85      P
-      H2O         1.00e+00  T
-      Ac-         1.00e-06  T
-      Al+++       1.41e-06  T
-      Ca++        1.22e-03  T 
-      Cl-         4.55e-05  T
-      Fe++        4.66e-07  T
-      Fe+++       1.00E-15  M Goethite
-      HCO3-       3.00e-04  T
-      HS-         4.43E-08  T
-      K+          1.66e-05  T
-      Mg++        4.10e-04  T
-      N2(aq)      5.50e-01  G N2(g)
-      NH3(aq)     1.00e-06  T
-      Na+         7.97e-05  T
-      NO3-        1.41e-06  T
-      O2(aq)      0.16      G O2(g)
-      SiO2(aq)    1.63e-04  T
-      SO4--       3.90e-04  T
-      SOC(aq)     1.00e-04  T
-      Tracer      1.00e-05  T
     /
   END
 
@@ -323,6 +301,13 @@ $%$%$% CHUNK DELIM %^%^%^
     /
   END
 
+
+! start auto add
+
+$%$%$% CHUNK DELIM %^%^%^
+
+! end auto add
+
   #=========================== TRANSPORT CONDITIONS ============================= 
   TRANSPORT_CONDITION  initial_all
     TYPE zero_gradient 
@@ -345,19 +330,18 @@ $%$%$% CHUNK DELIM %^%^%^
       / 
   END 
 
-  TRANSPORT_CONDITION  from_river
-    TYPE dirichlet_zero_gradient 
-      CONSTRAINT_LIST 
-        0.d0  river
-      / 
-  END 
-
   TRANSPORT_CONDITION  from_precip
     TYPE zero_gradient 
       CONSTRAINT_LIST 
         0.d0  precip
       / 
   END 
+
+! start auto add
+
+$%$%$% CHUNK DELIM %^%^%^
+
+! end auto add
 
   #======================BOUNDARY CONDITION==========================
 
