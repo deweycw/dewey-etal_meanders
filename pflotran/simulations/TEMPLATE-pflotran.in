@@ -38,9 +38,9 @@ SUBSURFACE
     POROSITY 0.2
     CHARACTERISTIC_CURVES sf
     PERMEABILITY 
-      PERM_X  5.26E-11
-      PERM_Y  5.26E-11
-      PERM_Z  5.26E-11
+      PERM_X  2.26E-11
+      PERM_Y  2.26E-11
+      PERM_Z  2.26E-11
     /
   /
 

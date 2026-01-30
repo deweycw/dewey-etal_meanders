@@ -555,6 +555,44 @@ class PFLOTRANGenerator:
 
         return updated_content
 
+    def _update_datum_files(self, content: List[str], upstream_file: str, downstream_file: str) -> List[str]:
+        """Update the DATUM FILE references in upstream_bc and downstream_bc flow conditions.
+
+        The template has hardcoded 2019 file names that need to be replaced with the
+        correct year-specific files from the simulation configuration.
+        """
+        updated_content = []
+        in_upstream_bc = False
+        in_downstream_bc = False
+
+        for line in content:
+            # Track which flow condition block we're in
+            if 'FLOW_CONDITION upstream_bc' in line:
+                in_upstream_bc = True
+                in_downstream_bc = False
+            elif 'FLOW_CONDITION downstream_bc' in line:
+                in_upstream_bc = False
+                in_downstream_bc = True
+            elif line.strip().startswith('FLOW_CONDITION') or (line.strip() == '/' and (in_upstream_bc or in_downstream_bc)):
+                # Exiting the current flow condition block
+                if line.strip() == '/':
+                    in_upstream_bc = False
+                    in_downstream_bc = False
+
+            # Replace DATUM FILE lines within the appropriate flow condition
+            if 'DATUM FILE' in line:
+                indent = len(line) - len(line.lstrip())
+                if in_upstream_bc:
+                    updated_content.append(' ' * indent + f'DATUM FILE {upstream_file}\n')
+                elif in_downstream_bc:
+                    updated_content.append(' ' * indent + f'DATUM FILE {downstream_file}\n')
+                else:
+                    updated_content.append(line)
+            else:
+                updated_content.append(line)
+
+        return updated_content
+
     def write_regions_block(self) -> str:
         """Generate regions block."""
         grid_file = self._get_grid_file()
@@ -640,6 +678,10 @@ class PFLOTRANGenerator:
 
         # Update FINAL_TIME for transient simulations
         template_content = self._update_final_time(template_content, transient)
+
+        # Update DATUM FILE references for upstream_bc and downstream_bc (transient only)
+        if transient and upstream_file and downstream_file:
+            template_content = self._update_datum_files(template_content, upstream_file, downstream_file)
 
         chunks = self._split_template_with_chemistry(template_content)
 
