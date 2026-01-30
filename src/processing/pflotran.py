@@ -13,6 +13,7 @@ Extends pflotranutils.CrossSection with:
 import math
 import sys
 import numpy as np
+import pandas as pd
 import h5py
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -1324,9 +1325,28 @@ class PflotranProcessor(CrossSection):
         rmse = np.sqrt(np.mean((all_simulated - all_observed) ** 2))
         bias = np.mean(all_simulated - all_observed)
 
+        # Calculate NSE
+        obs_mean = np.mean(all_observed)
+        ss_res = np.sum((all_observed - all_simulated) ** 2)
+        ss_tot = np.sum((all_observed - obs_mean) ** 2)
+        nse = 1 - (ss_res / ss_tot) if ss_tot > 0 else np.nan
+
+        # Calculate KGE
+        sim_mean = np.mean(all_simulated)
+        obs_std = np.std(all_observed)
+        sim_std = np.std(all_simulated)
+        if obs_std > 0 and obs_mean != 0:
+            alpha = sim_std / obs_std  # Variability ratio
+            beta = sim_mean / obs_mean  # Bias ratio
+            kge = 1 - np.sqrt((r_value - 1)**2 + (alpha - 1)**2 + (beta - 1)**2)
+        else:
+            kge = np.nan
+
         # Print stats to console
         print(f"\n--- Validation Stats: {component_name} ---")
         print(f"  R²    = {r_squared:.3f}")
+        print(f"  NSE   = {nse:.3f}")
+        print(f"  KGE   = {kge:.3f}")
         print(f"  RMSE  = {rmse:.2e}")
         print(f"  Bias  = {bias:.2e}")
         print(f"  Slope = {slope:.3f}")
@@ -1351,6 +1371,719 @@ class PflotranProcessor(CrossSection):
         ax.set_aspect('equal', adjustable='box')
 
         return ax
+
+    def calculate_nse(self, component_name: str, startdate: Any,
+                      chem_obs: Any,
+                      results: Optional[dict] = None,
+                      distances: Optional[List] = None,
+                      obs_component_name: Optional[str] = None,
+                      depths: Optional[List[float]] = None,
+                      max_time_diff_hours: float = 12.0) -> dict:
+        """
+        Calculate Nash-Sutcliffe Efficiency (NSE) for a specified output parameter.
+
+        NSE = 1 - (Σ(O_i - S_i)²) / (Σ(O_i - Ō)²)
+
+        Where:
+        - O_i = observed values
+        - S_i = simulated values
+        - Ō = mean of observed values
+
+        NSE interpretation:
+        - NSE = 1: Perfect match between simulated and observed
+        - NSE = 0: Model is as accurate as using the mean of observations
+        - NSE < 0: Mean of observations is a better predictor than the model
+
+        Args:
+            component_name: Name of the component (e.g., 'Total_Fe++ [M]')
+            startdate: Starting date for simulation (e.g., np.datetime64('2019-05-01'))
+            chem_obs: Chemical observations DataFrame with 'Date' and 'Well' columns
+            results: Optional dict of results by distance. If None, calls get_histories().
+            distances: Optional distance points. If None, uses self.config['distances'].
+            obs_component_name: Name of component in observations (if different).
+            depths: Optional depths for get_histories() if extracting data.
+            max_time_diff_hours: Maximum time difference (hours) for matching
+                                 observations to simulations. Default is 12 hours.
+
+        Returns:
+            Dictionary containing:
+            - 'nse': Nash-Sutcliffe Efficiency value
+            - 'nse_by_location': Dict of NSE values per monitoring location
+            - 'n_pairs': Number of observation-simulation pairs used
+            - 'observed': Array of observed values
+            - 'simulated': Array of simulated values
+            - 'rmse': Root Mean Square Error
+            - 'bias': Mean bias (simulated - observed)
+
+        Example:
+            stats = processor.calculate_nse(
+                'Total_Fe++ [M]',
+                startdate=np.datetime64('2019-05-01'),
+                chem_obs=obs_df
+            )
+            print(f"NSE: {stats['nse']:.3f}")
+        """
+        # Use defaults from processor if not provided
+        if distances is None:
+            distances = list(self.config['distances'])
+
+        # Extract results if not provided
+        if results is None:
+            results, _ = self.get_histories(depths=depths, components=[component_name])
+
+        # Infer observation component name if not provided
+        if obs_component_name is None:
+            obs_component_name = self.COMPONENT_TO_OBS_MAP.get(component_name)
+            if obs_component_name is None:
+                raise ValueError(f"Could not infer observation name for '{component_name}'. "
+                               f"Please provide obs_component_name explicitly.")
+
+        # Check if observation component exists
+        if obs_component_name not in chem_obs.columns:
+            raise ValueError(f"'{obs_component_name}' not found in observation data columns")
+
+        # Determine unit conversion factors
+        is_pH = 'pH' in component_name
+        if is_pH:
+            sim_unit_factor = 1.0
+            obs_unit_factor = 1.0
+        else:
+            # Use consistent units (M) for comparison
+            target_unit = 'M'
+            sim_unit_factor = self._get_sim_unit_factor(target_unit)
+            obs_unit_factor = self._get_obs_unit_factor(obs_component_name, target_unit)
+
+        # Get simulation times as datetime
+        sim_times = self.times
+        sim_datetimes = [startdate + np.timedelta64(int(t), 'h') for t in sim_times]
+
+        # Collect all observed vs simulated pairs
+        all_observed = []
+        all_simulated = []
+        all_locations = []
+        pairs_by_location: dict = {loc: {'obs': [], 'sim': []} for loc in self.config['obs_locs']}
+
+        loc_dist = self.config['loc_dist']
+
+        for loc in self.config['obs_locs']:
+            # Get observations for this location
+            df = chem_obs[chem_obs['Well'] == loc].copy()
+            if obs_component_name not in df.columns:
+                continue
+
+            mask = df[obs_component_name].isna()
+            df = df[~mask]
+
+            if len(df) == 0:
+                continue
+
+            # Get the distance for this location
+            loc_id = self.config['loc_name'].get(loc, '1')
+            distance = None
+            for d, lid in loc_dist.items():
+                if lid == loc_id:
+                    distance = d
+                    break
+
+            if distance is None or distance not in results:
+                continue
+
+            # Get simulation data for this distance
+            sim_data = np.array(results[distance][component_name]) * sim_unit_factor
+
+            # For each observation, find corresponding simulation value
+            for _, row in df.iterrows():
+                obs_date = row['Date']
+                obs_value = row[obs_component_name] * obs_unit_factor
+
+                # Find closest simulation time
+                if hasattr(obs_date, 'to_numpy'):
+                    obs_datetime = obs_date.to_numpy()
+                else:
+                    obs_datetime = np.datetime64(obs_date)
+
+                # Calculate time differences
+                time_diffs = [abs((obs_datetime - sd).astype('timedelta64[h]').astype(float))
+                             for sd in sim_datetimes]
+                closest_idx = np.argmin(time_diffs)
+
+                # Only include if within max_time_diff_hours of a simulation output
+                if time_diffs[closest_idx] <= max_time_diff_hours:
+                    sim_value = sim_data[closest_idx]
+                    all_observed.append(obs_value)
+                    all_simulated.append(sim_value)
+                    all_locations.append(loc)
+                    pairs_by_location[loc]['obs'].append(obs_value)
+                    pairs_by_location[loc]['sim'].append(sim_value)
+
+        if len(all_observed) == 0:
+            raise ValueError("No matching observation/simulation pairs found within "
+                           f"{max_time_diff_hours} hours")
+
+        all_observed = np.array(all_observed)
+        all_simulated = np.array(all_simulated)
+
+        # Calculate overall NSE
+        obs_mean = np.mean(all_observed)
+        ss_res = np.sum((all_observed - all_simulated) ** 2)  # Residual sum of squares
+        ss_tot = np.sum((all_observed - obs_mean) ** 2)       # Total sum of squares
+
+        if ss_tot == 0:
+            nse = np.nan  # All observations are identical
+        else:
+            nse = 1 - (ss_res / ss_tot)
+
+        # Calculate NSE by location
+        nse_by_location = {}
+        for loc, pairs in pairs_by_location.items():
+            if len(pairs['obs']) > 1:
+                obs_arr = np.array(pairs['obs'])
+                sim_arr = np.array(pairs['sim'])
+                loc_obs_mean = np.mean(obs_arr)
+                loc_ss_res = np.sum((obs_arr - sim_arr) ** 2)
+                loc_ss_tot = np.sum((obs_arr - loc_obs_mean) ** 2)
+                if loc_ss_tot > 0:
+                    nse_by_location[loc] = 1 - (loc_ss_res / loc_ss_tot)
+                else:
+                    nse_by_location[loc] = np.nan
+
+        # Calculate additional statistics
+        rmse = np.sqrt(np.mean((all_simulated - all_observed) ** 2))
+        bias = np.mean(all_simulated - all_observed)
+
+        return {
+            'nse': float(nse),
+            'nse_by_location': nse_by_location,
+            'n_pairs': len(all_observed),
+            'observed': all_observed,
+            'simulated': all_simulated,
+            'rmse': float(rmse),
+            'bias': float(bias),
+            'component': component_name,
+            'obs_component': obs_component_name
+        }
+
+    # Mapping from water level observation column names to location IDs
+    WATER_OBS_LOC_MAP = {
+        'mzt11': '1', 'mzt13': '3', 'mzt15': '5',
+        'mzt21': '1', 'mzt23': '3', 'mzt25': '5',
+        'mcp11': '1', 'mcp13': '3', 'mcp15': '5',
+    }
+
+    # Base elevations for converting pressure to mASL
+    BASE_ELEVATIONS = {
+        'MZ': 2717.5,
+        'MC': 2717.5,  # Adjust if different for MC
+    }
+
+    def _calculate_kge_for_water_levels(self, startdate: Any, water_obs: Any,
+                                        results: dict, distances: List,
+                                        max_time_diff_hours: float) -> Optional[dict]:
+        """
+        Internal method to calculate KGE for water levels.
+
+        Converts simulated pressure to water elevation (mASL) and compares
+        with observed groundwater elevations.
+
+        Returns None if no valid observation-simulation pairs are found.
+        """
+        # Check for pressure component in simulation
+        pressure_component = 'Liquid_Pressure [Pa]'
+        first_distance = distances[0]
+        if first_distance not in results or pressure_component not in results[first_distance]:
+            return None
+
+        # Get base elevation for this meander
+        base_elev = self.BASE_ELEVATIONS.get(self.meander, 2717.5)
+
+        # Determine date column name (handle both formats)
+        date_col = 'Date and time' if 'Date and time' in water_obs.columns else 'Date'
+
+        # Get simulation times as datetime
+        sim_times = self.times
+        sim_datetimes = [startdate + np.timedelta64(int(t), 'h') for t in sim_times]
+
+        # Collect all observed vs simulated pairs
+        all_observed = []
+        all_simulated = []
+        pairs_by_location: dict = {}
+
+        loc_dist = self.config['loc_dist']
+
+        # Find water level columns that match our locations
+        for obs_col in water_obs.columns:
+            if obs_col == date_col:
+                continue
+
+            # Get location ID from observation column name
+            loc_id = self.WATER_OBS_LOC_MAP.get(obs_col.lower())
+            if loc_id is None:
+                continue
+
+            # Find the distance for this location
+            distance = None
+            for d, lid in loc_dist.items():
+                if lid == loc_id:
+                    distance = d
+                    break
+
+            if distance is None or distance not in results:
+                continue
+
+            if pressure_component not in results[distance]:
+                continue
+
+            # Initialize location tracking
+            if obs_col not in pairs_by_location:
+                pairs_by_location[obs_col] = {'obs': [], 'sim': []}
+
+            # Get simulated pressure and convert to mASL
+            sim_pressure = np.array(results[distance][pressure_component])
+            sim_elev = (sim_pressure - 101325.0) / (9.81 * 998.0) + base_elev
+
+            # Match observations to simulations
+            for _, row in water_obs.iterrows():
+                obs_date = row[date_col]
+                obs_value = row[obs_col]
+
+                # Skip NaN observations
+                if pd.isna(obs_value):
+                    continue
+
+                if hasattr(obs_date, 'to_numpy'):
+                    obs_datetime = obs_date.to_numpy()
+                else:
+                    obs_datetime = np.datetime64(obs_date)
+
+                time_diffs = [abs((obs_datetime - sd).astype('timedelta64[h]').astype(float))
+                             for sd in sim_datetimes]
+                closest_idx = np.argmin(time_diffs)
+
+                if time_diffs[closest_idx] <= max_time_diff_hours:
+                    sim_value = sim_elev[closest_idx]
+                    all_observed.append(obs_value)
+                    all_simulated.append(sim_value)
+                    pairs_by_location[obs_col]['obs'].append(obs_value)
+                    pairs_by_location[obs_col]['sim'].append(sim_value)
+
+        if len(all_observed) == 0:
+            return None
+
+        all_observed = np.array(all_observed)
+        all_simulated = np.array(all_simulated)
+
+        # Calculate KGE components
+        obs_mean = np.mean(all_observed)
+        sim_mean = np.mean(all_simulated)
+        obs_std = np.std(all_observed)
+        sim_std = np.std(all_simulated)
+
+        # Pearson correlation
+        if obs_std > 0 and sim_std > 0:
+            r = np.corrcoef(all_observed, all_simulated)[0, 1]
+        else:
+            r = np.nan
+
+        # Variability ratio (alpha)
+        alpha = sim_std / obs_std if obs_std > 0 else np.nan
+
+        # Bias ratio (beta)
+        beta = sim_mean / obs_mean if obs_mean != 0 else np.nan
+
+        # Calculate KGE
+        if not np.isnan(r) and not np.isnan(alpha) and not np.isnan(beta):
+            kge = 1 - np.sqrt((r - 1)**2 + (alpha - 1)**2 + (beta - 1)**2)
+        else:
+            kge = np.nan
+
+        # Calculate NSE
+        ss_res = np.sum((all_observed - all_simulated) ** 2)
+        ss_tot = np.sum((all_observed - obs_mean) ** 2)
+        nse = 1 - (ss_res / ss_tot) if ss_tot > 0 else np.nan
+
+        # Calculate RMSE
+        rmse = np.sqrt(np.mean((all_simulated - all_observed) ** 2))
+
+        # Calculate KGE by location
+        kge_by_location = {}
+        for loc, pairs in pairs_by_location.items():
+            if len(pairs['obs']) > 1:
+                obs_arr = np.array(pairs['obs'])
+                sim_arr = np.array(pairs['sim'])
+                loc_obs_mean = np.mean(obs_arr)
+                loc_sim_mean = np.mean(sim_arr)
+                loc_obs_std = np.std(obs_arr)
+                loc_sim_std = np.std(sim_arr)
+
+                if loc_obs_std > 0 and loc_sim_std > 0:
+                    loc_r = np.corrcoef(obs_arr, sim_arr)[0, 1]
+                    loc_alpha = loc_sim_std / loc_obs_std
+                    loc_beta = loc_sim_mean / loc_obs_mean if loc_obs_mean != 0 else np.nan
+                    if not np.isnan(loc_r) and not np.isnan(loc_beta):
+                        kge_by_location[loc] = 1 - np.sqrt(
+                            (loc_r - 1)**2 + (loc_alpha - 1)**2 + (loc_beta - 1)**2
+                        )
+
+        return {
+            'kge': float(kge) if not np.isnan(kge) else np.nan,
+            'nse': float(nse) if not np.isnan(nse) else np.nan,
+            'rmse': float(rmse),
+            'kge_components': {
+                'r': float(r) if not np.isnan(r) else np.nan,
+                'alpha': float(alpha) if not np.isnan(alpha) else np.nan,
+                'beta': float(beta) if not np.isnan(beta) else np.nan
+            },
+            'kge_by_location': kge_by_location,
+            'n_pairs': len(all_observed),
+            'observed': all_observed,
+            'simulated': all_simulated,
+            'component': 'Water_Level [mASL]',
+            'obs_component': 'GW Elevation'
+        }
+
+    def _calculate_kge_for_component(self, component_name: str, startdate: Any,
+                                      chem_obs: Any, results: dict,
+                                      distances: List, max_time_diff_hours: float) -> Optional[dict]:
+        """
+        Internal method to calculate KGE for a single component.
+
+        Returns None if no valid observation-simulation pairs are found.
+        """
+        # Get observation component name
+        obs_component_name = self.COMPONENT_TO_OBS_MAP.get(component_name)
+        if obs_component_name is None:
+            return None
+
+        # Check if observation component exists in data
+        if obs_component_name not in chem_obs.columns:
+            return None
+
+        # Check if component exists in simulation results
+        first_distance = distances[0]
+        if first_distance not in results or component_name not in results[first_distance]:
+            return None
+
+        # Determine unit conversion factors
+        is_pH = 'pH' in component_name
+        if is_pH:
+            sim_unit_factor = 1.0
+            obs_unit_factor = 1.0
+        else:
+            target_unit = 'M'
+            sim_unit_factor = self._get_sim_unit_factor(target_unit)
+            obs_unit_factor = self._get_obs_unit_factor(obs_component_name, target_unit)
+
+        # Get simulation times as datetime
+        sim_times = self.times
+        sim_datetimes = [startdate + np.timedelta64(int(t), 'h') for t in sim_times]
+
+        # Collect all observed vs simulated pairs
+        all_observed = []
+        all_simulated = []
+        pairs_by_location: dict = {loc: {'obs': [], 'sim': []} for loc in self.config['obs_locs']}
+
+        loc_dist = self.config['loc_dist']
+
+        for loc in self.config['obs_locs']:
+            df = chem_obs[chem_obs['Well'] == loc].copy()
+            if obs_component_name not in df.columns:
+                continue
+
+            mask = df[obs_component_name].isna()
+            df = df[~mask]
+
+            if len(df) == 0:
+                continue
+
+            loc_id = self.config['loc_name'].get(loc, '1')
+            distance = None
+            for d, lid in loc_dist.items():
+                if lid == loc_id:
+                    distance = d
+                    break
+
+            if distance is None or distance not in results:
+                continue
+
+            if component_name not in results[distance]:
+                continue
+
+            sim_data = np.array(results[distance][component_name]) * sim_unit_factor
+
+            for _, row in df.iterrows():
+                obs_date = row['Date']
+                obs_value = row[obs_component_name] * obs_unit_factor
+
+                if hasattr(obs_date, 'to_numpy'):
+                    obs_datetime = obs_date.to_numpy()
+                else:
+                    obs_datetime = np.datetime64(obs_date)
+
+                time_diffs = [abs((obs_datetime - sd).astype('timedelta64[h]').astype(float))
+                             for sd in sim_datetimes]
+                closest_idx = np.argmin(time_diffs)
+
+                if time_diffs[closest_idx] <= max_time_diff_hours:
+                    sim_value = sim_data[closest_idx]
+                    all_observed.append(obs_value)
+                    all_simulated.append(sim_value)
+                    pairs_by_location[loc]['obs'].append(obs_value)
+                    pairs_by_location[loc]['sim'].append(sim_value)
+
+        if len(all_observed) == 0:
+            return None
+
+        all_observed = np.array(all_observed)
+        all_simulated = np.array(all_simulated)
+
+        # Calculate KGE components
+        obs_mean = np.mean(all_observed)
+        sim_mean = np.mean(all_simulated)
+        obs_std = np.std(all_observed)
+        sim_std = np.std(all_simulated)
+
+        # Pearson correlation
+        if obs_std > 0 and sim_std > 0:
+            r = np.corrcoef(all_observed, all_simulated)[0, 1]
+        else:
+            r = np.nan
+
+        # Variability ratio (alpha)
+        alpha = sim_std / obs_std if obs_std > 0 else np.nan
+
+        # Bias ratio (beta)
+        beta = sim_mean / obs_mean if obs_mean != 0 else np.nan
+
+        # Calculate KGE
+        if not np.isnan(r) and not np.isnan(alpha) and not np.isnan(beta):
+            kge = 1 - np.sqrt((r - 1)**2 + (alpha - 1)**2 + (beta - 1)**2)
+        else:
+            kge = np.nan
+
+        # Calculate NSE
+        ss_res = np.sum((all_observed - all_simulated) ** 2)
+        ss_tot = np.sum((all_observed - obs_mean) ** 2)
+        nse = 1 - (ss_res / ss_tot) if ss_tot > 0 else np.nan
+
+        # Calculate RMSE
+        rmse = np.sqrt(np.mean((all_simulated - all_observed) ** 2))
+
+        # Calculate KGE by location
+        kge_by_location = {}
+        for loc, pairs in pairs_by_location.items():
+            if len(pairs['obs']) > 1:
+                obs_arr = np.array(pairs['obs'])
+                sim_arr = np.array(pairs['sim'])
+                loc_obs_mean = np.mean(obs_arr)
+                loc_sim_mean = np.mean(sim_arr)
+                loc_obs_std = np.std(obs_arr)
+                loc_sim_std = np.std(sim_arr)
+
+                if loc_obs_std > 0 and loc_sim_std > 0:
+                    loc_r = np.corrcoef(obs_arr, sim_arr)[0, 1]
+                    loc_alpha = loc_sim_std / loc_obs_std
+                    loc_beta = loc_sim_mean / loc_obs_mean if loc_obs_mean != 0 else np.nan
+                    if not np.isnan(loc_r) and not np.isnan(loc_beta):
+                        kge_by_location[loc] = 1 - np.sqrt(
+                            (loc_r - 1)**2 + (loc_alpha - 1)**2 + (loc_beta - 1)**2
+                        )
+
+        return {
+            'kge': float(kge) if not np.isnan(kge) else np.nan,
+            'nse': float(nse) if not np.isnan(nse) else np.nan,
+            'rmse': float(rmse),
+            'kge_components': {
+                'r': float(r) if not np.isnan(r) else np.nan,
+                'alpha': float(alpha) if not np.isnan(alpha) else np.nan,
+                'beta': float(beta) if not np.isnan(beta) else np.nan
+            },
+            'kge_by_location': kge_by_location,
+            'n_pairs': len(all_observed),
+            'observed': all_observed,
+            'simulated': all_simulated,
+            'component': component_name,
+            'obs_component': obs_component_name
+        }
+
+    def calculate_kge(self, startdate: Any, chem_obs: Any = None,
+                      component_name: Optional[str] = None,
+                      water_obs: Any = None,
+                      results: Optional[dict] = None,
+                      distances: Optional[List] = None,
+                      depths: Optional[List[float]] = None,
+                      max_time_diff_hours: float = 12.0,
+                      print_summary: bool = True) -> dict:
+        """
+        Calculate Kling-Gupta Efficiency (KGE) for simulation output parameters.
+
+        If component_name is None, calculates KGE for ALL simulation components
+        that have matching observational data. Otherwise, calculates for the
+        specified component only. If water_obs is provided, also calculates
+        KGE for water levels.
+
+        KGE = 1 - sqrt((r - 1)² + (α - 1)² + (β - 1)²)
+
+        Where:
+        - r = Pearson correlation coefficient
+        - α = variability ratio (σ_sim / σ_obs)
+        - β = bias ratio (μ_sim / μ_obs)
+
+        KGE interpretation:
+        - KGE = 1: Perfect match
+        - KGE > -0.41: Model is better than using mean of observations
+        - KGE < -0.41: Mean of observations is a better predictor
+
+        Args:
+            startdate: Starting date for simulation (e.g., np.datetime64('2019-05-01'))
+            chem_obs: Chemical observations DataFrame with 'Date' and 'Well' columns.
+                     Can be None if only calculating water levels.
+            component_name: Optional specific component name (e.g., 'Total_Fe++ [M]').
+                           If None, calculates for all components with observations.
+            water_obs: Optional water level observations DataFrame with 'Date and time'
+                      column and well columns (e.g., 'mzt11', 'mzt13', 'mzt15').
+                      Values should be in mASL.
+            results: Optional dict of results by distance. If None, calls get_histories().
+            distances: Optional distance points. If None, uses self.config['distances'].
+            depths: Optional depths for get_histories() if extracting data.
+            max_time_diff_hours: Maximum time difference (hours) for matching
+                                 observations to simulations. Default is 12 hours.
+            print_summary: Whether to print a summary table of results. Default True.
+
+        Returns:
+            Dictionary containing:
+            - 'components': Dict mapping component names to their KGE results
+            - 'summary': DataFrame with KGE, NSE, RMSE, n for each component
+            - 'n_components': Number of components with valid KGE calculations
+
+        Example:
+            # Calculate KGE for all components with observations
+            stats = processor.calculate_kge(
+                startdate=np.datetime64('2019-05-01'),
+                chem_obs=obs_df
+            )
+
+            # Include water levels
+            stats = processor.calculate_kge(
+                startdate=np.datetime64('2019-05-01'),
+                chem_obs=obs_df,
+                water_obs=water_obs_df
+            )
+
+            # Water levels only
+            stats = processor.calculate_kge(
+                startdate=np.datetime64('2019-05-01'),
+                water_obs=water_obs_df
+            )
+        """
+        # Validate inputs
+        if chem_obs is None and water_obs is None:
+            raise ValueError("At least one of chem_obs or water_obs must be provided")
+
+        # Use defaults from processor if not provided
+        if distances is None:
+            distances = list(self.config['distances'])
+
+        # Determine which components to process
+        if component_name is not None:
+            # Single component mode
+            components_to_check = [component_name]
+        elif chem_obs is not None:
+            # All components mode - get from COMPONENT_TO_OBS_MAP
+            components_to_check = list(self.COMPONENT_TO_OBS_MAP.keys())
+        else:
+            components_to_check = []
+
+        # Build list of components to extract (including pressure for water levels)
+        components_to_extract = []
+        if chem_obs is not None:
+            available_sim_components = list(self.component_list) if hasattr(self, 'component_list') else []
+            components_to_extract = [c for c in components_to_check if c in available_sim_components]
+
+        # Add pressure component if water levels requested
+        if water_obs is not None:
+            if 'Liquid_Pressure [Pa]' not in components_to_extract:
+                components_to_extract.append('Liquid_Pressure [Pa]')
+
+        # Extract results if not provided
+        if results is None:
+            if not components_to_extract:
+                raise ValueError("No matching components found in simulation output")
+            results, _ = self.get_histories(depths=depths, components=components_to_extract)
+
+        # Calculate KGE for each chemical component
+        component_results = {}
+        summary_data = []
+
+        if chem_obs is not None:
+            for comp in components_to_check:
+                result = self._calculate_kge_for_component(
+                    comp, startdate, chem_obs, results, distances, max_time_diff_hours
+                )
+                if result is not None:
+                    component_results[comp] = result
+                    summary_data.append({
+                        'Component': comp,
+                        'Obs': result['obs_component'],
+                        'KGE': result['kge'],
+                        'NSE': result['nse'],
+                        'RMSE': result['rmse'],
+                        'r': result['kge_components']['r'],
+                        'α': result['kge_components']['alpha'],
+                        'β': result['kge_components']['beta'],
+                        'n': result['n_pairs']
+                    })
+
+        # Calculate KGE for water levels if provided
+        if water_obs is not None:
+            water_result = self._calculate_kge_for_water_levels(
+                startdate, water_obs, results, distances, max_time_diff_hours
+            )
+            if water_result is not None:
+                component_results['Water_Level [mASL]'] = water_result
+                summary_data.append({
+                    'Component': 'Water_Level [mASL]',
+                    'Obs': water_result['obs_component'],
+                    'KGE': water_result['kge'],
+                    'NSE': water_result['nse'],
+                    'RMSE': water_result['rmse'],
+                    'r': water_result['kge_components']['r'],
+                    'α': water_result['kge_components']['alpha'],
+                    'β': water_result['kge_components']['beta'],
+                    'n': water_result['n_pairs']
+                })
+
+        if len(component_results) == 0:
+            raise ValueError("No components with matching observation data found")
+
+        # Create summary DataFrame
+        summary_df = pd.DataFrame(summary_data)
+
+        # Print summary if requested
+        if print_summary:
+            print(f"\n{'='*80}")
+            print(f"KGE Summary - {len(component_results)} components with observations")
+            print(f"{'='*80}")
+            print(f"{'Component':<25} {'Obs':<12} {'KGE':>8} {'NSE':>8} {'RMSE':>10} {'r':>6} {'α':>6} {'β':>6} {'n':>5}")
+            print(f"{'-'*80}")
+            for _, row in summary_df.iterrows():
+                print(f"{row['Component']:<25} {row['Obs']:<12} {row['KGE']:>8.3f} {row['NSE']:>8.3f} "
+                      f"{row['RMSE']:>10.2e} {row['r']:>6.3f} {row['α']:>6.3f} {row['β']:>6.3f} {row['n']:>5}")
+            print(f"{'='*80}\n")
+
+        # For single component mode, also return the direct results for convenience
+        if component_name is not None and component_name in component_results:
+            return {
+                **component_results[component_name],
+                'components': component_results,
+                'summary': summary_df,
+                'n_components': len(component_results)
+            }
+
+        return {
+            'components': component_results,
+            'summary': summary_df,
+            'n_components': len(component_results)
+        }
 
     # =========================================================================
     # Thermodynamic Calculations
