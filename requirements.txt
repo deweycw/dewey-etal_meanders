@@ -1,11 +1,25 @@
-# PFLOTRAN build script dependencies
+# Python dependencies for dewey-etal_meanders
+# Install with: pip install -r requirements.txt
+
+# Core scientific computing
 numpy
 pandas
-h5py
-matplotlib
 scipy
-jupyter
+
+# Plotting
+matplotlib
 seaborn
 
-# Local package (install with: pip install -e /path/to/pflotran-utils)
-# pflotran-utils
+# HDF5 file I/O
+h5py
+
+# Interactive notebooks
+jupyter
+
+# PFLOTRAN utilities (used in src/processing/pflotran.py and simulations)
+pflotranutils
+
+# Parameter tuning workflow
+scikit-learn
+pyyaml
+anthropic  # For agentic AI workflow

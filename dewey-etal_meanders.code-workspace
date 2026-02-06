@@ -13,5 +13,7 @@
 			"path": "../dewey-etal-meanders"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
 }
