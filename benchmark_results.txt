@@ -1,0 +1,11 @@
+PFLOTRAN MPI Scaling Benchmark
+==============================
+
+4 ranks (P-cores only): 128.454219590s
+6 ranks (P-cores only): 148.375035692s
+8 ranks (P-cores only): 134.913076280s
+10 ranks (P-cores only): 129.901460713s
+12 ranks (P-cores only): 106.232101551s
+14 ranks (all cores): 98.268264491s
+16 ranks (all cores): .022189750s
+20 ranks (all cores): .032949317s

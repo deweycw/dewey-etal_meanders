@@ -29,7 +29,7 @@ SUBSURFACE
 
   #==================== STRATA ===================
   STRATA
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   END
 
   #=========================== MATERIAL PROPERTIES ==============================
@@ -118,19 +118,19 @@ noskip
   /
 
   REGION upstream_bc_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   /
 
   REGION downstream_bc_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   /
 
   REGION soil_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   /
 
   REGION gravel_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   /
 
 ! start auto add
