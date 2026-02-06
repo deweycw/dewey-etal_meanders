@@ -1,0 +1,182 @@
+# PFLOTRAN Parameter Tuning Configuration
+# This file defines all tunable parameters, their bounds, and metadata.
+
+# Simulation settings
+simulation:
+  meander: mzt  # mzt or mcp
+  year: "2019"  # 2018 or 2019
+  n_cores: 14
+  timeout_minutes: 60
+
+# Objective function settings
+objective:
+  penalty_value: 2.0  # Value for failed simulations
+  species_weights:
+    TIC: 1.0
+    pH: 0.8
+    Ca: 0.8
+    Fe: 0.8
+    SO4: 0.7
+    NPOC: 0.6
+    DO: 0.3
+    NO3: 0.1
+
+# Sensitivity analysis settings
+sensitivity:
+  n_trajectories: 10  # Number of Morris trajectories
+  n_levels: 4  # Grid levels for Morris method
+  threshold_quantile: 0.5  # Keep parameters with μ* above this quantile
+
+# Optimization settings
+optimization:
+  n_iterations: 50
+  n_initial: 5  # Initial random samples before GP fitting
+  checkpoint_interval: 5
+
+# Parameter definitions
+# Each parameter has:
+#   - name: Unique identifier
+#   - block: Reaction block in the template
+#   - keyword: PFLOTRAN keyword
+#   - default: Default value (in linear space)
+#   - bounds: [lower, upper] bounds (in linear space)
+#   - is_log_scale: Whether to optimize in log10 space
+#   - description: Human-readable description
+
+parameters:
+  # Root Respiration (soil CO2 production proxy)
+  - name: root_respiration_dissolution_rate
+    block: Root_Respiration
+    keyword: DISSOLUTION_RATE_CONSTANT
+    default: 7.94e-13  # 10^(-12.1)
+    bounds: [1.0e-14, 1.0e-10]
+    is_log_scale: true
+    description: "Root respiration dissolution rate constant"
+
+  # Fe++ oxidation
+  - name: fe_oxidation_forward_rate
+    block: Fe_oxidation
+    keyword: FORWARD_RATE
+    default: 1.0e-10
+    bounds: [1.0e-12, 1.0e-8]
+    is_log_scale: true
+    description: "Fe++ oxidation forward rate"
+
+  # HS- oxidation
+  - name: hs_oxidation_forward_rate
+    block: HS_oxidation
+    keyword: FORWARD_RATE
+    default: 1.0e-10
+    bounds: [1.0e-12, 1.0e-8]
+    is_log_scale: true
+    description: "HS- oxidation forward rate"
+
+  # Aerobic respiration
+  - name: aerobic_rate_constant
+    block: Aerobic_respiration
+    keyword: RATE_CONSTANT
+    default: 1.0e-9
+    bounds: [1.0e-11, 1.0e-7]
+    is_log_scale: true
+    description: "Aerobic respiration rate constant"
+
+  - name: aerobic_o2_half_sat
+    block: Aerobic_respiration_O2
+    keyword: HALF_SATURATION_CONSTANT
+    default: 1.0e-4
+    bounds: [1.0e-6, 1.0e-2]
+    is_log_scale: true
+    description: "Aerobic respiration O2 half-saturation constant"
+
+  - name: aerobic_soc_half_sat
+    block: Aerobic_respiration_SOC
+    keyword: HALF_SATURATION_CONSTANT
+    default: 1.0e-5
+    bounds: [1.0e-7, 1.0e-3]
+    is_log_scale: true
+    description: "Aerobic respiration SOC half-saturation constant"
+
+  # SOM_AC_FERMENTATION
+  - name: som_fermentation_rate
+    block: SOM_AC_FERMENTATION
+    keyword: RATE
+    default: 1.0e-8
+    bounds: [1.0e-8, 1.0e-6]
+    is_log_scale: true
+    description: "SOM acetate fermentation rate"
+
+  - name: som_fermentation_threshold
+    block: SOM_AC_FERMENTATION
+    keyword: THRESHOLD
+    default: 1.0e-6
+    bounds: [1.0e-6, 1.0e-5]
+    is_log_scale: true
+    description: "SOM acetate fermentation threshold"
+
+  # JINBETHKE_NITRATE_ACETATE
+  - name: nitrate_rmax
+    block: JINBETHKE_NITRATE_ACETATE
+    keyword: RMAX
+    default: 1.0e-6
+    bounds: [1.0e-8, 1.0e-4]
+    is_log_scale: true
+    description: "Nitrate-acetate maximum rate"
+
+  - name: nitrate_k_donor
+    block: JINBETHKE_NITRATE_ACETATE
+    keyword: K_DONOR
+    default: 1.0e-5
+    bounds: [1.0e-7, 1.0e-3]
+    is_log_scale: true
+    description: "Nitrate-acetate donor half-saturation"
+
+  - name: nitrate_k_acceptor
+    block: JINBETHKE_NITRATE_ACETATE
+    keyword: K_ACCEPTOR
+    default: 1.0e-5
+    bounds: [1.0e-7, 1.0e-3]
+    is_log_scale: true
+    description: "Nitrate-acetate acceptor half-saturation"
+
+  # JINBETHKE_FERRIHYDRITE_ACETATE
+  - name: ferrihydrite_rmax
+    block: JINBETHKE_FERRIHYDRITE_ACETATE
+    keyword: RMAX
+    default: 2.5e-7
+    bounds: [2.5e-9, 2.5e-5]
+    is_log_scale: true
+    description: "Ferrihydrite-acetate maximum rate"
+
+  # JINBETHKE_GOETHITE_ACETATE
+  - name: goethite_rmax
+    block: JINBETHKE_GOETHITE_ACETATE
+    keyword: RMAX
+    default: 2.5e-7
+    bounds: [2.5e-9, 2.5e-5]
+    is_log_scale: true
+    description: "Goethite-acetate maximum rate"
+
+  # JINBETHKE_SULFATE_ACETATE
+  - name: sulfate_rmax
+    block: JINBETHKE_SULFATE_ACETATE
+    keyword: RMAX
+    default: 2.5e-7
+    bounds: [2.5e-9, 2.5e-5]
+    is_log_scale: true
+    description: "Sulfate-acetate maximum rate"
+
+  - name: sulfate_k_donor
+    block: JINBETHKE_SULFATE_ACETATE
+    keyword: K_DONOR
+    default: 5.0e-6
+    bounds: [5.0e-8, 5.0e-4]
+    is_log_scale: true
+    description: "Sulfate-acetate donor half-saturation"
+
+  - name: sulfate_k_acceptor
+    block: JINBETHKE_SULFATE_ACETATE
+    keyword: K_ACCEPTOR
+    default: 1.0e-4
+    bounds: [1.0e-6, 1.0e-2]
+    is_log_scale: true
+    description: "Sulfate-acetate acceptor half-saturation"

@@ -137,7 +137,7 @@ class PflotranProcessor(CrossSection):
     PROJECT_ROOT = _PROJECT_ROOT
 
     def __init__(self, h5_path: Optional[str] = None, meander: str = 'MZ',
-                 perpendicular_axis: str = 'y', perp_loc: float = 0.0):
+                 perpendicular_axis: str = 'x', perp_loc: float = 0.0):
         """
         Initialize the processor.
 
@@ -146,7 +146,8 @@ class PflotranProcessor(CrossSection):
                      - Absolute path: '/full/path/to/file.h5'
                      - Relative path: 'mzt19/pflotran-mzt19.h5' (searched in data dirs)
             meander: Site identifier ('MZ' or 'MC')
-            perpendicular_axis: Axis perpendicular to cross-section ('x', 'y', or 'z')
+            perpendicular_axis: Axis perpendicular to cross-section ('x', 'y', or 'z').
+                               Default 'x' since these simulations have NX=1.
             perp_loc: Location along perpendicular axis in meters (default: 0.0)
         """
         if meander not in self.MEANDER_CONFIG:
@@ -329,7 +330,7 @@ class PflotranProcessor(CrossSection):
 
         Args:
             depths: Optional list of depths for each location. If None, uses
-                    [1.0, 1.0, 1.0, 1.0, 1.0] (surface monitoring depth)
+                    the configured depths from MEANDER_CONFIG for the site.
             components: Optional list of components to extract. If None, extracts all.
 
         Returns:
@@ -344,7 +345,8 @@ class PflotranProcessor(CrossSection):
         distances = self.config['distances']
 
         if depths is None:
-            depths = [1.0] * len(distances)
+            # Use configured depths for each observation location
+            depths = self.config.get('depths', [1.0] * len(distances))
 
         if len(depths) != len(distances):
             raise ValueError(f"depths list length ({len(depths)}) must match "
@@ -1291,10 +1293,15 @@ class PflotranProcessor(CrossSection):
         else:
             ax.scatter(all_observed, all_simulated, alpha=0.7, s=30)
 
-        # Calculate axis limits
-        min_val = min(all_observed.min(), all_simulated.min())
-        max_val = max(all_observed.max(), all_simulated.max())
-        margin = (max_val - min_val) * 0.05
+        # Calculate axis limits (filter out NaN/Inf values)
+        valid_obs = all_observed[np.isfinite(all_observed)]
+        valid_sim = all_simulated[np.isfinite(all_simulated)]
+        if len(valid_obs) > 0 and len(valid_sim) > 0:
+            min_val = min(valid_obs.min(), valid_sim.min())
+            max_val = max(valid_obs.max(), valid_sim.max())
+        else:
+            min_val, max_val = 0, 1  # Default fallback
+        margin = (max_val - min_val) * 0.05 if max_val > min_val else 0.1
         line_min = min_val - margin
         line_max = max_val + margin
 
@@ -1661,10 +1668,12 @@ class PflotranProcessor(CrossSection):
 
                 if time_diffs[closest_idx] <= max_time_diff_hours:
                     sim_value = sim_elev[closest_idx]
-                    all_observed.append(obs_value)
-                    all_simulated.append(sim_value)
-                    pairs_by_location[obs_col]['obs'].append(obs_value)
-                    pairs_by_location[obs_col]['sim'].append(sim_value)
+                    # Skip non-finite values (inf, nan)
+                    if np.isfinite(sim_value) and np.isfinite(obs_value):
+                        all_observed.append(obs_value)
+                        all_simulated.append(sim_value)
+                        pairs_by_location[obs_col]['obs'].append(obs_value)
+                        pairs_by_location[obs_col]['sim'].append(sim_value)
 
         if len(all_observed) == 0:
             return None
@@ -1825,10 +1834,12 @@ class PflotranProcessor(CrossSection):
 
                 if time_diffs[closest_idx] <= max_time_diff_hours:
                     sim_value = sim_data[closest_idx]
-                    all_observed.append(obs_value)
-                    all_simulated.append(sim_value)
-                    pairs_by_location[loc]['obs'].append(obs_value)
-                    pairs_by_location[loc]['sim'].append(sim_value)
+                    # Skip non-finite values (inf, nan)
+                    if np.isfinite(sim_value) and np.isfinite(obs_value):
+                        all_observed.append(obs_value)
+                        all_simulated.append(sim_value)
+                        pairs_by_location[loc]['obs'].append(obs_value)
+                        pairs_by_location[loc]['sim'].append(sim_value)
 
         if len(all_observed) == 0:
             return None
