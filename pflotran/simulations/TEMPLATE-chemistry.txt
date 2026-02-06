@@ -159,7 +159,7 @@
     END 
 
     MINERAL_KINETICS 
-
+    
       Albite
         PREFACTOR 
           RATE_CONSTANT 2.75d-13 
@@ -249,7 +249,7 @@ noskip
       /
 
       Root_Respiration
-        DISSOLUTION_RATE_CONSTANT    -12.1d0     
+        $T DISSOLUTION_RATE_CONSTANT    -12.1d0
         PRECIPITATION_RATE_CONSTANT   0.d0
       /
 
@@ -262,89 +262,90 @@ noskip
       /
 
     /
-skip
 # ------- Fe++ oxidation ---------
     GENERAL_REACTION
-      REACTION 1.00 Fe++ + 0.25 1.00  O2(aq)  + H+ <-> 1.00 Fe+++ + 0.50 H2O
-      FORWARD_RATE 1.d-10
+      REACTION 1.00 Fe++ + 0.25 O2(aq) + H+ <-> 1.00 Fe+++ + 0.50 H2O
+      $T FORWARD_RATE 1.d-10
       BACKWARD_RATE 0.d0
     /
 
 # ------- HS- oxidation ---------
     GENERAL_REACTION
-      REACTION 1.00 HS- + 2.00 1.00  O2(aq)  <->  1.00 SO4--  +  1.00 H+
-      FORWARD_RATE 1.d-10
+      REACTION 1.00 HS- + 2.00 O2(aq) <-> 1.00 SO4-- + 1.00 H+
+      $T FORWARD_RATE 1.d-10
       BACKWARD_RATE 0.d0
     /
 
 # ------- Aerobic respiration ---------
     MICROBIAL_REACTION
-      REACTION  1.00 SOC(aq) + 1.00  O2(aq)  + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
-      RATE_CONSTANT 1.d-9
+      REACTION 1.00 SOC(aq) + 1.00 O2(aq) + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
+      $T RATE_CONSTANT 1.d-9
       MONOD
-        SPECIES_NAME  O2(aq)  
-        HALF_SATURATION_CONSTANT 1.d-4         
+        SPECIES_NAME O2(aq)
+        $T HALF_SATURATION_CONSTANT 1.d-4
         THRESHOLD_CONCENTRATION 1.d-6
       /
       MONOD
         SPECIES_NAME SOC(aq)
-        HALF_SATURATION_CONSTANT 1.d-5     
+        $T HALF_SATURATION_CONSTANT 1.d-5
         THRESHOLD_CONCENTRATION 1.d-8
       /
     /
-  noskip
+
     REACTION_SANDBOX
-    
+
       SOM_AC_FERMENTATION
-        RATE        1.d-8
-        THRESHOLD   1.d-6
+        $T RATE        1.d-8
+        $T THRESHOLD   1.d-6
       /
-    skip
+
+skip
       FH_GT_MINERAL_RIPENING
-        RATE_CONSTANT_FH_TO_GT  5.d-3
+        $T RATE_CONSTANT_FH_TO_GT  5.d-3
       /
+noskip
 
       JINBETHKE_NITRATE_ACETATE
-        RMAX            1.0d-6  
-        K_DONOR         1.0d-5 
-        K_ACCEPTOR      1.0d-5
+        $T RMAX            1.0d-6
+        $T K_DONOR         1.0d-5
+        $T K_ACCEPTOR      1.0d-5
         Y               1.0d-0
-        M               2.667d0            ! 0.667 * 4   
-        CHI             8.0d0              ! 2.0 * 4 
-        O2_THRESHOLD    5.0d-5
+        M               2.667d0            ! 0.667 * 4
+        CHI             8.0d0              ! 2.0 * 4
+        O2_THRESHOLD    1.0d-4
       END
 
-      JINBETHKE_FERRIHYDRITE_ACETATE     
-        RMAX            2.5d-7
+      JINBETHKE_FERRIHYDRITE_ACETATE
+        $T RMAX            2.5d-7
         K_DONOR         1.0d-6
         K_ACCEPTOR      1.0d-6  ! vol fraction
         Y               1.0d-0
-        M               0.50d0            ! 0.125 * 4   
-        CHI             7.0d0              ! 1.75 * 4 
+        M               0.50d0            ! 0.125 * 4
+        CHI             7.0d0              ! 1.75 * 4
         O2_THRESHOLD    1.0d-5
       /
 
-      JINBETHKE_GOETHITE_ACETATE  
-        RMAX            2.5d-7
+      JINBETHKE_GOETHITE_ACETATE
+        $T RMAX            2.5d-7
         K_DONOR         1.0d-6
         K_ACCEPTOR      1.0d-6  ! vol fraction
         Y               1.0d-0
-        M               0.50d0            ! 0.125 * 4   
-        CHI             7.0d0              ! 1.75 * 4 
+        M               0.50d0            ! 0.125 * 4
+        CHI             7.0d0              ! 1.75 * 4
         O2_THRESHOLD    1.0d-5
         K_PRECIPITATION 1.0d-30
       /
 
       JINBETHKE_SULFATE_ACETATE
-        RMAX            2.5d-7 !3.2
-        K_DONOR         5.0d-6
-        K_ACCEPTOR      1.0d-4
+        $T RMAX            2.5d-7
+        $T K_DONOR         5.0d-6
+        $T K_ACCEPTOR      1.0d-4
         Y               1.0d-0
-        M               1.33d0            ! 0.33 * 4.0   
-        CHI             8.0d0              ! 2.0 * 4.0 
+        M               1.33d0            ! 0.33 * 4.0
+        CHI             8.0d0              ! 2.0 * 4.0
         O2_THRESHOLD    1.0d-5
       END
-noskip
+
     /
   
 

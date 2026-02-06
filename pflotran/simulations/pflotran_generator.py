@@ -78,7 +78,7 @@ SIMULATION_CONFIGS = {
         'upstream_h': 1.94,
         'downstream_h': 1.66,
         'upstream_file': 'hydro_us_2019_4-21_10-2-MZT.txt',
-        'downstream_file': 'hydro_dn_2019_4-21_10-2-MZT.txt',
+        'downstream_file': 'hydro_ds_2019_4-21_10-2-MZT.txt',
         'subdir': 'mzt19',
         'final_time': 3993  # hours
     },
@@ -116,7 +116,23 @@ class PFLOTRANGenerator:
     """Main class for generating PFLOTRAN input files with corrected DATUM calculations."""
 
     def __init__(self, year: str, meander: str, nx: int, upstream_h: float,
-                 downstream_h: float, final_time: int, sim_dir: Path, template_dir: Path):
+                 downstream_h: float, final_time: int, sim_dir: Path, template_dir: Path,
+                 strip_tuning_markers: bool = True):
+        """
+        Initialize the PFLOTRAN generator.
+
+        Args:
+            year: Simulation year ('2018' or '2019')
+            meander: Meander type ('mcp' or 'mzt')
+            nx: Number of grid cells in x direction
+            upstream_h: Upstream hydraulic head
+            downstream_h: Downstream hydraulic head
+            final_time: Simulation duration in hours
+            sim_dir: The simulation subdirectory (e.g., mcp18, mzt19)
+            template_dir: Directory containing shared templates
+            strip_tuning_markers: If True, remove $T markers from chemistry template
+                                  (use True for standalone runs, False for tuning workflow)
+        """
         self.year = year
         self.meander = meander.lower()
         self.nx = nx
@@ -125,6 +141,7 @@ class PFLOTRANGenerator:
         self.final_time = final_time  # Simulation duration in hours
         self.sim_dir = sim_dir  # The simulation subdirectory (e.g., mcp18, mzt19)
         self.template_dir = template_dir  # Directory containing shared templates
+        self.strip_tuning_markers = strip_tuning_markers
         self.bc_data = None
         self.chemistry_block = None
 
@@ -183,13 +200,39 @@ class PFLOTRANGenerator:
             raise FileNotFoundError(f"Directory not found: {hydro_bcs_dir}")
 
     def load_chemistry_template(self):
-        """Load the chemistry template file."""
+        """Load the chemistry template file.
+
+        If strip_tuning_markers is True, removes the $T markers from tunable
+        parameter lines, keeping the default values. This allows the generator
+        to produce valid PFLOTRAN input files when run standalone (not as part
+        of a tuning workflow).
+        """
         print("Loading chemistry template...")
         try:
             template_path = self.template_dir / 'TEMPLATE-chemistry.txt'
             with open(template_path, 'r') as f:
-                self.chemistry_block = f.readlines()
-            print(f"  Chemistry template loaded ({len(self.chemistry_block)} lines)")
+                lines = f.readlines()
+
+            if self.strip_tuning_markers:
+                # Remove $T markers from tunable parameter lines
+                # Format: "        $T KEYWORD value" -> "        KEYWORD value"
+                stripped_lines = []
+                marker_count = 0
+                for line in lines:
+                    if '$T ' in line:
+                        # Remove the $T marker but keep the rest of the line
+                        stripped_lines.append(line.replace('$T ', ''))
+                        marker_count += 1
+                    else:
+                        stripped_lines.append(line)
+                self.chemistry_block = stripped_lines
+                print(f"  Chemistry template loaded ({len(self.chemistry_block)} lines)")
+                print(f"  Stripped {marker_count} tuning markers ($T) for standalone run")
+            else:
+                self.chemistry_block = lines
+                print(f"  Chemistry template loaded ({len(self.chemistry_block)} lines)")
+                print(f"  Tuning markers ($T) preserved for tuning workflow")
+
         except Exception as e:
             raise FileNotFoundError(f"Failed to load chemistry template: {e}")
 
@@ -356,11 +399,23 @@ class PFLOTRANGenerator:
         return pd.DataFrame(interpolated, columns=['date', f'{component}_M'])
 
     def _fix_nitrate_data(self, nitrate_df: pd.DataFrame):
-        """Fix negative nitrate values."""
+        """Fix zero or negative nitrate values.
+
+        PFLOTRAN chemistry solver cannot handle exactly zero concentrations.
+        Replace zeros/negatives with previous value or a minimum floor.
+        """
         column = 'nitrate_M'
+        min_floor = 1e-12  # Minimum concentration floor to prevent solver issues
+
+        # Fix first value if zero/negative
+        if len(nitrate_df) > 0 and nitrate_df[column].iloc[0] <= 0.0:
+            nitrate_df[column].iloc[0] = min_floor
+
+        # Fix subsequent values
         for i in range(1, len(nitrate_df)):
             if nitrate_df[column].iloc[i] <= 0.0:
-                nitrate_df[column].iloc[i] = nitrate_df[column].iloc[i-1]
+                prev_val = nitrate_df[column].iloc[i-1]
+                nitrate_df[column].iloc[i] = max(prev_val, min_floor)
 
     def write_chemistry_blocks(self, block_type: str = 'river') -> Tuple[List[str], List[str]]:
         """Write chemistry and transport constraint blocks."""
@@ -414,6 +469,7 @@ class PFLOTRANGenerator:
     def _update_template_concentrations(self, template: List[str], day: int):
         """Update template with concentration values for given day."""
         bc = self.bc_data
+        min_floor = 1e-12  # Minimum concentration floor to prevent solver issues
 
         def get_concentration(component: str, day_index: int) -> float:
             if component not in bc or len(bc[component]) == 0:
@@ -421,7 +477,9 @@ class PFLOTRANGenerator:
             max_index = len(bc[component]) - 1
             safe_index = min(day_index, max_index)
             try:
-                return bc[component].iloc[safe_index, 1]
+                value = bc[component].iloc[safe_index, 1]
+                # Ensure no zero or negative concentrations (breaks chemistry solver)
+                return max(value, min_floor) if value > 0 else min_floor
             except (IndexError, KeyError):
                 return 1e-9
 
@@ -477,41 +535,34 @@ class PFLOTRANGenerator:
                     f.write(f'{i:.4E}\t{0:.4E}\t{0:.4E}\t{hx:.4E}\n')
 
     def _get_grid_file(self) -> str:
-        """Get the correct grid file path based on meander type."""
+        """Get the correct grid file path based on meander type.
+
+        Grid files are shared across years and located in the simulations/
+        directory (self.template_dir), not in year-specific subdirectories.
+        """
         if self.meander == 'mzt':
-            return "../../xxgrid010-mz-cxc-top.h5"
+            grid_file = self.template_dir / "xxgrid010-mz-cxc-top.h5"
         elif self.meander == 'mcp':
-            return "../../xxgrid010-mc-cxc-top.h5"
+            grid_file = self.template_dir / "xxgrid010-mc-cxc-top.h5"
         else:
             raise ValueError(f"Unknown meander type: {self.meander}")
 
-    def _update_strata_block(self, content: List[str]) -> List[str]:
-        """Update the STRATA block with the correct grid file for the meander type."""
+        return str(grid_file)
+
+    def _replace_grid_file_placeholder(self, content: List[str]) -> List[str]:
+        """Replace {{GRID_FILE}} placeholder with the full grid file path.
+
+        This handles all FILE references in the template (STRATA, REGION blocks, etc.)
+        and uses the full path which works on both Mac and Ubuntu via Path.home().
+        """
         grid_file = self._get_grid_file()
         updated_content = []
-        i = 0
 
-        while i < len(content):
-            line = content[i]
-
-            if line.strip() == 'STRATA':
-                updated_content.append(line)
-                i += 1
-
-                while i < len(content):
-                    inner_line = content[i]
-                    if inner_line.strip().startswith('FILE'):
-                        indent = len(inner_line) - len(inner_line.lstrip())
-                        updated_content.append(' ' * indent + f'FILE {grid_file}\n')
-                    elif inner_line.strip() == 'END':
-                        updated_content.append(inner_line)
-                        break
-                    else:
-                        updated_content.append(inner_line)
-                    i += 1
+        for line in content:
+            if '{{GRID_FILE}}' in line:
+                updated_content.append(line.replace('{{GRID_FILE}}', grid_file))
             else:
                 updated_content.append(line)
-            i += 1
 
         return updated_content
 
@@ -550,6 +601,52 @@ class PFLOTRANGenerator:
                 # Replace FINAL_TIME for transient simulations
                 indent = len(line) - len(line.lstrip())
                 updated_content.append(' ' * indent + f'FINAL_TIME {self.final_time}.d0 h\n')
+            else:
+                updated_content.append(line)
+
+        return updated_content
+
+    def _update_datum_files(self, content: List[str], upstream_file: str, downstream_file: str) -> List[str]:
+        """Update the DATUM FILE references in upstream_bc and downstream_bc flow conditions.
+
+        The template has hardcoded MZT file names that need to be replaced with the
+        correct meander/year-specific files from the simulation configuration.
+        """
+        updated_content = []
+        in_upstream_bc = False
+        in_downstream_bc = False
+        nesting_depth = 0
+
+        for line in content:
+            stripped = line.strip()
+
+            # Track which flow condition block we're in
+            if 'FLOW_CONDITION upstream_bc' in line:
+                in_upstream_bc = True
+                in_downstream_bc = False
+                nesting_depth = 1
+            elif 'FLOW_CONDITION downstream_bc' in line:
+                in_upstream_bc = False
+                in_downstream_bc = True
+                nesting_depth = 1
+            elif in_upstream_bc or in_downstream_bc:
+                # Track nesting depth to know when we exit the FLOW_CONDITION block
+                # Nested blocks (TYPE, MONOD, etc.) start with keywords and end with /
+                if stripped == '/':
+                    nesting_depth -= 1
+                    if nesting_depth == 0:
+                        in_upstream_bc = False
+                        in_downstream_bc = False
+                elif any(stripped.startswith(kw) for kw in ['TYPE', 'MONOD', 'INHIBITION']):
+                    nesting_depth += 1
+
+            # Replace DATUM FILE lines within the appropriate flow condition
+            if 'DATUM FILE' in line and (in_upstream_bc or in_downstream_bc):
+                indent = len(line) - len(line.lstrip())
+                if in_upstream_bc:
+                    updated_content.append(' ' * indent + f'DATUM FILE {upstream_file}\n')
+                elif in_downstream_bc:
+                    updated_content.append(' ' * indent + f'DATUM FILE {downstream_file}\n')
             else:
                 updated_content.append(line)
 
@@ -632,14 +729,18 @@ class PFLOTRANGenerator:
         with open(template_file, 'r') as f:
             template_content = f.readlines()
 
-        # Update STRATA block with correct grid file for this meander
-        template_content = self._update_strata_block(template_content)
+        # Replace {{GRID_FILE}} placeholder with full path (works on Mac/Ubuntu)
+        template_content = self._replace_grid_file_placeholder(template_content)
 
         # Update GRID block with correct NXYZ for this meander
         template_content = self._update_grid_block(template_content)
 
         # Update FINAL_TIME for transient simulations
         template_content = self._update_final_time(template_content, transient)
+
+        # Update DATUM FILE references for upstream_bc and downstream_bc (transient only)
+        if transient and upstream_file and downstream_file:
+            template_content = self._update_datum_files(template_content, upstream_file, downstream_file)
 
         chunks = self._split_template_with_chemistry(template_content)
 
@@ -730,6 +831,8 @@ class PFLOTRANGenerator:
         spinup_filename = f'pflotran-{self.meander}{year_suffix}_{timestamp}_spin.in'
         self.assemble_input_file(spinup_filename, False)
 
+        # Update transient file's RESTART FILENAME to match the spin checkpoint
+        # PFLOTRAN automatically creates {basename}-restart.chk at simulation end
         transient_path = self.output_dir / transient_filename
         if transient_path.exists():
             with open(transient_path, 'r') as f:
@@ -906,6 +1009,8 @@ def main():
                        help='Meander type: mcp or mzt')
     parser.add_argument('--test-datum', action='store_true',
                        help='Run DATUM generation test and exit')
+    parser.add_argument('--keep-tuning-markers', action='store_true',
+                       help='Keep $T markers in chemistry template (for tuning workflow)')
 
     args = parser.parse_args()
 
@@ -949,6 +1054,8 @@ def main():
 
     try:
         # Initialize generator
+        # By default, strip $T markers for standalone runs
+        # Use --keep-tuning-markers to preserve them for tuning workflow
         generator = PFLOTRANGenerator(
             year=args.year,
             meander=args.meander.lower(),
@@ -957,7 +1064,8 @@ def main():
             downstream_h=config['downstream_h'],
             final_time=config['final_time'],
             sim_dir=sim_dir,
-            template_dir=template_dir
+            template_dir=template_dir,
+            strip_tuning_markers=not args.keep_tuning_markers
         )
 
         # Test DATUM generation if requested

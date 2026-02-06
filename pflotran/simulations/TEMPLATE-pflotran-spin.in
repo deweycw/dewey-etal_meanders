@@ -10,7 +10,7 @@ SIMULATION
     /
   /
   CHECKPOINT
-    TIMES y 1. 
+    TIMES y 1.
   /
 END
 
@@ -28,7 +28,7 @@ SUBSURFACE
 
   #==================== STRATA ===================
   STRATA
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   END
 
   #=========================== MATERIAL PROPERTIES ==============================
@@ -37,9 +37,9 @@ SUBSURFACE
     POROSITY 0.2
     CHARACTERISTIC_CURVES sf
     PERMEABILITY 
-      PERM_X  5.26E-11
-      PERM_Y  5.26E-11
-      PERM_Z  5.26E-11
+      PERM_X  2.26E-11
+      PERM_Y  2.26E-11
+      PERM_Z  2.26E-11
     /
   /
 
@@ -92,10 +92,10 @@ SUBSURFACE
 
   #=====================TIME======================
   TIME
-    FINAL_TIME 1.5d0 y 
+    FINAL_TIME 1.d0 y
     INITIAL_TIMESTEP_SIZE  24.d0 hr
-    MINIMUM_TIMESTEP_SIZE  0.001d0 hr
-    MAXIMUM_TIMESTEP_SIZE  336.0d0 hr
+    MINIMUM_TIMESTEP_SIZE  0.01d0 hr
+    MAXIMUM_TIMESTEP_SIZE  504.0d0 hr
   END
 
   #==================REGIONS====================
@@ -107,19 +107,19 @@ SUBSURFACE
   /
 
   REGION upstream_bc_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   /
 
   REGION downstream_bc_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   /
 
   REGION soil_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   /
 
   REGION gravel_reg
-    FILE ../../xxgrid010-mz-cxc-top.h5
+    FILE {{GRID_FILE}}
   /
 
 ! start auto add
@@ -250,9 +250,9 @@ $%$%$% CHUNK DELIM %^%^%^
     /
 
     IMMOBILE
-      Fim       1.d-10 !1.d-5
-      Nim       1.d-10 !1.d-4
-      Sim       1.d-10 !1.d-4
+      Fim       1.d-5
+      Nim       1.d-4
+      Sim       1.d-4
     /
 
     MINERALS
@@ -264,7 +264,7 @@ $%$%$% CHUNK DELIM %^%^%^
       Dolomite         1.00e-02  1.82e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Root_Respiration 1.00e-02  1.13e+05
       !Pyrite           1.00e-03  1.90e+00
-      Ferrihydrite     0.00e-00  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Ferrihydrite     5.00e-05  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       SOC              1.00e-02  1.13e+05 # cm^2/cm^3
       SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
