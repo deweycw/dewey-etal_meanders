@@ -13,7 +13,7 @@ SIMULATION
     /
   /
   RESTART
-    FILENAME pflotran-mcp19_rundefault_spin-restart.chk
+    FILENAME pflotran-mcp19_default_spin-restart.chk
     RESET_TO_TIME_ZERO
   /
 END
