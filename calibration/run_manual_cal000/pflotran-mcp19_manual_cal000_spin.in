@@ -1790,7 +1790,7 @@ FLOW_CONDITION top_river_bc_0
 
       JINBETHKE_FERRIHYDRITE_ACETATE
         RMAX            2.500000d-06                                             !! tune
-        K_DONOR         1.000000d-06                                             !! tune 
+        K_DONOR         1.00d-05                                             !! tune 
         K_ACCEPTOR      1.0d-6  ! vol fraction
         Y               1.0d-0
         M               0.50d0            ! 0.125 * 4
