@@ -1728,7 +1728,7 @@ FLOW_CONDITION top_river_bc_0
       /
 
       Root_Respiration
-        DISSOLUTION_RATE_CONSTANT     7.943280d-13
+        DISSOLUTION_RATE_CONSTANT     7.943280d-13.                             !! tune
         PRECIPITATION_RATE_CONSTANT   0.d0
       /
 
@@ -1758,10 +1758,10 @@ FLOW_CONDITION top_river_bc_0
     # ------- Aerobic respiration ---------
     MICROBIAL_REACTION
       REACTION 1.00 SOC(aq) + 1.00 O2(aq) + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
-      RATE_CONSTANT 1.000000d-09
+      RATE_CONSTANT 1.000000d-09                                                !! tune
       MONOD
         SPECIES_NAME O2(aq)
-        HALF_SATURATION_CONSTANT 1.000000d-04
+        HALF_SATURATION_CONSTANT 1.000000d-04                                   !! tune
         THRESHOLD_CONCENTRATION 1.d-6
       /
       MONOD
@@ -1779,9 +1779,9 @@ FLOW_CONDITION top_river_bc_0
       /
 
       JINBETHKE_NITRATE_ACETATE
-        RMAX            1.000000d-06
+        RMAX            1.000000d-06                                             !! tune
         K_DONOR         1.000000d-05
-        K_ACCEPTOR      1.000000d-05
+        K_ACCEPTOR      1.000000d-05                                             !! tune
         Y               1.0d-0
         M               2.667d0            ! 0.667 * 4
         CHI             8.0d0              ! 2.0 * 4
@@ -1789,8 +1789,8 @@ FLOW_CONDITION top_river_bc_0
       END
 
       JINBETHKE_FERRIHYDRITE_ACETATE
-        RMAX            2.500000d-06
-        K_DONOR         1.000000d-06
+        RMAX            2.500000d-06                                             !! tune
+        K_DONOR         1.000000d-06                                             !! tune 
         K_ACCEPTOR      1.0d-6  ! vol fraction
         Y               1.0d-0
         M               0.50d0            ! 0.125 * 4
@@ -1811,7 +1811,7 @@ FLOW_CONDITION top_river_bc_0
 
       JINBETHKE_SULFATE_ACETATE
         RMAX            2.500000d-07
-        K_DONOR         5.000000d-06
+        K_DONOR         5.000000d-06                                              !! tune
         K_ACCEPTOR      1.000000d-04
         Y               1.0d-0
         M               1.33d0            ! 0.33 * 4.0
