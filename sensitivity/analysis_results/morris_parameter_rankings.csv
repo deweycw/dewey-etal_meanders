@@ -1,0 +1,17 @@
+parameter,DIC,Fe²⁺,pH,Ca²⁺,Composite,mean_rank
+aero_k_o2,2,1,2,2,1,1.6
+root_resp,1,3,1,1,3,1.8
+aero_rate,3,2,3,3,2,2.6
+denit_k_acceptor,6,4,6,4,4,4.8
+msr_k_donor,4,6,4,5,6,5.0
+denit_rmax,5,5,5,6,5,5.2
+fh_rmax,7,7,8,8,7,7.4
+fh_k_donor,8,9,7,7,8,7.8
+gt_rmax,11,8,10,9,9,9.4
+msr_rmax,9,11,9,11,11,10.2
+gt_k_donor,12,10,11,10,10,10.6
+msr_k_acceptor,10,12,12,12,12,11.6
+calcite_rate,13,14,13,13,14,13.4
+denit_k_donor,14,13,14,14,13,13.6
+fh_SA,15,15,15,15,15,15.0
+gt_SA,16,16,16,16,16,16.0

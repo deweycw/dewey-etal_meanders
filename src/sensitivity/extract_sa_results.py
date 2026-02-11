@@ -55,7 +55,7 @@ WELL_TO_DEPTH = dict(zip(WELLS, DEPTHS))
 DISTANCE_TO_WELL = {d: w for d, w in zip(DISTANCES, WELLS)}
 
 DEFAULT_SENSITIVITY_DIR = '/lustre/dewey/users/4315/sensitivity'
-DEFAULT_OBS_CSV = str(_PROJECT_ROOT / 'data' / 'observational' / 'porewater' / 'mc_2019_porewater.csv')
+DEFAULT_OBS_CSV = str(_PROJECT_ROOT / 'mc_2019_porewater.csv')
 
 
 def load_failed_runs(sensitivity_dir: str) -> set:
