@@ -1798,8 +1798,8 @@ noskip
       END
 
       JINBETHKE_FERRIHYDRITE_ACETATE
-        RMAX            2.500000d-05
-        K_DONOR         2.154435d-06
+        RMAX            2.500000d-06
+        K_DONOR         4.641589d-06
         K_ACCEPTOR      1.0d-6  ! vol fraction
         Y               1.0d-0
         M               0.50d0            ! 0.125 * 4

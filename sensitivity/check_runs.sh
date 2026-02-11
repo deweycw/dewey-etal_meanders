@@ -5,17 +5,11 @@
 SPIN_SIZE_MIN=48000000    # ~49 MB threshold for complete spin
 TRANS_SIZE_MIN=700000000  # ~731 MB threshold for complete transient
 
-LOGFILE="check_runs_summary.log"
-
-{
-printf "Run status summary — %s\n\n" "$(date)"
 printf "%-8s %-6s %-6s %8s %8s %8s\n" "Run" "Spin" "Trans" "Spin" "Trans" "Total"
 printf "%s\n" "------------------------------------------------"
 
 complete=0
 incomplete=0
-finished_runs=()
-unfinished_runs=()
 
 for run_dir in run[0-9][0-9][0-9]; do
     run_name="${run_dir}"
@@ -64,10 +58,8 @@ for run_dir in run[0-9][0-9][0-9]; do
     # Count complete/incomplete
     if [[ "$spin_ok" == "OK" && "$trans_ok" == "OK" ]]; then
         ((complete++))
-        finished_runs+=("$run_name")
     else
         ((incomplete++))
-        unfinished_runs+=("$run_name")
     fi
 
     printf "%-8s %-6s %-6s %8s %8s %8s\n" "$run_name" "$spin_ok" "$trans_ok" "$spin_hr" "$trans_hr" "$total_hr"
@@ -75,15 +67,4 @@ for run_dir in run[0-9][0-9][0-9]; do
 done
 
 printf "%s\n" "------------------------------------------------"
-printf "Complete: %d   Incomplete: %d\n\n" "$complete" "$incomplete"
-
-printf "Finished runs:\n"
-for r in "${finished_runs[@]}"; do printf "  %s\n" "$r"; done
-
-printf "\nUnfinished runs:\n"
-for r in "${unfinished_runs[@]}"; do printf "  %s\n" "$r"; done
-
-} | tee "$LOGFILE"
-
-echo ""
-echo "Summary saved to $LOGFILE"
+printf "Complete: %d   Incomplete: %d\n" "$complete" "$incomplete"
