@@ -1,0 +1,3259 @@
+! Generated 2026-02-05 12:41:20 (Local Time)
+! Meander: MCP, Year: 2019
+
+#==================== SIMULATION ==================== 
+SIMULATION
+  SIMULATION_TYPE SUBSURFACE
+  PROCESS_MODELS
+    SUBSURFACE_FLOW flow
+      MODE RICHARDS
+    /
+    SUBSURFACE_TRANSPORT transport 
+      MODE GIRT 
+    /
+  /
+  CHECKPOINT
+    TIMES y 0.25
+  /
+END
+
+SUBSURFACE
+  #==================== GRID ====================
+  GRID
+    TYPE structured     
+    NXYZ 1 122 26
+    DXYZ
+      1.d0
+      0.5d0
+      0.10d0
+    /
+  END
+
+  #==================== STRATA ===================
+  STRATA
+    FILE ../xxgrid010-mc-cxc-top.h5
+  END
+
+  #=========================== MATERIAL PROPERTIES ==============================
+  MATERIAL_PROPERTY gravel
+    ID  1
+    POROSITY 0.20
+    CHARACTERISTIC_CURVES sf
+    PERMEABILITY 
+      PERM_X  2.26E-11
+      PERM_Y  2.26E-11
+      PERM_Z  2.26E-11
+    /
+  /
+
+  MATERIAL_PROPERTY  topsoil
+    ID  2
+    POROSITY 0.40
+    CHARACTERISTIC_CURVES sf
+    PERMEABILITY 
+      PERM_X  1.055E-12
+      PERM_Y  1.055E-12
+      PERM_Z  1.055E-12
+    /
+  /
+
+  #=====================CHARACTERISTIC CURVES============
+  CHARACTERISTIC_CURVES sf
+    SATURATION_FUNCTION VAN_GENUCHTEN
+      M 0.286
+      ALPHA 1.9401d-4
+      LIQUID_RESIDUAL_SATURATION 0.115
+    /
+    PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+      M 0.5
+      LIQUID_RESIDUAL_SATURATION 0.115
+    /
+  /
+
+  #=========================== fluid properties =================================
+  FLUID_PROPERTY
+    PHASE LIQUID
+    DIFFUSION_COEFFICIENT 1.d-9
+  END
+
+  FLUID_PROPERTY
+    PHASE GAS
+    DIFFUSION_COEFFICIENT 2.1d-5
+  END
+
+  #===================OUTPUT=====================
+  OUTPUT
+    VELOCITY_AT_CENTER
+    TIME_UNITS y
+    SNAPSHOT_FILE
+      FORMAT HDF5
+      PERIODIC TIME 0.05d0 y
+    /
+
+  SCREEN PERIODIC 100
+  END
+
+  #=====================TIME======================
+  TIME
+    FINAL_TIME 0.5d0 y
+    INITIAL_TIMESTEP_SIZE  2.d0 hr
+    MINIMUM_TIMESTEP_SIZE  0.01d0 hr
+    MAXIMUM_TIMESTEP_SIZE  200.0d0 hr
+  END
+
+  #==================REGIONS====================
+  REGION all
+    COORDINATES
+      -1000.d0  -1000.d0  -1000.d0
+      1000.d0  1000.d0  1000.d0
+    /
+  /
+  REGION upstream_bc_reg
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION downstream_bc_reg
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION soil_reg
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION gravel_reg
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_0
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_1
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_2
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_3
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_4
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_5
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_6
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_7
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_8
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_9
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_10
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_11
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_12
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_13
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_14
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_15
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_16
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_17
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_18
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_19
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_20
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_21
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_22
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_23
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_24
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_25
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_26
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_27
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_28
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_29
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_30
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_31
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_32
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_33
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_34
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_35
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_36
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_37
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_38
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_39
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_40
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_41
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_42
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_43
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_44
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_45
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_46
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_47
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_48
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_49
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_50
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_51
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_52
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_53
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_54
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_55
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_56
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_57
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_58
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_59
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_60
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_61
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_62
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_63
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_64
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_65
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_66
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_67
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_68
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_69
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_70
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_71
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_72
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_73
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_74
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_75
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_76
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_77
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_78
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_79
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_80
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_81
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_82
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_83
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_84
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_85
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_86
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_87
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_88
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_89
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_90
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_91
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_92
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_93
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_94
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_95
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_96
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_97
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_98
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_99
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_100
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_101
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_102
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_103
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_104
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_105
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_106
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_107
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_108
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_109
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_110
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_111
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_112
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_113
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_114
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_115
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_116
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_117
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_118
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_119
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_120
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+  REGION top_bc_reg_121
+    FILE ../xxgrid010-mc-cxc-top.h5
+  /
+
+  #========================FLOW CONDITION=============================
+  FLOW_CONDITION initial
+    TYPE
+      LIQUID_PRESSURE hydrostatic
+    /
+    INTERPOLATION linear
+    DATUM 1.d0 1.d0 1.66d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION upstream_bc
+    TYPE
+      LIQUID_PRESSURE seepage 
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.94d0 
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION downstream_bc
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.907d0
+    LIQUID_PRESSURE 101325.d0 
+  /
+  FLOW_CONDITION top_precip_bc
+    TYPE
+      LIQUID_FLUX NEUMANN
+    /
+    LIQUID_FLUX 1.757d-8 ! [m/s]
+  /
+FLOW_CONDITION top_river_bc_0
+  TYPE
+    LIQUID_PRESSURE seepage
+  /
+  CYCLIC
+  DATUM 0.d0 0.d0 1.940d0
+  LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_1
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.931d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_2
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.923d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_3
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.914d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_4
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.906d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_5
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.897d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_6
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.889d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_7
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.880d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_8
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.872d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_9
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.863d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_10
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.855d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_11
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.846d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_12
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.838d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_13
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.829d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_14
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.821d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_15
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.812d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_16
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.804d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_17
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.795d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_18
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.787d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_19
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.778d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_20
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.770d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_21
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.761d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_22
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.753d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_23
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.744d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_24
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.736d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_25
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.727d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_26
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.719d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_27
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.710d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_28
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.702d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_29
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.693d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_30
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.685d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_31
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.676d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_32
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.668d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_33
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.659d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_34
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.651d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_35
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.642d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_36
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.634d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_37
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.625d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_38
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.617d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_39
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.608d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_40
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.600d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_41
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.591d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_42
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.582d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_43
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.574d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_44
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.565d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_45
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.557d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_46
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.548d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_47
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.540d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_48
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.531d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_49
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.523d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_50
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.514d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_51
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.506d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_52
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.497d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_53
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.489d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_54
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.480d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_55
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.472d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_56
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.463d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_57
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.455d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_58
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.446d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_59
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.438d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_60
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.429d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_61
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.421d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_62
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.412d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_63
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.404d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_64
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.395d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_65
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.387d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_66
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.378d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_67
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.370d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_68
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.361d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_69
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.353d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_70
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.344d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_71
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.336d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_72
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.327d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_73
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.319d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_74
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.310d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_75
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.302d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_76
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.293d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_77
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.285d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_78
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.276d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_79
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.268d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_80
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.259d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_81
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.250d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_82
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.242d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_83
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.233d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_84
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.225d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_85
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.216d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_86
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.208d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_87
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.199d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_88
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.191d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_89
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.182d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_90
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.174d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_91
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.165d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_92
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.157d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_93
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.148d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_94
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.140d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_95
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.131d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_96
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.123d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_97
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.114d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_98
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.106d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_99
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.097d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_100
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.089d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_101
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.080d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_102
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.072d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_103
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.063d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_104
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.055d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_105
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.046d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_106
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.038d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_107
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.029d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_108
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.021d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_109
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.012d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_110
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 1.004d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_111
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.995d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_112
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.987d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_113
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.978d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_114
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.970d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_115
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.961d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_116
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.953d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_117
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.944d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_118
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.936d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_119
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.927d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_120
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.919d0
+    LIQUID_PRESSURE 101325.d0
+  /
+  FLOW_CONDITION top_river_bc_121
+    TYPE
+      LIQUID_PRESSURE seepage
+    /
+    CYCLIC
+    DATUM 0.d0 0.d0 0.910d0
+    LIQUID_PRESSURE 101325.d0
+  /
+
+  #==================== CHEMISTRY ===================
+  CHEMISTRY 
+    PRIMARY_SPECIES 
+      H+        
+      H2O   
+      Ac-    
+      Al+++
+      Ca++   
+      Cl-         
+      Fe++
+      Fe+++
+      HCO3-
+      HS-
+      K+
+      Mg++ 
+      N2(aq)
+      Na+
+      NH3(aq)
+      NO3-
+      O2(aq)   
+      SiO2(aq)
+      SO4--  
+      SOC(aq)
+      Tracer 
+    / 
+
+    SECONDARY_SPECIES
+      HAc(aq)
+      S2--
+      S2O3--
+      CO(aq)
+      ClO-
+      ClO2-
+      ClO3-
+      ClO4-
+      H2(aq)
+      HSO5-
+      SO3--
+      Al(OH)2+
+      Al(SO4)2-
+      Al(OH)4-
+      Al(OH)3(aq)
+      AlOH++
+      AlSO4+
+      CO2(aq)
+      CO3--
+      CaCO3(aq)
+      CaCl+
+      CaCl2(aq)
+      CaHCO3+
+      CaNO3+
+      CaOH+
+      CaSO4(aq)
+      CH4(aq)
+      Fe(OH)2(aq)
+      Fe(OH)2+
+      Fe(OH)3(aq)
+      Fe(OH)3-
+      Fe(OH)4-
+      Fe(OH)4--
+      Fe(SO4)2-
+      Fe2(OH)2++++
+      Fe3(OH)4(5+)
+      FeCO3(aq)
+      FeCO3+
+      FeCl+
+      FeCl++
+      FeCl2(aq)
+      FeCl2+
+      FeCl4-
+      FeCl4--
+      FeHCO3+
+      FeNO3++
+      FeOH+
+      FeOH++
+      FeSO4(aq)
+      FeSO4+
+      H2S(aq)
+      H2SO4(aq)
+      H2SiO4--
+      HCl(aq)
+      HNO3(aq)
+      HO2-
+      HS2O3-
+      HSO4-
+      H3SiO4-
+      KCl(aq)
+      KHSO4(aq)
+      KOH(aq)
+      KSO4-
+      Mg4(OH)4++++
+      MgCO3(aq)
+      MgCl+
+      MgHCO3+
+      MgSO4(aq)
+      NaAlO2(aq)
+      NaCO3-
+      NaCl(aq)
+      NaHCO3(aq)
+      NaHSiO3(aq)
+      NaNO3(aq)
+      NaOH(aq)
+      NaSO4-
+      OH-
+      S--
+      S5O6--
+      SCN-
+      H2SO3(aq)
+      HClO(aq)
+      HClO2(aq)
+      HSO3-
+      MgOH+
+      NH4+
+      NH4SO4-
+      SO2(aq)
+      Urea(aq)
+      
+    END   
+ 
+    ACTIVE_GAS_SPECIES
+      GAS_TRANSPORT_IS_UNVETTED
+      CO2(g)*
+      N2(g)
+      O2(g)
+    /
+    
+    PASSIVE_GAS_SPECIES
+      CO2(g)*
+      O2(g)
+      N2(g)
+    /
+    IMMOBILE_SPECIES
+      Fim
+      Nim
+      Sim
+    /
+
+    MINERALS 
+      Albite
+      Calcite
+      Dolomite
+      Root_Respiration
+      Ferrihydrite
+      Goethite
+      SOC
+      SOM
+    /
+
+    DECOUPLED_EQUILIBRIUM_REACTIONS
+        Fe++
+        Fe+++
+        HS-
+        SO4--
+        NO3-
+        NH3(aq)
+        N2(aq)
+        O2(aq)
+    END 
+
+    MINERAL_KINETICS 
+
+      Albite
+        PREFACTOR 
+          RATE_CONSTANT 2.75d-13 
+          ACTIVATION_ENERGY 69.8d0  !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 6.92d-11 
+          ACTIVATION_ENERGY 60.2d0  !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  0.457d0
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 2.57d-08
+          ACTIVATION_ENERGY 71.0d0  !kJ / mol
+          PREFACTOR_SPECIES OH- 
+              ALPHA  0.572
+          /
+        / 
+      /
+
+      Calcite
+        PREFACTOR 
+          RATE_CONSTANT 1.550000d-05 
+          ACTIVATION_ENERGY 23.5d0  !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 5.01d-01 
+          ACTIVATION_ENERGY 14.4d0  !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  1.0
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 3.31d-04 
+          ACTIVATION_ENERGY 35.4d0  !kJ / mol
+          PREFACTOR_SPECIES HCO3-  
+              ALPHA  1.0 
+          /
+        / 
+      /
+
+      Dolomite
+        PREFACTOR 
+          RATE_CONSTANT 2.51d-09
+          ACTIVATION_ENERGY 95.31d0 !kJ / mol
+          /
+        PREFACTOR
+          RATE_CONSTANT 1.74d-04
+          ACTIVATION_ENERGY 56.69d0 !kJ / mol
+          PREFACTOR_SPECIES H+  
+              ALPHA  0.5
+          /
+        /
+        PREFACTOR
+          RATE_CONSTANT 4.27d-06 
+          ACTIVATION_ENERGY 45.69d0 !kJ / mol
+          PREFACTOR_SPECIES HCO3-  
+              ALPHA  0.5 
+          /
+        / 
+      /
+
+      Ferrihydrite 
+        RATE_CONSTANT 0.d0
+      /
+
+      Goethite 
+        RATE_CONSTANT 0.d0
+      /
+
+      Root_Respiration
+        DISSOLUTION_RATE_CONSTANT     3.685422d-13
+        PRECIPITATION_RATE_CONSTANT   0.d0
+      /
+
+      SOC
+        RATE_CONSTANT 1.00d-10
+      /
+      
+      SOM        
+        RATE_CONSTANT 0.d0 
+      /
+
+    /
+    # ------- Fe++ oxidation ---------
+    GENERAL_REACTION
+      REACTION 1.00 Fe++ + 0.25 O2(aq) + H+ <-> 1.00 Fe+++ + 0.50 H2O
+      FORWARD_RATE 1.d-10
+      BACKWARD_RATE 0.d0
+    /
+
+    # ------- HS- oxidation ---------
+    GENERAL_REACTION
+      REACTION 1.00 HS- + 2.00 O2(aq) <-> 1.00 SO4-- + 1.00 H+
+      FORWARD_RATE 1.d-10
+      BACKWARD_RATE 0.d0
+    /
+
+    # ------- Aerobic respiration ---------
+    MICROBIAL_REACTION
+      REACTION 1.00 SOC(aq) + 1.00 O2(aq) + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
+      RATE_CONSTANT 4.641589d-10
+      MONOD
+        SPECIES_NAME O2(aq)
+        HALF_SATURATION_CONSTANT 1.000000d-03
+        THRESHOLD_CONCENTRATION 1.d-6
+      /
+      MONOD
+        SPECIES_NAME SOC(aq)
+        HALF_SATURATION_CONSTANT 1.d-5
+        THRESHOLD_CONCENTRATION 1.d-8
+      /
+    /
+
+    REACTION_SANDBOX
+
+      SOM_AC_FERMENTATION
+        RATE        1.d-8
+        THRESHOLD   1.d-6
+      /
+
+      JINBETHKE_NITRATE_ACETATE
+        RMAX            1.000000d-05
+        K_DONOR         1.000000d-06
+        K_ACCEPTOR      1.000000d-04
+        Y               1.0d-0
+        M               2.667d0            ! 0.667 * 4
+        CHI             8.0d0              ! 2.0 * 4
+        O2_THRESHOLD    1.0d-4
+      END
+
+      JINBETHKE_FERRIHYDRITE_ACETATE
+        RMAX            2.500000d-06
+        K_DONOR         2.154435d-06
+        K_ACCEPTOR      1.0d-6  ! vol fraction
+        Y               1.0d-0
+        M               0.50d0            ! 0.125 * 4
+        CHI             7.0d0              ! 1.75 * 4
+        O2_THRESHOLD    1.0d-5
+      /
+
+      JINBETHKE_GOETHITE_ACETATE
+        RMAX            2.500000d-06
+        K_DONOR         2.154435d-06
+        K_ACCEPTOR      1.0d-6  ! vol fraction
+        Y               1.0d-0
+        M               0.50d0            ! 0.125 * 4
+        CHI             7.0d0              ! 1.75 * 4
+        O2_THRESHOLD    1.0d-5
+        K_PRECIPITATION 1.0d-30
+      /
+
+      JINBETHKE_SULFATE_ACETATE
+        RMAX            1.160397d-07
+        K_DONOR         5.000000d-05
+        K_ACCEPTOR      4.641589d-05
+        Y               1.0d-0
+        M               1.33d0            ! 0.33 * 4.0
+        CHI             8.0d0              ! 2.0 * 4.0
+        O2_THRESHOLD    1.0d-5
+      END
+
+    /
+
+    DATABASE ../hanford-cd.dat
+    LOG_FORMULATION 
+    ACTIVITY_COEFFICIENTS TIMESTEP 
+    OUTPUT 
+     all
+     PRIMARY_SPECIES
+     SECONDARY_SPECIES
+     FREE_ION
+     TOTAL
+     pH
+     MINERAL_SATURATION_INDEX
+    /  
+  END
+
+  #=========================== CONSTRAINTS ====================================== 
+  CONSTRAINT  initial_gravel
+    CONCENTRATIONS 
+      H+          8.2       P
+      H2O         1.00E+00  T
+      Ac-         1.00E-06  T
+      Al+++       1.41e-06  T
+      Ca++        1.22e-03  T      
+      Cl-         2.05e-05  T
+      Fe++        4.66E-10  T
+      Fe+++       1.00E-15  M Goethite 
+      HCO3-       3.00e-04  G CO2(g)*   
+      HS-         1.00e-07  T
+      K+          2.07e-05  T
+      Mg++        3.08e-04  T 
+      N2(aq)      5.50e-01  G N2(g)
+      Na+         8.15e-05  T
+      NH3(aq)     1.00e-06  T
+      NO3-        2.07e-08  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.63e-04  T
+      SO4--       3.90E-04  T
+      SOC(aq)     1.34d-04  M SOC
+      Tracer      1.00d-10  T 
+    /
+
+    IMMOBILE
+      Fim       1.d-10 !1.d-6
+      Nim       1.d-10 !1.d-4
+      Sim       1.d-10 !1.d-4
+    /
+
+    MINERALS
+      Albite           6.74e-02  0.10e+00 m^2/g     # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Calcite          1.00e-03  1.10e+01 
+      Dolomite         1.00e-02  1.82e+00 m^2/g
+      Root_Respiration 1.00e-02  1.13e+05
+      Ferrihydrite     0.00e-00  1.080000e+08 
+      Goethite         3.72e-04  2.830000e+07
+      SOC              1.00e-02  1.13e+05 
+      SOM              1.00e-02  1.13e+05
+    /
+  END
+
+  CONSTRAINT  initial_soil
+    CONCENTRATIONS 
+      H+          7.6       P
+      H2O         1.00E+00  T
+      Ac-         1.00E-06  T
+      Al+++       1.41e-06  T
+      Ca++        1.22e-03  T      
+      Cl-         2.05e-05  T
+      Fe++        4.66E-10  T
+      Fe+++       1.00E-15  M Goethite 
+      HCO3-       3.00e-04  G CO2(g)*   
+      HS-         1.00e-07  T
+      K+          2.07e-05  T
+      Mg++        3.08e-04  T 
+      N2(aq)      5.50e-01  G N2(g)
+      Na+         8.15e-05  T
+      NH3(aq)     1.00e-06  T
+      NO3-        2.07e-08  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.63e-04  T
+      SO4--       3.90E-04  T
+      SOC(aq)     1.34d-04  M SOC
+      Tracer      1.00d-10  T 
+    /
+
+    IMMOBILE
+      Fim       1.d-5
+      Nim       1.d-4
+      Sim       1.d-4
+    /
+
+    MINERALS
+      Albite           6.74e-02  0.10e+00 m^2/g     # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Calcite          1.00e-03  1.10e+01 
+      Dolomite         1.00e-02  1.82e+00 m^2/g 
+      Root_Respiration 1.00e-02  1.13e+05
+      Ferrihydrite     5.00e-05  1.080000e+08
+      Goethite         3.72e-04  2.830000e+07
+      SOC              1.00e-02  1.13e+05
+      SOM              1.00e-02  1.13e+05 
+    /
+  END
+
+  CONSTRAINT  river
+    CONCENTRATIONS 
+      H+          7.85      P
+      H2O         1.00e+00  T
+      Ac-         1.00e-06  T
+      Al+++       1.41e-06  T
+      Ca++        1.22e-03  T 
+      Cl-         4.55e-05  T
+      Fe++        4.66e-07  T
+      Fe+++       1.00E-15  M Goethite
+      HCO3-       3.00e-04  T
+      HS-         4.43E-08  T
+      K+          1.66e-05  T
+      Mg++        4.10e-04  T
+      N2(aq)      5.50e-01  G N2(g)
+      NH3(aq)     1.00e-06  T
+      Na+         7.97e-05  T
+      NO3-        1.41e-06  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.63e-04  T
+      SO4--       3.90e-04  T
+      SOC(aq)     1.00e-04  T
+      Tracer      1.00e-05  T
+    /
+  END
+
+  CONSTRAINT  precip
+    CONCENTRATIONS 
+      H+          5.6       Z
+      H2O         1.00e+00  T
+      Ac-         1.00e-10  T
+      Al+++       1.00e-10  T
+      Ca++        1.00e-10  T 
+      Cl-         1.00e-10  T
+      Fe++        4.66e-10  T
+      Fe+++       1.00E-15  M Goethite
+      HCO3-       3.00e-04  G CO2(g)*
+      HS-         1.00e-10  T
+      K+          1.00e-10  T
+      Mg++        1.00e-10  T
+      N2(aq)      0.55      G N2(g)
+      NH3(aq)     1.00e-10  T
+      Na+         1.00e-10  T
+      NO3-        2.07e-08  T
+      O2(aq)      0.16      G O2(g)
+      SiO2(aq)    1.00e-08  T
+      SO4--       3.00e-08  T
+      SOC(aq)     1.00e-04  M SOC
+      Tracer      1.00e-05  T
+    /
+  END
+
+  #=========================== TRANSPORT CONDITIONS ============================= 
+  TRANSPORT_CONDITION  initial_all
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  initial_gravel
+      / 
+  END 
+  TRANSPORT_CONDITION  initial_soil
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  initial_soil
+      / 
+  END 
+  TRANSPORT_CONDITION  initial_gravel
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  initial_gravel
+      / 
+  END 
+  TRANSPORT_CONDITION  from_river
+    TYPE dirichlet_zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  river
+      / 
+  END 
+  TRANSPORT_CONDITION  from_precip
+    TYPE zero_gradient 
+      CONSTRAINT_LIST 
+        0.d0  precip
+      / 
+  END 
+
+  #======================BOUNDARY CONDITION==========================
+  BOUNDARY_CONDITION river_upstream
+    FLOW_CONDITION upstream_bc
+    TRANSPORT_CONDITION from_river
+    REGION upstream_bc_reg
+  /
+  BOUNDARY_CONDITION river_downstream
+    FLOW_CONDITION downstream_bc
+    TRANSPORT_CONDITION from_river
+    REGION downstream_bc_reg
+  /
+  BOUNDARY_CONDITION top_river_0
+    FLOW_CONDITION top_river_bc_0
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_0
+  /
+  BOUNDARY_CONDITION top_precip_0
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_0
+  /
+  BOUNDARY_CONDITION top_river_1
+    FLOW_CONDITION top_river_bc_1
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_1
+  /
+  BOUNDARY_CONDITION top_precip_1
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_1
+  /
+  BOUNDARY_CONDITION top_river_2
+    FLOW_CONDITION top_river_bc_2
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_2
+  /
+  BOUNDARY_CONDITION top_precip_2
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_2
+  /
+  BOUNDARY_CONDITION top_river_3
+    FLOW_CONDITION top_river_bc_3
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_3
+  /
+  BOUNDARY_CONDITION top_precip_3
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_3
+  /
+  BOUNDARY_CONDITION top_river_4
+    FLOW_CONDITION top_river_bc_4
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_4
+  /
+  BOUNDARY_CONDITION top_precip_4
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_4
+  /
+  BOUNDARY_CONDITION top_river_5
+    FLOW_CONDITION top_river_bc_5
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_5
+  /
+  BOUNDARY_CONDITION top_precip_5
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_5
+  /
+  BOUNDARY_CONDITION top_river_6
+    FLOW_CONDITION top_river_bc_6
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_6
+  /
+  BOUNDARY_CONDITION top_precip_6
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_6
+  /
+  BOUNDARY_CONDITION top_river_7
+    FLOW_CONDITION top_river_bc_7
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_7
+  /
+  BOUNDARY_CONDITION top_precip_7
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_7
+  /
+  BOUNDARY_CONDITION top_river_8
+    FLOW_CONDITION top_river_bc_8
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_8
+  /
+  BOUNDARY_CONDITION top_precip_8
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_8
+  /
+  BOUNDARY_CONDITION top_river_9
+    FLOW_CONDITION top_river_bc_9
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_9
+  /
+  BOUNDARY_CONDITION top_precip_9
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_9
+  /
+  BOUNDARY_CONDITION top_river_10
+    FLOW_CONDITION top_river_bc_10
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_10
+  /
+  BOUNDARY_CONDITION top_precip_10
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_10
+  /
+  BOUNDARY_CONDITION top_river_11
+    FLOW_CONDITION top_river_bc_11
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_11
+  /
+  BOUNDARY_CONDITION top_precip_11
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_11
+  /
+  BOUNDARY_CONDITION top_river_12
+    FLOW_CONDITION top_river_bc_12
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_12
+  /
+  BOUNDARY_CONDITION top_precip_12
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_12
+  /
+  BOUNDARY_CONDITION top_river_13
+    FLOW_CONDITION top_river_bc_13
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_13
+  /
+  BOUNDARY_CONDITION top_precip_13
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_13
+  /
+  BOUNDARY_CONDITION top_river_14
+    FLOW_CONDITION top_river_bc_14
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_14
+  /
+  BOUNDARY_CONDITION top_precip_14
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_14
+  /
+  BOUNDARY_CONDITION top_river_15
+    FLOW_CONDITION top_river_bc_15
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_15
+  /
+  BOUNDARY_CONDITION top_precip_15
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_15
+  /
+  BOUNDARY_CONDITION top_river_16
+    FLOW_CONDITION top_river_bc_16
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_16
+  /
+  BOUNDARY_CONDITION top_precip_16
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_16
+  /
+  BOUNDARY_CONDITION top_river_17
+    FLOW_CONDITION top_river_bc_17
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_17
+  /
+  BOUNDARY_CONDITION top_precip_17
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_17
+  /
+  BOUNDARY_CONDITION top_river_18
+    FLOW_CONDITION top_river_bc_18
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_18
+  /
+  BOUNDARY_CONDITION top_precip_18
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_18
+  /
+  BOUNDARY_CONDITION top_river_19
+    FLOW_CONDITION top_river_bc_19
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_19
+  /
+  BOUNDARY_CONDITION top_precip_19
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_19
+  /
+  BOUNDARY_CONDITION top_river_20
+    FLOW_CONDITION top_river_bc_20
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_20
+  /
+  BOUNDARY_CONDITION top_precip_20
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_20
+  /
+  BOUNDARY_CONDITION top_river_21
+    FLOW_CONDITION top_river_bc_21
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_21
+  /
+  BOUNDARY_CONDITION top_precip_21
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_21
+  /
+  BOUNDARY_CONDITION top_river_22
+    FLOW_CONDITION top_river_bc_22
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_22
+  /
+  BOUNDARY_CONDITION top_precip_22
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_22
+  /
+  BOUNDARY_CONDITION top_river_23
+    FLOW_CONDITION top_river_bc_23
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_23
+  /
+  BOUNDARY_CONDITION top_precip_23
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_23
+  /
+  BOUNDARY_CONDITION top_river_24
+    FLOW_CONDITION top_river_bc_24
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_24
+  /
+  BOUNDARY_CONDITION top_precip_24
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_24
+  /
+  BOUNDARY_CONDITION top_river_25
+    FLOW_CONDITION top_river_bc_25
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_25
+  /
+  BOUNDARY_CONDITION top_precip_25
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_25
+  /
+  BOUNDARY_CONDITION top_river_26
+    FLOW_CONDITION top_river_bc_26
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_26
+  /
+  BOUNDARY_CONDITION top_precip_26
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_26
+  /
+  BOUNDARY_CONDITION top_river_27
+    FLOW_CONDITION top_river_bc_27
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_27
+  /
+  BOUNDARY_CONDITION top_precip_27
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_27
+  /
+  BOUNDARY_CONDITION top_river_28
+    FLOW_CONDITION top_river_bc_28
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_28
+  /
+  BOUNDARY_CONDITION top_precip_28
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_28
+  /
+  BOUNDARY_CONDITION top_river_29
+    FLOW_CONDITION top_river_bc_29
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_29
+  /
+  BOUNDARY_CONDITION top_precip_29
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_29
+  /
+  BOUNDARY_CONDITION top_river_30
+    FLOW_CONDITION top_river_bc_30
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_30
+  /
+  BOUNDARY_CONDITION top_precip_30
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_30
+  /
+  BOUNDARY_CONDITION top_river_31
+    FLOW_CONDITION top_river_bc_31
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_31
+  /
+  BOUNDARY_CONDITION top_precip_31
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_31
+  /
+  BOUNDARY_CONDITION top_river_32
+    FLOW_CONDITION top_river_bc_32
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_32
+  /
+  BOUNDARY_CONDITION top_precip_32
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_32
+  /
+  BOUNDARY_CONDITION top_river_33
+    FLOW_CONDITION top_river_bc_33
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_33
+  /
+  BOUNDARY_CONDITION top_precip_33
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_33
+  /
+  BOUNDARY_CONDITION top_river_34
+    FLOW_CONDITION top_river_bc_34
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_34
+  /
+  BOUNDARY_CONDITION top_precip_34
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_34
+  /
+  BOUNDARY_CONDITION top_river_35
+    FLOW_CONDITION top_river_bc_35
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_35
+  /
+  BOUNDARY_CONDITION top_precip_35
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_35
+  /
+  BOUNDARY_CONDITION top_river_36
+    FLOW_CONDITION top_river_bc_36
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_36
+  /
+  BOUNDARY_CONDITION top_precip_36
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_36
+  /
+  BOUNDARY_CONDITION top_river_37
+    FLOW_CONDITION top_river_bc_37
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_37
+  /
+  BOUNDARY_CONDITION top_precip_37
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_37
+  /
+  BOUNDARY_CONDITION top_river_38
+    FLOW_CONDITION top_river_bc_38
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_38
+  /
+  BOUNDARY_CONDITION top_precip_38
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_38
+  /
+  BOUNDARY_CONDITION top_river_39
+    FLOW_CONDITION top_river_bc_39
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_39
+  /
+  BOUNDARY_CONDITION top_precip_39
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_39
+  /
+  BOUNDARY_CONDITION top_river_40
+    FLOW_CONDITION top_river_bc_40
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_40
+  /
+  BOUNDARY_CONDITION top_precip_40
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_40
+  /
+  BOUNDARY_CONDITION top_river_41
+    FLOW_CONDITION top_river_bc_41
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_41
+  /
+  BOUNDARY_CONDITION top_precip_41
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_41
+  /
+  BOUNDARY_CONDITION top_river_42
+    FLOW_CONDITION top_river_bc_42
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_42
+  /
+  BOUNDARY_CONDITION top_precip_42
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_42
+  /
+  BOUNDARY_CONDITION top_river_43
+    FLOW_CONDITION top_river_bc_43
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_43
+  /
+  BOUNDARY_CONDITION top_precip_43
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_43
+  /
+  BOUNDARY_CONDITION top_river_44
+    FLOW_CONDITION top_river_bc_44
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_44
+  /
+  BOUNDARY_CONDITION top_precip_44
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_44
+  /
+  BOUNDARY_CONDITION top_river_45
+    FLOW_CONDITION top_river_bc_45
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_45
+  /
+  BOUNDARY_CONDITION top_precip_45
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_45
+  /
+  BOUNDARY_CONDITION top_river_46
+    FLOW_CONDITION top_river_bc_46
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_46
+  /
+  BOUNDARY_CONDITION top_precip_46
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_46
+  /
+  BOUNDARY_CONDITION top_river_47
+    FLOW_CONDITION top_river_bc_47
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_47
+  /
+  BOUNDARY_CONDITION top_precip_47
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_47
+  /
+  BOUNDARY_CONDITION top_river_48
+    FLOW_CONDITION top_river_bc_48
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_48
+  /
+  BOUNDARY_CONDITION top_precip_48
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_48
+  /
+  BOUNDARY_CONDITION top_river_49
+    FLOW_CONDITION top_river_bc_49
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_49
+  /
+  BOUNDARY_CONDITION top_precip_49
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_49
+  /
+  BOUNDARY_CONDITION top_river_50
+    FLOW_CONDITION top_river_bc_50
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_50
+  /
+  BOUNDARY_CONDITION top_precip_50
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_50
+  /
+  BOUNDARY_CONDITION top_river_51
+    FLOW_CONDITION top_river_bc_51
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_51
+  /
+  BOUNDARY_CONDITION top_precip_51
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_51
+  /
+  BOUNDARY_CONDITION top_river_52
+    FLOW_CONDITION top_river_bc_52
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_52
+  /
+  BOUNDARY_CONDITION top_precip_52
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_52
+  /
+  BOUNDARY_CONDITION top_river_53
+    FLOW_CONDITION top_river_bc_53
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_53
+  /
+  BOUNDARY_CONDITION top_precip_53
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_53
+  /
+  BOUNDARY_CONDITION top_river_54
+    FLOW_CONDITION top_river_bc_54
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_54
+  /
+  BOUNDARY_CONDITION top_precip_54
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_54
+  /
+  BOUNDARY_CONDITION top_river_55
+    FLOW_CONDITION top_river_bc_55
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_55
+  /
+  BOUNDARY_CONDITION top_precip_55
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_55
+  /
+  BOUNDARY_CONDITION top_river_56
+    FLOW_CONDITION top_river_bc_56
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_56
+  /
+  BOUNDARY_CONDITION top_precip_56
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_56
+  /
+  BOUNDARY_CONDITION top_river_57
+    FLOW_CONDITION top_river_bc_57
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_57
+  /
+  BOUNDARY_CONDITION top_precip_57
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_57
+  /
+  BOUNDARY_CONDITION top_river_58
+    FLOW_CONDITION top_river_bc_58
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_58
+  /
+  BOUNDARY_CONDITION top_precip_58
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_58
+  /
+  BOUNDARY_CONDITION top_river_59
+    FLOW_CONDITION top_river_bc_59
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_59
+  /
+  BOUNDARY_CONDITION top_precip_59
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_59
+  /
+  BOUNDARY_CONDITION top_river_60
+    FLOW_CONDITION top_river_bc_60
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_60
+  /
+  BOUNDARY_CONDITION top_precip_60
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_60
+  /
+  BOUNDARY_CONDITION top_river_61
+    FLOW_CONDITION top_river_bc_61
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_61
+  /
+  BOUNDARY_CONDITION top_precip_61
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_61
+  /
+  BOUNDARY_CONDITION top_river_62
+    FLOW_CONDITION top_river_bc_62
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_62
+  /
+  BOUNDARY_CONDITION top_precip_62
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_62
+  /
+  BOUNDARY_CONDITION top_river_63
+    FLOW_CONDITION top_river_bc_63
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_63
+  /
+  BOUNDARY_CONDITION top_precip_63
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_63
+  /
+  BOUNDARY_CONDITION top_river_64
+    FLOW_CONDITION top_river_bc_64
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_64
+  /
+  BOUNDARY_CONDITION top_precip_64
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_64
+  /
+  BOUNDARY_CONDITION top_river_65
+    FLOW_CONDITION top_river_bc_65
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_65
+  /
+  BOUNDARY_CONDITION top_precip_65
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_65
+  /
+  BOUNDARY_CONDITION top_river_66
+    FLOW_CONDITION top_river_bc_66
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_66
+  /
+  BOUNDARY_CONDITION top_precip_66
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_66
+  /
+  BOUNDARY_CONDITION top_river_67
+    FLOW_CONDITION top_river_bc_67
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_67
+  /
+  BOUNDARY_CONDITION top_precip_67
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_67
+  /
+  BOUNDARY_CONDITION top_river_68
+    FLOW_CONDITION top_river_bc_68
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_68
+  /
+  BOUNDARY_CONDITION top_precip_68
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_68
+  /
+  BOUNDARY_CONDITION top_river_69
+    FLOW_CONDITION top_river_bc_69
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_69
+  /
+  BOUNDARY_CONDITION top_precip_69
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_69
+  /
+  BOUNDARY_CONDITION top_river_70
+    FLOW_CONDITION top_river_bc_70
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_70
+  /
+  BOUNDARY_CONDITION top_precip_70
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_70
+  /
+  BOUNDARY_CONDITION top_river_71
+    FLOW_CONDITION top_river_bc_71
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_71
+  /
+  BOUNDARY_CONDITION top_precip_71
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_71
+  /
+  BOUNDARY_CONDITION top_river_72
+    FLOW_CONDITION top_river_bc_72
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_72
+  /
+  BOUNDARY_CONDITION top_precip_72
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_72
+  /
+  BOUNDARY_CONDITION top_river_73
+    FLOW_CONDITION top_river_bc_73
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_73
+  /
+  BOUNDARY_CONDITION top_precip_73
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_73
+  /
+  BOUNDARY_CONDITION top_river_74
+    FLOW_CONDITION top_river_bc_74
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_74
+  /
+  BOUNDARY_CONDITION top_precip_74
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_74
+  /
+  BOUNDARY_CONDITION top_river_75
+    FLOW_CONDITION top_river_bc_75
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_75
+  /
+  BOUNDARY_CONDITION top_precip_75
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_75
+  /
+  BOUNDARY_CONDITION top_river_76
+    FLOW_CONDITION top_river_bc_76
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_76
+  /
+  BOUNDARY_CONDITION top_precip_76
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_76
+  /
+  BOUNDARY_CONDITION top_river_77
+    FLOW_CONDITION top_river_bc_77
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_77
+  /
+  BOUNDARY_CONDITION top_precip_77
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_77
+  /
+  BOUNDARY_CONDITION top_river_78
+    FLOW_CONDITION top_river_bc_78
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_78
+  /
+  BOUNDARY_CONDITION top_precip_78
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_78
+  /
+  BOUNDARY_CONDITION top_river_79
+    FLOW_CONDITION top_river_bc_79
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_79
+  /
+  BOUNDARY_CONDITION top_precip_79
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_79
+  /
+  BOUNDARY_CONDITION top_river_80
+    FLOW_CONDITION top_river_bc_80
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_80
+  /
+  BOUNDARY_CONDITION top_precip_80
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_80
+  /
+  BOUNDARY_CONDITION top_river_81
+    FLOW_CONDITION top_river_bc_81
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_81
+  /
+  BOUNDARY_CONDITION top_precip_81
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_81
+  /
+  BOUNDARY_CONDITION top_river_82
+    FLOW_CONDITION top_river_bc_82
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_82
+  /
+  BOUNDARY_CONDITION top_precip_82
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_82
+  /
+  BOUNDARY_CONDITION top_river_83
+    FLOW_CONDITION top_river_bc_83
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_83
+  /
+  BOUNDARY_CONDITION top_precip_83
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_83
+  /
+  BOUNDARY_CONDITION top_river_84
+    FLOW_CONDITION top_river_bc_84
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_84
+  /
+  BOUNDARY_CONDITION top_precip_84
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_84
+  /
+  BOUNDARY_CONDITION top_river_85
+    FLOW_CONDITION top_river_bc_85
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_85
+  /
+  BOUNDARY_CONDITION top_precip_85
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_85
+  /
+  BOUNDARY_CONDITION top_river_86
+    FLOW_CONDITION top_river_bc_86
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_86
+  /
+  BOUNDARY_CONDITION top_precip_86
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_86
+  /
+  BOUNDARY_CONDITION top_river_87
+    FLOW_CONDITION top_river_bc_87
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_87
+  /
+  BOUNDARY_CONDITION top_precip_87
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_87
+  /
+  BOUNDARY_CONDITION top_river_88
+    FLOW_CONDITION top_river_bc_88
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_88
+  /
+  BOUNDARY_CONDITION top_precip_88
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_88
+  /
+  BOUNDARY_CONDITION top_river_89
+    FLOW_CONDITION top_river_bc_89
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_89
+  /
+  BOUNDARY_CONDITION top_precip_89
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_89
+  /
+  BOUNDARY_CONDITION top_river_90
+    FLOW_CONDITION top_river_bc_90
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_90
+  /
+  BOUNDARY_CONDITION top_precip_90
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_90
+  /
+  BOUNDARY_CONDITION top_river_91
+    FLOW_CONDITION top_river_bc_91
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_91
+  /
+  BOUNDARY_CONDITION top_precip_91
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_91
+  /
+  BOUNDARY_CONDITION top_river_92
+    FLOW_CONDITION top_river_bc_92
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_92
+  /
+  BOUNDARY_CONDITION top_precip_92
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_92
+  /
+  BOUNDARY_CONDITION top_river_93
+    FLOW_CONDITION top_river_bc_93
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_93
+  /
+  BOUNDARY_CONDITION top_precip_93
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_93
+  /
+  BOUNDARY_CONDITION top_river_94
+    FLOW_CONDITION top_river_bc_94
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_94
+  /
+  BOUNDARY_CONDITION top_precip_94
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_94
+  /
+  BOUNDARY_CONDITION top_river_95
+    FLOW_CONDITION top_river_bc_95
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_95
+  /
+  BOUNDARY_CONDITION top_precip_95
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_95
+  /
+  BOUNDARY_CONDITION top_river_96
+    FLOW_CONDITION top_river_bc_96
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_96
+  /
+  BOUNDARY_CONDITION top_precip_96
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_96
+  /
+  BOUNDARY_CONDITION top_river_97
+    FLOW_CONDITION top_river_bc_97
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_97
+  /
+  BOUNDARY_CONDITION top_precip_97
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_97
+  /
+  BOUNDARY_CONDITION top_river_98
+    FLOW_CONDITION top_river_bc_98
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_98
+  /
+  BOUNDARY_CONDITION top_precip_98
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_98
+  /
+  BOUNDARY_CONDITION top_river_99
+    FLOW_CONDITION top_river_bc_99
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_99
+  /
+  BOUNDARY_CONDITION top_precip_99
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_99
+  /
+  BOUNDARY_CONDITION top_river_100
+    FLOW_CONDITION top_river_bc_100
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_100
+  /
+  BOUNDARY_CONDITION top_precip_100
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_100
+  /
+  BOUNDARY_CONDITION top_river_101
+    FLOW_CONDITION top_river_bc_101
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_101
+  /
+  BOUNDARY_CONDITION top_precip_101
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_101
+  /
+  BOUNDARY_CONDITION top_river_102
+    FLOW_CONDITION top_river_bc_102
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_102
+  /
+  BOUNDARY_CONDITION top_precip_102
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_102
+  /
+  BOUNDARY_CONDITION top_river_103
+    FLOW_CONDITION top_river_bc_103
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_103
+  /
+  BOUNDARY_CONDITION top_precip_103
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_103
+  /
+  BOUNDARY_CONDITION top_river_104
+    FLOW_CONDITION top_river_bc_104
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_104
+  /
+  BOUNDARY_CONDITION top_precip_104
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_104
+  /
+  BOUNDARY_CONDITION top_river_105
+    FLOW_CONDITION top_river_bc_105
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_105
+  /
+  BOUNDARY_CONDITION top_precip_105
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_105
+  /
+  BOUNDARY_CONDITION top_river_106
+    FLOW_CONDITION top_river_bc_106
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_106
+  /
+  BOUNDARY_CONDITION top_precip_106
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_106
+  /
+  BOUNDARY_CONDITION top_river_107
+    FLOW_CONDITION top_river_bc_107
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_107
+  /
+  BOUNDARY_CONDITION top_precip_107
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_107
+  /
+  BOUNDARY_CONDITION top_river_108
+    FLOW_CONDITION top_river_bc_108
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_108
+  /
+  BOUNDARY_CONDITION top_precip_108
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_108
+  /
+  BOUNDARY_CONDITION top_river_109
+    FLOW_CONDITION top_river_bc_109
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_109
+  /
+  BOUNDARY_CONDITION top_precip_109
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_109
+  /
+  BOUNDARY_CONDITION top_river_110
+    FLOW_CONDITION top_river_bc_110
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_110
+  /
+  BOUNDARY_CONDITION top_precip_110
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_110
+  /
+  BOUNDARY_CONDITION top_river_111
+    FLOW_CONDITION top_river_bc_111
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_111
+  /
+  BOUNDARY_CONDITION top_precip_111
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_111
+  /
+  BOUNDARY_CONDITION top_river_112
+    FLOW_CONDITION top_river_bc_112
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_112
+  /
+  BOUNDARY_CONDITION top_precip_112
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_112
+  /
+  BOUNDARY_CONDITION top_river_113
+    FLOW_CONDITION top_river_bc_113
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_113
+  /
+  BOUNDARY_CONDITION top_precip_113
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_113
+  /
+  BOUNDARY_CONDITION top_river_114
+    FLOW_CONDITION top_river_bc_114
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_114
+  /
+  BOUNDARY_CONDITION top_precip_114
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_114
+  /
+  BOUNDARY_CONDITION top_river_115
+    FLOW_CONDITION top_river_bc_115
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_115
+  /
+  BOUNDARY_CONDITION top_precip_115
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_115
+  /
+  BOUNDARY_CONDITION top_river_116
+    FLOW_CONDITION top_river_bc_116
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_116
+  /
+  BOUNDARY_CONDITION top_precip_116
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_116
+  /
+  BOUNDARY_CONDITION top_river_117
+    FLOW_CONDITION top_river_bc_117
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_117
+  /
+  BOUNDARY_CONDITION top_precip_117
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_117
+  /
+  BOUNDARY_CONDITION top_river_118
+    FLOW_CONDITION top_river_bc_118
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_118
+  /
+  BOUNDARY_CONDITION top_precip_118
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_118
+  /
+  BOUNDARY_CONDITION top_river_119
+    FLOW_CONDITION top_river_bc_119
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_119
+  /
+  BOUNDARY_CONDITION top_precip_119
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_119
+  /
+  BOUNDARY_CONDITION top_river_120
+    FLOW_CONDITION top_river_bc_120
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_120
+  /
+  BOUNDARY_CONDITION top_precip_120
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_120
+  /
+  BOUNDARY_CONDITION top_river_121
+    FLOW_CONDITION top_river_bc_121
+    TRANSPORT_CONDITION from_river
+    REGION top_bc_reg_121
+  /
+  BOUNDARY_CONDITION top_precip_121
+    FLOW_CONDITION top_precip_bc
+    TRANSPORT_CONDITION from_precip
+    REGION top_bc_reg_121
+  /
+
+  #========================INITIAL CONDITION==========================
+  INITIAL_CONDITION initial
+    FLOW_CONDITION initial
+    TRANSPORT_CONDITION initial_all
+    REGION all
+  /
+  INITIAL_CONDITION initial_soil
+    FLOW_CONDITION initial
+    TRANSPORT_CONDITION initial_soil
+    REGION soil_reg
+  /
+  INITIAL_CONDITION initial_gravel
+    FLOW_CONDITION initial
+    TRANSPORT_CONDITION initial_gravel
+    REGION gravel_reg
+  /
+
+END_SUBSURFACE
+

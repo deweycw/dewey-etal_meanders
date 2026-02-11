@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=morris_sa
-#SBATCH --array=1-339%32
+#SBATCH --array=0-339%64
 #SBATCH --ntasks=4
 #SBATCH --partition=standard
 #SBATCH --time=03:00:00
@@ -9,10 +9,10 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=cdewey@udel.edu
 
-# --array=0-339%32 : 340 tasks, up to 32 concurrent (4 nodes * 8 runs/node)
+# --array=0-339%64 : 340 tasks, up to 64 concurrent (4 nodes * 8 runs/node)
 # --ntasks=4       : 4 MPI ranks per simulation
 # --time           : 180 min wall time per task (spin + main + margin)
-# Adjust %32 based on how many nodes you want to use simultaneously.
+# Adjust %64 based on how many nodes you want to use simultaneously.
 # %8 = 1 node, %16 = 2 nodes, %64 = 8 nodes, etc.
 
 # ============================================================
