@@ -20,11 +20,12 @@ From: ubuntu:22.04
     # Upgrade pip
     python3 -m pip install --no-cache-dir --upgrade pip setuptools
 
-    # Install pflotranutils from GitHub (includes numpy, matplotlib, scipy, pandas, h5py, seaborn)
-    python3 -m pip install --no-cache-dir \
-        "pflotranutils @ git+https://github.com/deweycw/pflotran-utils.git@stable" \
-        scikit-learn \
-        pyyaml
+    # Clone and install pflotranutils (includes numpy, matplotlib, scipy, pandas, h5py, seaborn)
+    git clone --single-branch --branch meanders https://github.com/deweycw/pflotran-utils.git /opt/pflotran-utils
+    python3 -m pip install --no-cache-dir /opt/pflotran-utils
+
+    # Additional dependencies
+    python3 -m pip install --no-cache-dir scikit-learn pyyaml
 
 %environment
     export LC_ALL=C.UTF-8
