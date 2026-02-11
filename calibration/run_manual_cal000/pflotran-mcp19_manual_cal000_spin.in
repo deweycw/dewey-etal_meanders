@@ -1728,7 +1728,7 @@ FLOW_CONDITION top_river_bc_0
       /
 
       Root_Respiration
-        DISSOLUTION_RATE_CONSTANT     7.943280d-13.                             !! tune
+        DISSOLUTION_RATE_CONSTANT     7.943280d-13                             !! tune
         PRECIPITATION_RATE_CONSTANT   0.d0
       /
 
