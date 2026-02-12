@@ -13,7 +13,7 @@ SIMULATION
     /
   /
   RESTART
-    FILENAME pflotran-mcp19_manual_cal000_spin-restart.chk
+    FILENAME pflotran-mcp19_manual_cal002_spin-restart.chk
     RESET_TO_TIME_ZERO
   /
 END
@@ -1738,7 +1738,7 @@ noskip
       /
 
       Root_Respiration
-        DISSOLUTION_RATE_CONSTANT     7.943280d-13
+        DISSOLUTION_RATE_CONSTANT     7.943280d-14
         PRECIPITATION_RATE_CONSTANT   0.d0
       /
 
@@ -1807,8 +1807,8 @@ noskip
         O2_THRESHOLD    1.0d-5
       /
 
-      JINBETHKE_GOETHITE_ACETATE
-        RMAX            2.500000d-07
+      JINBETHKE_GOETHITE_ACETATE 
+        RMAX            2.500000d-07 
         K_DONOR         1.000000d-06
         K_ACCEPTOR      1.0d-6  ! vol fraction
         Y               1.0d-0
@@ -1821,7 +1821,7 @@ noskip
       JINBETHKE_SULFATE_ACETATE
         RMAX            2.500000d-07
         K_DONOR         5.000000d-06
-        K_ACCEPTOR      1.000000d-04
+        K_ACCEPTOR      1.00d-05
         Y               1.0d-0
         M               1.33d0            ! 0.33 * 4.0
         CHI             8.0d0              ! 2.0 * 4.0

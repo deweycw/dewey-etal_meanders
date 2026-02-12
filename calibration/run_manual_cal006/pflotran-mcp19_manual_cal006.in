@@ -13,7 +13,7 @@ SIMULATION
     /
   /
   RESTART
-    FILENAME pflotran-mcp19_manual_cal000_spin-restart.chk
+    FILENAME pflotran-mcp19_manual_cal005_spin-restart.chk
     RESET_TO_TIME_ZERO
   /
 END
@@ -1738,12 +1738,12 @@ noskip
       /
 
       Root_Respiration
-        DISSOLUTION_RATE_CONSTANT     7.943280d-13
+        DISSOLUTION_RATE_CONSTANT     1.0d-13
         PRECIPITATION_RATE_CONSTANT   0.d0
       /
 
       SOC
-        RATE_CONSTANT 1.00d-10
+        RATE_CONSTANT 1.00d-8
       /
       
       SOM        
@@ -1767,10 +1767,10 @@ noskip
   # ------- Aerobic respiration ---------
     MICROBIAL_REACTION
       REACTION 1.00 SOC(aq) + 1.00 O2(aq) + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
-      RATE_CONSTANT 1.000000d-09
+      RATE_CONSTANT 5.00d-09
       MONOD
         SPECIES_NAME O2(aq)
-        HALF_SATURATION_CONSTANT 1.000000d-04
+        HALF_SATURATION_CONSTANT 2.00d-05
         THRESHOLD_CONCENTRATION 1.d-6
       /
       MONOD
@@ -1807,8 +1807,8 @@ noskip
         O2_THRESHOLD    1.0d-5
       /
 
-      JINBETHKE_GOETHITE_ACETATE
-        RMAX            2.500000d-07
+      JINBETHKE_GOETHITE_ACETATE 
+        RMAX            2.500000d-07 
         K_DONOR         1.000000d-06
         K_ACCEPTOR      1.0d-6  ! vol fraction
         Y               1.0d-0
@@ -1819,9 +1819,9 @@ noskip
       /
 
       JINBETHKE_SULFATE_ACETATE
-        RMAX            2.500000d-07
-        K_DONOR         5.000000d-06
-        K_ACCEPTOR      1.000000d-04
+        RMAX            2.500000d-06
+        K_DONOR         5.00d-06
+        K_ACCEPTOR      1.00d-05
         Y               1.0d-0
         M               1.33d0            ! 0.33 * 4.0
         CHI             8.0d0              ! 2.0 * 4.0
