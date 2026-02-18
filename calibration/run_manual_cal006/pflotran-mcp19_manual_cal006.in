@@ -13,7 +13,11 @@ SIMULATION
     /
   /
   RESTART
+<<<<<<< HEAD
     FILENAME pflotran-mcp19_manual_cal006_spin-restart.chk
+=======
+    FILENAME pflotran-mcp19_manual_cal005_spin-restart.chk
+>>>>>>> refs/remotes/origin/dev
     RESET_TO_TIME_ZERO
   /
 END
