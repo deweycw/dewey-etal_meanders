@@ -11,6 +11,9 @@
 		{
 			"name": "dewey-etal-meanders",
 			"path": "../dewey-etal-meanders"
+		},
+		{
+			"path": "../pflotran"
 		}
 	],
 	"settings": {

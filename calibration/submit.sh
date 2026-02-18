@@ -26,13 +26,13 @@ SPIN_EXIT=$?
 
 if [ $SPIN_EXIT -ne 0 ]; then
     echo "ERROR: Spin-up failed with exit code $SPIN_EXIT"
-    echo "$RUN_ID SPIN_FAIL $SPIN_EXIT" >> "${SENSITIVITY_DIR}/failed_runs.log"
+    echo "$RUN_ID SPIN_FAIL $SPIN_EXIT" >> "${RUN_DIR}/failed_runs.log"
     exit 1
 fi
 
 if [ ! -f "$SPIN_CHECKPOINT" ]; then
     echo "ERROR: Spin-up completed but checkpoint file not found: $SPIN_CHECKPOINT"
-    echo "$RUN_ID SPIN_NO_CHECKPOINT" >> "${SENSITIVITY_DIR}/failed_runs.log"
+    echo "$RUN_ID SPIN_NO_CHECKPOINT" >> "${RUN_DIR}/failed_runs.log"
     exit 1
 fi
 
@@ -51,7 +51,7 @@ MAIN_EXIT=$?
 
 if [ $MAIN_EXIT -ne 0 ]; then
     echo "ERROR: Main simulation failed with exit code $MAIN_EXIT"
-    echo "$RUN_ID MAIN_FAIL $MAIN_EXIT" >> "${SENSITIVITY_DIR}/failed_runs.log"
+    echo "$RUN_ID MAIN_FAIL $MAIN_EXIT" >> "${RUN_DIR}/failed_runs.log"
     exit 1
 fi
 
