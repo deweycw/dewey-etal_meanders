@@ -1747,7 +1747,7 @@ noskip
       /
 
       Root_Respiration
-        DISSOLUTION_RATE_CONSTANT     2.0d-13
+        DISSOLUTION_RATE_CONSTANT     4.0d-13
         PRECIPITATION_RATE_CONSTANT   0.d0
       /
 
