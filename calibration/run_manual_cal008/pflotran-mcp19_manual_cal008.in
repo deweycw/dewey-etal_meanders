@@ -13,7 +13,7 @@ SIMULATION
     /
   /
   RESTART
-    FILENAME pflotran-mcp19_manual_cal017_spin-restart.chk
+    FILENAME pflotran-mcp19_manual_cal008_spin-restart.chk
     RESET_TO_TIME_ZERO
   /
 END
@@ -1649,7 +1649,6 @@ noskip
       Root_Respiration
       Ferrihydrite
       Goethite
-      Mackinawite
       SOC
       SOM
     /
@@ -1734,16 +1733,12 @@ noskip
         RATE_CONSTANT 0.d0
       /
 
-      Goethite
-        RATE_CONSTANT 0.d0
-      /
-
-      Mackinawite
+      Goethite 
         RATE_CONSTANT 0.d0
       /
 
       Root_Respiration
-        DISSOLUTION_RATE_CONSTANT     2.0d-13
+        DISSOLUTION_RATE_CONSTANT     1.0d-13
         PRECIPITATION_RATE_CONSTANT   0.d0
       /
 
@@ -1755,27 +1750,27 @@ noskip
         RATE_CONSTANT 0.d0 
       /
     /
-    # ------- Fe++ oxidation ---------
+  # ------- Fe++ oxidation ---------
     GENERAL_REACTION
       REACTION 1.00 Fe++ + 0.25 O2(aq) + H+ <-> 1.00 Fe+++ + 0.50 H2O
-      FORWARD_RATE 1.d-10                                                    !! tune
+      FORWARD_RATE 1.d-10
       BACKWARD_RATE 0.d0
     /
 
-    # ------- HS- oxidation ---------
+  # ------- HS- oxidation ---------
     GENERAL_REACTION
       REACTION 1.00 HS- + 2.00 O2(aq) <-> 1.00 SO4-- + 1.00 H+
-      FORWARD_RATE 1.d-10                                                    !! tune
+      FORWARD_RATE 1.d-10
       BACKWARD_RATE 0.d0
     /
 
-    # ------- Aerobic respiration ---------
+  # ------- Aerobic respiration ---------
     MICROBIAL_REACTION
       REACTION 1.00 SOC(aq) + 1.00 O2(aq) + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
-      RATE_CONSTANT 5.00d-10                                                 !! tune
+      RATE_CONSTANT 5.00d-09
       MONOD
         SPECIES_NAME O2(aq)
-        HALF_SATURATION_CONSTANT 1.00d-06                                    !! tune
+        HALF_SATURATION_CONSTANT 1.00d-06
         THRESHOLD_CONCENTRATION 1.d-8
       /
       MONOD
@@ -1802,25 +1797,25 @@ noskip
         O2_THRESHOLD    1.0d-4
       END
 
-       JINBETHKE_FERRIHYDRITE_ACETATE
-        RMAX                        2.500000d-06                                         !! tune
-        K_DONOR                     1.00d-05                                             !! tune 
-        SURFACE_AREA_THRESHOLD      0.40d-4                             ! [threshold] / ([Fe++] + [threshold])
-        Y                           1.0d-0
-        M                           0.50d0             ! 0.125 * 4
-        CHI                         7.0d0              ! 1.75 * 4
-        O2_THRESHOLD                1.0d-5
+      JINBETHKE_FERRIHYDRITE_ACETATE
+        RMAX            2.500000d-06
+        K_DONOR         1.00d-05
+        K_ACCEPTOR      1.0d-6  ! vol fraction
+        Y               1.0d-0
+        M               0.50d0            ! 0.125 * 4
+        CHI             7.0d0              ! 1.75 * 4
+        O2_THRESHOLD    1.0d-5
       /
 
-      JINBETHKE_GOETHITE_ACETATE
-        RMAX                        2.500000d-07
-        K_DONOR                     1.000000d-06
-        SURFACE_AREA_THRESHOLD      2.0d-4                             ! [threshold] / ([Fe++] + [threshold])
-        Y                           1.0d-0
-        M                           0.50d0             ! 0.125 * 4
-        CHI                         7.0d0              ! 1.75 * 4
-        O2_THRESHOLD                1.0d-5
-        K_PRECIPITATION             1.0d-30
+      JINBETHKE_GOETHITE_ACETATE 
+        RMAX            2.500000d-07 
+        K_DONOR         1.000000d-06
+        K_ACCEPTOR      1.0d-6  ! vol fraction
+        Y               1.0d-0
+        M               0.50d0            ! 0.125 * 4
+        CHI             7.0d0              ! 1.75 * 4
+        O2_THRESHOLD    1.0d-5
+        K_PRECIPITATION 1.0d-30
       /
 
       JINBETHKE_SULFATE_ACETATE
@@ -1832,15 +1827,6 @@ noskip
         CHI             8.0d0              ! 2.0 * 4.0
         O2_THRESHOLD    1.0d-5
       END
-
-      MACKINAWITE_DISS_PRECIP
-        PRECIP_RATE     1.d-10
-        DSLN_RATE       1.d-10
-        HALF_SAT_FE     1.d-5
-        HALF_SAT_HS     1.d-5
-        O2_THRESHOLD_M  1.d-5
-        HALF_SAT_O2     1.d-5
-      /
     /
   
     DATABASE ../hanford-cd.dat
@@ -1894,10 +1880,9 @@ noskip
       Calcite          1.00e-03  1.10e+01 
       Dolomite         1.00e-02  1.82e+00 m^2/g
       Root_Respiration 1.00e-02  1.13e+05
-      Ferrihydrite     0.00e-00  1.080000e+07
+      Ferrihydrite     0.00e-00  1.080000e+07 
       Goethite         3.72e-04  2.830000e+06
-      Mackinawite      0.00e+00  1.00e+01
-      SOC              1.00e-02  1.13e+05
+      SOC              1.00e-02  1.13e+05 
       SOM              1.00e-02  1.13e+05
     /
   END
@@ -1940,9 +1925,8 @@ noskip
       Root_Respiration 1.00e-02  1.13e+05
       Ferrihydrite     5.00e-05  1.080000e+07
       Goethite         3.72e-04  2.830000e+06
-      Mackinawite      0.00e+00  1.00e+01
       SOC              1.00e-02  1.13e+05
-      SOM              1.00e-02  1.13e+05
+      SOM              1.00e-02  1.13e+05 
     /
   END
 
@@ -10583,7 +10567,7 @@ noskip
 
   TRANSPORT_CONDITION  from_river
       TIME_UNITS h
-      TYPE dirichlet
+      TYPE dirichlet_zero_gradient
       CONSTRAINT_LIST
         0.d0  from_river_conc_0
         24.d0  from_river_conc_24
