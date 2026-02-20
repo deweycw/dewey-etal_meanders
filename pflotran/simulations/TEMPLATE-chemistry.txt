@@ -142,6 +142,7 @@
       Root_Respiration
       Ferrihydrite
       Goethite
+      Mackinawite
       !Pyrite
       SOC
       SOM
@@ -244,8 +245,12 @@ noskip
         RATE_CONSTANT 0.d0
       /
 
-      Goethite 
+      Goethite
         RATE_CONSTANT 0.d0
+      /
+
+      Mackinawite
+        RATE_CONSTANT 1.d-11
       /
 
       Root_Respiration
@@ -262,14 +267,14 @@ noskip
       /
 
     /
-# ------- Fe++ oxidation ---------
+# ------- Fe++ oxidation --------- (effectively off at rate 1e-10)
     GENERAL_REACTION
       REACTION 1.00 Fe++ + 0.25 O2(aq) + H+ <-> 1.00 Fe+++ + 0.50 H2O
       $T FORWARD_RATE 1.d-10
       BACKWARD_RATE 0.d0
     /
 
-# ------- HS- oxidation ---------
+# ------- HS- oxidation --------- (effectively off at rate 1e-10)
     GENERAL_REACTION
       REACTION 1.00 HS- + 2.00 O2(aq) <-> 1.00 SO4-- + 1.00 H+
       $T FORWARD_RATE 1.d-10
@@ -279,10 +284,10 @@ noskip
 # ------- Aerobic respiration ---------
     MICROBIAL_REACTION
       REACTION 1.00 SOC(aq) + 1.00 O2(aq) + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
-      $T RATE_CONSTANT 1.d-9
+      $T RATE_CONSTANT 5.d-10
       MONOD
         SPECIES_NAME O2(aq)
-        $T HALF_SATURATION_CONSTANT 1.d-4
+        $T HALF_SATURATION_CONSTANT 1.d-6
         THRESHOLD_CONCENTRATION 1.d-6
       /
       MONOD

@@ -46,3 +46,4 @@ pflotran.log
 
 # Large model output (adjust as needed)
 data/model_output/*.h5
+calibration/**/*.h5
