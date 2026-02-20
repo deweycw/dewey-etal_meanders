@@ -13,7 +13,7 @@ SIMULATION
     /
   /
   CHECKPOINT
-    TIMES y 0.25
+    TIMES y 0.25 0.50 0.75 1.0
   /
 END
 
@@ -39,8 +39,8 @@ SUBSURFACE
   MATERIAL_PROPERTY gravel
     ID  1
     POROSITY 0.20
-    TORTUOSITY 0.2
-    TRANSVERSE_DISPERSIVITY_V 1.5d0
+    !TORTUOSITY 0.5
+    TRANSVERSE_DISPERSIVITY_V 0.02d0
     CHARACTERISTIC_CURVES sf
     PERMEABILITY 
       PERM_X  2.26E-11
@@ -52,13 +52,13 @@ SUBSURFACE
   MATERIAL_PROPERTY  topsoil
     ID  2
     POROSITY 0.40
-    TORTUOSITY 0.2
-    TRANSVERSE_DISPERSIVITY_V 1.5d0
+    !TORTUOSITY 0.5
+    TRANSVERSE_DISPERSIVITY_V 0.02d0
     CHARACTERISTIC_CURVES sf
     PERMEABILITY 
       PERM_X  1.055E-12
       PERM_Y  1.055E-12
-      PERM_Z  1.055E-11
+      PERM_Z  1.055E-12
     /
   /
 
@@ -100,7 +100,7 @@ SUBSURFACE
 
   #=====================TIME======================
   TIME
-    FINAL_TIME 2.00d0 y
+    FINAL_TIME 0.500d0 y
     INITIAL_TIMESTEP_SIZE  2.d0 hr
     MINIMUM_TIMESTEP_SIZE  0.01d0 hr
     MAXIMUM_TIMESTEP_SIZE  600.0d0 hr
@@ -1743,7 +1743,7 @@ FLOW_CONDITION top_river_bc_0
       /
 
       SOC
-        RATE_CONSTANT 1.00d-10
+        RATE_CONSTANT 1.00d-8
       /
       
       SOM        
@@ -1754,14 +1754,14 @@ FLOW_CONDITION top_river_bc_0
     # ------- Fe++ oxidation ---------
     GENERAL_REACTION
       REACTION 1.00 Fe++ + 0.25 O2(aq) + H+ <-> 1.00 Fe+++ + 0.50 H2O
-      FORWARD_RATE 1.d-10                                                    !! tune
+      FORWARD_RATE 1.d-6                                                    !! tune
       BACKWARD_RATE 0.d0
     /
 
     # ------- HS- oxidation ---------
     GENERAL_REACTION
       REACTION 1.00 HS- + 2.00 O2(aq) <-> 1.00 SO4-- + 1.00 H+
-      FORWARD_RATE 1.d-10                                                    !! tune
+      FORWARD_RATE 1.d-6                                                    !! tune
       BACKWARD_RATE 0.d0
     /
 
@@ -1800,22 +1800,22 @@ FLOW_CONDITION top_river_bc_0
 
       JINBETHKE_FERRIHYDRITE_ACETATE
         RMAX                        2.500000d-06                                         !! tune
-        K_DONOR                     1.00d-05                                             !! tune 
-        SURFACE_AREA_THRESHOLD      0.40d-4                             ! [threshold] / ([Fe++] + [threshold])
+        K_DONOR                     5.00d-06                                             !! tune 
+        SURFACE_AREA_THRESHOLD      1.0d-3                             ! [threshold] / ([Fe++] + [threshold])
         Y                           1.0d-0
         M                           0.50d0             ! 0.125 * 4
         CHI                         7.0d0              ! 1.75 * 4
-        O2_THRESHOLD                1.0d-5
+        O2_THRESHOLD                1.0d-6
       /
 
       JINBETHKE_GOETHITE_ACETATE
         RMAX                        2.500000d-07
         K_DONOR                     1.000000d-06
-        SURFACE_AREA_THRESHOLD      2.0d-4                             ! [threshold] / ([Fe++] + [threshold])
+        SURFACE_AREA_THRESHOLD      1.0d-3                             ! [threshold] / ([Fe++] + [threshold])
         Y                           1.0d-0
         M                           0.50d0             ! 0.125 * 4
         CHI                         7.0d0              ! 1.75 * 4
-        O2_THRESHOLD                1.0d-5
+        O2_THRESHOLD                1.0d-6
         K_PRECIPITATION             1.0d-30
       /
 
@@ -1987,7 +1987,7 @@ FLOW_CONDITION top_river_bc_0
       NH3(aq)     1.00e-10  T
       Na+         1.00e-10  T
       NO3-        2.07e-08  T
-      O2(aq)      0.16      G O2(g)
+      O2(aq)      1.00e-06  T
       SiO2(aq)    1.00e-08  T
       SO4--       3.00e-08  T
       SOC(aq)     1.00e-04  M SOC
