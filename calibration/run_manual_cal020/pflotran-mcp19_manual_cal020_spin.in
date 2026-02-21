@@ -1890,7 +1890,7 @@ FLOW_CONDITION top_river_bc_0
       Albite           6.74e-02  0.10e+00 m^2/g     # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Calcite          1.00e-03  1.10e+01 
       Dolomite         1.00e-02  1.82e+00 m^2/g
-      Root_Respiration 1.00e-02  1.13e+05
+      Root_Respiration 0.00e-00  0.00e+01
       Ferrihydrite     0.00e-00  1.080000e+07
       Goethite         3.72e-04  2.830000e+06
       Mackinawite      0.00e+00  1.00e+01
@@ -1934,7 +1934,7 @@ FLOW_CONDITION top_river_bc_0
       Albite           6.74e-02  0.10e+00 m^2/g     # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Calcite          1.00e-03  1.10e+01 
       Dolomite         1.00e-02  1.82e+00 m^2/g 
-      Root_Respiration 0.00e-02  1.13e+05
+      Root_Respiration 0.00e-02  1.13e+03
       Ferrihydrite     5.00e-05  1.080000e+07
       Goethite         3.72e-04  2.830000e+06
       Mackinawite      0.00e+00  1.00e+01
