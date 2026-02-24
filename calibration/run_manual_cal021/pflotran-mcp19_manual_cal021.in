@@ -13,7 +13,7 @@ SIMULATION
     /
   /
   RESTART
-    FILENAME pflotran-mcp19_manual_cal020_spin-restart.chk
+    FILENAME pflotran-mcp19_manual_cal021_spin-restart.chk
     RESET_TO_TIME_ZERO
   /
 END
@@ -1941,7 +1941,7 @@ noskip
       Albite           6.74e-02  0.10e+00 m^2/g     # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Calcite          1.00e-03  1.10e+01 
       Dolomite         1.00e-02  1.82e+00 m^2/g 
-      Root_Respiration 1.00e-02  1.13e+05
+      Root_Respiration 1.00e-02  1.13e+04
       Ferrihydrite     5.00e-05  1.080000e+07
       Goethite         3.72e-04  2.830000e+06
       Mackinawite      0.00e+00  1.00e+01
