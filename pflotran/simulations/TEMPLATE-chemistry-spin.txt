@@ -26,7 +26,6 @@
 
     SECONDARY_SPECIES
       HAc(aq)
-      S2--
       S2O3--
       CO(aq)
       ClO-
@@ -365,5 +364,9 @@ noskip
      TOTAL
      pH
      MINERAL_SATURATION_INDEX
+     JB Fh Acetate Sandbox Rate
+     JB Gt Acetate Sandbox Rate
+     JB Sulfate Acetate Sandbox Rate
+     JB Nitrate Acetate Sandbox Rate
     /
   END
