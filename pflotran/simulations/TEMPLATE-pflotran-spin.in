@@ -10,7 +10,7 @@ SIMULATION
     /
   /
   CHECKPOINT
-    TIMES y 1.
+    TIMES y 0.2 0.3 0.4 
   /
 END
 
@@ -34,7 +34,9 @@ SUBSURFACE
   #=========================== MATERIAL PROPERTIES ==============================
   MATERIAL_PROPERTY gravel
     ID  1
-    POROSITY 0.2
+    POROSITY 0.20
+    !TORTUOSITY 0.5
+    TRANSVERSE_DISPERSIVITY_V 0.02d0
     CHARACTERISTIC_CURVES sf
     PERMEABILITY 
       PERM_X  2.26E-11
@@ -46,6 +48,8 @@ SUBSURFACE
   MATERIAL_PROPERTY  topsoil
     ID  2
     POROSITY 0.40
+    !TORTUOSITY 0.5
+    TRANSVERSE_DISPERSIVITY_V 0.02d0
     CHARACTERISTIC_CURVES sf
     PERMEABILITY 
       PERM_X  1.055E-12
@@ -84,7 +88,7 @@ SUBSURFACE
     TIME_UNITS y
     SNAPSHOT_FILE
       FORMAT HDF5
-      PERIODIC TIME 0.5d0 y
+      PERIODIC TIME 0.05d0 y
     /
 
   SCREEN PERIODIC 100
@@ -92,10 +96,10 @@ SUBSURFACE
 
   #=====================TIME======================
   TIME
-    FINAL_TIME 1.d0 y
-    INITIAL_TIMESTEP_SIZE  24.d0 hr
+    FINAL_TIME 0.500d0 y
+    INITIAL_TIMESTEP_SIZE  2.d0 hr
     MINIMUM_TIMESTEP_SIZE  0.01d0 hr
-    MAXIMUM_TIMESTEP_SIZE  504.0d0 hr
+    MAXIMUM_TIMESTEP_SIZE  600.0d0 hr
   END
 
   #==================REGIONS====================
@@ -209,19 +213,15 @@ $%$%$% CHUNK DELIM %^%^%^
     /
 
     MINERALS
-      !Albite           6.74e-02  2.90e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Albite           6.74e-02  0.10e+00 m^2/g 
-      Calcite          1.00e-03  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      !Calcite          1.00e-03  0.22e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      !Dolomite         1.00e-02  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Dolomite         1.00e-02  1.82e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Root_Respiration 1.00e-02  1.13e+05
-      !Pyrite           1.00e-03  1.90e+00
-      Ferrihydrite     0.00e-00  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Albite           6.74e-02  0.10e+00 m^2/g     # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Calcite          1.00e-03  1.10e+01 
+      Dolomite         1.00e-02  1.82e+00 m^2/g
+      Root_Respiration 0.00e-00  0.00e+01
+      Ferrihydrite     0.00e-00  1.080000e+07
+      Goethite         3.72e-04  2.830000e+06
       Mackinawite      0.00e+00  1.00e+01
-      SOC              1.00e-02  1.13e+05 # cm^2/cm^3
-      SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      SOC              1.00e-02  1.13e+05
+      SOM              1.00e-02  1.13e+05
     /
   END
 
@@ -257,19 +257,15 @@ $%$%$% CHUNK DELIM %^%^%^
     /
 
     MINERALS
-      !Albite           6.74e-02  2.90e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Albite           6.74e-02  0.10e+00 m^2/g 
-      Calcite          1.00e-03  1.10e+01 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      !Calcite          1.00e-03  0.22e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      !Dolomite         1.00e-02  1.07e+03 # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Dolomite         1.00e-02  1.82e+00 m^2/g # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Root_Respiration 1.00e-02  1.13e+05
-      !Pyrite           1.00e-03  1.90e+00
-      Ferrihydrite     5.00e-05  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
-      Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Albite           6.74e-02  0.10e+00 m^2/g     # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Calcite          1.00e-03  1.10e+01 
+      Dolomite         1.00e-02  1.82e+00 m^2/g 
+      Root_Respiration 1.00e-02  5.13e+04
+      Ferrihydrite     5.00e-05  1.080000e+07
+      Goethite         3.72e-04  2.830000e+06
       Mackinawite      0.00e+00  1.00e+01
-      SOC              1.00e-02  1.13e+05 # cm^2/cm^3
-      SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      SOC              1.00e-02  1.13e+05
+      SOM              1.00e-02  1.13e+05
     /
   END
 
@@ -317,7 +313,7 @@ $%$%$% CHUNK DELIM %^%^%^
       NH3(aq)     1.00e-10  T
       Na+         1.00e-10  T
       NO3-        2.07e-08  T
-      O2(aq)      0.16      G O2(g)
+      O2(aq)      1.00e-06  T
       SiO2(aq)    1.00e-08  T
       SO4--       3.00e-08  T
       SOC(aq)     1.00e-04  M SOC
@@ -348,7 +344,7 @@ $%$%$% CHUNK DELIM %^%^%^
   END 
 
   TRANSPORT_CONDITION  from_river
-    TYPE dirichlet_zero_gradient 
+    TYPE dirichlet 
       CONSTRAINT_LIST 
         0.d0  river
       / 

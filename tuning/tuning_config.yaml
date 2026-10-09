@@ -48,7 +48,7 @@ parameters:
   - name: root_respiration_dissolution_rate
     block: Root_Respiration
     keyword: DISSOLUTION_RATE_CONSTANT
-    default: 7.94e-13  # 10^(-12.1)
+    default: 6.00e-13  # 10^(-12.1)
     bounds: [1.0e-14, 1.0e-10]
     is_log_scale: true
     description: "Root respiration dissolution rate constant"
@@ -57,8 +57,8 @@ parameters:
   - name: fe_oxidation_forward_rate
     block: Fe_oxidation
     keyword: FORWARD_RATE
-    default: 1.0e-10
-    bounds: [1.0e-12, 1.0e-8]
+    default: 1.00e-06
+    bounds: [1.0e-12, 1.0e-4]
     is_log_scale: true
     description: "Fe++ oxidation forward rate"
 
@@ -66,8 +66,8 @@ parameters:
   - name: hs_oxidation_forward_rate
     block: HS_oxidation
     keyword: FORWARD_RATE
-    default: 1.0e-10
-    bounds: [1.0e-12, 1.0e-8]
+    default: 1.00e-06
+    bounds: [1.0e-12, 1.0e-4]
     is_log_scale: true
     description: "HS- oxidation forward rate"
 
@@ -75,7 +75,7 @@ parameters:
   - name: aerobic_rate_constant
     block: Aerobic_respiration
     keyword: RATE_CONSTANT
-    default: 1.0e-9
+    default: 5.00e-10
     bounds: [1.0e-11, 1.0e-7]
     is_log_scale: true
     description: "Aerobic respiration rate constant"
@@ -83,7 +83,7 @@ parameters:
   - name: aerobic_o2_half_sat
     block: Aerobic_respiration_O2
     keyword: HALF_SATURATION_CONSTANT
-    default: 1.0e-4
+    default: 1.00e-06
     bounds: [1.0e-6, 1.0e-2]
     is_log_scale: true
     description: "Aerobic respiration O2 half-saturation constant"
@@ -91,7 +91,7 @@ parameters:
   - name: aerobic_soc_half_sat
     block: Aerobic_respiration_SOC
     keyword: HALF_SATURATION_CONSTANT
-    default: 1.0e-5
+    default: 1.00e-06
     bounds: [1.0e-7, 1.0e-3]
     is_log_scale: true
     description: "Aerobic respiration SOC half-saturation constant"
@@ -142,7 +142,7 @@ parameters:
   - name: ferrihydrite_rmax
     block: JINBETHKE_FERRIHYDRITE_ACETATE
     keyword: RMAX
-    default: 2.5e-7
+    default: 1.50e-06
     bounds: [2.5e-9, 2.5e-5]
     is_log_scale: true
     description: "Ferrihydrite-acetate maximum rate"
@@ -160,7 +160,7 @@ parameters:
   - name: sulfate_rmax
     block: JINBETHKE_SULFATE_ACETATE
     keyword: RMAX
-    default: 2.5e-7
+    default: 3.50e-06
     bounds: [2.5e-9, 2.5e-5]
     is_log_scale: true
     description: "Sulfate-acetate maximum rate"
@@ -168,7 +168,7 @@ parameters:
   - name: sulfate_k_donor
     block: JINBETHKE_SULFATE_ACETATE
     keyword: K_DONOR
-    default: 5.0e-6
+    default: 1.00e-06
     bounds: [5.0e-8, 5.0e-4]
     is_log_scale: true
     description: "Sulfate-acetate donor half-saturation"
@@ -176,7 +176,7 @@ parameters:
   - name: sulfate_k_acceptor
     block: JINBETHKE_SULFATE_ACETATE
     keyword: K_ACCEPTOR
-    default: 1.0e-4
+    default: 1.00e-05
     bounds: [1.0e-6, 1.0e-2]
     is_log_scale: true
     description: "Sulfate-acetate acceptor half-saturation"

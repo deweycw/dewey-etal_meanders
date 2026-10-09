@@ -6,7 +6,7 @@ This package provides tools for tuning PFLOTRAN reactive transport model paramet
 
 The workflow offers multiple approaches:
 
-1. **Sensitivity Analysis (Morris Method)**: Screen all 25 parameters to identify the most influential ones (~80-100 simulations)
+1. **Sensitivity Analysis (Morris Method)**: Screen all 16 parameters to identify the most influential ones (~80-100 simulations)
 2. **Bayesian Optimization**: Efficiently optimize the reduced parameter set using Gaussian Process surrogate modeling (~50-100 simulations)
 3. **Agentic AI Workflow**: Use Claude to intelligently reason about results and make parameter adjustments based on biogeochemical understanding (~30 iterations)
 4. **Validation**: Run final simulation with optimized parameters and generate diagnostic plots
@@ -116,25 +116,24 @@ validation = compute_objective_with_details(
 
 | Config | nx | Start Date | Duration |
 |--------|-----|------------|----------|
-| mzt19 | 108 | 2019-04-19 | 3993 hours |
-| mcp19 | 122 | 2019-04-19 | 3993 hours |
-| mzt18 | 108 | 2018-05-01 | 5131 hours |
-| mcp18 | 122 | 2018-05-01 | 5131 hours |
+| mzt19 | 108 | 2019-04-21 | 3993 hours |
+| mcp19 | 122 | 2019-04-21 | 3993 hours |
+| mzt18 | 108 | 2018-04-01 | 5131 hours |
+| mcp18 | 122 | 2018-04-01 | 5131 hours |
 
 ### Tunable Parameters
 
-The workflow tunes 26 reaction parameters across these reaction blocks:
+The workflow tunes the 16 reaction parameters defined in `tuning_config.yaml` (marked with `$T` in `TEMPLATE-chemistry.txt`):
 
 - **Root_Respiration**: 1 parameter (dissolution rate)
 - **Fe++ oxidation**: 1 parameter (forward rate)
 - **HS- oxidation**: 1 parameter (forward rate)
 - **Aerobic respiration**: 3 parameters (rate constant, O2 and SOC half-saturation)
 - **SOM_AC_FERMENTATION**: 2 parameters (rate, threshold)
-- **FH_GT_MINERAL_RIPENING**: 1 parameter (ripening rate)
-- **JINBETHKE_NITRATE_ACETATE**: 4 parameters (RMAX, K_DONOR, K_ACCEPTOR, O2_THRESHOLD)
-- **JINBETHKE_FERRIHYDRITE_ACETATE**: 4 parameters
-- **JINBETHKE_GOETHITE_ACETATE**: 4 parameters
-- **JINBETHKE_SULFATE_ACETATE**: 4 parameters
+- **JINBETHKE_NITRATE_ACETATE**: 3 parameters (RMAX, K_DONOR, K_ACCEPTOR)
+- **JINBETHKE_FERRIHYDRITE_ACETATE**: 1 parameter (RMAX)
+- **JINBETHKE_GOETHITE_ACETATE**: 1 parameter (RMAX)
+- **JINBETHKE_SULFATE_ACETATE**: 3 parameters (RMAX, K_DONOR, K_ACCEPTOR)
 
 ### Species Weights
 

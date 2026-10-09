@@ -60,14 +60,17 @@ MOLECULAR_WEIGHTS = {
     'silicon': 62.0049, 'sulfate': 96.06, 'npoc': 12.011
 }
 
+# Simulation t=0 must match the hydro BC files (hydro-bcs/dwn_bc_creator_*.ipynb):
+# 2018 starts 2018-04-01 (5131 h), 2019 starts 2019-04-21 (3993 h). River chemistry
+# constraints are written daily from 'start'; 'end' covers the full transient run.
 YEAR_CONFIGS = {
     '2018': {
         'start': pd.Timestamp(2018, 4, 1),
         'end': pd.Timestamp(2018, 10, 31)
     },
     '2019': {
-        'start': pd.Timestamp(2019, 4, 19),
-        'end': pd.Timestamp(2019, 10, 2)
+        'start': pd.Timestamp(2019, 4, 21),
+        'end': pd.Timestamp(2019, 10, 6)
     }
 }
 
@@ -75,8 +78,8 @@ YEAR_CONFIGS = {
 SIMULATION_CONFIGS = {
     ('2019', 'mzt'): {
         'nx': 108,
-        'upstream_h': 1.94,
-        'downstream_h': 1.66,
+        'upstream_h': 1.64,    # t=0 of hydro_us_2019 (MZT datum 2721.5 m ASL)
+        'downstream_h': 1.36,  # t=0 of hydro_ds_2019
         'upstream_file': 'hydro_us_2019_4-21_10-2-MZT.txt',
         'downstream_file': 'hydro_ds_2019_4-21_10-2-MZT.txt',
         'subdir': 'mzt19',
@@ -84,17 +87,28 @@ SIMULATION_CONFIGS = {
     },
     ('2018', 'mzt'): {
         'nx': 108,
-        'upstream_h': 1.84,
-        'downstream_h': 1.46,
+        'upstream_h': 1.54,    # t=0 of hydro_us_2018 (MZT datum 2721.5 m ASL)
+        'downstream_h': 1.16,  # t=0 of hydro_ds_2018
         'upstream_file': 'hydro_us_2018_4-1_10-31-MZT.txt',
         'downstream_file': 'hydro_ds_2018_4-1_10-31-MZT.txt',
         'subdir': 'mzt18',
-        'final_time': 5131  # hours
+        'final_time': 5131,  # hours
+        # A beaver dam raised the upstream level from 2018-07-28. 'dam' uses the
+        # measured record; 'nodam' holds the head drop at its 07-28 value after
+        # that date (hydro-bcs/dwn_bc_creator_MZ-nodam.ipynb). Same t=0 heads.
+        # 'tag' is appended to the run name (pflotran-mzt18<tag>_...).
+        'scenarios': {
+            'dam':   {'tag': ''},
+            'nodam': {'tag': 'nd',
+                      'upstream_file': 'mzt-NODAM_us_2018_4-1_10-31-MZT.txt',
+                      'downstream_file': 'mzt-NODAM_ds_2018_4-1_10-31-MZT.txt'},
+        },
+        'default_scenario': 'dam',
     },
     ('2019', 'mcp'): {
         'nx': 122,
-        'upstream_h': 1.94,
-        'downstream_h': 0.91,
+        'upstream_h': 1.94,    # t=0 of mc_up_2019_3993h.txt (hydro-bcs/make_mcp_stage.py)
+        'downstream_h': 0.91,  # t=0 of mc_dn_2019_3993h.txt
         'upstream_file': 'mc_up_2019_3993h.txt',
         'downstream_file': 'mc_dn_2019_3993h.txt',
         'subdir': 'mcp19',
@@ -102,8 +116,8 @@ SIMULATION_CONFIGS = {
     },
     ('2018', 'mcp'): {
         'nx': 122,
-        'upstream_h': 1.84,
-        'downstream_h': 0.96,
+        'upstream_h': 1.84,    # t=0 of mc_us_2018_5131h-NODAM.txt (hydro-bcs/make_mcp_stage.py)
+        'downstream_h': 0.69,  # t=0 of mc_dn_2018_5131h-NODAM.txt
         'upstream_file': 'mc_us_2018_5131h-NODAM.txt',
         'downstream_file': 'mc_dn_2018_5131h-NODAM.txt',
         'subdir': 'mcp18',
@@ -117,7 +131,7 @@ class PFLOTRANGenerator:
 
     def __init__(self, year: str, meander: str, nx: int, upstream_h: float,
                  downstream_h: float, final_time: int, sim_dir: Path, template_dir: Path,
-                 strip_tuning_markers: bool = True):
+                 strip_tuning_markers: bool = True, scenario: str = None, tag: str = ''):
         """
         Initialize the PFLOTRAN generator.
 
@@ -132,9 +146,14 @@ class PFLOTRANGenerator:
             template_dir: Directory containing shared templates
             strip_tuning_markers: If True, remove $T markers from chemistry template
                                   (use True for standalone runs, False for tuning workflow)
+            scenario: Optional scenario name (e.g. 'dam'/'nodam' for MZT 2018)
+            tag: Suffix appended to the run name for this scenario (e.g. 'nd')
         """
         self.year = year
         self.meander = meander.lower()
+        self.scenario = scenario
+        # Run name used in file names, e.g. 'mzt18' or 'mzt18nd'
+        self.run_name = f'{self.meander}{year[-2:]}{tag}'
         self.nx = nx
         self.upstream_h = upstream_h
         self.downstream_h = downstream_h
@@ -445,7 +464,7 @@ class PFLOTRANGenerator:
             with open(chem_file, 'a') as f:
                 f.writelines(template)
 
-        transport_type = 'dirichlet_zero_gradient' if block_type == 'river' else 'zero_gradient'
+        transport_type = 'dirichlet' if block_type == 'river' else 'zero_gradient'
 
         start_string = (f'\nTRANSPORT_CONDITION  from_{block_type}\n'
                        f'    TIME_UNITS h\n'
@@ -606,6 +625,31 @@ class PFLOTRANGenerator:
 
         return updated_content
 
+    def _update_spin_datums(self, content: List[str]) -> List[str]:
+        """Set the constant DATUM of the spin-up upstream_bc and downstream_bc
+        flow conditions to this configuration's upstream_h / downstream_h.
+
+        The spin-up template hardcodes MZT 2019 heads, which would otherwise be
+        used for every meander/year.
+        """
+        heads = {'upstream_bc': self.upstream_h, 'downstream_bc': self.downstream_h}
+        updated_content = []
+        condition = None
+
+        for line in content:
+            tokens = line.split()
+            if len(tokens) >= 2 and tokens[0] == 'FLOW_CONDITION':
+                condition = tokens[1]
+
+            if (condition in heads and tokens and tokens[0] == 'DATUM'
+                    and 'FILE' not in tokens):
+                indent = len(line) - len(line.lstrip())
+                updated_content.append(' ' * indent + f'DATUM 0.d0 0.d0 {heads[condition]}d0\n')
+            else:
+                updated_content.append(line)
+
+        return updated_content
+
     def _update_datum_files(self, content: List[str], upstream_file: str, downstream_file: str) -> List[str]:
         """Update the DATUM FILE references in upstream_bc and downstream_bc flow conditions.
 
@@ -742,6 +786,10 @@ class PFLOTRANGenerator:
         if transient and upstream_file and downstream_file:
             template_content = self._update_datum_files(template_content, upstream_file, downstream_file)
 
+        # Update constant upstream/downstream heads (spin-up only)
+        if not transient:
+            template_content = self._update_spin_datums(template_content)
+
         chunks = self._split_template_with_chemistry(template_content)
 
         output_file = self.output_dir / filename
@@ -752,7 +800,8 @@ class PFLOTRANGenerator:
             timestamp = self.generation_timestamp.strftime("%Y-%m-%d %H:%M:%S")
             f.write(f"! Generated {timestamp} (Local Time)\n")
             f.write(f"! Output directory: {self.output_dir.absolute()}\n")
-            f.write(f"! Meander: {self.meander.upper()}, Year: {self.year}\n\n")
+            f.write(f"! Meander: {self.meander.upper()}, Year: {self.year}"
+                    f"{', Scenario: ' + self.scenario if self.scenario else ''}\n\n")
 
             f.writelines(chunks[0])
             f.write(regions_block)
@@ -823,12 +872,11 @@ class PFLOTRANGenerator:
     def generate_files(self, upstream_file: str = None, downstream_file: str = None) -> Tuple[str, str]:
         """Generate both spin-up and transient input files with meander and year in filenames."""
         timestamp = self.generation_timestamp.strftime("%Y-%m-%d_%H-%M-%S")
-        year_suffix = self.year[-2:]
 
-        transient_filename = f'pflotran-{self.meander}{year_suffix}_{timestamp}.in'
+        transient_filename = f'pflotran-{self.run_name}_{timestamp}.in'
         self.assemble_input_file(transient_filename, True, upstream_file, downstream_file)
 
-        spinup_filename = f'pflotran-{self.meander}{year_suffix}_{timestamp}_spin.in'
+        spinup_filename = f'pflotran-{self.run_name}_{timestamp}_spin.in'
         self.assemble_input_file(spinup_filename, False)
 
         # Update transient file's RESTART FILENAME to match the spin checkpoint
@@ -840,7 +888,7 @@ class PFLOTRANGenerator:
 
             for i, line in enumerate(lines):
                 if 'FILENAME' in line and 'restart.chk' in line:
-                    lines[i] = f"    FILENAME pflotran-{self.meander}{year_suffix}_{timestamp}_spin-restart.chk\n"
+                    lines[i] = f"    FILENAME pflotran-{self.run_name}_{timestamp}_spin-restart.chk\n"
                     break
 
             with open(transient_path, 'w') as f:
@@ -867,6 +915,7 @@ class PFLOTRANGenerator:
             f.write("-" * 50 + "\n")
             f.write(f"  year:            {self.year}\n")
             f.write(f"  meander:         {self.meander}\n")
+            f.write(f"  scenario:        {self.scenario or '-'}\n")
             f.write(f"  nx:              {self.nx}\n")
             f.write(f"  upstream_h:      {self.upstream_h}\n")
             f.write(f"  downstream_h:    {self.downstream_h}\n")
@@ -1011,6 +1060,9 @@ def main():
                        help='Run DATUM generation test and exit')
     parser.add_argument('--keep-tuning-markers', action='store_true',
                        help='Keep $T markers in chemistry template (for tuning workflow)')
+    parser.add_argument('--scenario', type=str, default=None,
+                       help='Scenario for configurations that have them '
+                            '(MZT 2018: dam [default] or nodam)')
 
     args = parser.parse_args()
 
@@ -1027,7 +1079,20 @@ def main():
 
     # Get configuration for this year/meander combination
     config_key = (args.year, args.meander.lower())
-    config = SIMULATION_CONFIGS[config_key]
+    config = dict(SIMULATION_CONFIGS[config_key])
+
+    # Apply scenario overrides (e.g. MZT 2018 dam / nodam)
+    scenarios = config.get('scenarios', {})
+    scenario = args.scenario or config.get('default_scenario')
+    if args.scenario and not scenarios:
+        print(f"\nError: {args.meander.upper()} {args.year} has no scenarios (got --scenario {args.scenario})")
+        return 1
+    if scenarios and scenario not in scenarios:
+        print(f"\nError: Invalid scenario '{scenario}'. Acceptable options: {', '.join(scenarios)}")
+        return 1
+    scenario_cfg = scenarios.get(scenario, {})
+    config.update({k: v for k, v in scenario_cfg.items() if k != 'tag'})
+    tag = scenario_cfg.get('tag', '')
 
     # Determine directories
     script_dir = Path(__file__).parent  # simulations directory (contains templates)
@@ -1041,7 +1106,8 @@ def main():
     print(f"\n{'='*60}")
     print(f"PFLOTRAN Generator v3.0 - Unified")
     print(f"{'='*60}")
-    print(f"\nConfiguration for {args.meander.upper()} {args.year}:")
+    print(f"\nConfiguration for {args.meander.upper()} {args.year}"
+          f"{' (' + scenario + ')' if scenario else ''}:")
     print(f"  Template dir:    {template_dir}")
     print(f"  Simulation dir:  {sim_dir}")
     print(f"  nx:              {config['nx']}")
@@ -1065,7 +1131,9 @@ def main():
             final_time=config['final_time'],
             sim_dir=sim_dir,
             template_dir=template_dir,
-            strip_tuning_markers=not args.keep_tuning_markers
+            strip_tuning_markers=not args.keep_tuning_markers,
+            scenario=scenario,
+            tag=tag
         )
 
         # Test DATUM generation if requested

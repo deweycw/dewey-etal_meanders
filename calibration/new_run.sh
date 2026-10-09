@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #
 # Create a new run directory by copying input files from an existing one.
-# The .in files are renamed to match the new run ID.
+# The .in files are renamed to match the new run ID, and the transient file's
+# restart FILENAME is updated to the new run's spin-up checkpoint.
 #
 # Usage:
 #   ./new_run.sh <new_run_dir> <source_run_dir>
@@ -40,6 +41,8 @@ for f in "$SRC_DIR"/*.in; do
     [ -e "$f" ] || continue
     newname="$(basename "$f" | sed "s/${SRC_ID}/${NEW_ID}/g")"
     cp "$f" "$NEW_DIR/$newname"
+    # point the transient restart at this run's spin-up checkpoint
+    sed -i "s/${SRC_ID}_spin-restart\.chk/${NEW_ID}_spin-restart.chk/" "$NEW_DIR/$newname"
     echo "  $f -> $NEW_DIR/$newname"
     copied=$((copied + 1))
 done

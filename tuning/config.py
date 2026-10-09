@@ -105,25 +105,25 @@ SIMULATION_CONFIGS = {
     ('2019', 'mzt'): {
         'nx': 108,
         'subdir': 'mzt19',
-        'startdate': '2019-04-19',
+        'startdate': '2019-04-21',
         'final_time_hours': 3993,
     },
     ('2019', 'mcp'): {
         'nx': 122,
         'subdir': 'mcp19',
-        'startdate': '2019-04-19',
+        'startdate': '2019-04-21',
         'final_time_hours': 3993,
     },
     ('2018', 'mzt'): {
         'nx': 108,
         'subdir': 'mzt18',
-        'startdate': '2018-05-01',
+        'startdate': '2018-04-01',
         'final_time_hours': 5131,
     },
     ('2018', 'mcp'): {
         'nx': 122,
         'subdir': 'mcp18',
-        'startdate': '2018-05-01',
+        'startdate': '2018-04-01',
         'final_time_hours': 5131,
     },
 }

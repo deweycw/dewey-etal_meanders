@@ -1,4 +1,4 @@
-#==================== CHEMISTRY ===================
+  #==================== CHEMISTRY ===================
   CHEMISTRY 
     PRIMARY_SPECIES 
       H+        
@@ -112,8 +112,7 @@
       NH4+
       NH4SO4-
       SO2(aq)
-      Urea(aq)
-      
+      Urea(aq) 
     END   
  
     ACTIVE_GAS_SPECIES
@@ -142,7 +141,6 @@
       Ferrihydrite
       Goethite
       Mackinawite
-      !Pyrite
       SOC
       SOM
     /
@@ -183,7 +181,7 @@
 
       Calcite
         PREFACTOR 
-          RATE_CONSTANT 1.55d-06 
+          RATE_CONSTANT 1.550000d-06 
           ACTIVATION_ENERGY 23.5d0  !kJ / mol
           /
         PREFACTOR
@@ -222,24 +220,7 @@
           /
         / 
       /
-skip
-      Pyrite
-        PREFACTOR
-          RATE_CONSTANT 7.94d-09
-          ACTIVATION_ENERGY 56.9d0
-          PREFACTOR_SPECIES H+  O2(aq) 
-              ALPHA  -0.11d0  0.5d0
-          /
-        /
-        PREFACTOR
-          RATE_CONSTANT 3.16d-10 
-          ACTIVATION_ENERGY 56.9d0
-          PREFACTOR_SPECIES H+  Fe++  Fe+++
-            ALPHA  -0.32d0 -0.47d0  0.30d0
-          /
-        /
-      /
-noskip
+
       Ferrihydrite 
         RATE_CONSTANT 0.d0
       /
@@ -249,49 +230,48 @@ noskip
       /
 
       Mackinawite
-        RATE_CONSTANT 1.d-11
+        RATE_CONSTANT 0.d0
       /
 
       Root_Respiration
-        $T DISSOLUTION_RATE_CONSTANT    -12.1d0
+        $T DISSOLUTION_RATE_CONSTANT     6.0d-13
         PRECIPITATION_RATE_CONSTANT   0.d0
       /
 
       SOC
-        RATE_CONSTANT 1.00d-10
+        RATE_CONSTANT 1.00d-8
       /
       
       SOM        
         RATE_CONSTANT 0.d0 
       /
-
     /
-# ------- Fe++ oxidation --------- (effectively off at rate 1e-10)
+    # ------- Fe++ oxidation ---------
     GENERAL_REACTION
       REACTION 1.00 Fe++ + 0.25 O2(aq) + H+ <-> 1.00 Fe+++ + 0.50 H2O
-      $T FORWARD_RATE 1.d-10
+      $T FORWARD_RATE 1.d-6
       BACKWARD_RATE 0.d0
     /
 
-# ------- HS- oxidation --------- (effectively off at rate 1e-10)
+    # ------- HS- oxidation ---------
     GENERAL_REACTION
       REACTION 1.00 HS- + 2.00 O2(aq) <-> 1.00 SO4-- + 1.00 H+
-      $T FORWARD_RATE 1.d-10
+      $T FORWARD_RATE 1.d-6
       BACKWARD_RATE 0.d0
     /
 
-# ------- Aerobic respiration ---------
+    # ------- Aerobic respiration ---------
     MICROBIAL_REACTION
       REACTION 1.00 SOC(aq) + 1.00 O2(aq) + 1.00 H2O <-> 1.00 HCO3- + 1.00 H+
-      $T RATE_CONSTANT 5.d-10
+      $T RATE_CONSTANT 5.00d-10
       MONOD
         SPECIES_NAME O2(aq)
-        $T HALF_SATURATION_CONSTANT 1.d-6
-        THRESHOLD_CONCENTRATION 1.d-6
+        $T HALF_SATURATION_CONSTANT 1.00d-06
+        THRESHOLD_CONCENTRATION 1.d-8
       /
       MONOD
         SPECIES_NAME SOC(aq)
-        $T HALF_SATURATION_CONSTANT 1.d-5
+        $T HALF_SATURATION_CONSTANT 1.d-6
         THRESHOLD_CONCENTRATION 1.d-8
       /
     /
@@ -303,16 +283,10 @@ noskip
         $T THRESHOLD   1.d-6
       /
 
-skip
-      FH_GT_MINERAL_RIPENING
-        $T RATE_CONSTANT_FH_TO_GT  5.d-3
-      /
-noskip
-
       JINBETHKE_NITRATE_ACETATE
-        $T RMAX            1.0d-6
-        $T K_DONOR         1.0d-5
-        $T K_ACCEPTOR      1.0d-5
+        $T RMAX            1.000000d-06
+        $T K_DONOR         1.000000d-05
+        $T K_ACCEPTOR      1.000000d-05
         Y               1.0d-0
         M               2.667d0            ! 0.667 * 4
         CHI             8.0d0              ! 2.0 * 4
@@ -320,43 +294,50 @@ noskip
       END
 
       JINBETHKE_FERRIHYDRITE_ACETATE
-        $T RMAX            2.5d-7
-        K_DONOR         1.0d-6
-        K_ACCEPTOR      1.0d-6  ! vol fraction
-        Y               1.0d-0
-        M               0.50d0            ! 0.125 * 4
-        CHI             7.0d0              ! 1.75 * 4
-        O2_THRESHOLD    1.0d-5
+        $T RMAX                        1.500000d-06
+        K_DONOR                     5.00d-06
+        SURFACE_AREA_THRESHOLD      1.0d-3                             ! [threshold] / ([Fe++] + [threshold])
+        Y                           1.0d-0
+        M                           0.50d0             ! 0.125 * 4
+        CHI                         7.0d0              ! 1.75 * 4
+        O2_THRESHOLD                1.0d-6
       /
 
       JINBETHKE_GOETHITE_ACETATE
-        $T RMAX            2.5d-7
-        K_DONOR         1.0d-6
-        K_ACCEPTOR      1.0d-6  ! vol fraction
-        Y               1.0d-0
-        M               0.50d0            ! 0.125 * 4
-        CHI             7.0d0              ! 1.75 * 4
-        O2_THRESHOLD    1.0d-5
-        K_PRECIPITATION 1.0d-30
+        $T RMAX                        2.500000d-07
+        K_DONOR                     1.000000d-06
+        SURFACE_AREA_THRESHOLD      1.0d-3                             ! [threshold] / ([Fe++] + [threshold])
+        Y                           1.0d-0
+        M                           0.50d0             ! 0.125 * 4
+        CHI                         7.0d0              ! 1.75 * 4
+        O2_THRESHOLD                1.0d-6
+        K_PRECIPITATION             1.0d-30
       /
 
       JINBETHKE_SULFATE_ACETATE
-        $T RMAX            2.5d-7
-        $T K_DONOR         5.0d-6
-        $T K_ACCEPTOR      1.0d-4
+        $T RMAX            3.500000d-06
+        $T K_DONOR         1.00d-06
+        $T K_ACCEPTOR      1.00d-05
         Y               1.0d-0
         M               1.33d0            ! 0.33 * 4.0
         CHI             8.0d0              ! 2.0 * 4.0
         O2_THRESHOLD    1.0d-5
       END
 
+      MACKINAWITE_DISS_PRECIP
+        PRECIP_RATE     1.d-8
+        DSLN_RATE       1.d-10
+        HALF_SAT_FE     1.d-5
+        HALF_SAT_HS     1.d-7
+        O2_THRESHOLD_M  1.d-5
+        HALF_SAT_O2     1.d-5
+      /
     /
   
-
     DATABASE hanford-cd.dat
     LOG_FORMULATION 
     ACTIVITY_COEFFICIENTS TIMESTEP 
-    OUTPUT
+    OUTPUT 
      all
      PRIMARY_SPECIES
      SECONDARY_SPECIES
@@ -364,9 +345,7 @@ noskip
      TOTAL
      pH
      MINERAL_SATURATION_INDEX
-     JB Fh Acetate Sandbox Rate
-     JB Gt Acetate Sandbox Rate
-     JB Sulfate Acetate Sandbox Rate
-     JB Nitrate Acetate Sandbox Rate
-    /
+     AUXILIARY
+    /  
   END
+
