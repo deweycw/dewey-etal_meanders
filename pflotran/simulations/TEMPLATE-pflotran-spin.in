@@ -219,6 +219,7 @@ $%$%$% CHUNK DELIM %^%^%^
       !Pyrite           1.00e-03  1.90e+00
       Ferrihydrite     0.00e-00  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Mackinawite      0.00e+00  1.00e+01
       SOC              1.00e-02  1.13e+05 # cm^2/cm^3
       SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
     /
@@ -266,6 +267,7 @@ $%$%$% CHUNK DELIM %^%^%^
       !Pyrite           1.00e-03  1.90e+00
       Ferrihydrite     5.00e-05  1.08e+07 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
       Goethite         3.72e-04  2.83e+06 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
+      Mackinawite      0.00e+00  1.00e+01
       SOC              1.00e-02  1.13e+05 # cm^2/cm^3
       SOM              1.00e-02  1.13e+05 # cm^2/cm^3   # min_name     vol_frac     spe_sur_area [m2 mineral/m3 bulk]
     /

@@ -1842,7 +1842,7 @@ FLOW_CONDITION top_river_bc_0
     DATABASE ../hanford-cd.dat
     LOG_FORMULATION 
     ACTIVITY_COEFFICIENTS TIMESTEP 
-    OUTPUT 
+    OUTPUT
      all
      PRIMARY_SPECIES
      SECONDARY_SPECIES
@@ -1850,7 +1850,8 @@ FLOW_CONDITION top_river_bc_0
      TOTAL
      pH
      MINERAL_SATURATION_INDEX
-    /  
+     AUXILIARY
+    /
   END
 
   #=========================== CONSTRAINTS ====================================== 

@@ -31,9 +31,6 @@ Thumbs.db
 # Office temp files
 ~$*
 
-# containers
-*.sif
-
 # Data files (uncomment if needed)
 # *.csv
 # *.h5
@@ -47,6 +44,6 @@ Thumbs.db
 *.out
 pflotran.log
 
-# Simulation output
-pflotran/simulations/**/*.h5
-calibration/run_*/*.h5
+# Large model output (adjust as needed)
+data/model_output/*.h5
+calibration/**/*.h5
