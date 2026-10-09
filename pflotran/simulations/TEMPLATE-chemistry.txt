@@ -26,7 +26,6 @@
 
     SECONDARY_SPECIES
       HAc(aq)
-      S2--
       S2O3--
       CO(aq)
       ClO-
@@ -357,7 +356,7 @@ noskip
     DATABASE hanford-cd.dat
     LOG_FORMULATION 
     ACTIVITY_COEFFICIENTS TIMESTEP 
-    OUTPUT 
+    OUTPUT
      all
      PRIMARY_SPECIES
      SECONDARY_SPECIES
@@ -365,5 +364,9 @@ noskip
      TOTAL
      pH
      MINERAL_SATURATION_INDEX
-    /  
+     JB Fh Acetate Sandbox Rate
+     JB Gt Acetate Sandbox Rate
+     JB Sulfate Acetate Sandbox Rate
+     JB Nitrate Acetate Sandbox Rate
+    /
   END
